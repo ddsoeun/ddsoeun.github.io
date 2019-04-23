@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>한국색채연구소</title>
+    <link rel="stylesheet" href="reset.css">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon16.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon32.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon48.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon64.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon128.png">
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon150.png">
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta name="msapplication-TileImage" content="./ico/favicon144.png">
+    <!-- iPhone iOS 7이상   -->
+    <link rel="apple-touch-icon" size="120X120" href="./ico/favicon120.png">
+    <!--  표준 iOS 홈스크린  -->
+    <link rel="apple-touch-icon" size="57X57" href="./ico/favicon57.png">
+    <!--  iOS 홈스크린  -->
+    <link rel="apple-touch-icon" size="72X72" href="./ico/favicon72.png">
+    <!--  아이폰 레티나  -->
+    <link rel="apple-touch-icon" size="114X114" href="./ico/favicon114.png">
+    <!--  iPhone iOS  -->
+    <link rel="apple-touch-icon" size="180X180" href="./ico/favicon180.png">
+    <!--  안드로이드/iOS 기본   -->
+    <link rel="apple-touch-icon" size="152X152" href="./ico/favicon152.png">
+    <!--  안드로이드 크롬 홈  -->
+    <link rel="apple-touch-icon" size="196X196" href="./ico/favicon196.png">
+    <!--  아이패트 레티나 터치  -->
+    <link rel="apple-touch-icon" size="167X167" href="./ico/favicon167.png">
+   
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="application-name" content="Korea Color Lab Web Site">
+    <meta name="author" content="SoeunPark">
+    <meta name="description" content="Korea Color Research Institute Mainpage">
+    <meta name="generator" content="Brackets">
+    <meta name="keywords" content="한국색채연구소, 색채연구소, Korea Color Research Institute, Color Research Institute">
+    
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR" rel="stylesheet">
+    
+    <script>
+    $(document).ready(function(){
+       $(".hd").removeClass("on");
+       $(window).scroll(function(){
+          $(".hd").removeClass("on");
+          var scTop = $(window).scrollTop();
+          if(scTop>=100){
+               $(".hd").addClass("on");
+          } 
+       }); 
+    });
+    </script>
+    <script>
+    $(document).ready(function(){
+        var sc, pg;
+        $(".page").eq(0).find(".conBox li").addClass("on");
+        $(window).scroll(function(){
+            sc = $(window).scrollTop();
+            $(".page").each(function(index){
+                pg = $(this).offset();
+                if(sc >= pg.top-0){
+                    $(this).find(".conBox li").addClass("on");
+                }
+            });
+        });
+        $(".page").eq(0).find(".titBox").addClass("on");
+        $(window).scroll(function(){
+            sc = $(window).scrollTop();
+            $(".page").each(function(index){
+                pg = $(this).offset();
+                if(sc >= pg.top-600){
+                    $(this).find(".titBox").addClass("on");
+                }
+            });
+        });
+        $(".page").eq(0).find(".subBox").addClass("on");
+        $(window).scroll(function(){
+            sc = $(window).scrollTop();
+            $(".page").each(function(index){
+                pg = $(this).offset();
+                if(sc >= pg.top-600){
+                    $(this).find(".subBox").addClass("on");
+                }
+            });
+        });
+    });
+    </script>
+    
+    <style>
+    @media screen and (max-width:767px){
+        .mo { display: block; }
+        .desk { display: none; }
+        #container { width: 100%; clear: both; transition: 0.6s; }
+        .hd { width: 100%; background: transparent; position: fixed; top: 0; left: 0; z-index: 10; height: 60px; border-bottom: 1px solid rgba(225, 225, 225, 0.7); }
+        .hd.on { background: #fff; }
+        .logo { display: block; width: 100%; margin-right: -100%; text-align: center; height: 60px; background-image: url("./img/logo_w.png"); background-repeat: no-repeat; background-position: center center; background-size: 100px 40px; text-indent: -9999px; }
+        #container .hd.on .logo { background-image: url("./img/logo.png"); }
+        #container .lstBox { display: block; width: 60px; height: 60px; position: absolute; top: 0; left: 0; z-index: 20; }
+        #container .lstBox .lst { display: block; width: 25px; height: 2px; background: #fff; position: absolute; left: 17px; transition: 0.6s; transition-delay: 0.2s; }
+        #container .lstBox .lst.item1 { top: 23px; }
+        #container .lstBox .lst.item2 { top: 30px; width: 17px; }
+        #container .lstBox .lst.item3 { top: 37px; }
+        #ck1:checked ~ #container .hd .lstBox .lst.item1 { transform: rotate(-45deg); top: 30px; }
+        #ck1:checked ~ #container .hd .lstBox .lst.item2 { display: none; }
+        #ck1:checked ~ #container .hd .lstBox .lst.item3 { transform: rotate(45deg); top: 30px; }
+        #container .hd.on .lstBox .lst { background: #333; }
+        .ckItem { display: none; }
+        #ck1:checked ~ #container { margin-right: -85%; }
+        #ck1:checked ~ #wrap { left: 0; }
+        #ck1:checked ~ .blank { left: 0; }
+        
+        #wrap { width: 85%; height: 100%; clear: both; transition: 0.6s; position: fixed; z-index: 30; left: -100%; top: 0; background: #fff; }
+        #wrap .hdWrap { border-bottom: 1px solid #ddd; position: relative; }
+        #wrap .hdWrap .logo { background-image: url("./img/logo.png"); }
+        #wrap .hdWrap .lstBox { display: block; width: 60px; height: 60px; z-index: 30; position: absolute; top: 0; right: -60px; }
+        #wrap .hdWrap .lstBox .lst { background: #333; position: absolute; width: 25px; height: 2px; background: #fff; right: 20px; transition: 0.6s; transition-delay: 0.2s; }
+        #wrap .lstBox .lst.item1 { top: 23px; }
+        #wrap .lstBox .lst.item2 { top: 30px; width: 17px; }
+        #wrap .lstBox .lst.item3 { top: 37px; }
+        #ck1:checked~ #wrap .hdWrap .lstBox .lst.item1 { transform: rotate(-45deg); top: 30px; }
+        #ck1:checked~ #wrap .hdWrap .lstBox .lst.item2 { display: none; }
+        #ck1:checked~ #wrap .hdWrap .lstBox .lst.item3 { transform: rotate(45deg); top: 30px; }
+        #gnb { width: 80%; margin: 0 auto; height: calc(100% - 60px); }
+        #gnb li { width: 100%; height: 50px; line-height: 50px; text-indent: 30px; }
+        #gnb li:first-child { margin-top: 50px; }
+        #gnb li a { color: #333; font-size: 1.1em; font-weight: bold; }
+        .imgFrm { width: 100%; position: absolute; bottom: 0; left: 0; background-image: url("./img/gnb_img.png"); background-repeat: no-repeat; background-position: center bottom; height: 200px; background-size: 100% 120px; }
+        .blank { width: 100%; height: 100%; position: fixed; background: rgba(0, 0, 0, 0.6); top: 0; z-index: 25; left: -100%; }
+        
+        .content { width: 100%; min-height: 100%; clear: both; }
+        .page { width: 100%; height: auto; }
+        .page.item3 { height: 480vw; }
+        .vsBox { width: 100%; height: 55vh; background-image: url("./img/vs.jpg"); background-repeat: no-repeat; background-size: cover; background-position: center center; }
+        .conBox { width: 90%; margin: 0 auto; column-count: 1; }
+        .conBox li { clear: both; width: 100%; margin-top: 20px; background: #f5f5f5; height: 230px; position: relative; }
+        .conBox li a { display: block; width: 100%; height: 100%; }
+        .conBox li a .conImg { display: block; width: 80%; margin: 0 auto; height: 50%; background-repeat: no-repeat; background-position: center center; background-size: contain; }
+        .conBox li.item1 a .conImg { background-image: url("./img/lst_img1.png"); }
+        .conBox li.item2 a .conImg { background-image: url("./img/lst_img2.png"); }
+        .conBox li.item3 a .conImg { background-image: url("./img/lst_img3.png"); }
+        .conBox li a .conTit { font-size: 1.25em; text-align: center; color: #333; padding-top: 30px; }
+        .conBox li a .conCom { font-size: 0.9em; text-align: center; color: #333; height: 30px; line-height: 30px; }
+        .more { font-size: 1em; position: absolute; bottom: 0; left: 0; background: #fff; color: #333; width: 20px; height: 20px; line-height: 20px; text-align: center; }
+        .titBox { width: 90%; margin: 0 auto; position: relative; }
+        .title { font-size: 1.5em; font-weight: bolder; text-align: center; padding-top: 120px; margin-top: 20px; }
+        .title:before { content: ""; width: 1px; height: 70px; background: #333; position: absolute; left: 50%; top: 25px; }
+        .detail { font-size: 0.8em; text-align: center; word-break: keep-all; padding-top: 15px; line-height: 1.8; }
+        
+        .conBox2 { width: 100%; margin: 0 auto; margin-top: 80px; height: auto; }
+        .conBox2 .subBox { clear: both; width: 90%; position: relative; min-height: 130vw; } 
+        .conBox2 .subBox .imgBox { width: 100%; }
+        .conBox2 .subBox .imgBox img { width: 100%; height: 100%; }
+        .conBox2 .subBox.item1, .conBox2 .subBox.item3 { float: left;}
+        .conBox2 .subBox.item2 { float: right; }
+        .comment { font-size: 1.25em; word-break: keep-all; padding: 60px 30px; }
+        .comment:before { content: ""; width: 14px; height: 1px; position: absolute; left: 32px; background: #333; }
+        
+        .ft { width: 100%; height: 100px; }
+        .ftWrap { width: 100%; margin: 0 auto; height: 200px; }
+        .ftWrap a { display: block; width: 100%; position: relative; height: 40px; }
+        .ftLogo { width: 150px; height: 40px; background-image: url("./img/ft_logo.png"); background-repeat: no-repeat; background-position: center center; background-size: contain; margin: 0 auto; line-height: 40px; }
+        .ftLogo:before { content: ""; width: 100%; height: 1px; background: #ddd; position: absolute; left: 0; top: 20px; z-index: -1; }
+        .ftLogo img { display: block; width: 40%; margin: 0 auto; margin-top: -26px; }
+        .copy { width: 80%; margin: 0 auto; font-size: 0.65em; text-align: center; word-break: keep-all; color: #999; line-height: 2; padding-top: 20px; }
+        .txt_b { color: #333; }
+        
+        
+    }
+    @media screen and (min-width:768px) and (max-width:959px){
+        .mo { display: block; }
+        .desk { display: none; }
+        #container { width: 100%; clear: both; transition: 0.6s; }
+        .hd { width: 100%; background: transparent; position: fixed; top: 0; left: 0; z-index: 10; height: 60px; border-bottom: 1px solid rgba(225, 225, 225, 0.7); }
+        .hd.on { background: #fff; }
+        .logo { display: block; width: 100%; margin-right: -100%; text-align: center; height: 60px; background-image: url("./img/logo_w.png"); background-repeat: no-repeat; background-position: center center; background-size: 100px 40px; text-indent: -9999px; }
+        #container .hd.on .logo { background-image: url("./img/logo.png"); }
+        #container .lstBox { display: block; width: 60px; height: 60px; position: absolute; top: 0; left: 0; z-index: 20; }
+        #container .lstBox .lst { display: block; width: 25px; height: 2px; background: #fff; position: absolute; left: 17px; transition: 0.6s; transition-delay: 0.2s; }
+        #container .lstBox .lst.item1 { top: 23px; }
+        #container .lstBox .lst.item2 { top: 30px; width: 17px; }
+        #container .lstBox .lst.item3 { top: 37px; }
+        #ck1:checked ~ #container .hd .lstBox .lst.item1 { transform: rotate(-45deg); top: 30px; }
+        #ck1:checked ~ #container .hd .lstBox .lst.item2 { display: none; }
+        #ck1:checked ~ #container .hd .lstBox .lst.item3 { transform: rotate(45deg); top: 30px; }
+        #container .hd.on .lstBox .lst { background: #333; }
+        .ckItem { display: none; }
+        #ck1:checked ~ #container { margin-right: -85%; }
+        #ck1:checked ~ #wrap { left: 0; }
+        #ck1:checked ~ .blank { left: 0; }
+        
+        #wrap { width: 85%; height: 100%; clear: both; transition: 0.6s; position: fixed; z-index: 30; left: -100%; top: 0; background: #fff; }
+        #wrap .hdWrap { border-bottom: 1px solid #ddd; position: relative; }
+        #wrap .hdWrap .logo { background-image: url("./img/logo.png"); }
+        #wrap .hdWrap .lstBox { display: block; width: 60px; height: 60px; z-index: 30; position: absolute; top: 0; right: -60px; }
+        #wrap .hdWrap .lstBox .lst { background: #333; position: absolute; width: 25px; height: 2px; background: #fff; right: 20px; transition: 0.6s; transition-delay: 0.2s; }
+        #wrap .lstBox .lst.item1 { top: 23px; }
+        #wrap .lstBox .lst.item2 { top: 30px; width: 17px; }
+        #wrap .lstBox .lst.item3 { top: 37px; }
+        #ck1:checked~ #wrap .hdWrap .lstBox .lst.item1 { transform: rotate(-45deg); top: 30px; }
+        #ck1:checked~ #wrap .hdWrap .lstBox .lst.item2 { display: none; }
+        #ck1:checked~ #wrap .hdWrap .lstBox .lst.item3 { transform: rotate(45deg); top: 30px; }
+        #gnb { width: 80%; margin: 0 auto; height: calc(100% - 60px); }
+        #gnb li { width: 100%; height: 50px; line-height: 50px; text-indent: 30px; }
+        #gnb li:first-child { margin-top: 50px; }
+        #gnb li a { color: #333; font-size: 1.1em; font-weight: bold; }
+        .imgFrm { width: 100%; position: absolute; bottom: 0; left: 0; background-image: url("./img/gnb_img.png"); background-repeat: no-repeat; background-position: center bottom; height: 200px; background-size: 100% 120px; }
+        .blank { width: 100%; height: 100%; position: fixed; background: rgba(0, 0, 0, 0.6); top: 0; z-index: 25; left: -100%; }
+        
+        .content { width: 100%; min-height: 100%; clear: both; }
+        .page { width: 100%; height: auto; position: relative; clear: both; }
+        .page.item3 { min-height: 270vh; }
+        .vsBox { width: 100%; height: 55vh; background-image: url("./img/vs.jpg"); background-repeat: no-repeat; background-size: cover; background-position: center center; }
+        .conBox { width: 60%; margin: 0 auto; column-count: 1; margin-top: 50px; }
+        .conBox li { clear: both; width: 100%; margin-top: 120px; background: #f5f5f5; height: 230px; position: relative; opacity: 0; transition-duration: 0.6s; }
+        .conBox li.on { margin-top: 20px; opacity: 1; transition-delay: 0.4s; }
+        .conBox li a { display: block; width: 100%; height: 100%; }
+        .conBox li a .conImg { display: block; width: 80%; margin: 0 auto; height: 50%; background-repeat: no-repeat; background-position: center center; background-size: contain; }
+        .conBox li.item1 a .conImg { background-image: url("./img/lst_img1.png"); }
+        .conBox li.item2 a .conImg { background-image: url("./img/lst_img2.png"); }
+        .conBox li.item3 a .conImg { background-image: url("./img/lst_img3.png"); }
+        .conBox li a .conTit { font-size: 1.25em; text-align: center; color: #333; padding-top: 30px; }
+        .conBox li a .conCom { font-size: 0.9em; text-align: center; color: #333; height: 30px; line-height: 30px; }
+        .more { font-size: 1em; position: absolute; bottom: 0; left: 0; background: #fff; color: #333; width: 20px; height: 20px; line-height: 20px; text-align: center; }
+        .titBox { width: 90%; margin: 0 auto; position: relative; margin-top: 100px; opacity: 0; transition-duration: 0.2s; }
+        .titBox.on { margin-top: 0; opacity: 1; }
+        .title { font-size: 1.5em; font-weight: bolder; text-align: center; padding-top: 120px; margin-top: 20px; }
+        .title:before { content: ""; width: 1px; height: 70px; background: #333; position: absolute; left: 50%; top: 25px; }
+        .detail { font-size: 0.8em; text-align: center; word-break: keep-all; padding-top: 15px; line-height: 1.8; }
+        
+        .conBox2 { width: 100%; margin: 0 auto; margin-top: 80px; }
+        .conBox2 .subBox { clear: both; width: 90%; position: relative; } 
+        .conBox2 .subBox .imgBox { width: 100%; }
+        .conBox2 .subBox .imgBox img { width: 100%; height: 100%; }
+        .conBox2 .subBox.item1, .conBox2 .subBox.item3 { float: left; margin-left: -100%; opacity: 0; transition-duration: 0.6s; }
+        .conBox2 .subBox.item1.on { margin-left: 0; opacity: 1; }
+        .conBox2 .subBox.item3.on { margin-left: 0; opacity: 1; transition-delay: 2s; }
+        .conBox2 .subBox.item2 { float: right; margin-right: -100%; opacity: 0; transition-duration: 0.6s; }
+        .conBox2 .subBox.item2.on { margin-right: 0; opacity: 1; transition-delay: 1s; }
+        .comment { font-size: 1.25em; word-break: keep-all; padding: 60px 30px; }
+        .comment:before { content: ""; width: 14px; height: 1px; position: absolute; left: 32px; background: #333; }
+        
+        .ft { width: 100%; height: 100px; }
+        .ftWrap { width: 100%; margin: 0 auto; height: 200px; }
+        .ftWrap a { display: block; width: 100%; position: relative; height: 40px; }
+        .ftLogo { width: 150px; height: 40px; background-image: url("./img/ft_logo.png"); background-repeat: no-repeat; background-position: center center; background-size: contain; margin: 0 auto; line-height: 40px; }
+        .ftLogo:before { content: ""; width: 100%; height: 1px; background: #ddd; position: absolute; left: 0; top: 20px; z-index: -1; }
+        .ftLogo img { display: block; width: 40%; margin: 0 auto; margin-top: -26px; }
+        .copy { width: 80%; margin: 0 auto; font-size: 0.65em; text-align: center; word-break: keep-all; color: #999; line-height: 2; padding-top: 20px; }
+        .txt_b { color: #333; }
+    }
+    @media screen and (min-width:960px) and (max-width:1024px){
+        .mo { display: block; }
+        .desk { display: none; }
+        #container { width: 100%; clear: both; transition: 0.6s; }
+        .hd { width: 100%; background: transparent; position: fixed; top: 0; left: 0; z-index: 10; height: 60px; border-bottom: 1px solid rgba(225, 225, 225, 0.7); }
+        .hd.on { background: #fff; }
+        .logo { display: block; width: 100%; margin-right: -100%; text-align: center; height: 60px; background-image: url("./img/logo_w.png"); background-repeat: no-repeat; background-position: center center; background-size: 100px 40px; text-indent: -9999px; }
+        #container .hd.on .logo { background-image: url("./img/logo.png"); }
+        #container .lstBox { display: block; width: 60px; height: 60px; position: absolute; top: 0; left: 0; z-index: 20; }
+        #container .lstBox .lst { display: block; width: 25px; height: 2px; background: #fff; position: absolute; left: 17px; transition: 0.6s; transition-delay: 0.2s; }
+        #container .lstBox .lst.item1 { top: 23px; }
+        #container .lstBox .lst.item2 { top: 30px; width: 17px; }
+        #container .lstBox .lst.item3 { top: 37px; }
+        #ck1:checked ~ #container .hd .lstBox .lst.item1 { transform: rotate(-45deg); top: 30px; }
+        #ck1:checked ~ #container .hd .lstBox .lst.item2 { display: none; }
+        #ck1:checked ~ #container .hd .lstBox .lst.item3 { transform: rotate(45deg); top: 30px; }
+        #container .hd.on .lstBox .lst { background: #333; }
+        .ckItem { display: none; }
+        #ck1:checked ~ #container { margin-right: -85%; }
+        #ck1:checked ~ #wrap { left: 0; }
+        #ck1:checked ~ .blank { left: 0; }
+        
+        #wrap { width: 85%; height: 100%; clear: both; transition: 0.6s; position: fixed; z-index: 30; left: -100%; top: 0; background: #fff; }
+        #wrap .hdWrap { border-bottom: 1px solid #ddd; position: relative; }
+        #wrap .hdWrap .logo { background-image: url("./img/logo.png"); }
+        #wrap .hdWrap .lstBox { display: block; width: 60px; height: 60px; z-index: 30; position: absolute; top: 0; right: -60px; }
+        #wrap .hdWrap .lstBox .lst { background: #333; position: absolute; width: 25px; height: 2px; background: #fff; right: 20px; transition: 0.6s; transition-delay: 0.2s; }
+        #wrap .lstBox .lst.item1 { top: 23px; }
+        #wrap .lstBox .lst.item2 { top: 30px; width: 17px; }
+        #wrap .lstBox .lst.item3 { top: 37px; }
+        #ck1:checked~ #wrap .hdWrap .lstBox .lst.item1 { transform: rotate(-45deg); top: 30px; }
+        #ck1:checked~ #wrap .hdWrap .lstBox .lst.item2 { display: none; }
+        #ck1:checked~ #wrap .hdWrap .lstBox .lst.item3 { transform: rotate(45deg); top: 30px; }
+        #gnb { width: 80%; margin: 0 auto; height: calc(100% - 60px); }
+        #gnb li { width: 100%; height: 50px; line-height: 50px; text-indent: 30px; }
+        #gnb li:first-child { margin-top: 50px; }
+        #gnb li a { color: #333; font-size: 1.1em; font-weight: bold; }
+        .imgFrm { width: 100%; position: absolute; bottom: 0; left: 0; background-image: url("./img/gnb_img.png"); background-repeat: no-repeat; background-position: center bottom; height: 200px; background-size: 100% 120px; }
+        .blank { width: 100%; height: 100%; position: fixed; background: rgba(0, 0, 0, 0.6); top: 0; z-index: 25; left: -100%; }
+        
+        .content { width: 100%; min-height: 100%; clear: both; }
+        .page { width: 100%; height: auto; position: relative; clear: both; }
+        .page.item3 { min-height: 270vh; }
+        .vsBox { width: 100%; height: 55vh; background-image: url("./img/vs.jpg"); background-repeat: no-repeat; background-size: cover; background-position: center center; }
+        .conBox { width: 60%; margin: 0 auto; column-count: 1; margin-top: 50px; }
+        .conBox li { clear: both; width: 100%; margin-top: 120px; background: #f5f5f5; height: 230px; position: relative; opacity: 0; transition-duration: 0.4s; }
+        .conBox li.on { margin-top: 20px; opacity: 1; transition-delay: 0.6s; }
+        .conBox li a { display: block; width: 100%; height: 100%; }
+        .conBox li a .conImg { display: block; width: 80%; margin: 0 auto; height: 50%; background-repeat: no-repeat; background-position: center center; background-size: contain; }
+        .conBox li.item1 a .conImg { background-image: url("./img/lst_img1.png"); }
+        .conBox li.item2 a .conImg { background-image: url("./img/lst_img2.png"); }
+        .conBox li.item3 a .conImg { background-image: url("./img/lst_img3.png"); }
+        .conBox li a .conTit { font-size: 1.25em; text-align: center; color: #333; padding-top: 30px; }
+        .conBox li a .conCom { font-size: 0.9em; text-align: center; color: #333; height: 30px; line-height: 30px; }
+        .more { font-size: 1em; position: absolute; bottom: 0; left: 0; background: #fff; color: #333; width: 20px; height: 20px; line-height: 20px; text-align: center; }
+        .titBox { width: 90%; margin: 0 auto; position: relative; margin-top: 120px; opacity: 0; transition-duration: 0.2s; }
+        .titBox.on { margin-top: 0; opacity: 1; }
+        .title { font-size: 1.5em; font-weight: bolder; text-align: center; padding-top: 120px; margin-top: 20px; }
+        .title:before { content: ""; width: 1px; height: 70px; background: #333; position: absolute; left: 50%; top: 25px; }
+        .detail { font-size: 0.8em; text-align: center; word-break: keep-all; padding-top: 15px; line-height: 1.8; }
+        
+        .conBox2 { width: 100%; margin: 0 auto; margin-top: 80px; }
+        .conBox2 .subBox { clear: both; width: 90%; position: relative; } 
+        .conBox2 .subBox .imgBox { width: 100%; }
+        .conBox2 .subBox .imgBox img { width: 100%; height: 100%; }
+        .conBox2 .subBox.item1, .conBox2 .subBox.item3 { float: left; margin-left: -100%; opacity: 0; transition-duration: 0.6s; }
+        .conBox2 .subBox.item1.on { margin-left: 0; opacity: 1; transition-delay: 0.2s; }
+        .conBox2 .subBox.item3.on { margin-left: 0; opacity: 1; transition-delay: 3s; } 
+        .conBox2 .subBox.item2 { float: right; margin-right: -100%; opacity: 0; transition-duration: 0.6s; }
+        .conBox2 .subBox.item2.on { margin-right: 0; opacity: 1; transition-delay: 1.5s; }
+        .comment { font-size: 1.25em; word-break: keep-all; padding: 60px 30px; }
+        .comment:before { content: ""; width: 14px; height: 1px; position: absolute; left: 32px; background: #333; }
+        
+        .ft { width: 100%; height: 100px; }
+        .ftWrap { width: 100%; margin: 0 auto; height: 200px; }
+        .ftWrap a { display: block; width: 100%; position: relative; height: 40px; }
+        .ftLogo { width: 150px; height: 40px; background-image: url("./img/ft_logo.png"); background-repeat: no-repeat; background-position: center center; background-size: contain; margin: 0 auto; line-height: 40px; }
+        .ftLogo:before { content: ""; width: 100%; height: 1px; background: #ddd; position: absolute; left: 0; top: 20px; z-index: -1; }
+        .ftLogo img { display: block; width: 40%; margin: 0 auto; margin-top: -26px; }
+        .copy { width: 80%; margin: 0 auto; font-size: 0.65em; text-align: center; word-break: keep-all; color: #999; line-height: 2; padding-top: 20px; }
+        .txt_b { color: #333; }
+    }
+    @media screen and (min-width:1025px){
+        .mo { display: none; }
+        .desk { display: block; }
+        #container { width: 100%; clear: both; transition: 0.6s; position: relative; }
+        .hd { width: 100%; background: transparent; position: fixed; top: 0; left: 0; z-index: 10; height: 100px; border-bottom: 1px solid rgba(225, 225, 225, 0.7); }
+        .hd.on { background: #fff; }
+        .logo { display: block; width: 200px; float: left; text-align: center; height: 80px; background-image: url("./img/logo_w.png"); background-repeat: no-repeat; background-position: center center; background-size: 200px 80px; text-indent: -9999px; margin-top: 10px; margin-left: 8%; }
+        #container .hd.on .logo { background-image: url("./img/logo.png"); }
+        #container .lstBox { display: none; }
+        .ckItem { display: none; }
+        .lstBox { display: none; }
+        #wrap { display: none; }
+        #menu { width: 45%; float: right; margin-right: 8%; }
+        #menu li { float: left; width: 20%; }
+        #menu li a { display: block; width: 100%; height: 100px; line-height: 100px; color: #fff; font-weight: bolder; text-align: center; transition: 0.4s; transition-delay: 0.2s; }
+        .hd.on #menu li a { color: #333; }
+        #menu li a:hover { color: #fff; }
+        #menu:hover a { color: rgba(255, 255, 255, 0.4); }
+        .hd.on #menu li a:hover { color: #333; }
+        .hd.on #menu:hover a { color: rgba(0, 0, 0, 0.4); }
+        
+        .content { width: 100%; height: auto; clear: both; }
+        .page { width: 100%; height: auto; position: relative; clear: both; }
+        .page.item3 { min-height: 300vh; }
+        .vsBox { width: 100%; height: 100vh; background-image: url("./img/vs.jpg"); background-repeat: no-repeat; background-size: cover; background-position: center center; }
+        .conBox { width: 75%; margin: 0 auto; column-count: 3; margin-top: 80px; }
+        .conBox li { float: left; width: 100%; background: #f5f5f5; height: 450px; position: relative; margin-top: 100px; opacity: 0; transition-duration: 0.6s; }
+        .conBox li.on { margin-top: 0; opacity: 1; transition-delay: 1s; }
+        .conBox li a { display: block; width: 100%; height: 100%; }
+        .conBox li a .conImg { display: block; width: 100%; margin: 0 auto; height: 50%; background-repeat: no-repeat; background-position: center center; background-size: 80%; transition: 0.4s; transition-timing-function: ease-in-out; }
+        .conBox li.item1 a .conImg { background-image: url("./img/lst_img1.png"); }
+        .conBox li.item2 a .conImg { background-image: url("./img/lst_img2.png"); }
+        .conBox li.item3 a .conImg { background-image: url("./img/lst_img3.png"); }
+        .conBox li a .conTit { font-size: 1.8em; text-align: center; color: #333; padding-top: 60px; transition: 0.4s; transition-timing-function: ease-in-out; }
+        .conBox li a .conCom { font-size: 1.2em; text-align: center; color: #333; height: 30px; line-height: 30px; }
+        .more { font-size: 1em; position: absolute; bottom: 0; left: 0; background: #fff; color: #333; width: 20px; height: 20px; line-height: 20px; text-align: center; transition: 0.4s; transition-timing-function: ease-in-out; }
+        .conBox li:hover .conImg { background-size: 100%; }
+        .conBox li:hover .conTit { padding-top: 40px; }
+        .conBox li:hover .more { width: 40px; height: 40px; font-size: 1.2em; line-height: 40px; }
+        
+        .titBox { width: 90%; margin: 0 auto; position: relative; margin-top: 100px; opacity: 0; transition-duration: 0.6s; transition-delay: 0.2s;  }
+        .titBox.on { margin-top: 0; opacity: 1; }
+        .title { font-size: 2.5em; font-weight: bolder; text-align: center; padding-top: 230px; margin-top: 20px; }
+        .title:before { content: ""; width: 1px; height: 150px; background: #333; position: absolute; left: 50%; top: 35px; }
+        .detail { font-size: 1.25em; text-align: center; word-break: keep-all; padding-top: 15px; line-height: 1.8; }
+        
+        .conBox2 { width: 75%; margin: 0 auto; margin-top: 80px; clear: both; padding-bottom: 400px; }
+        .conBox2 .subBox { clear: both; width: 90%; position: relative; padding-top: 100px; } 
+        .conBox2 .subBox .imgBox { width: 45%; float: left; }
+        .conBox2 .subBox .imgBox img { width: 100%; height: 100%; }
+        .conBox2 .subBox.item1, .conBox2 .subBox.item3 { float: left; margin-left: -120%; opacity: 0; transition-duration: 2s; }
+        .conBox2 .subBox.item3 { transition-delay: 0.6s; }
+        .conBox2 .subBox.item1.on, .conBox2 .subBox.item3.on { margin-left: 0; opacity: 1; }
+        .conBox2 .subBox.item2 { float: right; margin-right: -120%; opacity: 0; transition-duration: 0.6s; transition-delay: 1s; }
+        .conBox2 .subBox.item2.on { margin-right: 0; opacity: 1; }
+        .comment { font-size: 1.8em; word-break: keep-all; padding: 30% 30px 0px 30px; float: right; width: 40%; }
+        .conBox2 .subBox.item2 .imgBox { float: right; }
+        .conBox2 .subBox.item2 .comment { float: left; }
+        .conBox2 .subBox.item3 .comment { padding-top: 15%; }
+        .conBox2 .subBox .comment:before { content: ""; width: 50px; height: 3px; background: #333; position: absolute; margin-top: -10px; }
+        
+        .ft { width: 100%; height: 300px; position: relative; }
+        .ftWrap { width: 100%; margin: 0 auto; height: 200px; }
+        .ftWrap a { display: block; width: 100%; position: relative; height: 80px; }
+        .ftLogo { width: 300px; height: 80px; background-image: url("./img/ft_logo.png"); background-repeat: no-repeat; background-position: center center; background-size: contain; margin: 0 auto; line-height: 40px; }
+        .ftLogo:before { content: ""; width: 100%; height: 1px; background: #ddd; position: absolute; left: 0; top: 40px; z-index: -1; }
+        .ftLogo img { display: block; width: 40%; margin: 0 auto; margin-top: -26px; }
+        .copy { width: 80%; margin: 0 auto; font-size: 0.8em; text-align: center; word-break: keep-all; color: #999; line-height: 2; padding-top: 50px; padding-bottom: 50px; }
+        .txt_b { color: #333; }
+    }
+    @media screen and (min-width:1300px){
+        .conBox2 { padding-bottom: 800px; }
+    }
+    @media screen and (max-width:320px) {
+        .page.item3 { height: 500vw; }
+    }
+    </style>
+</head>
+<body>
+<input type="checkbox" class="ckItem" id="ck1" name="ck1">
+<div id="container">
+    <header class="hd on">
+        <a href="index.html" class="logo">로고</a>
+        <label for="ck1" class="lstBox mo">
+            <span class="lst item1"></span>
+            <span class="lst item2"></span>
+            <span class="lst item3"></span>
+        </label>
+        <nav id="menu" class="desk">
+            <ul>
+                <li class="item1">
+                    <a href="sub1.html">KCRI</a>
+                </li>
+                <li class="item2">
+                    <a href="sub2.html">R&D</a>
+                </li>
+                <li class="item3">
+                    <a href="sub3.html">EDUCATION</a>
+                </li>
+                <li class="item4">
+                    <a href="sub4.html">DESIGN</a>
+                </li>
+                <li class="item5">
+                    <a href="sub5.html">NOTICE</a>
+                </li>
+            </ul>  
+        </nav>
+    </header> 
+    <main class="content">
+        <div class="vsBox"></div>
+        <div class="page item1">
+            <ul class="conBox">
+                <li class="item1">
+                    <a href="sub2.html">
+                        <h3 class="conTit">R&D</h3>
+                        <p class="conCom">색채 자료 조사 및 분석</p>
+                        <div class="conImg"></div>
+                        <span class="more">+</span>
+                    </a>
+                </li>
+                <li class="item2">
+                    <a href="sub3.html">
+                        <h3 class="conTit">Color School</h3>
+                        <p class="conCom">색채전문인력 양성</p>
+                        <div class="conImg"></div>
+                        <span class="more">+</span>
+                    </a>
+                </li>
+                <li class="item3">
+                    <a href="sub4.html">
+                        <h3 class="conTit">Design</h3>
+                        <p class="conCom">체계적인 컨설팅</p>
+                        <div class="conImg"></div>
+                        <span class="more">+</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="page item2">
+            <div class="titBox">
+                <h2 class="title">한국색채연구소</h2>
+                <p class="detail">연구소의 축적된 연구개발 DB와 노하우를 바탕으로 <br>여러분의 산업, 교육, 환경과 연관된 색채 프로젝트를 전개합니다.</p>
+            </div>
+        </div>
+        <div class="page item3">
+            <div class="conBox2">
+                <div class="subBox item1">
+                    <div class="imgBox">
+                        <img src="./img/con_img1.jpg" alt="디자인">
+                    </div>
+                    <p class="comment">도시의 생활과 활동을 위한 도시공간 디자인</p>
+                </div>
+                <div class="subBox item2">
+                    <div class="imgBox">
+                        <img src="./img/con_img2.jpg" alt="디자인">
+                    </div>
+                    <p class="comment">모든 사람들이 살기 좋은 공간을 만들기 위한 색채학적 작업</p>
+                </div>
+                <div class="subBox item3">
+                    <div class="imgBox">
+                        <img src="./img/con_img3.jpg" alt="디자인">
+                    </div>
+                    <p class="comment">삶의 질을 결정하고 그 시대의 문화를 반영하는, 환경</p>
+                </div>
+            </div>
+        </div>    
+    </main> 
+    <footer class="ft">
+        <div class="ftWrap">
+            <a href="index.html">
+                <p class="ftLogo"></p>
+            </a>
+            <p class="copy">
+                <span class="txt_b">Address</span> 경기도 성남시 분당구 야탑1동 344-1 코리아디자인센터 211호<br>
+                <span class="txt_b">Tel</span> 031-788-7200~7212 <span class="txt_b">Fax</span> 031-788-7210<br>
+                ⓒ 2019 KOREA COLOR RSEARCH INSTITUTE all rights reserved.
+            </p>
+        </div>
+    </footer> 
+</div> 
+<div id="wrap" class="mo">
+    <div class="hdWrap">
+        <a href="index.html" class="logo">로고</a>
+        <label for="ck1" class="lstBox mo">
+            <span class="lst item1"></span>
+            <span class="lst item2"></span>
+            <span class="lst item3"></span>
+        </label>
+    </div>
+    <nav id="gnb" class="mo">
+        <ul>
+            <li>
+                <a href="sub1.html">KCRI</a>
+            </li>
+            <li>
+                <a href="sub2.html">R&D</a>
+            </li>
+            <li>
+                <a href="sub3.html">EDUCATION</a>
+            </li>
+            <li>
+                <a href="sub4.html">DESIGN</a>
+            </li>
+            <li>
+                <a href="sub5.html">NOTICE</a>
+            </li>
+        </ul>  
+    </nav>
+    <div class="imgFrm"></div>    
+</div>
+<div class="blank mo"></div>
+</body>
+</html>

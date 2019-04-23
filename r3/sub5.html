@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>한국색채연구소</title>
+    <link rel="stylesheet" href="reset.css">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon16.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon32.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon48.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon64.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon128.png">
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon150.png">
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta name="msapplication-TileImage" content="./ico/favicon144.png">
+    <!-- iPhone iOS 7이상   -->
+    <link rel="apple-touch-icon" size="120X120" href="./ico/favicon120.png">
+    <!--  표준 iOS 홈스크린  -->
+    <link rel="apple-touch-icon" size="57X57" href="./ico/favicon57.png">
+    <!--  iOS 홈스크린  -->
+    <link rel="apple-touch-icon" size="72X72" href="./ico/favicon72.png">
+    <!--  아이폰 레티나  -->
+    <link rel="apple-touch-icon" size="114X114" href="./ico/favicon114.png">
+    <!--  iPhone iOS  -->
+    <link rel="apple-touch-icon" size="180X180" href="./ico/favicon180.png">
+    <!--  안드로이드/iOS 기본   -->
+    <link rel="apple-touch-icon" size="152X152" href="./ico/favicon152.png">
+    <!--  안드로이드 크롬 홈  -->
+    <link rel="apple-touch-icon" size="196X196" href="./ico/favicon196.png">
+    <!--  아이패트 레티나 터치  -->
+    <link rel="apple-touch-icon" size="167X167" href="./ico/favicon167.png">
+   
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="application-name" content="Korea Color Lab Web Site">
+    <meta name="author" content="SoeunPark">
+    <meta name="description" content="Korea Color Research Institute Mainpage">
+    <meta name="generator" content="Brackets">
+    <meta name="keywords" content="한국색채연구소, 색채연구소, Korea Color Research Institute, Color Research Institute">
+    
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR" rel="stylesheet">
+    
+    <script>
+    $(document).ready(function(){
+       $(".hd").removeClass("on");
+       $(window).scroll(function(){
+          $(".hd").removeClass("on");
+          var scTop = $(window).scrollTop();
+          if(scTop>=100){
+               $(".hd").addClass("on");
+          } 
+       }); 
+    });
+    </script>
+    
+    <style>
+    @media screen and (max-width:767px){
+        .mo { display: block; }
+        .desk { display: none; }
+        #container { width: 100%; clear: both; transition: 0.6s; }
+        .hd { width: 100%; background: transparent; position: fixed; top: 0; left: 0; z-index: 10; height: 60px; border-bottom: 1px solid rgba(225, 225, 225, 0.7); }
+        .hd.on { background: #fff; }
+        .logo { display: block; width: 100%; margin-right: -100%; text-align: center; height: 60px; background-image: url("./img/logo_w.png"); background-repeat: no-repeat; background-position: center center; background-size: 100px 40px; text-indent: -9999px; }
+        #container .hd.on .logo { background-image: url("./img/logo.png"); }
+        #container .lstBox { display: block; width: 60px; height: 60px; position: absolute; top: 0; left: 0; z-index: 20; }
+        #container .lstBox .lst { display: block; width: 25px; height: 2px; background: #fff; position: absolute; left: 17px; transition: 0.6s; transition-delay: 0.2s; }
+        #container .lstBox .lst.item1 { top: 23px; }
+        #container .lstBox .lst.item2 { top: 30px; width: 17px; }
+        #container .lstBox .lst.item3 { top: 37px; }
+        #ck1:checked ~ #container .hd .lstBox .lst.item1 { transform: rotate(-45deg); top: 30px; }
+        #ck1:checked ~ #container .hd .lstBox .lst.item2 { display: none; }
+        #ck1:checked ~ #container .hd .lstBox .lst.item3 { transform: rotate(45deg); top: 30px; }
+        #container .hd.on .lstBox .lst { background: #333; }
+        .ckItem { display: none; }
+        #ck1:checked ~ #container { margin-right: -85%; }
+        #ck1:checked ~ #wrap { left: 0; }
+        #ck1:checked ~ .blank { left: 0; }
+        
+        #wrap { width: 85%; height: 100%; clear: both; transition: 0.6s; position: fixed; z-index: 30; left: -100%; top: 0; background: #fff; }
+        #wrap .hdWrap { border-bottom: 1px solid #ddd; position: relative; }
+        #wrap .hdWrap .logo { background-image: url("./img/logo.png"); }
+        #wrap .hdWrap .lstBox { display: block; width: 60px; height: 60px; z-index: 30; position: absolute; top: 0; right: -60px; }
+        #wrap .hdWrap .lstBox .lst { background: #333; position: absolute; width: 25px; height: 2px; background: #fff; right: 20px; transition: 0.6s; transition-delay: 0.2s; }
+        #wrap .lstBox .lst.item1 { top: 23px; }
+        #wrap .lstBox .lst.item2 { top: 30px; width: 17px; }
+        #wrap .lstBox .lst.item3 { top: 37px; }
+        #ck1:checked~ #wrap .hdWrap .lstBox .lst.item1 { transform: rotate(-45deg); top: 30px; }
+        #ck1:checked~ #wrap .hdWrap .lstBox .lst.item2 { display: none; }
+        #ck1:checked~ #wrap .hdWrap .lstBox .lst.item3 { transform: rotate(45deg); top: 30px; }
+        #gnb { width: 80%; margin: 0 auto; height: calc(100% - 60px); }
+        #gnb li { width: 100%; height: 50px; line-height: 50px; text-indent: 30px; }
+        #gnb li:first-child { margin-top: 50px; }
+        #gnb li a { color: #333; font-size: 1.1em; font-weight: bold; }
+        .imgFrm { width: 100%; position: absolute; bottom: 0; left: 0; background-image: url("./img/gnb_img.png"); background-repeat: no-repeat; background-position: center bottom; height: 200px; background-size: 100% 120px; }
+        .blank { width: 100%; height: 100%; position: fixed; background: rgba(0, 0, 0, 0.6); top: 0; z-index: 25; left: -100%; }
+        
+        .content { width: 100%; min-height: 100%; clear: both; }
+        .vsBox { width: 100%; height: 55vh; background-image: url("./img/sub5.png"); background-repeat: no-repeat; background-size: cover; background-position: center center; }
+        .vsTit { font-size: 1.8em; text-align: center; color: #fff; letter-spacing: 5px; padding-top: 25vh; }
+        .notiBox { width: 100%; height: 120px; border-top: 1px solid #ddd; }
+        .notiBox.item1 { margin-top: 20px; }
+        .notiBox.item5 { border-bottom: 1px solid #333; margin-bottom: 20px; }
+        .notiBox .dateBox { width: 25%; height: 120px; float: left; }
+        .notiBox .dateBox .day { text-align: center; font-size: 1.5em; padding-top: 30px; }
+        .notiBox .dateBox .date { text-align: center; font-size: 0.7em; color: #999; font-weight: 300; }
+        .notiBox .conBox { width: 75%; height: 120px; float: right; }
+        .notiBox .conBox .tit { width: 80%; margin: 0 auto; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; font-size: 0.85em; padding-top: 25px; }
+        .notiBox .conBox .com { width: 80%; margin: 0 auto; overflow: hidden; white-space: normal; text-overflow: ellipsis; font-size: 0.85em; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; line-height: 1.6; color: #666; margin-top: 10px; }
+        .searchFrm { display: block; width: 90%; margin: 0 auto; height: 35px; margin-top: 50px; }
+        .searchForm { width: 100%; height: 35px; line-height: 35px; border: 1px solid #ddd; position: relative; }
+        .search { width: calc(100% - 35px); height: 34px; position: absolute; top: 0; left: 0; }
+        .searchBtn { width: 35px; height: 34px; line-height: 34px; background-image: url("./img/search.png"); background-repeat: no-repeat; background-position: center center; background-size: 50% 50%; position: absolute; top: 0px; right: 1px; background-color: transparent; }
+        .numBox { width: 80px; margin: 0 auto; height: 30px; line-height: 30px; margin-bottom: 50px; }
+        .numBox p { width: 33.33333%; float: left; text-align: center; font-size: 0.7em; font-weight: 300; color: #666; }
+        .numBox .num { color: #333; font-weight: bolder; }
+        
+        .ft { width: 100%; height: 100px; }
+        .ftWrap { width: 100%; margin: 0 auto; height: 200px; }
+        .ftWrap a { display: block; width: 100%; position: relative; height: 40px; }
+        .ftLogo { width: 150px; height: 40px; background-image: url("./img/ft_logo.png"); background-repeat: no-repeat; background-position: center center; background-size: contain; margin: 0 auto; line-height: 40px; }
+        .ftLogo:before { content: ""; width: 100%; height: 1px; background: #ddd; position: absolute; left: 0; top: 20px; z-index: -1; }
+        .ftLogo img { display: block; width: 40%; margin: 0 auto; margin-top: -26px; }
+        .copy { width: 80%; margin: 0 auto; font-size: 0.65em; text-align: center; word-break: keep-all; color: #999; line-height: 2; padding-top: 20px; }
+        .txt_b { color: #333; }
+        
+    }
+    @media screen and (min-width:768px) and (max-width:959px){
+        .mo { display: block; }
+        .desk { display: none; }
+        #container { width: 100%; clear: both; transition: 0.6s; }
+        .hd { width: 100%; background: transparent; position: fixed; top: 0; left: 0; z-index: 10; height: 60px; border-bottom: 1px solid rgba(225, 225, 225, 0.7); }
+        .hd.on { background: #fff; }
+        .logo { display: block; width: 100%; margin-right: -100%; text-align: center; height: 60px; background-image: url("./img/logo_w.png"); background-repeat: no-repeat; background-position: center center; background-size: 100px 40px; text-indent: -9999px; }
+        #container .hd.on .logo { background-image: url("./img/logo.png"); }
+        #container .lstBox { display: block; width: 60px; height: 60px; position: absolute; top: 0; left: 0; z-index: 20; }
+        #container .lstBox .lst { display: block; width: 25px; height: 2px; background: #fff; position: absolute; left: 17px; transition: 0.6s; transition-delay: 0.2s; }
+        #container .lstBox .lst.item1 { top: 23px; }
+        #container .lstBox .lst.item2 { top: 30px; width: 17px; }
+        #container .lstBox .lst.item3 { top: 37px; }
+        #ck1:checked ~ #container .hd .lstBox .lst.item1 { transform: rotate(-45deg); top: 30px; }
+        #ck1:checked ~ #container .hd .lstBox .lst.item2 { display: none; }
+        #ck1:checked ~ #container .hd .lstBox .lst.item3 { transform: rotate(45deg); top: 30px; }
+        #container .hd.on .lstBox .lst { background: #333; }
+        .ckItem { display: none; }
+        #ck1:checked ~ #container { margin-right: -85%; }
+        #ck1:checked ~ #wrap { left: 0; }
+        #ck1:checked ~ .blank { left: 0; }
+        
+        #wrap { width: 85%; height: 100%; clear: both; transition: 0.6s; position: fixed; z-index: 30; left: -100%; top: 0; background: #fff; }
+        #wrap .hdWrap { border-bottom: 1px solid #ddd; position: relative; }
+        #wrap .hdWrap .logo { background-image: url("./img/logo.png"); }
+        #wrap .hdWrap .lstBox { display: block; width: 60px; height: 60px; z-index: 30; position: absolute; top: 0; right: -60px; }
+        #wrap .hdWrap .lstBox .lst { background: #333; position: absolute; width: 25px; height: 2px; background: #fff; right: 20px; transition: 0.6s; transition-delay: 0.2s; }
+        #wrap .lstBox .lst.item1 { top: 23px; }
+        #wrap .lstBox .lst.item2 { top: 30px; width: 17px; }
+        #wrap .lstBox .lst.item3 { top: 37px; }
+        #ck1:checked~ #wrap .hdWrap .lstBox .lst.item1 { transform: rotate(-45deg); top: 30px; }
+        #ck1:checked~ #wrap .hdWrap .lstBox .lst.item2 { display: none; }
+        #ck1:checked~ #wrap .hdWrap .lstBox .lst.item3 { transform: rotate(45deg); top: 30px; }
+        #gnb { width: 80%; margin: 0 auto; height: calc(100% - 60px); }
+        #gnb li { width: 100%; height: 50px; line-height: 50px; text-indent: 30px; }
+        #gnb li:first-child { margin-top: 50px; }
+        #gnb li a { color: #333; font-size: 1.1em; font-weight: bold; }
+        .imgFrm { width: 100%; position: absolute; bottom: 0; left: 0; background-image: url("./img/gnb_img.png"); background-repeat: no-repeat; background-position: center bottom; height: 200px; background-size: 100% 120px; }
+        .blank { width: 100%; height: 100%; position: fixed; background: rgba(0, 0, 0, 0.6); top: 0; z-index: 25; left: -100%; }
+        
+        .content { width: 100%; min-height: 100%; clear: both; }
+        .vsBox { width: 100%; height: 55vh; background-image: url("./img/sub5.png"); background-repeat: no-repeat; background-size: cover; background-position: center center; }
+        .vsTit { font-size: 2.8em; text-align: center; color: #fff; letter-spacing: 5px; padding-top: 25vh; }
+        .notiBox { width: 100%; height: 120px; border-top: 1px solid #ddd; }
+        .notiBox.item1 { margin-top: 50px; }
+        .notiBox.item5 { border-bottom: 1px solid #333; margin-bottom: 20px; }
+        .notiBox .dateBox { width: 25%; height: 120px; float: left; }
+        .notiBox .dateBox .day { text-align: center; font-size: 1.5em; padding-top: 30px; }
+        .notiBox .dateBox .date { text-align: center; font-size: 0.7em; color: #999; font-weight: 300; }
+        .notiBox .conBox { width: 75%; height: 120px; float: right; }
+        .notiBox .conBox .tit { width: 80%; margin: 0 auto; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; font-size: 0.85em; padding-top: 25px; }
+        .notiBox .conBox .com { width: 80%; margin: 0 auto; overflow: hidden; white-space: normal; text-overflow: ellipsis; font-size: 0.85em; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; line-height: 1.6; color: #666; margin-top: 10px; }
+        .searchFrm { display: block; width: 50%; margin: 0 auto; height: 35px; margin-top: 50px; }
+        .searchForm { width: 100%; height: 35px; line-height: 35px; border: 1px solid #ddd; position: relative; }
+        .search { width: calc(100% - 35px); height: 34px; position: absolute; top: 0; left: 0; }
+        .searchBtn { width: 35px; height: 34px; line-height: 34px; background-image: url("./img/search.png"); background-repeat: no-repeat; background-position: center center; background-size: 50% 50%; position: absolute; top: 0px; right: 1px; background-color: transparent; }
+        .numBox { width: 80px; margin: 0 auto; height: 30px; line-height: 30px; margin-bottom: 50px; }
+        .numBox p { width: 33.33333%; float: left; text-align: center; font-size: 0.7em; font-weight: 300; color: #666; }
+        .numBox .num { color: #333; font-weight: bolder; }
+        
+        .ft { width: 100%; height: 100px; }
+        .ftWrap { width: 100%; margin: 0 auto; height: 200px; }
+        .ftWrap a { display: block; width: 100%; position: relative; height: 40px; }
+        .ftLogo { width: 150px; height: 40px; background-image: url("./img/ft_logo.png"); background-repeat: no-repeat; background-position: center center; background-size: contain; margin: 0 auto; line-height: 40px; }
+        .ftLogo:before { content: ""; width: 100%; height: 1px; background: #ddd; position: absolute; left: 0; top: 20px; z-index: -1; }
+        .ftLogo img { display: block; width: 40%; margin: 0 auto; margin-top: -26px; }
+        .copy { width: 80%; margin: 0 auto; font-size: 0.65em; text-align: center; word-break: keep-all; color: #999; line-height: 2; padding-top: 20px; }
+        .txt_b { color: #333; }
+    }
+    @media screen and (min-width:960px) and (max-width:1024px){
+        .mo { display: block; }
+        .desk { display: none; }
+        #container { width: 100%; clear: both; transition: 0.6s; }
+        .hd { width: 100%; background: transparent; position: fixed; top: 0; left: 0; z-index: 10; height: 60px; border-bottom: 1px solid rgba(225, 225, 225, 0.7); }
+        .hd.on { background: #fff; }
+        .logo { display: block; width: 100%; margin-right: -100%; text-align: center; height: 60px; background-image: url("./img/logo_w.png"); background-repeat: no-repeat; background-position: center center; background-size: 100px 40px; text-indent: -9999px; }
+        #container .hd.on .logo { background-image: url("./img/logo.png"); }
+        #container .lstBox { display: block; width: 60px; height: 60px; position: absolute; top: 0; left: 0; z-index: 20; }
+        #container .lstBox .lst { display: block; width: 25px; height: 2px; background: #fff; position: absolute; left: 17px; transition: 0.6s; transition-delay: 0.2s; }
+        #container .lstBox .lst.item1 { top: 23px; }
+        #container .lstBox .lst.item2 { top: 30px; width: 17px; }
+        #container .lstBox .lst.item3 { top: 37px; }
+        #ck1:checked ~ #container .hd .lstBox .lst.item1 { transform: rotate(-45deg); top: 30px; }
+        #ck1:checked ~ #container .hd .lstBox .lst.item2 { display: none; }
+        #ck1:checked ~ #container .hd .lstBox .lst.item3 { transform: rotate(45deg); top: 30px; }
+        #container .hd.on .lstBox .lst { background: #333; }
+        .ckItem { display: none; }
+        #ck1:checked ~ #container { margin-right: -85%; }
+        #ck1:checked ~ #wrap { left: 0; }
+        #ck1:checked ~ .blank { left: 0; }
+        
+        #wrap { width: 85%; height: 100%; clear: both; transition: 0.6s; position: fixed; z-index: 30; left: -100%; top: 0; background: #fff; }
+        #wrap .hdWrap { border-bottom: 1px solid #ddd; position: relative; }
+        #wrap .hdWrap .logo { background-image: url("./img/logo.png"); }
+        #wrap .hdWrap .lstBox { display: block; width: 60px; height: 60px; z-index: 30; position: absolute; top: 0; right: -60px; }
+        #wrap .hdWrap .lstBox .lst { background: #333; position: absolute; width: 25px; height: 2px; background: #fff; right: 20px; transition: 0.6s; transition-delay: 0.2s; }
+        #wrap .lstBox .lst.item1 { top: 23px; }
+        #wrap .lstBox .lst.item2 { top: 30px; width: 17px; }
+        #wrap .lstBox .lst.item3 { top: 37px; }
+        #ck1:checked~ #wrap .hdWrap .lstBox .lst.item1 { transform: rotate(-45deg); top: 30px; }
+        #ck1:checked~ #wrap .hdWrap .lstBox .lst.item2 { display: none; }
+        #ck1:checked~ #wrap .hdWrap .lstBox .lst.item3 { transform: rotate(45deg); top: 30px; }
+        #gnb { width: 80%; margin: 0 auto; height: calc(100% - 60px); }
+        #gnb li { width: 100%; height: 50px; line-height: 50px; text-indent: 30px; }
+        #gnb li:first-child { margin-top: 50px; }
+        #gnb li a { color: #333; font-size: 1.1em; font-weight: bold; }
+        .imgFrm { width: 100%; position: absolute; bottom: 0; left: 0; background-image: url("./img/gnb_img.png"); background-repeat: no-repeat; background-position: center bottom; height: 200px; background-size: 100% 120px; }
+        .blank { width: 100%; height: 100%; position: fixed; background: rgba(0, 0, 0, 0.6); top: 0; z-index: 25; left: -100%; }
+        
+        .content { width: 100%; min-height: 100%; clear: both; }
+        .vsBox { width: 100%; height: 55vh; background-image: url("./img/sub5.png"); background-repeat: no-repeat; background-size: cover; background-position: center center; }
+        .vsTit { font-size: 3.2em; text-align: center; color: #fff; letter-spacing: 5px; padding-top: 25vh; }
+        .notiBox { width: 100%; height: 120px; border-top: 1px solid #ddd; }
+        .notiBox.item1 { margin-top: 50px; }
+        .notiBox.item5 { border-bottom: 1px solid #333; margin-bottom: 20px; }
+        .notiBox .dateBox { width: 25%; height: 120px; float: left; }
+        .notiBox .dateBox .day { text-align: center; font-size: 1.5em; padding-top: 30px; }
+        .notiBox .dateBox .date { text-align: center; font-size: 0.7em; color: #999; font-weight: 300; }
+        .notiBox .conBox { width: 75%; height: 120px; float: right; cursor: pointer; }
+        .notiBox .conBox .tit { width: 80%; margin: 0 auto; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; font-size: 0.85em; padding-top: 25px; }
+        .notiBox .conBox .com { width: 80%; margin: 0 auto; overflow: hidden; white-space: normal; text-overflow: ellipsis; font-size: 0.85em; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; line-height: 1.6; color: #666; margin-top: 10px; }
+        .searchFrm { display: block; width: 50%; margin: 0 auto; height: 35px; margin-top: 50px; }
+        .searchForm { width: 100%; height: 35px; line-height: 35px; border: 1px solid #ddd; position: relative; }
+        .search { width: calc(100% - 35px); height: 34px; position: absolute; top: 0; left: 0; }
+        .searchBtn { width: 35px; height: 34px; line-height: 34px; background-image: url("./img/search.png"); background-repeat: no-repeat; background-position: center center; background-size: 50% 50%; position: absolute; top: 0px; right: 1px; background-color: transparent; cursor: pointer; }
+        .numBox { width: 80px; margin: 0 auto; height: 30px; line-height: 30px; margin-bottom: 50px; }
+        .numBox p { width: 33.33333%; float: left; text-align: center; font-size: 0.7em; font-weight: 300; color: #666; }
+        .numBox .num { color: #333; font-weight: bolder; }
+        
+        .ft { width: 100%; height: 100px; }
+        .ftWrap { width: 100%; margin: 0 auto; height: 200px; }
+        .ftWrap a { display: block; width: 100%; position: relative; height: 40px; }
+        .ftLogo { width: 150px; height: 40px; background-image: url("./img/ft_logo.png"); background-repeat: no-repeat; background-position: center center; background-size: contain; margin: 0 auto; line-height: 40px; }
+        .ftLogo:before { content: ""; width: 100%; height: 1px; background: #ddd; position: absolute; left: 0; top: 20px; z-index: -1; }
+        .ftLogo img { display: block; width: 40%; margin: 0 auto; margin-top: -26px; }
+        .copy { width: 80%; margin: 0 auto; font-size: 0.65em; text-align: center; word-break: keep-all; color: #999; line-height: 2; padding-top: 20px; }
+        .txt_b { color: #333; }
+    }
+    @media screen and (min-width:1025px){
+        .mo { display: none; }
+        .desk { display: block; }
+        #container { width: 100%; clear: both; transition: 0.6s; }
+        .hd { width: 100%; background: transparent; position: fixed; top: 0; left: 0; z-index: 10; height: 100px; border-bottom: 1px solid rgba(225, 225, 225, 0.7); }
+        .hd.on { background: #fff; }
+        .logo { display: block; width: 200px; float: left; text-align: center; height: 80px; background-image: url("./img/logo_w.png"); background-repeat: no-repeat; background-position: center center; background-size: 200px 80px; text-indent: -9999px; margin-top: 10px; margin-left: 8%; }
+        #container .hd.on .logo { background-image: url("./img/logo.png"); }
+        #container .lstBox { display: none; }
+        .ckItem { display: none; }
+        #menu { width: 45%; float: right; margin-right: 8%; }
+        #menu li { float: left; width: 20%; }
+        #menu li a { display: block; width: 100%; height: 100px; line-height: 100px; color: #fff; font-weight: bolder; text-align: center; transition: 0.4s; transition-delay: 0.2s; }
+        .hd.on #menu li a { color: #333; }
+        #menu li a:hover { color: #fff; }
+        #menu:hover a { color: rgba(255, 255, 255, 0.4); }
+        .hd.on #menu li a:hover { color: #333; }
+        .hd.on #menu:hover a { color: rgba(0, 0, 0, 0.4); }
+        
+        .content { width: 100%; height: auto; clear: both; }
+        .vsBox { width: 100%; height: 75vh; background-image: url("./img/sub4.png"); background-repeat: no-repeat; background-size: cover; background-position: center center; }
+        .vsTit { font-size: 3.2em; text-align: center; color: #fff; letter-spacing: 5px; padding-top: 35vh; }
+        .notiBox { width: 70%; height: 120px; border-top: 1px solid #ddd; margin: 0 auto; }
+        .notiBox.item1 { margin-top: 50px; }
+        .notiBox.item5 { border-bottom: 1px solid #333; margin-bottom: 20px; }
+        .notiBox .dateBox { width: 10%; height: 120px; float: left; }
+        .notiBox .dateBox .day { text-align: center; font-size: 1.5em; padding-top: 30px; }
+        .notiBox .dateBox .date { text-align: center; font-size: 0.7em; color: #999; font-weight: 300; }
+        .notiBox .conBox { width: 90%; height: 120px; float: right; cursor: pointer; }
+        .notiBox .conBox .tit { width: 90%; margin: 0 auto; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; font-size: 0.85em; padding-top: 25px; }
+        .notiBox .conBox .com { width: 90%; margin: 0 auto; overflow: hidden; white-space: normal; text-overflow: ellipsis; font-size: 0.85em; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; line-height: 1.6; color: #666; margin-top: 10px; }
+        .searchFrm { display: block; width: 70%; margin: 0 auto; height: 35px; margin-top: 50px; }
+        .searchForm { width: 20%; float: right; height: 35px; line-height: 35px; border-bottom: 1px solid #333; position: relative; }
+        .search { width: calc(100% - 35px); height: 34px; position: absolute; top: 0; left: 0; }
+        .searchBtn { width: 35px; height: 34px; line-height: 34px; background-image: url("./img/search.png"); background-repeat: no-repeat; background-position: center center; background-size: 50% 50%; position: absolute; top: 0px; right: 1px; background-color: transparent; cursor: pointer; }
+        .numBox { width: 80px; margin: 0 auto; height: 30px; line-height: 30px; margin-bottom: 50px; }
+        .numBox p { width: 33.33333%; float: left; text-align: center; font-size: 0.7em; font-weight: 300; color: #666; }
+        .numBox .num { color: #333; font-weight: bolder; }
+        
+        .ft { width: 100%; height: 300px; position: relative; }
+        .ftWrap { width: 100%; margin: 0 auto; height: 200px; }
+        .ftWrap a { display: block; width: 100%; position: relative; height: 80px; }
+        .ftLogo { width: 300px; height: 80px; background-image: url("./img/ft_logo.png"); background-repeat: no-repeat; background-position: center center; background-size: contain; margin: 0 auto; line-height: 40px; }
+        .ftLogo:before { content: ""; width: 100%; height: 1px; background: #ddd; position: absolute; left: 0; top: 40px; z-index: -1; }
+        .ftLogo img { display: block; width: 40%; margin: 0 auto; margin-top: -26px; }
+        .copy { width: 80%; margin: 0 auto; font-size: 0.8em; text-align: center; word-break: keep-all; color: #999; line-height: 2; padding-top: 50px; padding-bottom: 50px; }
+        .txt_b { color: #333; }
+    }
+    @media screen and (min-width:1300px){
+        .conBox2 { padding-bottom: 800px; }
+    }
+    </style>
+</head>
+<body>
+<input type="checkbox" class="ckItem" id="ck1" name="ck1">
+<div id="container">
+    <header class="hd on">
+        <a href="index.html" class="logo">로고</a>
+        <label for="ck1" class="lstBox mo">
+            <span class="lst item1"></span>
+            <span class="lst item2"></span>
+            <span class="lst item3"></span>
+        </label>
+        <nav id="menu" class="desk">
+            <ul>
+                <li class="item1">
+                    <a href="sub1.html">KCRI</a>
+                </li>
+                <li class="item2">
+                    <a href="sub2.html">R&D</a>
+                </li>
+                <li class="item3">
+                    <a href="sub3.html">EDUCATION</a>
+                </li>
+                <li class="item4">
+                    <a href="sub4.html">DESIGN</a>
+                </li>
+                <li class="item5">
+                    <a href="sub5.html">NOTICE</a>
+                </li>
+            </ul>  
+        </nav>
+    </header> 
+    <main class="content">
+        <div class="vsBox">
+            <h2 class="vsTit">NOTICE</h2>
+        </div>
+        <form action="" class="searchFrm">
+            <div class="searchForm">
+                <input type="text" class="search">
+                <button class="searchBtn"></button>
+            </div>
+        </form>
+        <div class="notiBox item1">
+            <div class="dateBox">
+                <p class="day">19</p> 
+                <p class="date">2019.03</p>   
+            </div>
+            <div class="conBox">
+                <p class="tit">성향분석을 기반으로하는 배색 이미지 팔레트 시스템 특허 취득</p>
+                <p class="com">색채를 이용한 어린이 성향분석에이어 청소년, 청장년,노년의 성향분석과 피 진단자에게 필요한 5가지의  에너지 색채를 제공하여 주거환경을 개선해가는 프로그램</p>
+            </div>
+        </div>
+        <div class="notiBox item2">
+            <div class="dateBox">
+                <p class="day">11</p> 
+                <p class="date">2019.03</p>   
+            </div>
+            <div class="conBox">
+                <p class="tit">어린이색채교육 700 COLOR 발매!</p>
+                <p class="com">어린이색채교육 700 COLOR 발매! 구입 : www.colorshopping.co.kr 문의 : 031)788-7200 구입시 문의전화 부탁드립니다</p>
+            </div>
+        </div>
+        <div class="notiBox item3">
+            <div class="dateBox">
+                <p class="day">08</p> 
+                <p class="date">2019.03</p>   
+            </div>
+            <div class="conBox">
+                <p class="tit">중국어린이를 위한 감성교교육 프로그램 공급을 위한 MOU체결</p>
+                <p class="com">중국이 다음 세대의 주인인 어린이들의 감성교육을 통해 문화시민으로서의 선진화를 이루고자 북경국제청년예술교육협회와 한국색채연구소가 협약을 맺고 우리 어린이 창조예술학교 HAN'S(Human Art Network)와 MOU를 체결하고 중국 어린이 지도교사의 한국 현장교육,중국에 교육장 개설, 어린이 성향진단 프로그램을 전 유치원에 일시 보급하는 문제들을 협의하고 초등학교에 상상력교실을 설치하는 과제들을 한국과 동시에 추진하고자 협의중임</p>
+            </div>
+        </div>
+        <div class="notiBox item4">
+            <div class="dateBox">
+                <p class="day">27</p> 
+                <p class="date">2019.02</p>   
+            </div>
+            <div class="conBox">
+                <p class="tit">색채를 이용한 어린이 성향진단 프로그램 특허 취득</p>
+                <p class="com">특허10-1197025</p>
+            </div>
+        </div>
+        <div class="notiBox item5">
+            <div class="dateBox">
+                <p class="day">22</p> 
+                <p class="date">2019.02</p>   
+            </div>
+            <div class="conBox">
+                <p class="tit">MBC 경제매거진 M '색깔이 돈이다?! 컬러마케팅'</p>
+                <p class="com">MBC 제매거진 M '색깔이 돈이다?! 컬러마케팅'에 본 연구소 인터뷰 바야흐로 감성과 비주얼의 시대~ 색깔은 마케팅에서 절대 빼놓을 수 없는 필수 요소다. 어떤 색을 쓰느냐에 따라 제품이나 브랜드의 이미지가 달라지기 때문인데. 확 튀는 분홍색을 내세운 덕분에 개점 5개월 만에 유명세를 치르고 있다는 한 카페부터, 제품에 노란색을 덧입혀 훨씬 기억하기 쉬워지고, 또 경쟁 업체와 차별화에도 성공한 기업까지 잘 쓴 색은 이미지뿐 아니라, 매출 증대로도 이어진다. 그야말로 색이 경쟁력이 되어가고 있는데... 색이 제품과 브랜드에 미치는 영향과 최근 유행색은 무엇인지, 컬러 마케팅 현장으로 들어가 보자.</p>
+            </div>
+        </div>
+        <div class="numBox">
+            <p class="prev">〈</p>
+            <p class="num">1</p>
+            <p class="next">〉</p>
+        </div>
+    </main> 
+    <footer class="ft">
+        <div class="ftWrap">
+            <a href="index.html">
+                <p class="ftLogo"></p>
+            </a>
+            <p class="copy">
+                <span class="txt_b">Address</span> 경기도 성남시 분당구 야탑1동 344-1 코리아디자인센터 211호<br>
+                <span class="txt_b">Tel</span> 031-788-7200~7212 <span class="txt_b">Fax</span> 031-788-7210<br>
+                ⓒ 2019 KOREA COLOR RSEARCH INSTITUTE all rights reserved.
+            </p>
+        </div>
+    </footer> 
+</div> 
+<div id="wrap" class="mo">
+    <div class="hdWrap">
+        <a href="index.html" class="logo">로고</a>
+        <label for="ck1" class="lstBox mo">
+            <span class="lst item1"></span>
+            <span class="lst item2"></span>
+            <span class="lst item3"></span>
+        </label>
+    </div>
+    <nav id="gnb" class="mo">
+        <ul>
+            <li>
+                <a href="sub1.html">KCRI</a>
+            </li>
+            <li>
+                <a href="sub2.html">R&D</a>
+            </li>
+            <li>
+                <a href="sub3.html">EDUCATION</a>
+            </li>
+            <li>
+                <a href="sub4.html">DESIGN</a>
+            </li>
+            <li>
+                <a href="sub5.html">NOTICE</a>
+            </li>
+        </ul>  
+    </nav>
+    <div class="imgFrm"></div>    
+</div>
+<div class="blank mo"></div>
+</body>
+</html>
