@@ -1,0 +1,29 @@
+@keyframes imgAni1 {
+        from { width: 0; opacity: 0; }
+        to { width: 620px; opacity: 1; }
+        }
+        @keyframes imgAni2 {
+        from { width: 0; opacity: 0; }
+        to { width: 300px; opacity: 1; }
+        }
+
+animation: imgAni2 1.2s 1 normal ease-in none 0.4s;
+animation: imgAni1 1s 1 normal ease-in none 0.4s;
+.imgBox li.item1 iframe { display: none; }
+
+margin: 0 auto; overflow: hidden; white-space: normal; text-overflow: ellipsis; color: #333; font-size: 0.85em; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; line-height: 1.6; padding-top: 5px; transition: 0.4s;
+
+.raItem { display: none; }
+        .imgBox li.item8 a:hover .conTit { color: #1b5fa6; }
+        .imgBox li.item8 a:hover .conCom { color: #1b5fa6; }
+        #ra01:checked ~ .conBox.item1 { display: block; }
+        #ra02:checked ~ .conBox.item2 { display: block; }
+        #ra03:checked ~ .conBox.item3 { display: block; }
+        #ra01:checked ~ .raBtnBox .raBtn.item1 { background: #1b5fa6; }
+        #ra02:checked ~ .raBtnBox .raBtn.item2 { background: #1b5fa6; }
+        #ra03:checked ~ .raBtnBox .raBtn.item3 { background: #1b5fa6; }
+        .raBtnBox { position: absolute; width: 50px; height: 20px; top: 190px; right: 20px; }
+        .raBtnBox label { display: block; float: left;  width: 10px; height: 10px; line-height: 10px; background: #fff; border-radius: 10px; margin-right: 10px; }
+        .raBtnBox label.item3 { margin-right: 0; }
+
+.imgBox li.item5 a .tit { background: #357830; color: #fff; border: 0px; }

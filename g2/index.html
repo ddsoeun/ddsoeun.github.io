@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>환경부</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon16.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon32.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon48.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon64.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon128.png">
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon150.png">
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta name="msapplication-TileImage" content="./ico/favicon144.png">
+    <!-- iPhone iOS 7이상   -->
+    <link rel="apple-touch-icon" size="120X120" href="./ico/favicon120.png">
+    <!--  표준 iOS 홈스크린  -->
+    <link rel="apple-touch-icon" size="57X57" href="./ico/favicon57.png">
+    <!--  iOS 홈스크린  -->
+    <link rel="apple-touch-icon" size="72X72" href="./ico/favicon72.png">
+    <!--  아이폰 레티나  -->
+    <link rel="apple-touch-icon" size="114X114" href="./ico/favicon114.png">
+    <!--  iPhone iOS  -->
+    <link rel="apple-touch-icon" size="180X180" href="./ico/favicon180.png">
+    <!--  안드로이드/iOS 기본   -->
+    <link rel="apple-touch-icon" size="152X152" href="./ico/favicon152.png">
+    <!--  안드로이드 크롬 홈  -->
+    <link rel="apple-touch-icon" size="196X196" href="./ico/favicon196.png">
+    <!--  아이패트 레티나 터치  -->
+    <link rel="apple-touch-icon" size="167X167" href="./ico/favicon167.png">
+   
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="application-name" content="Ministry of Environment Web Site">
+    <meta name="author" content="SoeunPark">
+    <meta name="description" content="Ministry of Environment Mainpage">
+    <meta name="generator" content="Brackets">
+    <meta name="keywords" content="Ministry of Environment, Environment, 환경부">
+    
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR" rel="stylesheet">
+    
+    <link rel="stylesheet" href="reset.css">
+    
+    <script>
+    $(document).ready(function(){
+        var wd = $("body, html").width();
+        $(".imgBox li.item1").click(function(){
+            if(wd > 1299){
+                $(".imgBox li.item1 iframe").css("display", "block").css("width", "940px").css("height", "530px").css("z-index", "1");
+                $(".imgBox li.item1").css("background-image", "none");
+                $(".imgBox li.item1 img").css("display", "none");
+                $(".imgBox li.item1 p").css("display", "none");
+                $(".imgBox li.item2").css("width", "300px").css("height", "500px");
+                $(".imgBox li.item2 img").attr("src", "./img/main2_on.png")
+                $(".imgBox li.item2").css("left", "960px").css("top", "500px");
+                $(".imgBox li.item3").css("left", "0px").css("top", "550px");
+                $(".imgBox li.item4").css("left", "320px").css("top", "550px");
+                $(".imgBox li.item5").css("left", "0px").css("top", "790px");
+                $(".imgBox li.item7").css("left", "640px").css("top", "550px");
+                $(".imgBox li.item8").css("height", "240px").css("left", "640px").css("top", "760px");
+                $(".searchFrm").css("top", "1020px");
+                $(".ft").css("top", "1200px");    
+            } else if(wd > 959 && wd < 1300){
+                $(".imgBox li.item1 iframe").css("display", "block").css("width", "710px").css("height", "400px").css("z-index", "1");
+                $(".imgBox li.item1").css("background-image", "none");
+                $(".imgBox li.item1 img").css("display", "none");
+                $(".imgBox li.item1 p").css("display", "none");
+                $(".imgBox li.item2").css("width", "230px").css("height", "340px");
+                $(".imgBox li.item2 img").attr("src", "./img/main2_on.png")
+                $(".imgBox li.item2").css("left", "720px").css("top", "380px");
+                $(".imgBox li.item3").css("left", "0px").css("top", "410px");
+                $(".imgBox li.item4").css("height", "310px").css("left", "240px").css("top", "410px");
+                $(".imgBox li.item5").css("left", "0px").css("top", "570px");
+                $(".imgBox li.item7").css("left", "480px").css("top", "410px");
+                $(".imgBox li.item8").css("height", "150px").css("left", "480px").css("top", "570px");
+            } 
+        });  
+    });
+    </script>
+    
+    <style>    
+    @media screen and (max-width:767px){
+        .mo { display: block; }
+        .desk { display: none; }
+        .hd { width: 100%; height: 60px; z-index: 10; margin: 0 auto; position: fixed; clear: both; top: 0; left: 0; background: #fff; }
+        .logo { float: left; display: block; width: 60px; height: 60px; background-image: url("./img/logo.png"); background-repeat: no-repeat; background-position: center center; background-size: 100%; margin-left: 5%; }
+        .gnbBtn { display: block; width: 60px; height: 60px; float: right; position: relative; margin-right: 5%; }
+        .gnbBtn .lst { width: 30px; height: 2px; background: #333; position: absolute; transition: 0.2s; border-radius: 3px; }
+        .gnbBtn .lst.item1 { top: 24px; right: 0; }
+        .gnbBtn .lst.item2 { top: 34px; right: 0; }
+        .ckItem { display: none; }
+        #ck01:checked ~ .gnbBtn .lst { background: #1b5fa6; }
+        #ck01:checked ~ .gnbBtn .lst.item1 { transform: rotate(-45deg); top: 30px; }
+        #ck01:checked ~ .gnbBtn .lst.item2 { transform: rotate(45deg); top: 30px; }
+        #gnb { width: 100%; min-height: 100%; background-color: #fff; transition: 0.6s; position: fixed; top: 60px; left: -100%; z-index: 10; }
+        #gnb ul { width: 100%; height: 100%; }
+        #ck01:checked ~ #gnb { left: 0; }
+        #gnb li { clear: both; width: 90%; margin: 0 auto; height: 45px; line-height: 45px; }
+        #gnb li.first { margin-top: 100px; }
+        #gnb li.last { margin-bottom: 150px; }
+        .blank { width: 90%; margin: 0 auto; height: 2px; background: rgba(27, 95, 166, 0.6); margin-left: -100%; transition: 0.8s; transition-delay: 0.4s; }
+        .blank.item2 { height: 1px; background: #1b5fa6; }
+        #ck01:checked ~ #gnb .blank { margin-left: 5%; }
+        #gnb li a.mnDep1 { display: block; width: 100%; height: 40px; line-height: 40px; text-align: center; color: #333; font-size: 1.25em; font-weight: bolder; }
+        
+        .content { width: 90%; margin: 0 auto; height: auto; clear: both; position: relative; margin-top: 60px; }
+        .imgBoxFrm { width: 100%; height: auto; }
+        .imgBox { width: 100%; height: 100%; }
+        .imgBox li { position: absolute; animation: imgAni2 1.2s 1 normal ease-in none 0.4s; }
+        .imgBox a { display: block; width: 100%; height: 100%; }
+        .imgBox a img { display: block; width: 100%; height: 100%; }
+        .imgBox li.item1 { width: 100%; height: 220px; top: 400px; left: 0; background-image: url("./img/main1.png"); background-repeat: no-repeat; background-position: center bottom; background-size: cover; animation: imgAni1 1s 1 normal ease-in none 0.4s; }
+        .imgBox li.item1 a img { width: 80%; margin: 0 auto; height: 60%; margin-top: 10%; }
+        .imgBox li.item1 a .tit { width: 50px; height: 20px; background: #333; color: #fff; text-align: center; font-size: 0.65em; line-height: 20px; position: absolute; left: 10%; }
+        .imgBox li.item1 iframe { display: none; }
+        .imgBox li a .tit { position: absolute; color: #1b5fa6; text-align: center; width: 60%; left: 20%; top: 15%; font-weight: 600; font-size: 0.85em; background: #fff; height: 30px; line-height: 30px; border-radius: 30px; }
+        .imgBox li.item2 { width: 100%; height: 150px; top: 240px; left: 0; animation: imgAni1 1s 1 normal ease-in none 0.4s; }
+        .imgBox li.item3 { width: 48%; height: 110px; top: 120px; left: 0; }
+        .imgBox li.item3 a .tit { font-size: 0.7em; height: 20px; line-height: 20px; width: 50%; left: 25%; }
+        .imgBox li.item4 { width: 48%; height: 230px; top: 0; right: 0; }
+        .imgBox li.item4 a .tit  { top: 75%; }
+        .imgBox li.item7 { width: 48%; height: 110px; top: 0; left: 0; }
+        .imgBox li.item7 a .tit { top: 70%; left: 10%; background: #1b5fa6; color: #fff; font-size: 0.7em; height: 20px; line-height: 20px; width: 50%; }
+        
+        @keyframes imgAni1 {
+        from { width: 0; opacity: 0; }
+        to { width: 100%; opacity: 1; }
+        }
+        @keyframes imgAni2 {
+        from { width: 0; opacity: 0; }
+        to { width: 48%; opacity: 1; }
+        } 
+        
+        .searchFrm { width: 100%; margin: 0 auto; height: 100px; position: absolute; top: 640px; left: 0; padding-bottom: 50px; }
+        .searchForm { width: 100%; height: 60px; line-height: 60px; background: #1b5fa6; }
+        .search { width: calc(100% - 40px); height: 40px; text-indent: 20px; font-size: 0.8em; background: #1b5fa6; color: #fff; float: left; margin-top: 10px;  }
+        .searchBtn { width: 40px; float: right; height: 40px; line-height: 40px; background: #1b5fa6; margin-top: 10px; cursor: pointer; }
+        .searchBtn input { width: 40px; height: 40px; background: transparent; text-indent: -9999px; background-image: url("./icon/search.png"); background-repeat: no-repeat; background-size: 20px 20px; background-position: center center; }
+        .linkBox { width: 50%; height: 40px; line-height: 40px; float: left; background: #1b5fa6; color: #fff; text-indent: 10px; font-size: 0.8em; }
+        .linkBox.item2 { float: right; }
+        
+        .ft { height: 100px; width: 100%; clear: both; position: absolute; top: 750px; left: 0; background-image: url("./img/footer.png"); background-position: center top; background-repeat: no-repeat; background-size: cover; }
+        .ft .copy { width: 80%; margin: 0 auto; font-size: 0.6em; text-align: center; padding-top: 35px; color: #fff; text-shadow: 2px 2px 3px #333; }
+    }
+    @media screen and (min-width:768px) and (max-width:959px){
+        .mo { display: block; }
+        .desk { display: none; }
+        .hd { width: 100%; height: 60px; z-index: 10; margin: 0 auto; position: fixed; clear: both; top: 0; left: 0; background: #fff; }
+        .logo { float: left; display: block; width: 60px; height: 60px; background-image: url("./img/logo.png"); background-repeat: no-repeat; background-position: center center; background-size: 100%; margin-left: 5%; }
+        .gnbBtn { display: block; width: 60px; height: 60px; float: right; position: relative; margin-right: 5%; }
+        .gnbBtn .lst { width: 30px; height: 2px; background: #333; position: absolute; transition: 0.2s; border-radius: 3px; }
+        .gnbBtn .lst.item1 { top: 24px; right: 0; }
+        .gnbBtn .lst.item2 { top: 34px; right: 0; }
+        .ckItem { display: none; }
+        #ck01:checked ~ .gnbBtn .lst { background: #1b5fa6; }
+        #ck01:checked ~ .gnbBtn .lst.item1 { transform: rotate(-45deg); top: 30px; }
+        #ck01:checked ~ .gnbBtn .lst.item2 { transform: rotate(45deg); top: 30px; }
+        #gnb { width: 100%; min-height: 100%; background-color: #fff; transition: 0.6s; position: fixed; top: 60px; left: -100%; z-index: 10; }
+        #gnb ul { width: 100%; height: 100%; }
+        #ck01:checked ~ #gnb { left: 0; }
+        #gnb li { clear: both; width: 90%; margin: 0 auto; height: 45px; line-height: 45px; }
+        #gnb li.first { margin-top: 100px; }
+        #gnb li.last { margin-bottom: 150px; }
+        .blank { width: 90%; margin: 0 auto; height: 2px; background: rgba(27, 95, 166, 0.6); margin-left: -100%; transition: 0.8s; transition-delay: 0.4s; }
+        .blank.item2 { height: 1px; background: #1b5fa6; }
+        #ck01:checked ~ #gnb .blank { margin-left: 5%; }
+        #gnb li a.mnDep1 { display: block; width: 100%; height: 40px; line-height: 40px; text-align: center; color: #333; font-size: 1.25em; font-weight: bolder; }
+        
+        .content { width: 90%; margin: 0 auto; height: auto; clear: both; position: relative; margin-top: 60px; }
+        .imgBoxFrm { width: 100%; height: auto; }
+        .imgBox { width: 100%; height: 100%; }
+        .imgBox li { position: absolute; animation: imgAni2 1.2s 1 normal ease-in none 0.4s; }
+        .imgBox a { display: block; width: 100%; height: 100%; }
+        .imgBox a img { display: block; width: 100%; height: 100%; }
+        .imgBox li.item1 { width: 100%; height: 400px; top: 770px; left: 0; background-image: url("./img/main1.png"); background-repeat: no-repeat; background-position: center bottom; background-size: cover; animation: imgAni1 1s 1 normal ease-in none 0.4s; }
+        .imgBox li.item1 a img { width: 60%; margin: 0 auto; height: 50%; margin-top: 10%; }
+        .imgBox li.item1 a .tit { width: 50px; height: 20px; background: #333; color: #fff; text-align: center; font-size: 0.65em; line-height: 20px; position: absolute; left: 10%; }
+        .imgBox li.item1 iframe { display: none; }
+        .imgBox li a .tit { position: absolute; color: #1b5fa6; text-align: center; width: 60%; left: 20%; top: 15%; font-weight: 600; font-size: 0.85em; background: #fff; height: 30px; line-height: 30px; border-radius: 30px; }
+        .imgBox li.item2 { width: 100%; height: 300px; top: 460px; left: 0; animation: imgAni1 1s 1 normal ease-in none 0.4s; }
+        .imgBox li.item3 { width: 48%; height: 220px; top: 230px; left: 0; }
+        .imgBox li.item3 a .tit { font-size: 0.7em; height: 20px; line-height: 20px; width: 30%; left: 35%; padding: 5px 0px; }
+        .imgBox li.item4 { width: 48%; height: 450px; top: 0; right: 0; }
+        .imgBox li.item4 a .tit  { top: 75%; width: 40%; left: 30%; padding: 5px 0px; }
+        .imgBox li.item7 { width: 48%; height: 220px; top: 0; left: 0; }
+        .imgBox li.item7 a .tit { top: 70%; left: 10%; background: #1b5fa6; color: #fff; font-size: 0.7em; height: 20px; line-height: 20px; width: 30%; padding: 5px 0px; }
+        
+        @keyframes imgAni1 {
+        from { width: 0; opacity: 0; }
+        to { width: 100%; opacity: 1; }
+        }
+        @keyframes imgAni2 {
+        from { width: 0; opacity: 0; }
+        to { width: 48%; opacity: 1; }
+        }
+        
+        .searchFrm { width: 100%; margin: 0 auto; height: 100px; position: absolute; top: 1180px; left: 0; padding-bottom: 50px; }
+        .searchForm { width: 100%; height: 60px; line-height: 60px; background: #1b5fa6; }
+        .search { width: calc(100% - 40px); height: 40px; text-indent: 20px; font-size: 0.8em; background: #1b5fa6; color: #fff; float: left; margin-top: 10px;  }
+        .searchBtn { width: 40px; float: right; height: 40px; line-height: 40px; background: #1b5fa6; margin-top: 10px; }
+        .searchBtn input { width: 40px; height: 40px; background: transparent; text-indent: -9999px; background-image: url("./icon/search.png"); background-repeat: no-repeat; background-size: 20px 20px; background-position: center center; }
+        .linkBox { width: 50%; height: 40px; line-height: 40px; float: left; background: #1b5fa6; color: #fff; text-indent: 10px; font-size: 0.8em; }
+        .linkBox.item2 { float: right; }
+        
+        .ft { height: 100px; width: 100%; clear: both; position: absolute; top: 1290px; left: 0; background-image: url("./img/footer.png"); background-position: center top; background-repeat: no-repeat; background-size: cover; }
+        .ft .copy { width: 80%; margin: 0 auto; font-size: 0.6em; text-align: center; padding-top: 35px; color: #fff; }
+    }
+    @media screen and (min-width:960px) and (max-width:1299px){
+        .mo { display: none; }
+        .desk { display: block; }
+        .hd { width: 950px; height: 100px; z-index: 10; margin: 0 auto; position: relative; clear: both; background: #fff; }
+        .logo { float: left; display: block; width: 80px; height: 80px; background-image: url("./img/logo.png"); background-repeat: no-repeat; background-position: center center; background-size: 100%; margin-top: 10px; }
+        #gnb { width: 70%; float: right; background-color: #fff; z-index: 10;  margin-top: 40px; }
+        #ck01:checked ~ #gnb { left: 0; }
+        #gnb li { float: left; width: 16.666666666%; height: 40px; line-height: 40px; }
+        #gnb li a.mnDep1 { display: block; width: 100%; height: 40px; line-height: 40px; text-align: center; color: #333; font-size: 1em; font-weight: bolder; }
+        .sub { height: 0; opacity: 0; transition: 0.6s; transition-delay: 0.2s; background: #1b5fa6; padding-top: 20px; margin-top: 20px; z-index: 10; }
+        .sub.item1:before { content: ""; width: 378px; height: 0; background: #1b5fa6; position: absolute; top: 80px; left: 0px; opacity: 0; transition: 0.6s; transition-delay: 0.2s; background-image: url("./img/gnb_img.png"); background-repeat: no-repeat; background-position: left bottom; background-size: 100% 80%; padding-top: 20px; margin-top: 20px; z-index: 10; }
+        #gnb:hover .sub { height: 250px; opacity: 1; }
+        #gnb:hover .sub.item1::before { height: 250px; opacity: 1; }
+        #gnb li a.mnDep1:hover { color: #1b5fa6; font-weight: bolder; }
+        #gnb .sub li a:hover { font-weight: bold; color: rgba(255, 255, 255, 0.6); }
+        #gnb .sub li { clear: both; width: 100%; height: 30px; line-height: 30px; }
+        #gnb .sub li a { display: block; width: 100%; height: 30px; line-height: 30px; font-size: 0.75em; text-align: center; color: #fff; }
+        
+        .content { width: 950px; margin: 0 auto; height: auto; clear: both; position: relative; }
+        .imgBoxFrm { width: 100%; }
+        .imgBox { width: 100%; height: px; transition: height 0.6s ease-out; }
+        .imgBox li { position: absolute; transition: all 1s ease-in-out; animation: imgAni2 1.2s 1 normal ease-in none 0.4s; }
+        .imgBox a { display: block; width: 100%; height: 100%; }
+        .imgBox a img { display: block; width: 100%; height: 100%; }
+        .imgBox li.item1 { width: 470px; height: 440px; top: 0px; left: 0; background-image: url("./img/main1.png"); background-repeat: no-repeat; background-position: center bottom; background-size: cover; animation: imgAni1 1s 1 normal ease-in none 0.4s; }
+        .imgBox li.item1 a img { width: 60%; margin: 0 auto; height: auto; margin-top: 150px; }
+        .imgBox li.item1 a .tit { width: 80px; height: 25px; background: #333; color: #fff; text-align: center; font-size: 0.7em; line-height: 25px; position: absolute; left: 10%; border: 0px; }
+        .imgBox li.item1 iframe { display: none; }
+        .imgBox li a .tit { position: absolute; color: #fff; text-align: center; width: 50%; left: 25%; top: 15%; font-weight: 600; font-size: 0.9em; background: transparent; height: 30px; line-height: 30px; border: 1px solid #fff; }
+        .imgBox li.item3 a .tit:hover { background: #fff; color: #1b5fa6; }
+        .imgBox li.item4 a .tit:hover { background: #fff; color: #1b5fa6; }
+        .imgBox li.item7 a .tit:hover { background: #fff; color: #1b5fa6; }
+        .imgBox li.item2 { width: 470px; height: 240px; top: 450px; left: 0; animation: imgAni1 1s 1 normal ease-in none 0.4s; }
+        .imgBox li.item3 { width: 230px; height: 150px; top: 0px; left: 480px; }
+        .imgBox li.item4 { width: 230px; height: 370px; top: 160px; left: 480px; }
+        .imgBox li.item4 a .tit  { top: 75%; }
+        .imgBox li.item5 { width: 230px; height: 150px; top: 540px; left: 480px; }
+        .imgBox li.item5 a .tit { background: #357830; color: #fff; border: 0px; }
+        .imgBox li.item6 { width: 230px; height: 370px; top: 0; right: 0; }
+        .imgBox li.item7 { width: 230px; height: 155px; top: 380px; right: 0; }
+        .imgBox li.item7 a .tit { top: 65%; left: 10%; background: #1b5fa6; color: #fff; font-size: 0.85em; width: 50%; border: 0px; }
+        .imgBox li.item8 { width: 230px; height: 155px; top: 535px; right: 0; }
+        .imgBox li.item8 a { background: #f5f5f5; display: none; }
+        .imgBox li.item8 a .noti { font-size: 1em; color: #1b5fa6; padding-top: 10px; text-indent: 15px; }
+        .imgBox li.item8 a .conTit { width: 210px; margin: 2px 15px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; color: #333; font-size: 1.25em; font-weight: bold; }
+        .imgBox li.item8 a .conCom { width: 210px; padding: 10px 15px 0px 15px; margin: 0 auto; overflow: hidden; white-space: normal; text-overflow: ellipsis; color: #333; font-size: 0.7em; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; line-height: 1.6; padding-top: 5px; transition: 0.4s; }
+        
+        .raItem { display: none; }
+        #ra01:checked ~ .conBox.item1 { display: block; }
+        #ra02:checked ~ .conBox.item2 { display: block; }
+        #ra03:checked ~ .conBox.item3 { display: block; }
+        #ra01:checked ~ .raBtnBox .raBtn.item1 { background: #1b5fa6; }
+        #ra02:checked ~ .raBtnBox .raBtn.item2 { background: #1b5fa6; }
+        #ra03:checked ~ .raBtnBox .raBtn.item3 { background: #1b5fa6; }
+        .raBtnBox { position: absolute; width: 50px; height: 20px; top: 130px; right: 20px; }
+        .raBtnBox label { display: block; float: left;  width: 10px; height: 10px; line-height: 10px; background: #fff; border-radius: 10px; margin-right: 10px; }
+        .raBtnBox label:last-child { margin-right: 0; }
+        
+        @keyframes imgAni1 {
+        from { width: 0; opacity: 0; }
+        to { width: 470px; opacity: 1; }
+        }
+        @keyframes imgAni2 {
+        from { width: 0; opacity: 0; }
+        to { width: 230px; opacity: 1; }
+        }
+        
+        .searchFrm { width: 100%; margin: 0 auto; height: 60px; position: absolute; top: 900px; left: 0; }
+        .searchForm { width: 40%; height: 60px; line-height: 60px; background: #1b5fa6; float: right; }
+        .search { width: calc(40% - 40px); height: 40px; text-indent: 20px; font-size: 0.8em; background: #1b5fa6; color: #fff; float: left; margin-top: 10px; }
+        .searchBtn { width: 40px; float: right; height: 40px; line-height: 40px; background: #1b5fa6; margin-top: 10px; cursor: pointer; }
+        .searchBtn input { width: 40px; height: 40px; background: transparent; text-indent: -9999px; background-image: url("./icon/search.png"); background-repeat: no-repeat; background-size: 20px 20px; background-position: center center; cursor: pointer; }
+        .linkBox { width: 20%; height: 60px; line-height: 60px; float: left; background: #1b5fa6; color: #fff; text-indent: 10px; font-size: 0.8em; float: left; }
+        
+        
+        .ft { height: 200px; width: 100%; clear: both; background-image: url("./img/footer.png"); background-position: center top; background-repeat: no-repeat; background-size: cover; position: absolute; bottom: 0; left: 0; }
+        .ft .copy.desk { float: left; font-size: 0.65em; color: #fff;line-height: 1.6; margin-top: 100px; text-shadow: 2px 2px 3px #333; }
+        .ft .ftWrap { width: 950px; margin: 0 auto; }
+        .ftLink { float: right; width: 200px; margin-top: 100px; }
+        .ftLink li { float: left; width: 25%; }
+        .ftLink li a { display: block; width: 38px; margin: 0 auto; height: 38px; background-image: url("./icon/iconset.png"); background-repeat: no-repeat; }
+        .ftLink li a.item1 { background-position: -10px 0px; }
+        .ftLink li a.item2 { background-position: -84px -82px; }
+        .ftLink li a.item3 { background-position: -11px -82px; }
+        .ftLink li a.item4 { background-position: -11px -122px; }
+    }
+    @media screen and (min-width:1300px){
+        .mo { display: none; }
+        .desk { display: block; }
+        .hd { width: 1260px; height: 100px; z-index: 10; margin: 0 auto; position: relative; clear: both; background: #fff; }
+        .logo { float: left; display: block; width: 80px; height: 80px; background-image: url("./img/logo.png"); background-repeat: no-repeat; background-position: center center; background-size: 100%; margin-top: 10px; }
+        #gnb { width: 70%; float: right; background-color: #fff; z-index: 10;  margin-top: 40px; }
+        #ck01:checked ~ #gnb { left: 0; }
+        #gnb li { float: left; width: 16.666666666%; height: 40px; line-height: 40px; }
+        #gnb li a.mnDep1 { display: block; width: 100%; height: 40px; line-height: 40px; text-align: center; color: #333; font-size: 1em; font-weight: bolder; }
+        .sub { height: 0; transition: 1s; background: #1b5fa6; margin-top: 20px; z-index: 10; overflow: hidden; }
+        .sub li:first-child { padding-top: 20px; }
+        .sub.item1:before { content: ""; width: 378px; height: 0; position: absolute; top: 80px; left: 0px; margin-top: 20px; z-index: 10; transition: 1s; overflow: hidden; background-color: #1b5fa6; background-image: url("./img/gnb_img.png"); background-attachment: scroll; background-position: left bottom; background-size: 80% 80%; background-repeat: no-repeat; }
+        #gnb:hover .navImg { height: 270px; }
+        #gnb:hover .sub { height: 250px; }
+        #gnb:hover .sub::before { height: 250px; }
+        #gnb li:hover a { color: #1b5fa6; font-weight: bolder; }
+        #gnb .sub li a:hover { font-weight: bold; color: rgba(255, 255, 255, 0.6); }
+        #gnb .sub li { clear: both; width: 100%; height: 30px; line-height: 30px; }
+        #gnb .sub li a { display: block; width: 100%; height: 30px; line-height: 30px; font-size: 0.75em; text-align: center; color: #fff; }
+        
+        .content { width: 1260px; margin: 0 auto; height: auto; clear: both; position: relative; }
+        .imgBoxFrm { width: 100%; }
+        .imgBox { width: 100%; height: 900px; transition: height 0.6s ease-out; }
+        .imgBox li { position: absolute; transition: all 1s ease-in-out; z-index: 9; animation: imgAni2 1.2s 1 normal ease-in none 0.4s; }
+        .imgBox a { display: block; width: 100%; height: 100%; }
+        .imgBox a img { display: block; width: 100%; height: 100%; }
+        .imgBox li.item1 { width: 620px; height: 590px; top: 0px; left: 0; background-image: url("./img/main1.png"); background-repeat: no-repeat; background-position: center bottom; background-size: cover; animation: imgAni1 0.8s 1 normal ease-in none 0.4s; }
+        .imgBox li.item1 a img { width: 60%; margin: 0 auto; height: auto; margin-top: 200px; }
+        .imgBox li.item1 a .tit { width: 80px; height: 25px; background: #333; color: #fff; text-align: center; font-size: 0.7em; line-height: 25px; position: absolute; left: 10%; border: 0px; }
+        .imgBox li.item1 iframe { display: none; }
+        .imgBox li a .tit { position: absolute; color: #fff; text-align: center; width: 50%; left: 25%; top: 15%; font-weight: 600; font-size: 1.1em; background: transparent; height: 40px; line-height: 40px; border: 1px solid #fff; }
+        .imgBox li.item3 a .tit:hover { background: #fff; color: #1b5fa6; }
+        .imgBox li.item4 a .tit:hover { background: #fff; color: #1b5fa6; }
+        .imgBox li.item7 a .tit:hover { background: #fff; color: #1b5fa6; }
+        .imgBox li.item2 { width: 620px; height: 300px; top: 600px; left: 0; animation: imgAni1 1s 1 normal ease-in none 0.4s; }
+        .imgBox li.item3 { width: 300px; height: 220px; top: 0px; left: 640px; }
+        .imgBox li.item4 { width: 300px; height: 450px; top: 230px; left: 640px; animation-duration: 1.4s; }
+        .imgBox li.item4 a .tit  { top: 75%; }
+        .imgBox li.item5 { width: 300px; height: 210px; top: 690px; left: 640px; animation-duration: 1.6s; }
+        .imgBox li.item5 a .tit { top: 75%; color: #fff; border: 0px; background: #357830; }
+        .imgBox li.item5 a .tit:hover { background: #fff; color: #357830; }
+        .imgBox li.item6 { width: 300px; height: 470px; top: 0; right: 0; animation-duration: 1.8s; }
+        .imgBox li.item7 { width: 300px; height: 210px; top: 480px; right: 0; animation-duration: 2s; }
+        .imgBox li.item7 a .tit { top: 65%; left: 10%; background: #1b5fa6; color: #fff; font-size: 0.85em; width: 50%; border: 0px; }
+        .imgBox li.item8 { width: 300px; height: 210px; top: 690px; right: 0; background: #f5f5f5; animation-duration: 2.2s; }
+        .imgBox li.item8 a { display: none; width: 300px; height: 210px; }
+        .imgBox li.item8 a .noti { font-size: 1.25em; color: #1b5fa6; padding-top: 10px; text-indent: 15px; }
+        .imgBox li.item8 a .conTit { width: 280px; margin: 5px 15px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; color: #333; font-size: 1.7em; font-weight: 700; transition: 0.4s; }
+        .imgBox li.item8 a .conCom { width: 260px; margin: 0 auto; overflow: hidden; white-space: normal; text-overflow: ellipsis; color: #333; font-size: 0.85em; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; line-height: 1.6; padding-top: 5px; transition: 0.4s; }
+        .raItem { display: none; }
+        .imgBox li.item8 a:hover .conTit { color: #1b5fa6; }
+        .imgBox li.item8 a:hover .conCom { color: #1b5fa6; }
+        #ra01:checked ~ .conBox.item1 { display: block; }
+        #ra02:checked ~ .conBox.item2 { display: block; }
+        #ra03:checked ~ .conBox.item3 { display: block; }
+        #ra01:checked ~ .raBtnBox .raBtn.item1 { background: #1b5fa6; }
+        #ra02:checked ~ .raBtnBox .raBtn.item2 { background: #1b5fa6; }
+        #ra03:checked ~ .raBtnBox .raBtn.item3 { background: #1b5fa6; }
+        .raBtnBox { position: absolute; width: 50px; height: 20px; top: 190px; right: 20px; }
+        .raBtnBox label { display: block; float: left;  width: 10px; height: 10px; line-height: 10px; background: #fff; border-radius: 10px; margin-right: 10px; }
+        .raBtnBox label.item3 { margin-right: 0; }
+        
+        
+        @keyframes imgAni1 {
+        from { width: 0; opacity: 0; }
+        to { width: 620px; opacity: 1; }
+        }
+        @keyframes imgAni2 {
+        from { width: 0; opacity: 0; }
+        to { width: 300px; opacity: 1; }
+        }
+       
+        
+        .searchFrm { width: 100%; margin: 0 auto; height: 60px; position: absolute; top: 910px; left: 0; }
+        .searchForm { width: 40%; height: 60px; line-height: 60px; background: #1b5fa6; float: right; }
+        .search { width: calc(40% - 40px); height: 40px; text-indent: 20px; font-size: 0.8em; background: #1b5fa6; color: #fff; float: left; margin-top: 10px; }
+        .searchBtn { width: 40px; float: right; height: 40px; line-height: 40px; background: #1b5fa6; margin-top: 10px; cursor: pointer; }
+        .searchBtn input { width: 40px; height: 40px; background: transparent; text-indent: -9999px; background-image: url("./icon/search.png"); background-repeat: no-repeat; background-size: 20px 20px; background-position: center center; cursor: pointer; }
+        .linkBox { width: 20%; height: 60px; line-height: 60px; float: left; background: #1b5fa6; color: #fff; text-indent: 10px; font-size: 0.8em; float: left; }
+        
+        
+        .ft { height: 200px; width: 100%; clear: both; background-image: url("./img/footer.png"); background-position: center top; background-repeat: no-repeat; background-size: cover; position: absolute; top: 1070px; left: 0; }
+        .ft .copy.mo { width: 80%; margin: 0 auto; font-size: 0.6em; text-align: center; padding-top: 35px; color: #333; }
+        .ft .copy.desk { float: left; font-size: 0.65em; color: #fff;line-height: 1.6; margin-top: 100px; text-shadow: 2px 2px 3px #333; }
+        .ft .ftWrap { width: 1260px; margin: 0 auto; }
+        .ftLink { float: right; width: 200px; margin-top: 100px; }
+        .ftLink li { float: left; width: 25%; }
+        .ftLink li a { display: block; width: 38px; margin: 0 auto; height: 38px; background-image: url("./icon/iconset.png"); background-repeat: no-repeat; }
+        .ftLink li a.item1 { background-position: -46px 0px; }
+        .ftLink li a.item2 { background-position: -121px -82px; }
+        .ftLink li a.item3 { background-position: -46px -82px; }
+        .ftLink li a.item4 { background-position: -46px -122px; }
+        .ftLink li a.item1:hover { background-position: -10px 0px; }
+        .ftLink li a.item2:hover { background-position: -84px -82px; }
+        .ftLink li a.item3:hover { background-position: -11px -82px; }
+        .ftLink li a.item4:hover { background-position: -11px -122px; }
+    }
+    </style>
+</head>
+<body>
+    <header class="hd">
+        <a href="index.html" class="logo"></a>
+        <input type="checkbox" id="ck01" name="ck01" class="ckItem mo">
+        <label for="ck01" class="gnbBtn mo">
+            <span class="lst item1"></span>
+            <span class="lst item2"></span>
+        </label>
+        <nav id="gnb">
+            <ul>
+                <div class="blank item1 mo"></div>
+                <li class="first">
+                    <a href="#" class="mnDep1">정보공개</a>
+                    <ul class="sub desk item1">
+                        <li><a href="#">정보공개</a></li>
+                        <li><a href="#">공공데이터개방</a></li>
+                        <li><a href="#">감사·청렴마당</a></li>
+                        <li><a href="#">사회적협동조합 경영공시</a></li>
+                        <li><a href="#">소비자환경정보</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="mnDep1">국민소통</a>
+                    <ul class="sub desk item2">
+                        <li><a href="#">클린신고센터</a></li>
+                        <li><a href="#">민원신청</a></li>
+                        <li><a href="#">규제개혁</a></li>
+                        <li><a href="#">국민참여</a></li>
+                        <li><a href="#">헬프데스크</a></li>
+                        <li><a href="#">110화상/수화/채팅상담</a></li>
+                        <li><a href="#">국민생각함</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="mnDep1">법령/정책</a>
+                    <ul class="sub desk item3">
+                        <li><a href="#">환경법령</a></li>
+                        <li><a href="#">환경정책</a></li>
+                        <li><a href="#">환경정보네트워크</a></li>
+                        <li><a href="#">국회관련정보</a></li>
+                        <li><a href="#">정책이슈</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="mnDep1">발행물</a>
+                    <ul class="sub desk item4">
+                        <li><a href="#">소책자</a></li>
+                        <li><a href="#">환경간행물</a></li>
+                        <li><a href="#">환경웹진</a></li>
+                        <li><a href="#">환경동화</a></li>
+                        <li><a href="#">e-book</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="mnDep1">알림/홍보</a>
+                    <ul class="sub desk item5">
+                        <li><a href="sub5.html">뉴스·공지</a></li>
+                        <li><a href="#">홍보자료</a></li>
+                    </ul>
+                </li>
+                <li class="last">
+                    <a href="#" class="mnDep1">기관소개</a>
+                    <ul class="sub desk item6">
+                        <li><a href="#">인사말</a></li>
+                        <li><a href="#">일반현황</a></li>
+                        <li><a href="#">조직·직원안내</a></li>
+                        <li><a href="#">찾아오시는 길</a></li>
+                    </ul>
+                </li>
+                <div class="blank item2 mo"></div>
+            </ul>
+        </nav>  
+    </header>    
+    <main class="content">
+        <div class="imgBoxFrm">
+            <ul class="imgBox">
+                <li class="item1">
+                    <a href="" class="conBox">
+                        <p class="tit">MEDIA</p>
+                        <img src="./img/main1_txt.png" alt="">
+                        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/HyNVWvLUJIk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </a>    
+                </li>
+                <li class="item2">
+                    <a href="" class="conBox">
+                        <img src="./img/main2.png" alt="">
+                    </a>     
+                </li>
+                <li class="item3">
+                    <a href="" class="conBox">
+                        <p class="tit">국민소통</p>
+                        <img src="./img/main3.png" alt="">
+                    </a>     
+                </li>
+                <li class="item4">
+                    <a href="" class="conBox">
+                        <p class="tit">법령/정책</p>
+                        <img src="./img/main4.png" alt="">
+                    </a>     
+                </li>
+                <li class="item5 desk">
+                    <a href="" class="conBox">
+                        <p class="tit">기관소개</p>
+                        <img src="./img/main5.png" alt="">
+                    </a>     
+                </li>
+                <li class="item6 desk">
+                    <a href="" class="conBox">
+                        <img src="./img/main6.png" alt="">
+                    </a>    
+                </li>
+                <li class="item7">
+                    <a href="" class="conBox">
+                        <p class="tit">열린 장관실</p>
+                        <img src="./img/main7.png" alt="">
+                    </a>     
+                </li>
+                <li class="item8 desk">
+                    <input type="radio" name="ra01" id="ra01" class="raItem" checked>
+                    <input type="radio" name="ra01" id="ra02" class="raItem">
+                    <input type="radio" name="ra01" id="ra03" class="raItem">
+                    <div class="raBtnBox">
+                        <label for="ra01" class="raBtn item1"></label>
+                        <label for="ra02" class="raBtn item2"></label>
+                        <label for="ra03" class="raBtn item3"></label>
+                    </div>
+                    <a href="" class="conBox item1">
+                        <h3 class="noti">Notice</h3>
+                        <p class="conTit">한·중 공동 민·관 미세먼지 저감 기술교류회 개최</p>
+                        <p class="conCom">환경부와 한국환경산업 기술원은 '한·중 미세먼지 저감 실증 협력 사업' 참여 후보기업 21개사와 3월 25일부터 28일까지 중국 상하이(3월 25일), 톈진(3월 26일), 허베이성(3월 27일), 산시성(3월 28일)에서 한·중 공동 민·관 대기분야 기술교류회를 개최합니다. '한·중 미세먼지 저감 실증 협력 사업'은 2014년 7월 한·중 정상회담 후속 조치로 2015년부터 미세먼지 저감과 양국 환경산업의 공동 발전을 목표로 추진되고 있습니다. 이 사업을 통해 중국 산시성, 허베이성 등의 지역에 위치한 석탄 화력발전소 등 대기 오염물질을 다량 배출하는 시설들에 대해 우리나라의 대기오염 방지 기술을 적용하고 있습니다.</p>
+                    </a>
+                    <a href="" class="conBox item2">
+                        <h3 class="noti">Notice</h3>
+                        <p class="conTit">인천 송도 등 악취로 불편 겪는 지역, 최신 측정기법으로 악취실태 조사</p>
+                        <p class="conCom">환경부와 한국환경공단은 최신 측정기법을 활용해 12월 말까지 인천 송도, 청주 오창, 철원·포천 등 지난 해 악취 민원이 많았던 지역을 대상으로 악취 배출의 원인을 정밀하게 분석할 예정인데요. 이들 지역은 어떻게 선정 되었는지, 앞으로 악취 실태조사는 어떻게 진행되는지 살펴볼까요? 인천 송도, 청주 오창, 철원· 포천 등 악취로 불편 겪는 지역 3곳 대상으로 악취 원인 정밀 분석 먼저 조사 대상 지역은 환경부가 악취 배출원과 주거지 사리의 거리, 민원건수 등을 종합적으로 평가해 선정했는데요. 이들 지역은 주거지 근처에 각종 산업단지와 축사 등 악취를 배출할 수 있는 시설들이 있어 악취 배출원 관리를 소홀히 할 경우 언제든 악취가 발생할 수 있는 곳이었습니다. 실제로 이들 지역에서 지난해 발생한 악취 민원 평균 건수는 318건이며, 인천 연수구(송도)의 경우 618건으로 가장 많았습니다.</p>
+                    </a>
+                    <a href="" class="conBox item3">
+                        <h3 class="noti">Notice</h3>
+                        <p class="conTit">물, 언제나 어디서나 누구에게나! 세계 물의 날 행사 개최</p>
+                        <p class="conCom">2019년 '세계 물의 날' 기념식을 3월 22일 오후 2시부터 대구광역시 북구 엑스코(EXCO)에서 개최합니다. '세계 물의 날'은 먹는 물의 소중함을 알리고 물 문제 해결에 전 세계의 참여와 협력을 늘리기 위해 유엔(UN)에서 1992년부터 매년 3월 22일을 지정해 선포한 날인데요, 우리나라는 1995년부터 '세계 물의 날' 기념행사를 정부 차원에서 개최하고 있답니다. 유엔이 정한 올해 '세계 물의 날'의 주제는 '누구도 소외되지 않게(Leaving no one behind)'이며, 인종·지위·종교 등에 차별받지 않고 모두가 안전한 물을 공급받아야 한다는 취지를 담고 있습니다. 이는 유엔이 정한 지속 가능발전 목표(SDG)*의 슬로건과 동일하며, 전염병 예방 등 보건 향상과, 나아가 지속 가능 발전을 이루는 데 깨끗한 물이 필수적임을 의미합니다. 그동안 깨끗한 물을 이용하는 데 소외·무시당하고 있는 사람들을 재조명하고, 누구나 차별받지 않고 깨끗한 물을 이용해야 한다는 '물은 인권'이라는 인식을 높이고자 선정된 것이죠.</p>
+                    </a>    
+                </li>
+            </ul>
+        </div>
+        <div class="searchFrm">
+            <form action="" class="searchForm">
+                <input type="text" class="search" placeholder="검색어를 입력하세요">
+                <button class="searchBtn">
+                    <input type="submit">
+                </button>
+            </form>
+            <select name="" id="" class="linkBox item1">
+                <option value="">외청 및 소속기관</option>
+                <option value="">기상청</option>
+                <option value="">국립환경과학원</option>
+                <option value="">국립환경인력개발원</option>
+                <option value="">온실가스종합정보센터</option>
+                <option value="">한강유역환경청</option>
+                <option value="">낙동강유역환경청</option>
+                <option value="">금강유역환경청</option>
+                <option value="">영산강유역환경청</option>
+                <option value="">원주지방환경청</option>
+                <option value="">대구지방환경청</option>
+                <option value="">새만금지방환경청</option>
+                <option value="">수도권대기환경청</option>
+                <option value="">한강홍수통제소</option>
+                <option value="">낙동강홍수통제소</option>
+                <option value="">금강홍수통제소</option>
+                <option value="">영산강홍수통제소</option>
+                <option value="">중앙환경분쟁조정위원회</option>
+                <option value="">국립생물자원관</option>
+                <option value="">화학물질안전원</option>
+            </select>
+            <select name="" id="" class="linkBox item2">
+                <option value="">산하공공기관</option>
+                <option value="">한국환경공단</option>
+                <option value="">국립공원관리공단</option>
+                <option value="">수도권매립지관리공사</option>
+                <option value="">한국환경산업기술원</option>
+                <option value="">국립생태원</option>
+                <option value="">국립낙동강생물자원관</option>
+                <option value="">한국상하수도협회</option>
+                <option value="">한국수자원공사</option>
+                <option value="">환경보전협회</option>
+                <option value="">(주)워터웨이플러스</option>
+            </select>
+            <select name="" id="" class="linkBox item3 desk">
+                <option value="">관련기관·협회</option>
+                <option value="">한국자연환경보전협회</option>
+                <option value="">한국화학물질관리협회</option>
+                <option value="">환경영향평가협회</option>
+                <option value="">한국자연공원협회</option>
+                <option value="">한국건설자원협회</option>
+                <option value="">한국자동차환경협회</option>
+                <option value="">야생생물관리협회</option>
+                <option value="">한국폐기물협회</option>
+                <option value="">한국환경산업협회</option>
+                <option value="">한국생태관광협회</option>
+                <option value="">한국건설폐기물수집운반협회</option>
+                <option value="">전국생활폐기물 수집·운반협회</option>
+                <option value="">한국환경정책·평가연구원</option>
+            </select>
+        </div>    
+    </main>
+    <footer class="ft">
+        <p class="copy mo">
+           (우)30103 세종특별자치시 도움6로 11 정부세종청사 6동<br>
+            Copyright Ministry of Environment. All Rights Reserved.
+        </p> 
+        <div class="ftWrap desk">
+            <p class="copy desk">
+                (우)30103 세종특별자치시 도움6로 11 정부세종청사 6동 고객지원센터(민원실) : 1577-8866, 홈페이지 장애문의 : 044-201-6481 <br>Copyright Ministry of Environment. All Rights Reserved.
+            </p>  
+            <ul class="ftLink desk">
+                <li><a href="http://www.facebook.com/mevpr" class="item1"></a></li>
+                <li><a href="https://twitter.com/mevpr" class="item2"></a></li>
+                <li><a href="https://blog.naver.com/mesns" class="item3"></a></li>
+                <li><a href="https://www.youtube.com/user/mevpr" class="item4"></a></li>
+            </ul>
+        </div>
+    </footer> 
+</body>
+</html>
