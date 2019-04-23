@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Park Soeun Portolio</title>
+    <link rel="stylesheet" href="reset.css">
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link href="https://fonts.googleapis.com/css?family=Crete+Round|Nanum+Gothic+Coding|Noto+Sans+KR|Roboto|Ubuntu" rel="stylesheet">
+    
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon16.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon32.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon48.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon64.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon128.png">
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon150.png">
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta name="msapplication-TileImage" content="./ico/favicon144.png">
+    <link rel="apple-touch-icon" size="120X120" href="./ico/favicon120.png">
+    <link rel="apple-touch-icon" size="57X57" href="./ico/favicon57.png">
+    <link rel="apple-touch-icon" size="72X72" href="./ico/favicon72.png">
+    <link rel="apple-touch-icon" size="114X114" href="./ico/favicon114.png">
+    <link rel="apple-touch-icon" size="180X180" href="./ico/favicon180.png">
+    <link rel="apple-touch-icon" size="152X152" href="./ico/favicon152.png">
+    <link rel="apple-touch-icon" size="196X196" href="./ico/favicon196.png">
+    <link rel="apple-touch-icon" size="167X167" href="./ico/favicon167.png">
+   
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="application-name" content="SOEUN PORTFOLIO Web Site">
+    <meta name="author" content="SoeunPark">
+    <meta name="description" content="SOEUN PORTFOLIO Mainpage">
+    <meta name="generator" content="Brackets">
+    <meta name="keywords" content="SOEUN PORTFOLIO, soeun portfolio">
+    
+    <style>
+    body, html { -ms-overflow-style:none; }
+    ::-webkit-scrollbar { display: none; }
+    ::-o-scrollbar { display: none; }
+/*
+    font-family: 'Noto Sans KR', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
+    font-family: 'Nanum Gothic Coding', monospace;
+    font-family: 'Crete Round', serif;
+    font-family: 'Roboto', sans-serif;    
+*/
+    @media screen and (max-width:767px) {
+        .container { width: 100%; height: 100%; background: #ada9d4; }
+        
+        .lstBox { width: 40px; height: 40px; background: transparent; float: right; position: relative; cursor: pointer; margin-right: 10%; }
+        .lst { width: 40px; height: 3px; background: #fff; border-radius: 3px; position: absolute; transition: 0.4s; z-index: 10; }
+        .lst.item1 { top: 36px; }
+        .lst.item2 { top: 47px; }
+        .lst.item3 { top: 58px; }  
+        
+        .hd { width: 100%; height: 100px; }
+        .logo { width: 58px; height: 40px; display: block; padding-top: 30px; float: left; margin-left: 10%; }
+        .logo img { width: 100%; }
+        
+        .raItem { display: none; }
+        .contents { width: 100%; margin: 0 auto; padding-bottom: 20vw; background: #ada9d4; }
+        .raBox { display: none; }
+        .tit { font-size: 2.5rem; text-align: center; color: #fff; font-family: 'Crete Round', serif; font-style: italic; position: relative; margin-top: 5vw; }
+        .tit:before { content: ""; width: 100%; height: 4px; background: #f9d763; position: absolute; bottom: 45%; }
+        #ra01:checked ~ .raBox.item1 { display: block; }
+        #ra02:checked ~ .raBox.item2 { display: block; }
+        #ra03:checked ~ .raBox.item3 { display: block; }
+        #ra04:checked ~ .raBox.item4 { display: block; }
+        
+        .btnBox { width: 90%; margin: 0 auto; height: 40px; margin-top: 10vw; }
+        .btnBox li { float: left; width: 25%; height: 40px; }
+        .btnBox li label { display: block; width: 100%; height: 40px; line-height: 40px; border-top: 1px solid #fff; border-bottom: 1px solid #fff; border-left: 1px solid #fff; text-align: center; color: #fff; font-size: 0.8rem; }
+        .btnBox li:last-child label { border-right: 1px solid #fff; }
+        #ra01:checked ~ .btnBox li.item1 label { background: #f9d763; color: #333; }
+        #ra02:checked ~ .btnBox li.item2 label { background: #f9d763; color: #333; }
+        #ra03:checked ~ .btnBox li.item3 label { background: #f9d763; color: #333; }
+        #ra04:checked ~ .btnBox li.item4 label { background: #f9d763; color: #333; }
+        
+        .raBox { width: 90%; margin: 0 auto; margin-top: 3vw; }
+        .raBox.item1 { column-count: 1; }
+        .imgBox { width: 100%; margin-right: 5%; margin-top: 1.5vw; }
+        .raBox.item1 .imgBox { width: 100%; margin-right: 0; }
+        .imgBox figure { position: relative; width: 100%; }
+        .imgBox figure a { display: block; width: 100%; height: 100%; }
+        .imgBox figure img { width: 100%; height: auto; }
+        .imgBox figure figcaption { position: absolute; width: 100%; height: 98%; line-height: 100%; top: 0; right: 0; background: rgba(0, 0, 0, 0.6); text-align: center; z-index: 10; }
+        .imgBox figure figcaption .title { font-size: 0.7rem; color: #fff; padding: 10% 10%; word-break: keep-all; }
+        .imgBox figure figcaption .com { font-size: 0.6rem; color: #fff; padding: 0 10%; word-break: keep-all; }
+        .imgBox figure figcaption .com span { color: #f9d763; }
+        .imgBox.mobile .title { padding-top: 70%; }
+        .imgBox.mobile figcaption { height: 99.5%; }
+        
+        
+        .menuBox { position: fixed; top: 0; right: -100%; z-index: -10; background: #ada9d4; width: 100%; height: 100%; transition-duration: 0.8s; }
+        .menuBox .menu { margin-top: 25vh; position: relative; display: flex; justify-content: center; align-items: center; }
+        .menuBox .menu .menuLst { position: relative; z-index: 10; }
+        .menuBox .menu .menuLst a { display: flex; width: 100%; height: 100%; margin-top: -100%; opacity: 0; transition-duration: 0.6s; transition-delay: 0.4s; flex-direction: column; align-items: flex-start; text-align: center; }
+        .menuBox .menu .menuLst a span { text-align: center; color: #fff; font-family: 'Crete Round', serif; font-size: 1.8rem; font-weight: bold; letter-spacing: 5px; overflow: hidden; text-transform: uppercase; position: relative; display: inline-block; margin-top: 10vh; }
+        .menuBox .closeBtn { margin-top: 5vw; margin-right: 5vw; }
+        .menuBox .menu .menuLst a span::before, .menuBox .menu .menuLst a span::after { content: ""; width: 100%; height: 100%; background: #8f89c9; position: absolute; top: 0; left: 0; transform: translate3d(-100%,0,0) translate3d(-1px,0,0); transition: transform 0.7s; transition-timing-function: cubic-bezier(0.7,0,0.3,1); }
+        .menuBox .menu .menuLst a:hover span::before { transform: translate3d(100%, 0, 0) translate3d(1px, 0, 0); }
+        .menuBox .menu .menuLst a:hover span::after { transform: translate3d(0, 0, 0); }
+        .menuBox .menu .menuLst a span::after { top: calc(50% - 2px); height: 4px; }
+        
+        
+    }
+    @media screen and (min-width:768px) and (max-width:959px) {
+        .container { width: 100%; height: 100%; background: #ada9d4; }
+        
+        .lstBox { width: 40px; height: 40px; background: transparent; float: right; position: relative; cursor: pointer; margin-right: 10%; }
+        .lst { width: 40px; height: 3px; background: #fff; border-radius: 3px; position: absolute; transition: 0.4s; z-index: 10; }
+        .lst.item1 { top: 36px; }
+        .lst.item2 { top: 47px; }
+        .lst.item3 { top: 58px; }  
+        
+        .hd { width: 100%; height: 100px; }
+        .logo { width: 58px; height: 40px; display: block; padding-top: 30px; float: left; margin-left: 10%; }
+        .logo img { width: 100%; }
+        
+        .raItem { display: none; }
+        .contents { width: 100%; margin: 0 auto; padding-bottom: 20vw; background: #ada9d4; }
+        .raBox { display: none; }
+        .tit { font-size: 2.5rem; text-align: center; color: #fff; font-family: 'Crete Round', serif; font-style: italic; position: relative; margin-top: 5vw; }
+        .tit:before { content: ""; width: 100%; height: 4px; background: #f9d763; position: absolute; bottom: 45%; }
+        #ra01:checked ~ .raBox.item1 { display: block; }
+        #ra02:checked ~ .raBox.item2 { display: block; }
+        #ra03:checked ~ .raBox.item3 { display: block; }
+        #ra04:checked ~ .raBox.item4 { display: block; }
+        
+        .btnBox { width: 90%; margin: 0 auto; height: 40px; margin-top: 10vw; }
+        .btnBox li { float: left; width: 25%; height: 40px; }
+        .btnBox li label { display: block; width: 100%; height: 40px; line-height: 40px; border-top: 1px solid #fff; border-bottom: 1px solid #fff; border-left: 1px solid #fff; text-align: center; color: #fff; font-size: 0.8rem; }
+        .btnBox li:last-child label { border-right: 1px solid #fff; }
+        #ra01:checked ~ .btnBox li.item1 label { background: #f9d763; color: #333; }
+        #ra02:checked ~ .btnBox li.item2 label { background: #f9d763; color: #333; }
+        #ra03:checked ~ .btnBox li.item3 label { background: #f9d763; color: #333; }
+        #ra04:checked ~ .btnBox li.item4 label { background: #f9d763; color: #333; }
+        
+        .raBox { width: 90%; margin: 0 auto; margin-top: 3vw; }
+        .raBox.item1 { column-count: 2; }
+        .raBox.item3 { column-count: 2; }
+        .imgBox { width: 48%; margin-right: 4%; margin-top: 1.5vw; float: left; }
+        .imgBox:nth-child(2n) { margin-right: 0; }
+        .raBox.item1 .imgBox { width: 100%; }
+        .raBox.item3 .imgBox { width: 100%; }
+        .imgBox figure { position: relative; width: 100%; }
+        .imgBox figure a { display: block; width: 100%; height: 100%; }
+        .imgBox figure img { width: 100%; height: auto; }
+        .imgBox figure figcaption { position: absolute; width: 100%; height: 98%; line-height: 100%; top: 0; right: 0; background: rgba(0, 0, 0, 0.6); text-align: center; z-index: 10; }
+        .imgBox figure figcaption .title { font-size: 1rem; color: #fff; padding: 10% 10%; word-break: keep-all; }
+        .imgBox figure figcaption .com { font-size: 0.8rem; color: #fff; padding: 0 10%; word-break: keep-all; }
+        .imgBox figure figcaption .com span { color: #f9d763; }
+        .imgBox.mobile .title { padding-top: 70%; }
+        .imgBox.mobile figcaption { height: 99.5%; }
+        
+        
+        .menuBox { position: fixed; top: 0; right: -100%; z-index: -10; background: #ada9d4; width: 100%; height: 100%; transition-duration: 0.8s; }
+        .menuBox .menu { margin-top: 25vh; position: relative; display: flex; justify-content: center; align-items: center; }
+        .menuBox .menu .menuLst { position: relative; z-index: 10; }
+        .menuBox .menu .menuLst a { display: flex; width: 100%; height: 100%; margin-top: -100%; opacity: 0; transition-duration: 0.6s; transition-delay: 0.4s; flex-direction: column; align-items: flex-start; text-align: center; }
+        .menuBox .menu .menuLst a span { text-align: center; color: #fff; font-family: 'Crete Round', serif; font-size: 1.8rem; font-weight: bold; letter-spacing: 5px; overflow: hidden; text-transform: uppercase; position: relative; display: inline-block; margin-top: 10vh; }
+        .menuBox .closeBtn { margin-top: 5vw; margin-right: 5vw; }
+        .menuBox .menu .menuLst a span::before, .menuBox .menu .menuLst a span::after { content: ""; width: 100%; height: 100%; background: #8f89c9; position: absolute; top: 0; left: 0; transform: translate3d(-100%,0,0) translate3d(-1px,0,0); transition: transform 0.7s; transition-timing-function: cubic-bezier(0.7,0,0.3,1); }
+        .menuBox .menu .menuLst a:hover span::before { transform: translate3d(100%, 0, 0) translate3d(1px, 0, 0); }
+        .menuBox .menu .menuLst a:hover span::after { transform: translate3d(0, 0, 0); }
+        .menuBox .menu .menuLst a span::after { top: calc(50% - 2px); height: 4px; }
+    }
+    @media screen and (min-width:960px) and (max-width:1024px) {
+        .container { width: 100%; height: 100%; background: #ada9d4; }
+        label { cursor: pointer; }
+        .lstBox { width: 40px; height: 40px; background: transparent; float: right; position: relative; cursor: pointer; margin-right: 10%; }
+        .lst { width: 40px; height: 3px; background: #fff; border-radius: 3px; position: absolute; transition: 0.4s; z-index: 10; }
+        .lst.item1 { top: 36px; }
+        .lst.item2 { top: 47px; }
+        .lst.item3 { top: 58px; }  
+        
+        .hd { width: 100%; height: 100px; }
+        .logo { width: 58px; height: 40px; display: block; padding-top: 30px; float: left; margin-left: 10%; }
+        .logo img { width: 100%; }
+        
+        .raItem { display: none; }
+        .contents { width: 100%; margin: 0 auto; padding-bottom: 20vw; background: #ada9d4; }
+        .raBox { display: none; }
+        .tit { font-size: 2.5rem; text-align: center; color: #fff; font-family: 'Crete Round', serif; font-style: italic; position: relative; margin-top: 5vw; }
+        .tit:before { content: ""; width: 100%; height: 4px; background: #f9d763; position: absolute; bottom: 45%; }
+        #ra01:checked ~ .raBox.item1 { display: block; }
+        #ra02:checked ~ .raBox.item2 { display: block; }
+        #ra03:checked ~ .raBox.item3 { display: block; }
+        #ra04:checked ~ .raBox.item4 { display: block; }
+        
+        .btnBox { width: 90%; margin: 0 auto; height: 40px; margin-top: 10vw; }
+        .btnBox li { float: left; width: 25%; height: 40px; }
+        .btnBox li label { display: block; width: 100%; height: 40px; line-height: 40px; border-top: 1px solid #fff; border-bottom: 1px solid #fff; border-left: 1px solid #fff; text-align: center; color: #fff; font-size: 0.8rem; }
+        .btnBox li:last-child label { border-right: 1px solid #fff; }
+        #ra01:checked ~ .btnBox li.item1 label { background: #f9d763; color: #333; }
+        #ra02:checked ~ .btnBox li.item2 label { background: #f9d763; color: #333; }
+        #ra03:checked ~ .btnBox li.item3 label { background: #f9d763; color: #333; }
+        #ra04:checked ~ .btnBox li.item4 label { background: #f9d763; color: #333; }
+        
+        .raBox { width: 90%; margin: 0 auto; margin-top: 3vw; }
+        .raBox.item1 { column-count: 2; }
+        .raBox.item3 { column-count: 2; }
+        .imgBox { width: 48%; margin-right: 4%; margin-top: 1.5vw; float: left; }
+        .imgBox:nth-child(2n) { margin-right: 0; }
+        .raBox.item1 .imgBox { width: 100%; }
+        .raBox.item3 .imgBox { width: 100%; }
+        .imgBox figure { position: relative; width: 100%; }
+        .imgBox figure a { display: block; width: 100%; height: 100%; }
+        .imgBox figure img { width: 100%; height: auto; }
+        .imgBox figure figcaption { position: absolute; width: 100%; height: 98%; line-height: 100%; top: 0; right: 0; background: rgba(0, 0, 0, 0.6); text-align: center; z-index: 10; }
+        .imgBox figure figcaption .title { font-size: 1rem; color: #fff; padding: 10% 10%; word-break: keep-all; }
+        .imgBox figure figcaption .com { font-size: 0.8rem; color: #fff; padding: 0 10%; word-break: keep-all; }
+        .imgBox figure figcaption .com span { color: #f9d763; }
+        .imgBox.mobile .title { padding-top: 70%; }
+        .imgBox.mobile figcaption { height: 99.5%; }
+        
+        
+        .menuBox { position: fixed; top: 0; right: -100%; z-index: -10; background: #ada9d4; width: 100%; height: 100%; transition-duration: 0.8s; }
+        .menuBox .menu { margin-top: 25vh; position: relative; display: flex; justify-content: center; align-items: center; }
+        .menuBox .menu .menuLst { position: relative; z-index: 10; }
+        .menuBox .menu .menuLst a { display: flex; width: 100%; height: 100%; margin-top: -100%; opacity: 0; transition-duration: 0.6s; transition-delay: 0.4s; flex-direction: column; align-items: flex-start; text-align: center; }
+        .menuBox .menu .menuLst a span { text-align: center; color: #fff; font-family: 'Crete Round', serif; font-size: 1.8rem; font-weight: bold; letter-spacing: 5px; overflow: hidden; text-transform: uppercase; position: relative; display: inline-block; margin-top: 10vh; }
+        .menuBox .closeBtn { margin-top: 5vw; margin-right: 5vw; }
+        .menuBox .menu .menuLst a span::before, .menuBox .menu .menuLst a span::after { content: ""; width: 100%; height: 100%; background: #8f89c9; position: absolute; top: 0; left: 0; transform: translate3d(-100%,0,0) translate3d(-1px,0,0); transition: transform 0.7s; transition-timing-function: cubic-bezier(0.7,0,0.3,1); }
+        .menuBox .menu .menuLst a:hover span::before { transform: translate3d(100%, 0, 0) translate3d(1px, 0, 0); }
+        .menuBox .menu .menuLst a:hover span::after { transform: translate3d(0, 0, 0); }
+        .menuBox .menu .menuLst a span::after { top: calc(50% - 2px); height: 4px; }      
+    }
+    @media screen and (min-width:1025px) {
+        .container { width: 100%; height: 100%; background: #ada9d4; }
+        label { cursor: pointer; }
+        .lstBox { width: 40px; height: 40px; background: transparent; float: right; position: relative; cursor: pointer; margin-top: 30px; margin-right: 10%; }
+        .lst { width: 40px; height: 3px; background: #fff; border-radius: 3px; position: absolute; transition: 0.4s; z-index: 10; }
+        .lst.item1 { top: 10px; }
+        .lst.item2 { top: 18px; }
+        .lst.item3 { top: 26px; }  
+        
+        .hd { width: 100%; height: 100px; }
+        .logo { width: 58px; height: 40px; display: block; padding-top: 30px; float: left; margin-left: 10%; }
+        .logo img { width: 100%; }
+        
+        .raItem { display: none; }
+        .contents { width: 100%; margin: 0 auto; padding-bottom: 10vw; background: #ada9d4; }
+        .raBox { display: none; }
+        .tit { font-size: 3.5rem; text-align: center; color: #fff; font-family: 'Crete Round', serif; font-style: italic; position: relative; margin-top: 5vw; }
+        .tit:before { content: ""; width: 100%; height: 4px; background: #f9d763; position: absolute; bottom: 45%; }
+        #ra01:checked ~ .raBox.item1 { display: block; }
+        #ra02:checked ~ .raBox.item2 { display: block; }
+        #ra03:checked ~ .raBox.item3 { display: block; }
+        #ra04:checked ~ .raBox.item4 { display: block; }
+        
+        .btnBox { width: 60%; margin: 0 auto; height: 40px; margin-top: 10vw; }
+        .btnBox li { float: left; width: 25%; height: 40px; }
+        .btnBox li label { display: block; width: 100%; height: 40px; line-height: 40px; border-top: 1px solid #fff; border-bottom: 1px solid #fff; border-left: 1px solid #fff; text-align: center; color: #fff; font-size: 0.8rem; }
+        .btnBox li:last-child label { border-right: 1px solid #fff; }
+        #ra01:checked ~ .btnBox li.item1 label { background: #f9d763; color: #333; }
+        #ra02:checked ~ .btnBox li.item2 label { background: #f9d763; color: #333; }
+        #ra03:checked ~ .btnBox li.item3 label { background: #f9d763; color: #333; }
+        #ra04:checked ~ .btnBox li.item4 label { background: #f9d763; color: #333; }
+        
+        .raBox { width: 60%; margin: 0 auto; margin-top: 3vw; min-height: 100%; }
+        .raBox.item1 { column-count: 3; }
+        .raBox.item2, .raBox.item4 { height: 40vh; }
+        .raBox.item3 { height: 250vh; }
+        .imgBox { width: 30%; perspective: 1200px; display: inline-block; cursor: pointer; margin-right: 5%; float: left; margin-top: 1.5vw; }
+        .imgBox.item3, .imgBox.item6, .imgBox.item9, .imgBox.item12, .imgBox.item15 { margin-right: 0; }
+        .raBox.item1 .imgBox { width: 100%; margin-right: 0; }
+        .imgBox figure { position: relative; width: 100%; transform-style: preserve-3d; transition: 1s transform; }
+        .imgBox figure a { display: block; width: 100%; height: 100%; }
+        .imgBox figure img { width: 100%; height: 100%; }
+        .imgBox figure figcaption { position: absolute; width: 100%; height: 100%; line-height: 100%; top: 0; transform: rotateY(0.5turn) translateZ(1px); background: #8f89c9; text-align: center; opacity: 0.6; transition: 1s 0.5s opacity; }
+        .imgBox figure figcaption .title { font-size: 0.8rem; color: #fff; padding: 10% 10%; word-break: keep-all; }
+        .imgBox figure figcaption .com { font-size: 0.7rem; color: #fff; padding: 0 10%; word-break: keep-all; }
+        .imgBox figure figcaption .com span { color: #f9d763; }
+        .imgBox.mobile .title { padding-top: 70%; }
+        
+        .imgBox:hover figure { transform: rotateY(0.5turn); }
+        .imgBox:hover figure figcaption { opacity: 1; }
+        
+        
+        .menuBox { position: fixed; top: 0; right: -100%; z-index: -10; background: #ada9d4; width: 100%; height: 100%; transition-duration: 0.8s; }
+        .menuBox .menu { margin-top: 25vh; position: relative; display: flex; justify-content: center; align-items: center; }
+        .menuBox .menu .menuLst { position: relative; z-index: 10; }
+        .menuBox .menu .menuLst a { display: flex; width: 100%; height: 100%; margin-top: -100%; opacity: 0; transition-duration: 0.6s; transition-delay: 0.4s; flex-direction: column; align-items: flex-start; text-align: center; }
+        .menuBox .menu .menuLst a span { text-align: center; color: #fff; font-family: 'Crete Round', serif; font-size: 1.8rem; font-weight: bold; letter-spacing: 5px; overflow: hidden; text-transform: uppercase; position: relative; display: inline-block; margin-top: 10vh; }
+        .menuBox .closeBtn { margin-top: 5vw; margin-right: 5vw; }
+        .menuBox .menu .menuLst a span::before, .menuBox .menu .menuLst a span::after { content: ""; width: 100%; height: 100%; background: #8f89c9; position: absolute; top: 0; left: 0; transform: translate3d(-100%,0,0) translate3d(-1px,0,0); transition: transform 0.7s; transition-timing-function: cubic-bezier(0.7,0,0.3,1); }
+        .menuBox .menu .menuLst a:hover span::before { transform: translate3d(100%, 0, 0) translate3d(1px, 0, 0); }
+        .menuBox .menu .menuLst a:hover span::after { transform: translate3d(0, 0, 0); }
+        .menuBox .menu .menuLst a span::after { top: calc(50% - 2px); height: 4px; }   
+        }
+    }
+    </style>
+    <script>
+    $(document).ready(function(){
+        var wd = $("body, html").width();
+        $(".openBtn").click(function(){
+            $(".menuBox").css("right", "0").css("z-index", "99");  
+            if(wd >= 1025) {
+                $(".lstBox .lst.item1").css("top", "47px").css("transform", "rotate(-45deg)");
+                $(".lstBox .lst.item2").css("display", "none");
+                $(".lstBox .lst.item3").css("top", "47px").css("transform", "rotate(45deg)");
+            } else {
+                $(".lstBox .lst.item1").css("top", "18px").css("transform", "rotate(-45deg)");
+                $(".lstBox .lst.item2").css("display", "none");
+                $(".lstBox .lst.item3").css("top", "18px").css("transform", "rotate(45deg)");
+            }
+        });
+        $(".closeBtn").click(function(){
+            $(".menuBox").css("right", "-100%").css("z-index", "-10"); 
+            if(wd >= 1025) {
+                $(".lstBox .lst.item1").css("top", "36px").css("transform", "rotate(0deg)");
+                $(".lstBox .lst.item2").css("display", "block").css("top", "47px");
+                $(".lstBox .lst.item3").css("top", "58px").css("transform", "rotate(0deg)");
+            } else {
+                $(".lstBox .lst.item1").css("top", "10px").css("transform", "rotate(0deg)");
+                $(".lstBox .lst.item2").css("display", "block").css("top", "18px");
+                $(".lstBox .lst.item3").css("top", "26px").css("transform", "rotate(0deg)");
+            }
+        });
+        $(".openBtn").click(function(){
+            var intv = setTimeout(function(){
+                $(".menuBox .menuLst a").css("margin-top", "0px").css("opacity", "1");    
+            }); 
+        }); 
+    });
+    </script>
+    <script src="./js/about_basic.js"></script>
+    <script src="./js/imagesloaded.pkgd.min.js"></script>
+    <script src="./js/TweenMax.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <header class="hd">
+        <a href="index.html" class="logo">
+            <img src="./img/logo.png" alt="로고">
+        </a>
+        <div class="lstBox openBtn">
+            <span class="lst item1"></span>
+            <span class="lst item2"></span>
+            <span class="lst item3"></span>
+        </div>     
+    </header>
+    <main class="contents">
+        <h1 class="tit">Portfolio</h1>
+        <input type="radio" name="ra01" class="raItem" id="ra01" checked>
+        <input type="radio" name="ra01" class="raItem" id="ra02">
+        <input type="radio" name="ra01" class="raItem" id="ra03">
+        <input type="radio" name="ra01" class="raItem" id="ra04">
+        <ul class="btnBox">
+            <li class="item1"><label for="ra01">All</label></li>
+            <li class="item2"><label for="ra02">반응형</label></li>
+            <li class="item3"><label for="ra03">모바일형</label></li>
+            <li class="item4"><label for="ra04">데스크탑형</label></li>
+        </ul>
+        <div class="raBox item1">
+            <div class="imgBox item1">
+                <figure>
+                    <a href="http://soeun920.dothome.co.kr/r4" target="_blank">
+                        <img src="./img/portfolio9.png" alt="비즈굿">
+                        <figcaption>
+                            <h2 class="title">비즈굿 웹사이트 리뉴얼</h2>
+                            <p class="com">비즈굿 웹사이트를 반응형으로 리뉴얼했습니다.<br>
+                                <span>Production Period</span>&nbsp;&nbsp;&nbsp;2019.04.10 ~ 2019.04.15
+                            </p>
+                        </figcaption>    
+                    </a>
+                </figure>
+            </div>
+            <div class="imgBox item2">
+                <figure>
+                    <a href="http://ddsoeun.github.io/r3" target="_blank">
+                        <img src="./img/portfolio8.png" alt="한국색채연구소">
+                        <figcaption>
+                            <h2 class="title">한국색채연구소 웹사이트 리뉴얼</h2>
+                            <p class="com">한국색채연구소 웹사이트를 반응형으로 리뉴얼했습니다.<br>
+                                <span>Production Period</span>&nbsp;&nbsp;&nbsp;2019.04.04 ~ 2019.04.09
+                            </p>
+                        </figcaption>
+                    </a>
+                </figure>
+            </div> 
+            <div class="imgBox item3">
+                <figure>
+                    <a href="http://ddsoeun.github.io/r2" target="_blank">
+                        <img src="./img/portfolio7.png" alt="공차">
+                        <figcaption>
+                            <h2 class="title">공차 웹사이트 리뉴얼</h2>
+                            <p class="com">공차 웹사이트를 반응형으로 리뉴얼했습니다. 3D 애니메이션을 가미했습니다.<br>
+                                <span>Production Period</span>&nbsp;&nbsp;&nbsp;2019.03.28 ~ 2019.04.03
+                            </p>
+                        </figcaption>
+                    </a>
+                </figure>
+            </div> 
+            <div class="imgBox item4">
+                <figure>
+                    <a href="http://ddsoeun.github.io/r1" target="_blank">
+                        <img src="./img/portfolio6.png" alt="삼육외국어학원">
+                        <figcaption>
+                            <h2 class="title">삼육외국어학원 웹사이트 리뉴얼</h2>
+                            <p class="com">삼육외국어학원 웹사이트를 반응형으로 리뉴얼했습니다.<br>
+                                <span>Production Period</span>&nbsp;&nbsp;&nbsp;2019.03.21 ~ 2019.03.27
+                            </p>
+                        </figcaption>
+                    </a>
+                </figure>
+            </div> 
+             <div class="imgBox item5">
+                <figure>
+                    <a href="http://ddsoeun.github.io/g2" target="_blank">
+                        <img src="./img/portfolio5.png" alt="환경부">
+                        <figcaption>
+                            <h2 class="title">환경부 웹사이트 리뉴얼</h2>
+                            <p class="com">환경부 웹사이트를 반응형으로 리뉴얼했습니다.<br>
+                                <span>Production Period</span>&nbsp;&nbsp;&nbsp;2019.03.14 ~ 2019.03.21
+                            </p>
+                        </figcaption>
+                    </a>
+                </figure>
+            </div>
+            <div class="imgBox item6">
+                <figure>
+                    <a href="http://soeun920.dothome.co.kr/g1" target="_blank">
+                        <img src="./img/portfolio4.png" alt="계룡시청">
+                        <figcaption>
+                            <h2 class="title">계룡시청 웹사이트 리뉴얼</h2>
+                            <p class="com">계룡시청 웹사이트를 리뉴얼했습니다.<br>
+                                <span>Production Period</span>&nbsp;&nbsp;&nbsp;2019.02.11 ~ 2019.02.19
+                            </p>
+                        </figcaption>
+                    </a>
+                </figure>
+            </div>
+            <div class="imgBox item7">
+                <figure>
+                    <a href="http://soeun920.dothome.co.kr/c3" target="_blank">
+                        <img src="./img/portfolio3.png" alt="사회복지법인계룡">
+                        <figcaption>
+                            <h2 class="title">사회복지법인계룡 웹사이트 리뉴얼</h2>
+                            <p class="com">사회복지법인계룡 웹사이트를 클라이언트의 요구사항에 따라 리뉴얼했습니다.<br>
+                                <span>Production Period</span>&nbsp;&nbsp;&nbsp;2019.01.17 ~ 2019.01.29
+                            </p>
+                        </figcaption>
+                    </a>
+                </figure>
+            </div>
+            <div class="imgBox item8">
+                <figure>
+                    <a href="http://soeun920.dothome.co.kr/c2" target="_blank">
+                        <img src="./img/portfolio2.png" alt="(주)두산">
+                        <figcaption>
+                            <h2 class="title">(주)두산 웹사이트 리뉴얼</h2>
+                            <p class="com">(주)두산 웹사이트를 리뉴얼했습니다.<br>
+                                <span>Production Period</span>&nbsp;&nbsp;&nbsp;2019.01.03 ~ 2019.01.16
+                            </p>
+                        </figcaption>
+                    </a>
+                </figure>
+            </div>
+            <div class="imgBox item9">
+                <figure>
+                    <a href="http://ddsoeun.github.io/c1" target="_blank">
+                        <img src="./img/portfolio1.png" alt="스마트이비인후과">
+                        <figcaption>
+                            <h2 class="title">스마트이비인후과 웹사이트 리뉴얼</h2>
+                            <p class="com">스마트이비인후과 웹사이트를 리뉴얼했습니다.<br>
+                                <span>Production Period</span>&nbsp;&nbsp;&nbsp;2019.12.24 ~ 2019.01.11
+                            </p>
+                        </figcaption>
+                    </a>
+                </figure>
+            </div>
+            <div class="imgBox item10 mobile">
+                <figure>
+                    <a href="http://ddsoeun.github.io/m1" target="_blank">
+                        <img src="./img/mobile1.png" alt="계룡시청">
+                        <figcaption>
+                            <h2 class="title">계룡시청 모바일 웹사이트 리뉴얼</h2>
+                            <p class="com">계룡시청 모바일 웹사이트를 리뉴얼했습니다.<br>
+                                <span>Production Period</span>&nbsp;&nbsp;&nbsp;2019.02.19 ~ 2019.02.22
+                            </p>
+                        </figcaption>
+                    </a>
+                </figure>
+            </div> 
+            <div class="imgBox item11 mobile">
+                <figure>
+                    <a href="http://ddsoeun.github.io/m2" target="_blank">
+                        <img src="./img/mobile2.png" alt="하나투어">
+                        <figcaption>
+                            <h2 class="title">하나투어 모바일 웹사이트 리뉴얼</h2>
+                            <p class="com">하나투어 모바일 웹사이트를 리뉴얼했습니다.<br>
+                                <span>Production Period</span>&nbsp;&nbsp;&nbsp;2019.02.25 ~ 2019.02.27
+                            </p>
+                        </figcaption>
+                    </a>
+                </figure>
+            </div>
+            <div class="imgBox item12 mobile">
+                <figure>
+                    <a href="http://ddsoeun.github.io/m3" target="_blank">
+                        <img src="./img/mobile3.png" alt="크리스탈">
+                        <figcaption>
+                            <h2 class="title">크리스탈 모바일 웹사이트 제작</h2>
+                            <p class="com">크리스탈 모바일 웹사이트를 제작했습니다.<br>
+                                <span>Production Period</span>&nbsp;&nbsp;&nbsp;2019.02.27 ~ 2019.02.28
+                            </p>
+                        </figcaption>
+                    </a>
+                </figure>
+            </div>
+            <div class="imgBox item13 mobile">
+                <figure>
+                    <a href="http://ddsoeun.github.io/m6" target="_blank">
+                        <img src="./img/mobile6.png" alt="스파오">
+                        <figcaption>
+                            <h2 class="title">스파오 모바일 웹사이트 리뉴얼</h2>
+                            <p class="com">스파오 모바일 웹사이트를 리뉴얼했습니다.<br>
+                                <span>Production Period</span>&nbsp;&nbsp;&nbsp;2019.03.06 ~ 2019.03.08
+                            </p>
+                        </figcaption>
+                    </a>
+                </figure>
+            </div>
+            <div class="imgBox item14 mobile">
+                <figure>
+                    <a href="http://ddsoeun.github.io/m4" target="_blank">
+                        <img src="./img/mobile4.png" alt="클리오">
+                        <figcaption>
+                            <h2 class="title">클리오 모바일 웹사이트 리뉴얼</h2>
+                            <p class="com">클리오 모바일 웹사이트를 리뉴얼했습니다.<br>
+                                <span>Production Period</span>&nbsp;&nbsp;&nbsp;2019.03.04 ~ 2019.03.05
+                            </p>
+                        </figcaption>
+                    </a>
+                </figure>
+            </div>
+            <div class="imgBox item15 mobile">
+                <figure>
+                    <a href="http://ddsoeun.github.io/m5" target="_blank">
+                        <img src="./img/mobile5.png" alt="마블">
+                        <figcaption>
+                            <h2 class="title">마블 모바일 웹사이트 제작</h2>
+                            <p class="com">마블 모바일 웹사이트를 제작했습니다.<br>
+                                <span>Production Period</span>&nbsp;&nbsp;&nbsp;2019.03.06 ~ 2019.03.07
+                            </p>
+                        </figcaption>
+                    </a>
+                </figure>
+            </div>
+            <div class="imgBox item16 mobile">
+                <figure>
+                    <a href="http://ddsoeun.github.io/m7" target="_blank">
+                        <img src="./img/mobile7.png" alt="고양이는신이다">
+                        <figcaption>
+                            <h2 class="title">고양이는신이다 모바일 웹사이트 제작</h2>
+                            <p class="com">고양이 커뮤니티 '고양이는 신이다' 모바일 웹사이트를 제작했습니다.<br>
+                                <span>Production Period</span>&nbsp;&nbsp;&nbsp;2019.03.07 ~ 2019.03.08
+                            </p>
+                        </figcaption>
+                    </a>
+                </figure>
+            </div>
+            <div class="imgBox item17 mobile">
+                <figure>
+                    <a href="http://ddsoeun.github.io/m8" target="_blank">
+                        <img src="./img/mobile8.png" alt="사회복지법인계룡">
+                        <figcaption>
+                            <h2 class="title">사회복지법인계룡 모바일 웹사이트 제작</h2>
+                            <p class="com">사회복지법인계룡 모바일 웹사이트를 제작했습니다.<br>
+                                <span>Production Period</span>&nbsp;&nbsp;&nbsp;2019.01.30 ~ 2019.02.01
+                            </p>
+                        </figcaption>
+                    </a>
+                </figure>
+            </div>
+        </div>
+        <div class="raBox item2">
+             <div class="imgBox item1">
+                <figure>
+                    <a href="http://soeun920.dothome.co.kr/r4" target="_blank">
+                        <img src="./img/portfolio9.png" alt="비즈굿">
+                        <figcaption>
+                            <h2 class="title">비즈굿 웹사이트 리뉴얼</h2>
+                            <p class="com">비즈굿 웹사이트를 반응형으로 리뉴얼했습니다.<br>
+                                <span>Production Period</span>&nbsp;&nbsp;&nbsp;2019.04.10 ~ 2019.04.15
+                            </p>
+                        </figcaption>    
+                    </a>
+                </figure>
+            </div>
+            <div class="imgBox item2">
+                <figure>
+                    <a href="http://ddsoeun.github.io/r3" target="_blank">
+                        <img src="./img/portfolio8.png" alt="한국색채연구소">
+                        <figcaption>
+                            <h2 class="title">한국색채연구소 웹사이트 리뉴얼</h2>
+                            <p class="com">한국색채연구소 웹사이트를 반응형으로 리뉴얼했습니다.<br>
+                                <span>Production Period</span>&nbsp;&nbsp;&nbsp;2019.04.04 ~ 2019.04.09
+                            </p>
+                        </figcaption>
+                    </a>
+                </figure>
+            </div> 
+            <div class="imgBox item3">
+                <figure>
+                    <a href="http://ddsoeun.github.io/r2" target="_blank">
+                        <img src="./img/portfolio7.png" alt="공차">
+                        <figcaption>
+                            <h2 class="title">공차 웹사이트 리뉴얼</h2>
+                            <p class="com">공차 웹사이트를 반응형으로 리뉴얼했습니다. 3D 애니메이션을 가미했습니다.<br>
+                                <span>Production Period</span>&nbsp;&nbsp;&nbsp;2019.03.28 ~ 2019.04.03
+                            </p>
+                        </figcaption>
+                    </a>
+                </figure>
+            </div> 
+            <div class="imgBox item4">
+                <figure>
+                    <a href="http://ddsoeun.github.io/r1" target="_blank">
+                        <img src="./img/portfolio6.png" alt="삼육외국어학원">
+                        <figcaption>
+                            <h2 class="title">삼육외국어학원 웹사이트 리뉴얼</h2>
+                            <p class="com">삼육외국어학원 웹사이트를 반응형으로 리뉴얼했습니다.<br>
+                                <span>Production Period</span>&nbsp;&nbsp;&nbsp;2019.03.21 ~ 2019.03.27
+                            </p>
+                        </figcaption>
+                    </a>
+                </figure>
+            </div> 
+             <div class="imgBox item5">
+                <figure>
+                    <a href="http://ddsoeun.github.io/g2" target="_blank">
+                        <img src="./img/portfolio5.png" alt="환경부">
+                        <figcaption>
+                            <h2 class="title">환경부 웹사이트 리뉴얼</h2>
+                            <p class="com">환경부 웹사이트를 반응형으로 리뉴얼했습니다.<br>
+                                <span>Production Period</span>&nbsp;&nbsp;&nbsp;2019.03.14 ~ 2019.03.21
+                            </p>
+                        </figcaption>
+                    </a>
+                </figure>
+            </div>
+        </div>
+        <div class="raBox item3">
+            <div class="imgBox item1 mobile">
+                <figure>
+                    <a href="http://ddsoeun.github.io/m1" target="_blank">
+                        <img src="./img/mobile1.png" alt="계룡시청">
+                        <figcaption>
+                            <h2 class="title">계룡시청 모바일 웹사이트 리뉴얼</h2>
+                            <p class="com">계룡시청 모바일 웹사이트를 리뉴얼했습니다.<br>
+                                <span>Production Period</span>&nbsp;&nbsp;&nbsp;2019.02.19 ~ 2019.02.22
+                            </p>
+                        </figcaption>
+                    </a>
+                </figure>
+            </div> 
+            <div class="imgBox item2 mobile">
+                <figure>
+                    <a href="http://ddsoeun.github.io/m2" target="_blank">
+                        <img src="./img/mobile2.png" alt="하나투어">
+                        <figcaption>
+                            <h2 class="title">하나투어 모바일 웹사이트 리뉴얼</h2>
+                            <p class="com">하나투어 모바일 웹사이트를 리뉴얼했습니다.<br>
+                                <span>Production Period</span>&nbsp;&nbsp;&nbsp;2019.02.25 ~ 2019.02.27
+                            </p>
+                        </figcaption>
+                    </a>
+                </figure>
+            </div>
+            <div class="imgBox item3 mobile">
+                <figure>
+                    <a href="http://ddsoeun.github.io/m3" target="_blank">
+                        <img src="./img/mobile3.png" alt="크리스탈">
+                        <figcaption>
+                            <h2 class="title">크리스탈 모바일 웹사이트 제작</h2>
+                            <p class="com">크리스탈 모바일 웹사이트를 제작했습니다.<br>
+                                <span>Production Period</span>&nbsp;&nbsp;&nbsp;2019.02.27 ~ 2019.02.28
+                            </p>
+                        </figcaption>
+                    </a>
+                </figure>
+            </div>
+            <div class="imgBox item4 mobile">
+                <figure>
+                    <a href="http://ddsoeun.github.io/m6" target="_blank">
+                        <img src="./img/mobile6.png" alt="스파오">
+                        <figcaption>
+                            <h2 class="title">스파오 모바일 웹사이트 리뉴얼</h2>
+                            <p class="com">스파오 모바일 웹사이트를 리뉴얼했습니다.<br>
+                                <span>Production Period</span>&nbsp;&nbsp;&nbsp;2019.03.06 ~ 2019.03.08
+                            </p>
+                        </figcaption>
+                    </a>
+                </figure>
+            </div>
+            <div class="imgBox item5 mobile">
+                <figure>
+                    <a href="http://ddsoeun.github.io/m4" target="_blank">
+                        <img src="./img/mobile4.png" alt="클리오">
+                        <figcaption>
+                            <h2 class="title">클리오 모바일 웹사이트 리뉴얼</h2>
+                            <p class="com">클리오 모바일 웹사이트를 리뉴얼했습니다.<br>
+                                <span>Production Period</span>&nbsp;&nbsp;&nbsp;2019.03.04 ~ 2019.03.05
+                            </p>
+                        </figcaption>
+                    </a>
+                </figure>
+            </div>
+            <div class="imgBox item6 mobile">
+                <figure>
+                    <a href="http://ddsoeun.github.io/m5" target="_blank">
+                        <img src="./img/mobile5.png" alt="마블">
+                        <figcaption>
+                            <h2 class="title">마블 모바일 웹사이트 제작</h2>
+                            <p class="com">마블 모바일 웹사이트를 제작했습니다.<br>
+                                <span>Production Period</span>&nbsp;&nbsp;&nbsp;2019.03.06 ~ 2019.03.07
+                            </p>
+                        </figcaption>
+                    </a>
+                </figure>
+            </div>
+            <div class="imgBox item7 mobile">
+                <figure>
+                    <a href="http://ddsoeun.github.io/m7" target="_blank">
+                        <img src="./img/mobile7.png" alt="고양이는신이다">
+                        <figcaption>
+                            <h2 class="title">고양이는신이다 모바일 웹사이트 제작</h2>
+                            <p class="com">고양이 커뮤니티 '고양이는 신이다' 모바일 웹사이트를 제작했습니다.<br>
+                                <span>Production Period</span>&nbsp;&nbsp;&nbsp;2019.03.07 ~ 2019.03.08
+                            </p>
+                        </figcaption>
+                    </a>
+                </figure>
+            </div>
+            <div class="imgBox item8 mobile">
+                <figure>
+                    <a href="http://ddsoeun.github.io/m8" target="_blank">
+                        <img src="./img/mobile8.png" alt="사회복지법인계룡">
+                        <figcaption>
+                            <h2 class="title">사회복지법인계룡 모바일 웹사이트 제작</h2>
+                            <p class="com">사회복지법인계룡 모바일 웹사이트를 제작했습니다.<br>
+                                <span>Production Period</span>&nbsp;&nbsp;&nbsp;2019.01.30 ~ 2019.02.01
+                            </p>
+                        </figcaption>
+                    </a>
+                </figure>
+            </div>    
+        </div>
+        <div class="raBox item4">
+            <div class="imgBox item1">
+                <figure>
+                    <a href="http://soeun920.dothome.co.kr/g1" target="_blank">
+                        <img src="./img/portfolio4.png" alt="계룡시청">
+                        <figcaption>
+                            <h2 class="title">계룡시청 웹사이트 리뉴얼</h2>
+                            <p class="com">계룡시청 웹사이트를 리뉴얼했습니다.<br>
+                                <span>Production Period</span>&nbsp;&nbsp;&nbsp;2019.02.11 ~ 2019.02.19
+                            </p>
+                        </figcaption>
+                    </a>
+                </figure>
+            </div>
+            <div class="imgBox item2">
+                <figure>
+                    <a href="http://soeun920.dothome.co.kr/c3" target="_blank">
+                        <img src="./img/portfolio3.png" alt="사회복지법인계룡">
+                        <figcaption>
+                            <h2 class="title">사회복지법인계룡 웹사이트 리뉴얼</h2>
+                            <p class="com">사회복지법인계룡 웹사이트를 클라이언트의 요구사항에 따라 리뉴얼했습니다.<br>
+                                <span>Production Period</span>&nbsp;&nbsp;&nbsp;2019.01.17 ~ 2019.01.29
+                            </p>
+                        </figcaption>
+                    </a>
+                </figure>
+            </div>
+            <div class="imgBox item3">
+                <figure>
+                    <a href="http://soeun920.dothome.co.kr/c2" target="_blank">
+                        <img src="./img/portfolio2.png" alt="(주)두산">
+                        <figcaption>
+                            <h2 class="title">(주)두산 웹사이트 리뉴얼</h2>
+                            <p class="com">(주)두산 웹사이트를 리뉴얼했습니다.<br>
+                                <span>Production Period</span>&nbsp;&nbsp;&nbsp;2019.01.03 ~ 2019.01.16
+                            </p>
+                        </figcaption>
+                    </a>
+                </figure>
+            </div>
+            <div class="imgBox item4">
+                <figure>
+                    <a href="http://ddsoeun.github.io/c1" target="_blank">
+                        <img src="./img/portfolio1.png" alt="스마트이비인후과">
+                        <figcaption>
+                            <h2 class="title">스마트이비인후과 웹사이트 리뉴얼</h2>
+                            <p class="com">스마트이비인후과 웹사이트를 리뉴얼했습니다.<br>
+                                <span>Production Period</span>&nbsp;&nbsp;&nbsp;2019.12.24 ~ 2019.01.11
+                            </p>
+                        </figcaption>
+                    </a>
+                </figure>
+            </div>
+        </div>
+    </main>
+</div> 
+<div class="menuBox">
+    <div class="lstBox closeBtn">
+        <span class="lst item1"></span>
+        <span class="lst item2"></span>
+        <span class="lst item3"></span>
+    </div>
+    <div class="menu">
+        <nav class="menuLst">
+            <a href="index.html"><span>HOME</span></a>
+            <a href="about.html"><span>ABOUT</span></a>
+            <a href="portfolio.html"><span>PORTFOLIO</span></a>
+        </nav>
+    </div>
+</div>  
+</body>
+</html>
