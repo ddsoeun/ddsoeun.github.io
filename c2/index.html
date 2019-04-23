@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>::: 두산 웹사이트에 오신걸 환영합니다. :::</title>
+    
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon16.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon32.ico">
+    <link rel="apple-touch-icon" size="57X29 "href="./ico/favicon57.png">
+    <link rel="apple-touch-icon" size="72X36 "href="./ico/favicon72.png">
+    <link rel="apple-touch-icon" size="114X57 "href="./ico/favicon114.png">
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta name="msapplication-TileImage" content="./ico/favicon144.png">
+    
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="application-name" content="DOOSAN Web Site">
+    <meta name="author" content="SoeunPark">
+    <meta name="description" content="DOOSAN Site Mainpage">
+    <meta name="generator" content="Brackets">
+    <meta name="keywords" content="두산, (주)두산, DOOSAN, doosan, 두산웹사이트, 두산홈페이지, 두산지주회사">
+    <meta name="viewport" content="width=device-width, initial-scal=1.0, user-scalable=no">
+    
+    <!--[if lt IE 9]>
+    <script src="./js/html5shiv.js"></script>
+    <script>
+         //인터넷 익스플로러 9미만인 경우
+    </script>
+    <!--[endif]-->
+    <!--[if gte IE 9]><!-->
+    <script>
+    //인터넷 익스플로러 9이상인 경우
+    </script>
+    <!--[endif]-->
+    
+    <link rel="stylesheet" href="nomalize.css">
+    
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR" rel="stylesheet">
+    
+    <link rel="stylesheet" href="common.css">
+    
+    <style>
+    
+/*    font-family: 'Noto Sans KR', sans-serif;*/
+    #page2 { background-image: url(./img/elec_img.jpg); background-size: 120% 120%; transition: 1s; transition-delay: 0.1s;}
+    #page3 { background-image: url(./img/main_vol_img1.png); background-size: 120% 120%; transition: 1s; transition-delay: 0.1s; }
+    #page4 { background-color: #fff; }
+        
+    #page2:hover { background-size: 100% 100%; opacity: 1; }
+    #page3:hover { background-size: 100% 100%; opacity: 1; }
+    
+
+    .videoWrap { width: 100%; height: 100%; overflow: hidden; }
+    .videoWrap video { display: block; width: auto; height: 100%; min-height: 1080px; overflow: hidden; }
+
+        
+    .page { position: relative; clear: both; overflow: hidden; }
+    .pageWrap { width: 70%; margin: 0 auto; }
+    #page1 .pageWrap { position: absolute; top: 0; left:15%; }
+    .titBox { clear: both; }
+    
+    .pageTitle { color: #fff; font-size: 3.5em; padding-top: 250px; background-image: url("./logo/main_sublogo2.png"); background-repeat: no-repeat; background-position: 0px 200px; clear: both; line-height: 1.3; }
+    .pageComent { color: #fff; font-size: 1.25em; line-height: 1.6; }
+    #page1 .pageComent { margin-top: -20px; }
+    #page1 .titBox { padding-top: 120px; }
+        
+    #frm1 { clear: both; padding-top: 70px; }
+    #keyword { border: 0; outline: 0; background: #fff; display: block; width: 40%; height: 70px; line-height: 70px; float: left; text-indent: 30px; }
+    .frmBtn { outline: 0; border: 0; display: block; width: 70px; height: 70px; line-height: 70px; float: left; background-color: #0088ce; background-repeat: no-repeat; background-position: center center; }
+    .searchBtn { background-image: url("./icon/search.png"); background-size: 40%; }
+        
+        
+    .thumBox { position: absolute; right: 15%; top: 25%; width: 10vw; height: 30vw; }
+    .thumBox li { clear: both; width: 100%; height: 10vw; overflow: hidden; }
+    .thumBox li .offBox { width: 10vw; height: 10vw; clear: both; }
+    .thumBox li .onBox { width: 10vw; height: 10vw; clear: both; }
+    .thumBox li .offBox { display: block; }
+    .thumBox li .onBox { display: none; }
+    .thumBox li:hover .offBox { display: none; }
+    .thumBox li:hover .onBox { display: block; }
+
+    .more { display: inline-block; border: 3px solid #fff; color: #fff; padding: 18px; border-radius: 30px; padding-right: 20px; padding-left: 30px; }
+    .more:after { content: ""; display: inline-block; width: 30px; height: 10px; background-image: url("./icon/arrow.png"); background-repeat: no-repeat; background-size: 70%; margin-left: 30px; }
+    .comentBox { width: 30vw; height: 10vw; background-color: #003876; margin-top: 90px; border-radius: 0px 0px 100px 0px; }
+    .num { display: block; font-size: 1em; color: #fff; padding-top: 40px; text-indent: 45px; }
+    .coment { padding-left: 45px; color: #fff; font-size: 1.1em; line-height: 1.6; padding-top: 20px; }
+        
+    #page3 .more { margin-top: 65px; }
+    
+    #page4 .pageTitle { font-size: 2.5em; color: #333; background-image: url("./logo/main_sublogo.png"); background-repeat: no-repeat; background-position: 0px 0px; clear: both; padding-top: 50px; margin-top: 0;}
+    #page4 .pageComent { font-size: 1.1em; color: #333; margin-top: -20px; }
+    .col3 { display: block; width: 22%; float: left; margin-right: 4%; }
+    .col3.first { clear: both; }
+    .col3.last { margin-right: 0; }
+    .col6 { width: 48%; margin-right: 4%; }
+    .row { clear: both; margin: 0; padding: 0; }
+    .row li { float: left; }
+    .row a { color: #333; }
+    .row .wtxt { color: #fff; }
+    .curBox a { display: block; padding: 35px; }
+    .row.one { height: 17vw; margin-top: 15%; margin-bottom: 50px; }
+    .row.two { height: 12vw; margin-bottom: 50px; }
+    .hvBox, .hvBox2, .hvBox3 { display: block; padding: 35px; position: relative; }
+    .hvBox { height: 13.5vw; }
+    .hvBox2, .hvBox3 { height: 7.6vw; }
+    .curBox { background-image: url("./img/main_news_img.jpg"); width: 100%; height: 13.5vw; overflow: hidden; background-repeat: no-repeat; background-size: 100% 100%; position: relative; }
+    .curTit { font-size: 1.25em; line-height: 60px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; text-shadow: 0px 0px 15px #333; }
+    .date { font-size: 0.85em; position: absolute; bottom: 35px; }
+    .col3 .titBox { height: 13.5vw; }
+    .notiBox1 { height: 13.5vw; border-radius: 0px 0px 100px 0px; background-color: #003876; transition: 0.3s; }
+    .notiBox1:hover { border: 1px solid #003876; background-color: #fff; }
+    .notiBox1:hover .notiTit { color: #003876; }
+    .notiBox1:hover .date { color: #003876; }
+    .notiBox2 { height: 11.4vw; background-color: #0088ce; transition: 0.3s; }
+    .notiBox2:hover { border-radius: 0px 0px 90px 0px; }
+    .notiBox3 { border: 1px solid #999; overflow: hidden; }
+    .notiBox3 .notiTit { position: absolute; z-index: 1; padding-right: 32px; }
+    .notiBox3 a:before { content: ""; display: block; width: 100%; height: 222px; background-color: #daf1fc; transition: 0.3s; position: absolute; top: 0; left: -100%; z-index: 0; }
+    .notiBox3 a:hover::before { left: 0; }
+    .row.two .col3.last { background-color: #f5f5f5; height: 220px; }
+    .notiBox4 { padding: 35px; }
+    .notiBox4 .notiTit { height: auto; padding-bottom: 20px; border-bottom: 1px solid #ddd; }
+    .snsLst { margin: 0; padding: 0; margin-top: 30px; }
+    .snsLst li { float: left; width: 50%; box-sizing: border-box; }
+    .notiTit { font-size: 1.25em; font-weight: 800; overflow: hidden; white-space: normal; line-height: 1.6; height: 4.8em;; word-wrap: break-word; text-overflow: ellipsis; line-clamp:3; -webkit-line-clamp:3; box-orient:vertical; -webkit-box-orient:vertical; }
+    .snsTit { font-size: 0.9em; font-weight: 600; }
+    .snsLst img { padding-top: 20px; }
+    .snsCol { padding-left: 25px; }
+    .snsCol:last-child { padding-left: 0; }
+    .snsCol:last-child img { padding-left: 18px; }    
+        
+    .ft { clear: both; width: 100%; height: 230px; }
+    .ftWrap { clear: both; width: 100%; height: 130px; }
+    .ftWrap.first { height: 100px; background-color: #333; }
+    #relNav { width: 70%; margin: 0 auto; }
+    #relNav ul { clear: both; margin: 0; padding: 0; }
+    #relNav .col2 { width: 16.6666666667%; float: left;  height: 100px; overflow: hidden; box-sizing: border-box; }
+    #relNav .col2 a { display: block; height: 100px; }
+    .bgIcon { background-size: 40% auto; background-position: center center; background-repeat: no-repeat; color: #fff; text-align: center; }
+    #relNav .col2 a.item1 { font-size: 0.85em; font-weight: 800; border-left: 1px solid #444; border-right: 1px solid #444; background-image: url("./logo/Doosan_Logo.png"); padding-top: 70px; background-position: center 10px; }
+    #relNav .col2 a.item2 { background-image: url("./logo/ft_logo1.png"); }
+    #relNav .col2 a.item3 { background-image: url("./logo/ft_logo2.png"); }
+    #relNav .col2 a.item4 { background-image: url("./logo/ft_logo3.png"); background-size: 30%; }
+    #relNav .col2 a.item5 { background-image: url("./logo/footer_logo4.png"); background-size: 40%; }
+    #relNav .col2 a.item6 { background-image: url("./logo/Doosan_Logo.png"); }
+    .ftArea { width: 70%; margin: 0 auto; }
+    .copyright { width: 65%; float: left; font-size: 0.7em; line-height: 2; padding-top: 45px; color: #999; padding-left: 40px; }
+    .ftLink { width: 30%; float: right; font-weight: 300; height: 130px; line-height: 130px; }
+    .ftLink ul { margin: 0; padding: 0; }
+    .spl:after { content: "｜"; display: inline-block; padding-left: 7px; padding-right: 7px; }
+    .ftLink li { float: left; }
+    .ftLink li a {color: #444; padding: 6px; font-size: 0.8em; font-weight: 700; }
+    .ftLink li a.item1 { border-radius: 40px; border: 1px solid #999; color: #333; padding-left: 10px; padding-right: 10px; }
+  
+        
+        
+    </style>
+    
+    <script src="./js/jquery-3.3.1.js"></script>
+    
+   <link rel="stylesheet" href="par.css">
+   <script src="par.js"></script>
+    
+</head>
+<body>
+ 
+  <header class="hd">
+      <div class="hdWrap">
+          <a href="index.html" class="logo">로고</a>
+          <nav id="mainNav">
+              <ul>
+                  <li class="mnItem1">
+                      <a href="about.html" class="mnDep1">두산소개</a>
+                      <ul class="sub item1">
+                          <li><a href="about.html#page1">경영철학</a></li>
+                          <li><a href="about.html#page2">주요 경영진</a></li>
+                          <li><a href="about.html#page3">글로벌 네트워크</a></li>
+                          <li><a href="about.html#page4">사업분야</a></li>
+                          <li><a href="about.html#page5">두산역사</a></li>
+                          <li><a href="about.html#page6">투자정보</a></li>
+                      </ul>
+                  </li>
+                  <li class="mnItem1">
+                      <a href="career.html" class="mnDep1">채용정보</a>
+                      <ul class="sub item2">
+                          <li><a href="career.html#page1">인재상</a></li>
+                          <li><a href="career.html#page2">인사제도</a></li>
+                          <li><a href="https://career.doosan.com/" target="_blank">채용안내</a></li>
+                      </ul>
+                  </li>
+                  <li class="mnItem1">
+                      <a href="media.html" class="mnDep1">홍보센터</a>
+                      <ul class="sub item3">
+                          <li><a href="media.html#page1">보도자료</a></li>
+                          <li><a href="media.html#page2">PR영상</a></li>
+                          <li><a href="media.html#page3">광고</a></li>
+                          <li><a href="media.html#page4">CI</a></li>
+                      </ul>
+                  </li>
+                  <li class="mnItem1">
+                      <a href="csv.html" class="mnDep1">사회공헌</a>
+                      <ul class="sub item4">
+                          <li><a href="csv.html#page1">인재양성</a></li>
+                          <li><a href="csv.html#page2">지역사회 지원</a></li>
+                          <li><a href="csv.html#page3">역량활용</a></li>
+                      </ul>
+                  </li>
+              </ul>
+          </nav>
+          <nav id="topNav">
+              <ul>
+                  <li><a href="" class="dotSplit">Contact Us</a></li>
+                  <li><a href="">ENG</a></li>
+              </ul>
+          </nav>
+      </div>
+  </header> 
+  <div class="page" id="page1" data-page="0">
+    <div class="videoWrap">
+        <video autoplay loop muted="">
+           <source src="./video/doosan_video.mp4" type="video/mp4">
+           <source src="./video/doosan_video.webm" type="video/webm">
+           <source src="./video/doosan_video.ogg" type="video/ogg">      
+        </video> 
+     </div>
+    <div class="pageWrap">
+      <div class="titBox">
+          <h1 class="pageTitle">내일을 준비합니다</h1>
+          <p class="pageComent">세계 곳곳에서 인류의 더 나은 삶의 터전을 위해 두산은 지금 미래를 준비합니다</p>
+      </div> 
+    <form action="" id="frm1">
+        <input type="text" id="keyword" placeholder="검색어를 입력해 주세요" name="keyword" autofocus>
+        <input type="submit" class="frmBtn searchBtn" value="">
+    </form> 
+     </div>
+     <ul class="thumBox">
+         <li>
+            <a href="" class="item1">
+                 <div class="offBox">
+                 <a href=""><img src="./icon/main_busi.png" alt=""></a>
+                 </div>
+                 <div class="onBox">
+                 <a href=""><img src="./icon/main_busi_hover.png" alt=""></a>
+                 </div>
+             </a>
+        </li>
+         <li>
+            <a href="" class="item2">
+                 <div class="offBox">
+                 <a href=""><img src="./icon/main_invest.png" alt=""></a>
+                 </div>
+                 <div class="onBox">
+                 <a href=""><img src="./icon/main_invest_hover.png" alt=""></a>
+                 </div>
+             </a>
+        </li>
+         <li>
+            <a href="" class="item3">
+                 <div class="offBox">
+                 <a href=""><img src="./icon/main_jobinfo.png" alt=""></a>
+                 </div>
+                 <div class="onBox">
+                 <a href=""><img src="./icon/main_jobinfo_hover.png" alt=""></a>
+                 </div>
+             </a>
+        </li>
+     </ul>  
+  </div>
+  
+  <div class="page" id="page2" data-page="1">
+     <div class="pageWrap">
+        <div class="titBox">
+          <h1 class="pageTitle">두산,<br>지구의 가치를 높입니다</h1>
+          <a href="about.html#page4" class="more">계열사</a>
+          <div class="comentBox">
+              <span class="num">01</span>
+              <p class="coment">두산중공업은 지구의 바다를 인류의 마실 물로 바꾸고 <br>지구의 자원을 인류의 빛으로 바꾸고 있습니다</p>
+          </div>
+      </div>   
+     </div>
+  </div>
+  
+  <div class="page" id="page3" data-page="2">
+      <div class="pageWrap">
+         <div class="titBox">
+          <h1 class="pageTitle">아름다운 사회를 만들기 위한<br>두산의 노력</h1>
+          <p class="pageComent">두산은 기업 시민으로서 사회적 책임을 다하여<br>행복하고 풍요로운 미래를 만드는 데 기여하고자 노력합니다</p>
+          <a href="csv.html#page1" class="more">사회공헌 이야기</a>
+         </div>  
+     </div>
+  </div>
+  
+  <div class="page on" id="page4" data-page="3">
+     <div class="pageWrap">
+       <ul class="row one">
+       <li class="col3 first">
+        <div class="titBox">
+          <h1 class="pageTitle">두산 소식</h1>
+          <p class="pageComent">두산의 최신 소식을 알려드립니다.</p>
+         </div> 
+        </li>
+        <li class="col6">
+          <div class="curBox">
+              <a href="">
+                  <h2 class="curTit wtxt">두산연강재단, '제13회 과학교사 학술시찰' 진행</h2>
+                  <p class="date wtxt">2019-01-15</p>
+              </a>
+          </div>  
+        </li>
+        <li class="col3 last">
+           <div class="notiBox1">
+               <a href="" class="hvBox">
+                   <h2 class="notiTit wtxt">박지원 두산그룹 부회장, 'CES 2019'참관</h2>
+                   <p class="date wtxt">2019-01-11</p>
+               </a>
+           </div> 
+        </li>
+        </ul>
+        <ul class="row two">
+            <li class="col3 first">
+              <div class="notiBox2">
+               <a href="" class="hvBox2">
+                   <h2 class="notiTit wtxt">두산그룹, 사회복지공동모금회에 '희망나눔'성금 30억원 전달</h2>
+                   <p class="date wtxt">2019-01-09</p>
+               </a>
+              </div>  
+            </li>
+            <li class="col3">
+               <div class="notiBox3">
+               <a href="" class="hvBox3">
+                   <h2 class="notiTit">두산로보틱스, 中 협동로봇 시장 진출</h2>
+                   <p class="date">2018-12-19</p>
+               </a>
+              </div>  
+            </li>
+            <li class="col3">
+              <div class="notiBox3">
+               <a href="" class="hvBox3">
+                   <h2 class="notiTit">두산그룹, 전방 부대에 '사랑의 차(茶)' 전달</h2>
+                   <p class="date">2018-12-05</p>
+               </a>
+              </div>  
+            </li>
+            <li class="col3 last">
+              <div class="notiBox4">
+                  <h2 class="notiTit">SNS</h2>
+                  <ul class="snsLst">
+                      <li class="snsCol">
+                        <h3 class="snsTit">유튜브</h3>
+                        <a href="https://www.youtube.com/channel/UChZoGK8_IHlxqPQEbSej7Qw"><img src="./icon/youtube_icon.png" alt="유튜브">
+                        </a>
+                      </li>
+                      <li class="snsCol">
+                        <h3 class="snsTit">두산아트센터</h3>
+                        <a href="http://www.doosanartcenter.com/"><img src="./icon/sns_logo.png" alt="두산아트센터">
+                        </a>
+                      </li>
+                  </ul>
+              </div>  
+            </li>
+        </ul>
+     </div> 
+  </div>
+ <footer class="ft">
+     <div class="ftWrap first">
+         <nav id="relNav">
+             <ul>
+                 <li class="col2">
+                 <a href="index.html" class="bgIcon item1">FAMILY SITE</a>
+                 </li>
+                 <li class="col2">
+                 <a href="http://www.weveapt.co.kr/main/mainpage.do" class="bgIcon item2"></a>
+                 </li>
+                 <li class="col2">
+                 <a href="http://www.doosanartcenter.com/" class="bgIcon item3"></a>
+                 </li>
+                 <li class="col2">
+                 <a href="http://www.doosanbears.com" class="bgIcon item4"></a>
+                 </li>
+                 <li class="col2">
+                 <a href="http://www.doota-mall.com/" class="bgIcon item5"></a>
+                 </li>
+                 <li class="col2">
+                 <a href="http://www.doosanheavy.com/kr/" class="bgIcon item6"></a>
+                 </li>
+             </ul>
+         </nav>
+     </div>
+     <div class="frWrap">
+        <div class="ftArea">
+            <div class="copyright">
+                <p class="copy">
+                    <span class="spl">(주)두산 서울특별시 중구 을지로6가</span>
+                    <span class="spl">대표자 박정원</span><br>
+                    COPYRIGHT ⓒDOOSAN.ALL RIGHTS RESERVED
+                </p>
+            </div>
+            <div class="ftLink">
+            <ul>
+                <li><a href="" class="item1">개인정보처리방침</a></li>
+                <li><a href="" class="item2">사이트맵</a></li>
+                <li><a href="" class="item3">Contact Us</a></li>
+            </ul>
+            </div>
+        </div>
+     </div>
+     
+ </footer>  
+ <section id="quick">
+     <a data-val="0" class="pageMove on">
+         <span class="qtxt">두산의 가치</span>
+         <span class="qbtn"></span>
+     </a>
+     <a data-val="1" class="pageMove">
+         <span class="qtxt">두산의 사업분야</span>
+         <span class="qbtn"></span>
+     </a>
+     <a data-val="2" class="pageMove">
+         <span class="qtxt">두산의 사회공헌</span>
+         <span class="qbtn"></span>
+     </a>
+     <a data-val="3" class="pageMove">
+         <span class="qtxt">두산 소식</span>
+         <span class="qbtn"></span>
+     </a>
+ </section> 
+ <button id="quick_up" class="scrollBtn">▲</button>
+ <button id="quick_down" class="scrollBtn">▼</button>
+  
+</body>
+
+</html>
