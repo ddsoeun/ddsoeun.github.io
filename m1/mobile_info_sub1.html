@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>계룡시청 - 계룡소개</title>
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon16.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon32.ico">
+    <link rel="apple-touch-icon" size="57X29" href="./ico/favicon57.png">
+    <link rel="apple-touch-icon" size="72X36" href="./ico/favicon72.png">
+    <link rel="apple-touch-icon" size="114X57" href="./ico/favicon114.png">
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta name="msapplication-TileImage" content="./ico/favicon144.png">
+    <!-- iPhone iOS 7이상   -->
+    <link rel="apple-touch-icon" size="120X120" href="./ico/favicon120.png">
+    <!--  표준 iOS 홈스크린  -->
+    <link rel="apple-touch-icon" size="57X57" href="./ico/favicon57.png">
+    <!--  iOS 홈스크린  -->
+    <link rel="apple-touch-icon" size="72X72" href="./ico/favicon72.png">
+    <!--  아이폰 레티나  -->
+    <link rel="apple-touch-icon" size="114X114" href="./ico/favicon114.png">
+    <!--  iPhone iOS  -->
+    <link rel="apple-touch-icon" size="180X180" href="./ico/favicon180.png">
+    <!--  안드로이드/iOS 기본   -->
+    <link rel="apple-touch-icon" size="152X152" href="./ico/favicon152.png">
+    <!--  안드로이드 크롬 홈  -->
+    <link rel="apple-touch-icon" size="196X196" href="./ico/favicon196.png">
+    <!--  아이패트 레티나 터치  -->
+    <link rel="apple-touch-icon" size="167X167" href="./ico/favicon167.png">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="application-name" content="GYERYONG Web Site">
+    <meta name="author" content="SoeunPark">
+    <meta name="description" content="GYERYONG Mainpage">
+    <meta name="generator" content="Brackets">
+    <meta name="keywords" content="계룡, 계룡시, 계룡시청, 계룡시 웹사이트, 계룡시 홈페이지">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    
+    
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic" rel="stylesheet">
+    <link rel="stylesheet" href="reset.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    
+    <style>
+    .container { width: 100%; height: 100%; clear: both; }
+    .wrap { width: 100%; height: 200px; clear: both; position: relative; }
+    #hd { width: 100%; height: 60px; position: relative; clear: both; border-bottom: 1px solid #ddd; float: left; }
+    .ckItem { display: none; }
+    #hd label { display: block; width: 20%; text-align: center; }
+    #hd label.mainL { float: left; background-image: url("./icon/main.png"); background-repeat: no-repeat; background-position: center center; text-indent: -9999px; margin-top: 22px; margin-left: 10px; }
+    #hd label.topR { float: right; background-image: url("./icon/top.png"); background-repeat: no-repeat; background-position: center center; text-indent: -9999px; margin-top: 22px; }
+    .logoFrm { width: 30%; float: left; margin-left: 50px; }
+    .logoFrm a { display: block; text-align: center; background-image: url("./logo/logo_b.png"); background-position: center center; background-size: contain; background-repeat: no-repeat; text-indent: -9999px; margin-top: 20px; }
+    #ck1:checked ~ #gnb { left: 0; opacity: 1; }
+    #ck2:checked ~ #tnb { right: 0; opacity: 1; }
+    #ck1:not(:checked) ~ #gnb { left: -100%; }
+    #ck2:not(:checked) ~ #tnb { right: -100%; }
+    #ck1:checked ~ #tnb { right:-100% }
+    #ck2:checked ~ #gnb { left:-100% } 
+    #gnb { width: 100%; position: absolute; z-index: 999; background: #fff; left: -100%; top: 62px; transition: 0.4s; opacity: 0; }
+    #gnb ul { width: 100%; height: 100%; clear: both; }
+    #gnb li.mnItem { height: 14.28%; width: 100%; }
+    #gnb li.mnItem a.mnDep1 { display: block; width: 100%; clear: both; border-bottom: 1px solid #ddd; text-align: center; color: #333; padding: 15px 0px; }
+    #tnb { width: 100%; position: absolute; z-index: 999; background: #fff; right: -100%; top: 62px; transition: 0.4s; opacity: 0; }
+    #tnb ul { width: 100%; height: 100%; clear: both; }
+    #tnb li.topItem { height: 25%; width: 100%; }
+    #tnb li.topItem a.topDep1 { display: block; width: 100%; clear: both; border-bottom: 1px solid #ddd; text-align: center; color: #333; padding: 15px 0px; }
+    .hdWrap { width: 100%; height: 80px; position: relative; clear: both; padding-top: 16px; }
+    .search { display: block; position: relative; width: 80%; margin: 0 auto; height: 42px; border: 3px solid #094ca6; }
+    #searchFrm { clear: both; margin-top: 16px; }
+    #keyword { border: 0; outline: 0; background: #fff; display: block; width: 80%; margin: 0 auto; height: 100%; padding: 0px 10px; }
+    .frmBtn { outline: 0; border: 0; display: block; width: 36px; height: 36px; line-height: 36px; background-color: #fff; background-repeat: no-repeat; background-position: center center; position: absolute; top: 3px; right: 5px; cursor: pointer; }
+    .searchBtn { background-image: url("./icon/search.png"); background-size: 50%; }
+    .subMn { width: 100%; height: 58px; background: #094ca6; position: absolute; left: 0; top: 142px; z-index: 99; }
+    .subMenu { width: 100%; height: 0; opacity: 0; transition: 0.6s; transition-delay: 0.2s; overflow: hidden; }
+    .subMenu li { clear: both; width: 100%; line-height: 45px; background: #fff; border-bottom: 1px solid #666; }
+    .subMenu li label { display: block; color: #333; text-align: center; }
+    .subDepMn1 { display: block; color: #333; text-align: center; }
+    .subMenu li .more { color: #333; font-weight: bold; padding-left: 20px; }
+    .sub { position: relative; width: 100%; height: 0px; opacity: 0; transition: 0.6s; transition-delay: 0.2s; overflow: hidden; background: #333; border-top: 1px solid #666; }
+    .sub li { width: 100%; line-height: 40px; }
+    .sub li a { display: block; width: 100%; color: #fff; text-align: center; background: #094ca6; }
+    .sub li a.on { background: #fff; color: #094ca6; font-weight: bold; }
+    #ck21:checked ~ .sub.item1 { height: 204px; opacity: 1; }
+    #ck21:checked ~ .subDepMn1 { color: #094ca6; font-weight: bold; }
+    #ck21:not(:checked) ~ .sub.item1 { height: 0; opacity: 0; }
+    #ck22:checked ~ .sub.item2 { height: 122px; opacity: 1; }
+    #ck22:checked ~ .subDepMn1 { color: #094ca6; font-weight: bold; }
+    #ck22:not(:checked) ~ .sub.item2 { height: 0; opacity: 0; }
+    #ck24:checked ~ .sub.item4 { height: 81px; opacity: 1; }
+    #ck24:checked ~ .subDepMn1 { color: #094ca6; font-weight: bold; }
+    #ck24:not(:checked) ~ .sub.item4 { height: 0; opacity: 0; }
+    .mn10 { display: block; text-align: center; color: #fff; font-size: 1.5em; width: 100%; height: 100%; line-height: 60px; }
+    .mn10 .more { padding-left: 20px; }
+    #ck11:checked ~ .subMenu { opacity: 1; height: 800px; }
+    #ck11:not(:checked) ~ .subMenu { opacity: 0; height: 0; }
+
+    
+    </style>
+    
+    <style>
+    
+    #main { width: 100%; height: auto; border-bottom: 1px solid #ebebeb; }
+    .content { width: 100%; margin: 0 auto; position: relative; }
+    .con { width: 90%; margin: 0 auto; }
+    .titWrap { width: 100%; position: relative; padding-top: 30px; }
+    .infoWrap { width: 100%; height: 100%; position: relative; }
+    .pageTit { text-align: center; font-size: 1.5em; }
+       
+    .path { width: 100%; text-align: center; margin-top: 18px; margin-bottom: 58px; }
+    .path a { font-size: 0.7em; color: #666; }
+    .path span { font-size: 0.7em; color: #666; } 
+    .path .arrow { padding: 0px 8px; }
+    
+    .conBox { width: 100%; }
+    .subBox { width: 100%; height: 300px; margin-bottom: 30px; }
+    .subTit { margin-bottom: 10px; margin-top: 30px; text-align: center; }
+    .subCom { font-size: 0.8em; text-align: center; word-break: break-all; }
+    .imgBox { width: 50%; margin: 0 auto; }
+    .imgBox img { display: block; width: 100%; height: 100%; }
+        
+    
+    </style>
+    
+    <style>
+    
+    /*    footer    */
+    #ft { width: 100%; position: relative; clear: both; }
+    .ftWrap1 { width: 90%; height: 40px; position: relative; border-bottom: 1px solid #ebebeb; margin: 0 auto;} 
+    .ftlink { width: 100%; height: 40px; line-height: 40px; float: left; }
+    .ftlink p { font-size: 0.6em; color: #333; text-align: center; }
+        
+    .ftWrap2 { width: 90%; height: 80px; position: relative; margin: 0 auto; }
+    .copy { margin-top: 0.7em; text-align: center; }
+    .copy p.add { font-weight: bolder; color: #000; }
+    .copy p { font-size: 0.7em; font-weight: bold; color: #333; line-height: 1.6; text-align: center; }
+     
+    </style>
+    
+</head>
+<body>
+<div class="container">
+    <div class="wrap">
+        <input type="checkbox" id="ck1" class="ckItem">
+        <input type="checkbox" id="ck2" class="ckItem">
+        <header id="hd">
+            <label for="ck1" class="mainL">메인</label>
+            <div class="logoFrm">
+                <a href="index.html" class="logo">로고</a>
+            </div>
+            <label for="ck2" class="topR">상단</label>
+        </header>
+        <nav id="gnb">
+            <ul>
+                <li class="mnItem"><a href="" class="mnDep1">로그인</a></li>
+                <li class="mnItem"><a href="" class="mnDep1">나의계룡</a></li>
+                <li class="mnItem"><a href="" class="mnDep1">전자우편</a></li>
+                <li class="mnItem"><a href="mobile_info.html" class="mnDep1">계룡소개</a></li>
+                <li class="mnItem"><a href="" class="mnDep1">시민참여</a></li>
+                <li class="mnItem"><a href="" class="mnDep1">부서안내</a></li>
+                <li class="mnItem"><a href="" class="mnDep1">청사안내</a></li>
+            </ul>
+        </nav>
+        <nav id="tnb">
+            <ul>
+                <li class="topItem"><a href="" class="topDep1">계룡소식</a></li>
+                <li class="topItem"><a href="" class="topDep1">응답소</a></li>
+                <li class="topItem"><a href="https://www.open.go.kr/" class="topDep1">정보공개</a></li>
+                <li class="topItem"><a href="" class="topDep1">분야정보</a></li>
+            </ul>
+        </nav>
+        <div class="hdWrap">
+            <div class="search">
+                <form action="search.xml" id="searchFrm">
+                    <input type="text" id="keyword" placeholder="검색어를 입력해 주세요" name="keyword"> 
+                    <input type="submit" class="frmBtn searchBtn" value=""> 
+                </form>
+            </div>
+        </div>
+        <div class="subMn">
+           <input type="checkbox" id="ck11" class="ckItem">
+           <label for="ck11" class="mn10">계룡소개<span class="more">+</span></label> 
+           <ul class="subMenu">
+                   <li class="item1">
+                       <input type="checkbox" class="ckItem" id="ck21">
+                       <label for="ck21" class="subDepMn1">시청안내<span class="more">+</span></label>
+                       <ul class="sub item1">
+                           <li><a href="">조직도</a></li>
+                           <li><a href="">시의회</a></li>
+                           <li><a href="">본부·사업소</a></li>
+                           <li><a href="">찾아오시는길</a></li>
+                           <li><a href="">청사안내</a></li>
+                       </ul>
+                   </li>
+                   <li class="item2">
+                       <input type="checkbox" class="ckItem" id="ck22">
+                       <label for="ck22" class="subDepMn1">계룡의 상징물<span class="more">+</span></label>
+                       <ul class="sub item2">
+                           <li><a href="">휘장</a></li>
+                           <li><a href="">심벌</a></li>
+                           <li><a href="mobile_info_sub1.html" class="on">꽃·나무·새</a></li>
+                       </ul>
+                   </li>
+                   <li class="item3">
+                       <a href="" class="subDepMn1">계룡의 역사</a>
+                   </li>
+                   <li class="item4">
+                       <input type="checkbox" class="ckItem" id="ck24">
+                       <label for="ck24" class="subDepMn1">계룡의 정보<span class="more">+</span></label>
+                       <ul class="sub item4">
+                           <li><a href="">사진으로 본 계룡</a></li>
+                           <li><a href="">주요사업현황</a></li>
+                       </ul>
+                   </li>
+            </ul>
+        </div>
+    </div> 
+    
+    <div id="main">
+        
+     <div class="content">
+         <div class="con">
+             <div class="titWrap">
+                 <h1 class="pageTit">꽃·나무·새</h1>
+                 <div class="path">
+                     <a href="index.html" class="home">HOME</a>
+                     <span class="arrow">〉</span>
+                     <span class="mn">계룡소개</span>
+                     <span class="arrow">〉</span>
+                     <span class="mn">계룡의 상징물</span>
+                     <span class="arrow">〉</span>
+                     <span class="mn">꽃·나무·새</span>
+                 </div>
+             </div>
+             <div class="infoWrap">
+                <div class="conBox">
+                   <div class="subBox item1">
+                      <div class="imgBox">
+                      <img src="./img/mobile_info1.png" alt="시목">
+                      </div>
+                      <h4 class="subTit">시목 : 소나무</h4>
+                      <p class="subCom">소나무는 기개가 곧고 고난과 변화에도 굽히지 않는 군자의 모습과 같고 늘 푸른 상록수로 계룡시의 영원한 번영을 상징합니다.</p>
+                   </div>
+                   <div class="subBox item2">
+                      <div class="imgBox">
+                      <img src="./img/mobile_info2.png" alt="시조">
+                      </div>
+                      <h4 class="subTit">시조 : 팔색조</h4>
+                      <p class="subCom">참새목 팔색조과의 희귀한 여름철새로 몸길이 약18㎝, 천연기념물 204호로 개성이 강한 8개의 색은 지식의 정보화, 농업, 도시건설, 행정복지, 환경, 문화예술, 지역경제 등 8개 분야별로 성장, 발전해 나가는 계룡시민의 의지를 상징합니다.
+                   </div>
+                   <div class="subBox item3">
+                      <div class="imgBox">
+                      <img src="./img/mobile_info3.png" alt="시화">
+                      </div>
+                      <h4 class="subTit">시화 : 철쭉</h4>
+                      <p class="subCom">추위와 공해에 강한 강인함과 인내력은 내일을 향해 웅비하는 계룡시민의 의지를 표현하며 화사하고 고운 자태는 문화, 예술을 꽃피우는 “계룡커뮤니티”를 형성합니다.
+                   </div>
+                </div>
+             </div>   
+         </div>
+       </div>
+    </div> 
+      
+    <footer id="ft">
+        <div class="ftWrap1">
+           <div class="ftlink">
+               <p>찾아오시는길&nbsp;&nbsp;&nbsp;｜&nbsp;&nbsp;&nbsp;개인정보처리방침&nbsp;&nbsp;&nbsp;｜&nbsp;&nbsp;&nbsp;저작권정책&nbsp;&nbsp;&nbsp;｜&nbsp;&nbsp;&nbsp;PC버전
+               </p>
+           </div>
+        </div>
+        <div class="ftWrap2">
+          <div class="copy">
+              <p class="add">충청남도 계룡시 장안로 46(금암동)</p>
+              <p>TEL : 042)840-2114 (행정0450-114)</p>
+              <p>COPYRIGHT ⓒ 2018 THE GYERYONG CITY HALL. <br>ALL RIGHTS RESERVED.</p>
+          </div>  
+        </div>
+    </footer>
+
+</div>
+</body>
+</html>
