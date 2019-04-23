@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CLIO</title>
+    <link rel="stylesheet" href="reset.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR" rel="stylesheet">
+    <!--  데스크탑 jquery  -->
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <!--  모바일/태블릿 jquery  -->
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    
+    <!--  데스크탑 기본 IE/Window -->
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon16.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon32.ico">
+    
+     <!-- iPhone iOS 7이상   -->
+    <link rel="apple-touch-icon" size="120X120" href="./ico/favicon120.png">
+    <!--  표준 iOS 홈스크린  -->
+    <link rel="apple-touch-icon" size="57X57" href="./ico/favicon57.png">
+    <!--  iOS 홈스크린  -->
+    <link rel="apple-touch-icon" size="72X72" href="./ico/favicon72.png">
+    <!--  아이폰 레티나  -->
+    <link rel="apple-touch-icon" size="114X114" href="./ico/favicon114.png">
+    <!--  iPhone iOS  -->
+    <link rel="apple-touch-icon" size="180X180" href="./ico/favicon180.png">
+    <!--  안드로이드/iOS 기본   -->
+    <link rel="apple-touch-icon" size="152X152" href="./ico/favicon152.png">
+    <!--  안드로이드 크롬 홈  -->
+    <link rel="apple-touch-icon" size="196X196" href="./ico/favicon196.png">
+     <!--  아이패트 레티나 터치  -->
+    <link rel="apple-touch-icon" size="167X167" href="./ico/favicon167.png">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="application-name" content="CLOP Web Site">
+    <meta name="author" content="SoeunPark">
+    <meta name="description" content="CLIO Mobilepage">
+    <meta name="generator" content="Brackets">
+    <meta name="keywords" content="CLIO, clio, 클리오, 클리오 코스메틱, 코스메틱, 화장품, 로드샵">
+    
+    <script>
+     $(document).ready(function(){
+        var btnSw=true;
+        $(".menu").click(function(){
+            $("#gnb").slideToggle(600);
+        });     
+    });
+    </script>
+    <script>
+    $(document).ready(function(){
+       $("#gnb label").click(function(){
+         var th = $(this).attr("for");
+         var thId = "#"+th;
+         var sc0bj = $(thId).offset();
+         var scDist = sc0bj.top;
+         $("body, html").not(":animated").animate({"scrollTop":scDist}, 600);
+         $("#gnb label").removeClass("on");
+         $(this).addClass("on");
+       });
+    });
+    </script>
+    <script>
+    $(document).ready(function(){
+       var obj1, obj2, obj3, obj4, obj5, obj6;
+       obj1 = $("#about").offset();
+       obj2 = $("#product").offset();    
+       obj3 = $("#media").offset();    
+       obj4 = $("#community").offset();      
+
+       $(window).scroll(function(){
+          var sct = $(window).scrollTop(); 
+          $("#gnb label").removeClass("on");
+          if(sct >= obj6.top-200) {
+             $("#gnb li").eq(3).find("label").addClass("on"); 
+          } else if(sct >= obj3.top-80) {
+             $("#gnb li").eq(2).find("label").addClass("on"); 
+          } else if(sct >= obj2.top-80) {
+             $("#gnb li").eq(1).find("label").addClass("on"); 
+          } else {
+             $("#gnb li").eq(0).find("label").addClass("on");  
+          }
+       }); 
+    });        
+    </script>
+    
+    <style>
+    #hd { width: 100%; height: 60px; background: #333; }
+    .logo { position: absolute; top: 4px; left: 45%; background-repeat: no-repeat; background-position: center center; background-image: url("./icon/logo_w.png"); background-size: 100%; text-indent: -9999px; font-size: 3em; line-height: 60px; }
+    #hd .home { width: 60px; height: 16px; margin-top: 19px; margin-left: 20px; display: block; color: #fff; float: left; }
+    #hd .menu { float: right; width: 60px; background: transparent; color: #fff; height: 13px; margin-top: 26px; }
+    </style>
+    <style>
+    #gnb { width: 100%; display: none; }
+    #gnb li { line-height: 3; background: #333; border-top: 1px solid #666; }
+    #gnb li:last-child { border-bottom: 1px solid #666; }
+    #gnb li label { display: block; width: 100%; color: #fff; margin-left: 15%; }  
+    #gnb li label i.fas { padding-right: 15px; }
+    .vs { width: 100%; }
+    .vs img { width: 100%; height: 100%; }   
+    </style>
+    <style>
+    .page { width: 100%; }
+    .wrap { width: 80%; margin: 0 auto; min-height: 100%; }
+    .pageTit { font-size: 1.1em; font-weight: bold; color: #333; text-align: center; border-bottom: 2px solid #333; padding: 20px 0px 10px 0px; }
+    .wrap img { width: 100%; height: 100%; margin-top: 20px; }
+    .imgTit { width: 100%; line-height: 1.3; font-size: 1.5em; font-weight: bolder; padding: 10px 0px 10px 0px; }
+    .imgCom { line-height: 1.6; font-size: 0.85em; word-break: break-all; padding-bottom: 20px; }
+    .conBox { width: 100%; position: relative; border: 1px solid #999; margin-top: 25px; }
+    .conBox:last-child { margin-bottom: 20px; }
+    .conBox img { width: 100%; height: 100%; }
+    .com { width: 100%; color: #fff; background: #333; text-align: center; padding: 10px 0px 10px 0px; }    
+    </style>
+    <style>
+    #media { width: 100%; }
+    .videoWrap { width: 100%; height: 100vh; padding: 20px 0px 20px 0px; }
+    .videoWrap iframe { width: 100%; height: 100vh; }
+    #community .wrap { padding-bottom: 30px; }
+    .imgBox { width: 100%; position: relative; }
+    .rvImgBox { width: 100%; position: relative; }
+    .imgBox img { width: 100%; height: 100%; }
+    .imgBox .com { position: absolute; bottom: 0; left: 0; background: rgba(0, 0, 0, 0.6); } 
+    .txtBox { width: 100%; overflow: hidden; padding: 10px 0px; }
+    .rvTit { font-size: 1.2em; color: #333; }
+    .rvCom { font-size: 0.9em; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: #333; padding-top: 10px; }
+    .writer { font-size: 0.9em; color: #333; padding-top: 5px; }
+    </style>
+    <style>
+    #ft { width: 100%; height: 60px; clear: both; background: #333; }
+    .ftWrap { width: 90%; margin: 0 auto; height: 60px; }
+    .copy { font-size: 0.55em; color: #999; text-align: center; word-break: break-all; padding-top: 10px; }
+        
+    </style>
+    <style>
+    .top { position: fixed; z-index: 999; bottom: 10%; right: 3%; display: block; width: 40px; height: 40px; color: #333; }
+    .top i { background: #fff; border-radius: 100px; }
+    </style>
+</head>
+<body>
+   <header id="hd">
+       <a href="index.html" class="home">
+           <i class="fas fa-home"></i>
+       </a>
+       <h1 class="logo">클리오</h1>
+       <button class="menu">
+           <i class="fas fa-bars"></i>
+       </button>
+   </header> 
+   <nav id="gnb">
+       <ul class="gnbMn">
+           <li>
+               <label for="about" class="on">
+                   <i class="fas fa-heart"></i>about
+               </label>
+           </li>
+           <li>
+               <label for="product">
+                   <i class="fas fa-shopping-cart"></i>product
+               </label>
+           </li>
+           <li>
+               <label for="media">
+                   <i class="fas fa-tv"></i>media
+               </label>
+           </li>
+           <li>
+               <label for="community">
+                   <i class="fas fa-comment-alt"></i>community
+               </label>
+           </li>
+       </ul>
+   </nav>
+   <figure class="vs">
+       <img src="./img/vs1.jpg" alt="메인배너">
+   </figure>
+   <div class="page" id="about">
+      <div class="wrap">
+          <h3 class="pageTit">about</h3>
+          <img src="./img/about.jpg" alt="about">
+          <h6 class="imgTit">No.1 Practical Professional Makeup Brand</h6>
+          <p class="imgCom">클리오는 1993년 전문 메이크업 아티스트에 의해 탄생된 대한민국에서 가장 오랜 역사를 가진 메이크업 브랜드입니다.</p>
+      </div> 
+   </div>
+   <div class="page" id="product">
+      <div class="wrap">
+          <h3 class="pageTit">product</h3>
+          <div class="conBox item1">
+              <img src="./img/skincare.jpg" alt="스킨케어">
+              <p class="com">스킨케어</p>    
+          </div>
+          <div class="conBox item2">
+              <img src="./img/makeup.jpg" alt="메이크업">
+              <p class="com">메이크업</p>    
+          </div>
+          <div class="conBox item3">
+              <img src="./img/tool.jpg" alt="도구">
+              <p class="com">도구</p>    
+          </div>
+      </div> 
+   </div>
+   <div class="page" id="media">
+      <div class="wrap">
+          <h3 class="pageTit">media</h3>
+          <div class="videoWrap">
+              <iframe width="100%" height="100%" src="https://www.youtube.com/embed/3KHHEgMuR0s" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
+          </div>
+       </div>       
+   </div>
+   <div class="page" id="community">
+      <div class="wrap">
+          <h3 class="pageTit">community</h3>
+          <div class="imgBox item1">
+              <div class="rvImgBox">
+                  <img src="./img/community1.jpg" alt="리뷰1">
+                  <p class="com">리뷰보기<span class="bar">｜</span>구매하기</p>
+              </div>
+              <div class="txtBox">
+                  <h5 class="rvTit">킬커버 광채 쿠션</h5>
+                  <p class="rvCom">클리오 SS 신상으로 햇살광채 나는 데일리 메이크업</p>
+                  <p class="writer">프렌치팝콘</p>
+              </div>    
+          </div>
+          <div class="imgBox item2">
+              <div class="rvImgBox">
+                  <img src="./img/community2.jpg" alt="리뷰2">
+                  <p class="com">리뷰보기<span class="bar">｜</span>구매하기</p>
+              </div>    
+              <div class="txtBox">
+                  <h5 class="rvTit">킬커버 광채 쿠션</h5>
+                  <p class="rvCom">내가 빛나는 햇살 광채 쿠션! 클리오 신상 킬커버 광채쿠션</p>
+                  <p class="writer">쟈니</p>
+              </div>    
+          </div>
+          <div class="imgBox item3">
+              <div class="rvImgBox">
+                  <img src="./img/community3.jpg" alt="리뷰3">
+                  <p class="com">리뷰보기<span class="bar">｜</span>구매하기</p>
+              </div>
+              <div class="txtBox">
+                  <h5 class="rvTit">킬커버 광채 쿠션</h5>
+                  <p class="rvCom">색조장인 클리오 SS 신상! 클리오 봄 제품들로 데일리 메이크업해봤어요♥</p>
+                  <p class="writer">다미베이비</p>
+              </div>    
+          </div>
+      </div> 
+   </div>
+   <footer id="ft">
+       <div class="ftWrap">
+           <p class="copy">서울시 강남구 압구정로 30길 62 (주)클리오 / 대표이사 : 한현옥<br>COPYRIGHTS(C) 2016 CLUBCLIO.CO.LTD. ALL RIGHTS RESERVED.</p>
+       </div>
+   </footer>
+   <a href="#" class="top">
+       <i class="fas fa-arrow-alt-circle-up fa-2x"></i>
+   </a>
+</body>
+</html>
