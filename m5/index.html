@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MARVEL Studios</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="reset.css">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR" rel="stylesheet">
+    
+    <!--  데스크탑 기본 IE/Window -->
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon16.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon32.ico">
+    
+     <!-- iPhone iOS 7이상   -->
+    <link rel="apple-touch-icon" size="120X120" href="./ico/favicon120.png">
+    <!--  표준 iOS 홈스크린  -->
+    <link rel="apple-touch-icon" size="57X57" href="./ico/favicon57.png">
+    <!--  iOS 홈스크린  -->
+    <link rel="apple-touch-icon" size="72X72" href="./ico/favicon72.png">
+    <!--  아이폰 레티나  -->
+    <link rel="apple-touch-icon" size="114X114" href="./ico/favicon114.png">
+    <!--  iPhone iOS  -->
+    <link rel="apple-touch-icon" size="180X180" href="./ico/favicon180.png">
+    <!--  안드로이드/iOS 기본   -->
+    <link rel="apple-touch-icon" size="152X152" href="./ico/favicon152.png">
+    <!--  안드로이드 크롬 홈  -->
+    <link rel="apple-touch-icon" size="196X196" href="./ico/favicon196.png">
+     <!--  아이패트 레티나 터치  -->
+    <link rel="apple-touch-icon" size="167X167" href="./ico/favicon167.png">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="application-name" content="MARVEL Studio Web Site">
+    <meta name="author" content="SoeunPark">
+    <meta name="description" content="MARVEL Studio Mobilepage">
+    <meta name="generator" content="Brackets">
+    <meta name="keywords" content="MARVEL Studio, MARVEL, marvel, Marvel, 마블, 마블스튜디오, MCU">
+    
+    <!--  데스크탑 jquery  -->
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <!--  모바일/태블릿 jquery  -->
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    
+    <script>
+    $(document).ready(function(){
+        var tar;
+        $("#gnb button").click(function(){
+            tar = "#" + $(this).attr("data-target");
+            $(".page").removeClass("on");
+            $(tar).addClass("on");
+        });
+        $(".open").click(function(){
+            $("#tnb").slideToggle();
+        });
+    });    
+    </script>
+    
+    <style>
+    .ckItem { display: none; }
+    #tnb { width: 100%; height: 100%; display: none; position: fixed; z-index: 9999; left: 0; top: 0; background: #333; }
+    #tnb li:first-child { width: 100%; line-height: 40px; }
+    #tnb li img { width: 100%; height: 100%; }
+    #tnb li { width: 100%; line-height: 50px; border-bottom: 1px solid #666; }
+    #tnb li a { display: block; width: 100%; height: 100%; color: #999; font-size: 1.2em; padding-left: 30px;}
+    #tnb li:first-child { border-bottom: 0px; }
+    #tnb li:nth-child(2) { border-bottom: 0px; line-height: 0; }
+    #tnb li:nth-child(2) a { padding-left: 0; }
+    #tnb .open { margin-right: 20px; }
+    </style>
+    
+    <style>
+    #main { width: 100%; }
+    #hd { width: 100%; height: 100px; position: fixed; z-index: 999; }
+    .hdWrap { width: 100%; margin: 0 auto; height: 60px; background: #9d151b; }
+    .logo { display: block; width: 150px; height: 34px; background-image: url("./icon/logo_w.png"); background-repeat: no-repeat; background-position: center center; background-size: 100%; text-indent: -9999px; float: left; margin-top: 13px; margin-left: 20px; }  
+    .open { color: #e6c6c7; float: right; margin-top: 14px; } 
+    .open.closeBtn { color: #999; }
+    .hdWrap .open { margin-right: 20px; }
+    #gnb { width: 100%; clear: both; height: 40px; }
+    #gnb li { float: left; width: 25%; height: 40px; background: rgba(0, 0, 0, 0.6); }
+    #gnb li button { background: transparent; display: block; width: 100%; text-align: center; font-size: 1.1em; color: #fff; line-height: 40px; border-right: 1px solid #333; }
+    #gnb li:last-child button { border-right: 0px; }
+    
+    </style>
+    
+    <style>
+    .page { width:100%; min-height:100%; position:absolute; top:0; left:0; transform:rotate(-180deg); transition:0.8s; z-index:99; background:#fff; padding-top:101px; padding-bottom: 80px; opacity:0; }
+    .page1 { transform:rotate(90deg); }    
+    .page2 { transform:rotate(135deg); }        
+    .page3 { transform:rotate(235deg); }            
+    .page4 { transform:rotate(270deg); }    
+    .page.on { transform:rotate(0deg); opacity:1; }
+    .wrap { width: 90%; margin: 0 auto; }
+    .pageTit { font-size: 1.5em; text-align: center; padding: 30px 0px 20px 0px; }  
+    </style>
+    
+    <style>
+    .page1 img { width: 100%; }
+    .page1 img.ban { margin: 20px 0px; }
+    .page1 p.info { word-break: keep-all; word-wrap: break-word; color: #333; font-size: 0.85em; padding: 10px 10px 20px 10px; }
+    .page1 p.info.item2 { padding-top: 20px; }
+    .videoWrap { width: 100%; height: 100vh; padding: 20px 0px 40px 0px; }
+    .videoWrap iframe { width: 100%; height: 100vh; }
+    </style>
+    
+    <style>
+    .conBox { width: 48%; margin: 20px 0px; }
+    .conBox.item3 { width: 100%; margin: 0; }
+    .conBox img { width: 100%; height: 100%; }
+    .conBox.item1, .conBox.item4 { float: left; }
+    .conBox.item2, .conBox.item5 { float: right; }
+    .conBox.item4, .conBox.item5 { margin-bottom: 50px; }
+    </style>
+    
+    <style>
+    .imgBox { width: 100%; border: 1px solid #9d151b; margin-top: 20px; }
+    .imgBox a { display: block; width: 100%; margin: 0 auto; position: relative; }
+    .imgBox img { width: 100%; height: 100%; }
+    .imgBox p.detail { width: 100%; font-size: 1.1em; background: #9d151b; color: #fff; text-align: center; font-weight: bold; padding: 10px 0px; position: absolute; bottom: 0; left: 0; }
+    .imgBox p .sign { color: #fff; padding: 0px 15px; }    
+    .more { width: 100%; word-break: keep-all; word-wrap: break-word; font-size: 0.9em; color: #333; }    
+    </style>
+    
+    <style>
+    .subBox { width: 100%; margin-top: 20px; }
+    .subTit { font-size: 0.8em; float: left; line-height: 24px; }
+    .subTit .txt_r { color: #9d151b; font-size: 1.15em; padding-right: 10px; float: left; line-height: 22px; }
+    .date { font-size: 0.65em; float: right; padding-left: 20px; font-weight: 200; line-height: 25px; }
+    .subBox a { display: block; width: 100%; position: relative; }
+    .subBox a img { width: 100%; height: 100%; }
+    .click { background: #9d151b; color: #fff; width: 30%; font-size: 0.8em; text-align: center; padding: 5px 0px; border-radius: 100px; position: absolute; bottom: 10%; left: 5%; box-shadow: 1px 2px 2px 1px #3e080b; }    
+    </style>
+    
+    <style>
+    #ft { width: 100%; height: 90px; background: rgba(0, 0, 0, 0.6); position: fixed; z-index: 999; bottom: 0; left: 0; }
+    .ftWrap1 { width: 128px; height: 60px; margin: 0 auto; }
+    .ftWrap2 { width: 90%; height: 30px; margin: 0 auto; }
+    .ftWrap2 .copy { color: #fff; font-size: 0.65em; text-align: center; line-height: 30px; font-weight: 300; }
+    .ftWrap1 li { float: left; background-repeat: no-repeat; background-image: url("./icon/iconset.png"); width: 36px; height: 36px; margin-top: 12px; }
+    .ftWrap1 li.item1 { background-position: -10px -9px; margin-right: 10px; } 
+    .ftWrap1 li.item2 { background-position: -84px -9px; margin-right: 10px; }
+    .ftWrap1 li.item3 { background-position: -84px -91px; }    
+    </style>
+</head>
+<body>
+    <input type="checkbox" id="ck1" class="ckItem">
+    <div id="tnb">
+        <ul>
+            <li>
+                <label for="" class="open closeBtn">
+                    <i class="fas fa-times fa-2x"></i>
+                </label>
+            </li>
+            <li><a href=""><img src="./img/banner.jpg" alt="배너"></a></li>
+            <li><a href="">Login</a></li>
+            <li><a href="">Join</a></li>
+            <li><a href="">My page</a></li>
+            <li><a href="">Event</a></li>
+        </ul>
+    </div>
+    <div id="main">
+        <header id="hd">
+            <div class="hdWrap">
+                <a href="index.html" class="logo">logo</a>
+                <label for="ck1" class="open">
+                    <i class="fas fa-bars fa-2x"></i>
+                </label>
+            </div>
+            <nav id="gnb">
+                <ul>
+                    <li><button data-target="page1">About</button></li>
+                    <li><button data-target="page2">MCU</button></li>
+                    <li><button data-target="page3">Avengers</button></li>
+                    <li><button data-target="page4">Hero</button></li>
+                </ul>
+            </nav>    
+        </header>
+        <div class="page page1 on" id="page1">
+            <div class="wrap">
+                <h4 class="pageTit">About</h4>
+                <img src="./img/about.jpg" alt="마블스튜디오">
+                <p class="info">마블 스튜디오는 지난 2008년 영화 'IronMan1'을 시작으로 21편의 영화를 제작한 워트 디즈니 스튜디오의 자회사다. 영화를 비롯해서 마블 원샷과 TV시리즈가 하나의 거대한 세계관을 이루고 있으며, 이를 MCU(MARVEL Cinematic Universe)라고 일컫는다. 이 시리즈는 전 세계에서 175억 달러의 흥행수익을 거뒀고 이는 역사상 가장 높은 수익을 올린 영화 프랜차이즈다.</p>
+                <img src="./img/banner2.jpg" alt="어벤져스:엔드게임" class="ban">
+                <p class="info item2">이 거대한 시리즈는 10년째 순항하고 있으며 올해는 Phase4의 마지막 영화인 대종장 'AVENGERS : END GAME'의 개봉을 앞두고 있다. 또한 마블 스튜디오에서는 'IronMan1'으로부터 시작되어 어느덧 10주년을 맞이한 MCU를 기념해 10주년 기념 사진 촬영을 진행했는데, 이 촬영현장의 비하인드 영상을 유튜브를 통해 공개했다. 영상에서는 MCU의 대부 Stan Lee와 MCU의 대표 히어로, Ironman 역할의 Robert Downey Jr.를 비롯해 수많은 배우들과 제작자들을 찾아볼 수 있다.</p>
+                <div class="videoWrap">
+                    <iframe width="1920" height="969" src="https://www.youtube.com/embed/OzRsRUHw32M" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>    
+        </div>
+        <div class="page page2" id="page2">
+            <div class="wrap">
+                <h4 class="pageTit">MCU의 대표 작품</h4>
+                <div class="conBox item1">
+                   <img src="./img/mcu1.jpg" alt="캡틴마블"> 
+                </div>
+                <div class="conBox item2">
+                   <img src="./img/mcu2.jpg" alt="앤트맨과 와스프"> 
+                </div>
+                <div class="conBox item3">
+                   <img src="./img/mcu3.png" alt="어벤져스:인피니티워"> 
+                </div>
+                <div class="conBox item4">
+                   <img src="./img/mcu4.jpg" alt="토르:라그나로크"> 
+                </div>
+                <div class="conBox item5">
+                   <img src="./img/mcu5.jpg" alt="캡틴아메리카:시빌워"> 
+                </div>
+                <h4 class="pageTit item2">MCU의 최신 작품</h4>
+                <div class="videoWrap">
+                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/wGf4Q8Tqthc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>    
+                </div>
+            </div>    
+        </div>
+        <div class="page page3" id="page3">
+            <div class="wrap">
+                <h4 class="pageTit">Avengers</h4>
+                <p class="more">마블의 대표 영화이자 여러 히어로들의 팀플레이를 볼 수 있는 어벤져스는 총 3편이 개봉했고 올해 4월 어벤져스4의 개봉을 앞두고 있다.</p>
+                <div class="imgBox">
+                    <a href="">
+                        <img src="./img/aven1.jpg" alt="어벤져스1">
+                        <p class="detail">개봉일<span class="sign">:</span>2012-04-26</p>
+                    </a>
+                </div>
+                <div class="imgBox">
+                    <a href="">
+                        <img src="./img/aven2.jpg" alt="어벤져스2">
+                        <p class="detail">개봉일<span class="sign">:</span>2015-04-23</p>
+                    </a>
+                </div>
+                <div class="imgBox">
+                    <a href="">
+                        <img src="./img/aven3.jpg" alt="어벤져스3">
+                        <p class="detail">개봉일<span class="sign">:</span>2018-04-25</p>
+                    </a>
+                </div>
+            </div>    
+        </div>
+        <div class="page page4" id="page4">
+            <div class="wrap">
+                <h4 class="pageTit">Hero</h4>
+                <div class="subBox item1">
+                    <h3 class="subTit"><span class="txt_r">About</span> 히어로 : 캡틴마블편<span class="date">2019-02-17</span></h3>
+                    <a href="">
+                        <img src="./img/hero1.jpg" alt="캡틴마블">
+                        <p class="click">자세히보기</p>
+                    </a>
+                </div>
+                <div class="subBox item2">
+                    <h3 class="subTit"><span class="txt_r">About</span> 히어로 : 와스프편<span class="date">2018-06-24</span></h3>
+                    <a href="">
+                        <img src="./img/hero2.jpg" alt="와스프">
+                        <p class="click">자세히보기</p>
+                    </a>
+                </div>
+                <div class="subBox item3">
+                    <h3 class="subTit"><span class="txt_r">About</span> 히어로 : 앤트맨편<span class="date">2018-06-15</span></h3>
+                    <a href="">
+                        <img src="./img/hero3.jpg" alt="앤트맨">
+                        <p class="click">자세히보기</p>
+                    </a>
+                </div>
+                <div class="subBox item4">
+                    <h3 class="subTit"><span class="txt_r">About</span> 히어로 : 닥터 스트레인지편<span class="date">2018-03-11</span></h3>
+                    <a href="">
+                        <img src="./img/hero4.jpg" alt="닥터 스트레인지">
+                        <p class="click">자세히보기</p>
+                    </a>
+                </div>
+                <div class="subBox item5">
+                    <h3 class="subTit"><span class="txt_r">About</span> 히어로 : 블랙팬서편<span class="date">2018-01-21</span></h3>
+                    <a href="">
+                        <img src="./img/hero5.jpg" alt="블랙팬서">
+                        <p class="click">자세히보기</p>
+                    </a>
+                </div>
+                <div class="subBox item5">
+                    <h3 class="subTit"><span class="txt_r">About</span> 히어로 : 블랙위도우편<span class="date">2018-01-21</span></h3>
+                    <a href="">
+                        <img src="./img/hero6.jpg" alt="블랙위도우">
+                        <p class="click">자세히보기</p>
+                    </a>
+                </div>
+                <div class="subBox item5">
+                    <h3 class="subTit"><span class="txt_r">About</span> 히어로 : 토르편<span class="date">2018-01-21</span></h3>
+                    <a href="">
+                        <img src="./img/hero7.jpg" alt="토르">
+                        <p class="click">자세히보기</p>
+                    </a>
+                </div>
+                <div class="subBox item5">
+                    <h3 class="subTit"><span class="txt_r">About</span> 히어로 : 아이언맨편<span class="date">2018-01-21</span></h3>
+                    <a href="">
+                        <img src="./img/hero8.jpg" alt="아이언맨">
+                        <p class="click">자세히보기</p>
+                    </a>
+                </div>
+            </div>    
+        </div>
+        <footer id="ft">
+            <div class="ftWrap1">
+                <ul>
+                    <li class="item1"><a href=""></a></li>
+                    <li class="item2"><a href=""></a></li>
+                    <li class="item3"><a href=""></a></li>
+                </ul>   
+            </div>
+            <div class="ftWrap2">
+                <p class="copy">COPYRIGHT ⓒ MARVEL Studios ALL RIGHTS RESERVED.</p>    
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
