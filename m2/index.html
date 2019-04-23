@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>::: 하나투어를 방문해주셔서 감사합니다 :::</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="reset.css">
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic" rel="stylesheet">
+    
+    
+    <!--  데스크탑 기본 IE/Window -->
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon16.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon32.ico">
+    
+     <!-- iPhone iOS 7이상   -->
+    <link rel="apple-touch-icon" size="120X120" href="./ico/favicon120.png">
+    <!--  표준 iOS 홈스크린  -->
+    <link rel="apple-touch-icon" size="57X57" href="./ico/favicon57.png">
+    <!--  iOS 홈스크린  -->
+    <link rel="apple-touch-icon" size="72X72" href="./ico/favicon72.png">
+    <!--  아이폰 레티나  -->
+    <link rel="apple-touch-icon" size="114X114" href="./ico/favicon114.png">
+    <!--  iPhone iOS  -->
+    <link rel="apple-touch-icon" size="180X180" href="./ico/favicon180.png">
+    <!--  안드로이드/iOS 기본   -->
+    <link rel="apple-touch-icon" size="152X152" href="./ico/favicon152.png">
+    <!--  안드로이드 크롬 홈  -->
+    <link rel="apple-touch-icon" size="196X196" href="./ico/favicon196.png">
+     <!--  아이패트 레티나 터치  -->
+    <link rel="apple-touch-icon" size="167X167" href="./ico/favicon167.png">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="application-name" content="HANATOUR Web Site">
+    <meta name="author" content="SoeunPark">
+    <meta name="description" content="HANATOUR Mobilepage">
+    <meta name="generator" content="Brackets">
+    <meta name="keywords" content="하나, 하나투어, 투어, 여행사, 하나투어 홈페이지, 하나투어 웹사이트, 여행">
+    
+    <!--  데스크탑 jquery  -->
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <!--  모바일/태블릿 jquery  -->
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    
+    <script>
+     $(document).ready(function(){
+        var wd = parseInt($(".slide").width());
+        function nextAni(){
+            $(".slideBox").not(":animated").animate({"margin-left":-wd+"px"}, 800, function(){
+                $(".slideBox li").removeClass("on");
+                $(".slideBox li").eq(0).appendTo($(".slideBox"));
+                $(".slideBox").css("margin-left", "0px");
+                $(".slideBox li").eq(0).addClass("on");
+            }); 
+        }
+        var intv = setInterval(function(){
+           nextAni(); 
+        }, 3200);
+         
+        var loadingToSplash = setTimeout(function(){
+            loadSplash();
+        }, 1000);
+        
+        function loadSplash(){
+            $("#splash").animate({"opacity":"0", "left": "-101%"}, 600, function(){
+                $("#splach").fadeOut();
+            });
+        }
+    });
+    </script>
+    <script>
+     $(document).ready(function(){
+       $(window).scroll(function(){
+          $("#hd").removeClass("on");
+          var scTop = $(window).scrollTop();
+          if(scTop>=300){
+               $("#hd").addClass("on");
+          } 
+       }); 
+    });
+    </script>
+    
+    <style>
+    
+    #hd { width: 100%; height: 60px; background: transparent; position: fixed; z-index: 999; top: 0; left: 0; }
+    #hd.on { background: #fff; }
+    #hd.on .logo { display: block; width: 74px; height: 40px; margin-top: 10px; margin-left: 20px; background-image: url("./icon/iconset.png"); background-repeat: no-repeat; background-position: -83px -49px; text-indent: -9999px; float: left;}
+    #hd.on label.menu { display: block; float: right; width: 44px; height: 31px; background-image: url("./icon/iconset.png"); background-repeat: no-repeat; background-position: -9px -13px; text-indent: -9999px; margin-top: 14px; margin-right: 20px; background-color: transparent; }
+    .logo { display: block; width: 74px; height: 40px; margin-top: 10px; margin-left: 20px; background-image: url("./icon/iconset.png"); background-repeat: no-repeat; background-position: -10px -51px; text-indent: -9999px; float: left; }
+    #hd label.menu { display: block; float: right; width: 44px; height: 31px; background-image: url("./icon/iconset.png"); background-repeat: no-repeat; background-position: -56px -13px; text-indent: -9999px; margin-top: 14px; margin-right: 20px; background-color: transparent; }
+    #ck1:checked ~ #gnb { opacity: 1; top: 0; right: 0; }
+    #ck1:not(:checked) ~ #gnb { opacity: 0; top: 0; right: -100%; }
+    .ckItem { display: none; }
+    #gnb { position: fixed; top: 0px; right: -100%; width: 100%; height: 100%; opacity: 0; transition: 0.6s; transition-delay: 0.2s; clear: both; }
+    .hdWrap { width: 100%; height: 60px; background: #fff; position: relative; clear: both; }
+    .login { display: block; color: #666; font-size: 1.25em; width: 108px; height: 37px; margin-top: 10px; margin-left: 20px; background-image: url("./icon/iconset.png"); background-repeat: no-repeat; background-position: -148px -8px; text-indent: -9999px; float: left; }
+    .close { display: block; width: 36px; height: 35px; background-color: transparent; float: right; background-image: url("./icon/iconset.png"); background-repeat: no-repeat; background-position: -107px -11px; text-indent: -9999px; margin-top: 12px; margin-right: 20px; }
+    #gnb ul { width: 100%; height: 100%; background: #333; }
+    #gnb li { clear: both; width: 100%; line-height: 45px; background: #333; border-bottom: 1px solid #666; }
+    #gnb li:last-child { border-bottom: 0px; }
+    #gnb li label { display: block; color: #fff; padding-left:40px; float: left; width: 100%; }
+    #gnb li label span.more { float: right; color: #fff; font-weight: bold; margin-right: 40px; width: 10%; }
+    .sub { position: relative; width: 100%; height: 0px; opacity: 0; transition: 0.6s; transition-delay: 0.2s; overflow: hidden; background: #333; border-top: 1px solid #666; }
+    #ck2:checked ~ .sub.item1 { height: 137px; opacity: 1; }
+    #ck2:checked ~ .mnDep1 { color: #e45b85; font-weight: bold; }
+    #ck2:not(:checked) ~ .sub.item1 { height: 0; opacity: 0; }
+    #ck3:checked ~ .sub.item2 { height: 137px; opacity: 1; }
+    #ck3:checked ~ .mnDep1 { color: #e45b85; font-weight: bold; }
+    #ck3:not(:checked) ~ .sub.item2 { height: 0; opacity: 0; }
+    #ck4:checked ~ .sub.item3 { height: 182px; opacity: 1; }
+    #ck4:checked ~ .mnDep1 { color: #e45b85; font-weight: bold; }
+    #ck4:not(:checked) ~ .sub.item3 { height: 0; opacity: 0; }
+    #ck5:checked ~ .sub.item4 { height: 182px; opacity: 1; }
+    #ck5:checked ~ .mnDep1 { color: #e45b85; font-weight: bold; }
+    #ck5:not(:checked) ~ .sub.item4 { height: 0; opacity: 0; }
+    #ck6:checked ~ .sub.item5 { height: 137px; opacity: 1; }
+    #ck6:checked ~ .mnDep1 { color: #e45b85; font-weight: bold; }
+    #ck6:not(:checked) ~ .sub.item5 { height: 0; opacity: 0; }
+    
+    .sub li { width: 100%; }
+    .sub li a { display: block; width: 100%; color: #fff; padding-left: 60px; }
+    
+    
+    
+    </style>
+    <style>
+    #main { width: 100%; height: 100%; clear: both; }
+    .page1 { width: 100%; height: 100%; clear: both; }
+    .slide { width: 100%; height: 100%; overflow: hidden; }
+    .slideBox { width: 200%; height: 100%; background-color: #554c48; }
+    .slideBox li { float: left; width: 50%; height: 100%; background-repeat: no-repeat; background-size: cover; background-position: center center; transition: 0.6s; }
+    .sildeBox li.on { opacity: 1; }
+    .slideImg { width: 100%; height: 100%; }
+    .slideBox li.item1 { background-image: url("./img/vs1.jpg"); }
+    .slideBox li.item2 { background-image: url("./img/vs2.jpg"); background-position: right center; }
+    .slideCon { position: relative; padding-top: 40%; }
+    .slideBox li .titImg { padding-top: 4em; margin-top: 100%; opacity:0; transition:0.6s; transition-property:margin-top, opacity; transition-delay:0s, 0.4s; color: #fff; font-weight: bolder; font-size: 3em; text-align: center; text-shadow:1px 1px 5px #333, -1px -1px 5px #333; }
+    .slideBox li.on .titImg { margin-top:0; opacity:1; }
+    .slideBox li .slideTit { font-size: 1em; color: #fff; text-align: center; padding-top: 3em; text-shadow:1px 1px 5px #333, -1px -1px 5px #333; line-height: 1.6; }
+    </style>
+    <style>
+    .page2 { width: 100%; min-height: 100%; clear: both; margin-top: 20px; }
+    .conBox { width: 90%; margin: 0 auto; background: #ebebeb; height: 100%; clear: both; }
+    .introImg { width: 100%; padding-top: 50px; }
+    .introImg img { width: 100%; }
+    .conTit { font-size: 1.5em; font-weight: 800; margin-top: 30px; text-align: center; word-break: keep-all; }
+    .conCom { text-align: center; line-height: 1.6; padding: 15px 15px 20px 15px; word-break: keep-all; }
+    .conCom .txt_p { font-size: 1.25em; font-weight: bolder; color: #e45b85; }
+    .conBox2 { width: 90%; margin: 0 auto; border-radius: 10px; background: #fff; margin-bottom: 20px; margin-top: 10px; }
+    .tit { padding: 20px 20px 10px 20px; word-break: keep-all; }
+    .blank:after { content: "―"; width: 10px; height: 5px; color: #e45b85; padding: 0px 20px 20px 20px; }
+    .com { font-size: 1.25em; font-weight: bolder; color: #e45b85; padding: 10px 20px 15px 20px; word-break: keep-all; }
+    .subCom { font-weight: 500; padding: 0px 20px 20px 20px; word-break: keep-all; }
+    </style>
+    <style>
+    .page3 { width: 100%; min-height: 100%; clear: both; }
+    .wrap { width: 90%; margin: 0 auto; background: #ebebeb; margin-top: 20px; }
+    .imgBox { width: 90%; margin: 0 auto; position: relative; padding-top: 20px; }
+    .imgBox:last-child { padding-bottom: 10px; }
+    .imgBox img { width: 100%; height: 100%; }
+    .country { background: #e45b85; color: #fff; position: absolute; z-index: 10; top: 10%; left: 0; padding: 10px 0px 10px 0px; width: 30%; text-align: center; font-weight: bold; }  
+    </style>
+    <style>
+    .page4 { width: 100%; min-height: 100%; margin-top: 20px; position: relative; clear: both; }
+    .videoWrap { width: 90%; margin: 0 auto; height: 100%; position: absolute; }
+    </style>
+    <style>
+    .page5 { width: 100%; min-height: 100%; margin-top: 20px; clear: both; }
+    .imgWrap { width: 90%; margin: 0 auto; height: auto; background-image: url(./img/feedback.jpg); background-repeat: no-repeat; background-size: cover; background-position: center center; padding-bottom: 30px; }
+    .wrapTit { font-size: 1.5em; text-align: center; color: #fff; padding: 60px 0px 20px 0px; }
+    .feedBox { width: 90%; margin: 0 auto; background: rgba(255, 255, 255, 0.6); margin-top: 20px; padding: 20px 0px 20px 0px; }
+    .feedTit { width: 100%; text-align: center; }
+    .feedCom { font-size: 0.85em; text-align: center; padding-top: 10px; }
+    .date { font-size: 0.8em; text-align: center; padding-top: 5px; }
+    </style>
+    <style>
+    .page6 { width: 100%; min-height: 100%; margin-top: 20px; clear: both; }
+    .telWrap { width: 90%; margin: 0 auto; height: 100%; background-image: url("./img/tel.jpg"); background-size: cover; background-position: left center; background-repeat: no-repeat; }
+    .txt_p { color: #e45b85; font-size: 1.5em; text-align: center; }
+    .telTit { color: #fff; font-size: 1.5em; text-align: center; padding-top: 20px; line-height: 1.6; text-shadow:1px 1px 5px #333, -1px -1px 5px #333; }
+    .telCom { color: #fff; text-align: center; font-size: 0.85em; line-height: 1.6; text-shadow:1px 1px 5px #333, -1px -1px 5px #333; }
+    .telBox { margin-top: 20px; padding: 0px 20px 20px 20px; word-break: keep-all; }
+    .telBox.item1 { padding-top: 40px; }
+    .telBoxTit { color: #fff; text-align: center; padding-top: 20px; font-size: 1.15em; font-weight: bold; word-break: keep-all; text-shadow:1px 1px 5px #333, -1px -1px 5px #333; }
+    .telBoxCom { color: #fff; text-align: center; padding-top: 10px; font-size: 0.85em; line-height: 1.6; text-shadow:1px 1px 5px #333, -1px -1px 5px #333; }
+    .telSubCom { color: #fff; text-align: center; padding-top: 5px; font-size: 0.8em; line-height: 1.6; text-shadow:1px 1px 5px #333, -1px -1px 5px #333; }    
+    </style>
+    <style>
+    #ft { width: 100%; height: 120px; clear: both; position: relative; }
+    .ftWrap1 { width: 90%; height: 30px; margin: 0 auto; margin-bottom: 30px; position: relative; margin-top: 30px; }
+    .snsBox { width: 259px; margin: 0 auto; height: 100%; } 
+    .snsBox li { float: left; background-repeat: no-repeat; }
+    .subBox li a { display: block; text-indent: -9999px; width: 100%; }
+    .snsBox li.item1 { width: 37px; height: 37px; background-image: url(./icon/iconset.png); background-position: -11px -97px; }
+    .snsBox li.item2 { width: 37px; height: 37px; background-image: url(./icon/iconset.png); background-position: -84px -97px; }
+    .snsBox li.item3 { width: 37px; height: 37px; background-image: url(./icon/iconset.png); background-position: -12px -137px; }
+    .snsBox li.item4 { width: 37px; height: 37px; background-image: url(./icon/iconset.png); background-position: -85px -137px; }
+    .snsBox li.item5 { width: 37px; height: 37px; background-image: url(./icon/iconset.png); background-position: -11px -178px; }
+    .snsBox li.item6 { width: 37px; height: 37px; background-image: url(./icon/iconset.png); background-position: -85px -178px; }
+    .snsBox li.item7 { width: 37px; height: 37px; background-image: url(./icon/iconset.png); background-position: -11px -218px; }
+    .ftWrap2 { width: 90%; height: 90px; margin: 0 auto; position: relative; padding-bottom: 20px; }
+    .copy { font-size: 0.75em; text-align: center; line-height: 1.6; }
+    .copy.item2 { font-size: 0.6em; }
+    </style>
+    <style>
+     #splash { width: 100%; height: 100%; position:fixed; top: 0; left: 0; z-index:999; background:#fff; }
+    .splashWrap { width:90%; height: 90%; margin:5%; background-repeat:no-repeat; background-size:cover; background-position: left center; background-image:url("./img/vs3.jpg"); } 
+    </style>
+    
+</head>
+<body>
+    <header id="hd" class="on">
+        <a href="index.html" class="logo">로고</a>
+        <input type="checkbox" class="ckItem" id="ck1">
+        <label for="ck1" class="menu">메뉴</label>
+        <nav id="gnb">
+               <div class="hdWrap">
+                   <a href="" class="login">login</a>
+                   <input type="checkbox" id="ck1" class="ckItem">
+                   <label for="ck1" class="close">닫기</label>    
+               </div>
+               <ul>
+                   <li class="item1">
+                       <input type="checkbox" class="ckItem" id="ck2">
+                       <label for="ck2" class="mnDep1">해외<span class="more">+</span></label>
+                       <ul class="sub item1">
+                           <li><a href="">패키지 여행</a></li>
+                           <li><a href="">자유 여행</a></li>
+                           <li><a href="thema.html">테마 여행</a></li>
+                       </ul>
+                   </li>
+                   <li class="item2">
+                       <input type="checkbox" class="ckItem" id="ck3">
+                       <label for="ck3" class="mnDep1">국내<span class="more">+</span></label>
+                       <ul class="sub item2">
+                           <li><a href="">내륙 여행</a></li>
+                           <li><a href="">자유 여행</a></li>
+                           <li><a href="">제주 여행</a></li>
+                       </ul>
+                   </li>
+                   <li class="item3">
+                       <input type="checkbox" class="ckItem" id="ck4">
+                       <label for="ck4" class="mnDep1">연계서비스<span class="more">+</span></label>
+                       <ul class="sub item3">
+                           <li><a href="">공연/전시</a></li>
+                           <li><a href="">기업출장/단체</a></li>
+                           <li><a href="">여행용품샵</a></li>
+                           <li><a href="">비자 수속</a></li>
+                       </ul>
+                   </li>
+                   <li class="item4">
+                       <input type="checkbox" class="ckItem" id="ck5">
+                       <label for="ck5" class="mnDep1">여행정보<span class="more">+</span></label>
+                       <ul class="sub item4">
+                           <li><a href="">패키지피플</a></li>
+                           <li><a href="">인기여행도시</a></li>
+                           <li><a href="">전문가 여행기</a></li>
+                           <li><a href="">테마여행 동영상</a></li>
+                       </ul>
+                   </li>
+                   <li class="item5">
+                       <input type="checkbox" class="ckItem" id="ck6">
+                       <label for="ck6" class="mnDep1">MY HANA<span class="more">+</span></label>
+                       <ul class="sub item5">
+                           <li><a href="">예약확인/결제</a></li>
+                           <li><a href="">쿠폰</a></li>
+                           <li><a href="">나의 혜택 확인</a></li>
+                       </ul>
+                   </li>
+                   <li class="item6">
+                       <label for="ck7">이벤트</label>
+                   </li>
+               </ul>
+        </nav> 
+    </header>
+   
+    <div id="main">  
+        
+        <div class="page1">
+            <div class="slide">
+                <ul class="slideBox">
+                    <li class="item1 on">
+                        <div class="slideCon">
+                            <h2 class="titImg">HANA TOUR</h2>
+                            <h3 class="slideTit">낭만과 역사가 살아 숨쉬는 <br>동유럽에서의 하룻밤</h3>
+                        </div>
+                    </li>
+                    <li class="item2">
+                        <div class="slideCon">
+                            <h2 class="titImg">HANA TOUR</h2>
+                            <h3 class="slideTit">낭만을 찾아 떠나는 여행</h3>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="page2">
+           <div class="conBox">
+               <div class="introImg"><img src="./img/intro.jpg" alt="3월의 추천여행지"></div>
+               <h4 class="conTit">3월의 추천 여행지</h4>
+               <p class="conCom"><span class="txt_p">지금 바로</span><br>하나투어의 <span class="txt_p">3월 추천 여행지</span>를 알아보고 추천 여행지 특전 상품들을 만나보세요!</p>
+               <div class="conBox2 item1">
+                  <h4 class="tit">사전예약 할인</h4>
+                  <span class="blank"></span>
+                  <p class="com">최대 30만원 할인</p>
+                  <p class="subCom">90일전 예약 및 결제 시<br>30만원/인 할인</p> 
+               </div>
+               <div class="conBox2 item2">
+                  <h4 class="tit">다다익선 할인</h4>
+                  <span class="blank"></span>
+                  <p class="com">팀당 최대 200만원 할인</p>
+                  <p class="subCom">8명 예약 시,<br>팀당 200만원 할인</p> 
+               </div>
+           </div> 
+        </div>
+        
+        <div class="page3">
+           <div class="wrap">
+               <div class="imgBox">
+                   <img src="./img/italy.jpg" alt="이탈리아">
+                   <p class="country">이탈리아</p>
+               </div>
+               <div class="imgBox">
+                   <img src="./img/greece.jpg" alt="그리스">
+                   <p class="country">그리스</p>
+               </div>
+               <div class="imgBox">
+                   <img src="./img/usa.jpg" alt="미국">
+                   <p class="country">미국</p>
+               </div>
+               <div class="imgBox">
+                   <img src="./img/sydney.jpg" alt="호주">
+                   <p class="country">호주</p>
+               </div>
+               <div class="imgBox">
+                   <img src="./img/paris.jpg" alt="프랑스">
+                   <p class="country">프랑스</p>
+               </div>
+               <div class="imgBox">
+                   <img src="./img/china.jpg" alt="중국">
+                   <p class="country">중국</p>
+               </div>
+               <div class="imgBox">
+                   <img src="./img/india.jpg" alt="인도">
+                   <p class="country">인도</p>
+               </div>
+               <div class="imgBox">
+                   <img src="./img/tailand.jpg" alt="태국">
+                   <p class="country">태국</p>
+               </div>
+               <div class="imgBox">
+                   <img src="./img/africa.jpg" alt="아프리카">
+                   <p class="country">아프리카</p>
+               </div>
+           </div> 
+        </div>
+        
+        <div class="page4">
+          <div class="wrap">
+           <div class="videoWrap">
+               <iframe width="100%" height="100%" src="https://www.youtube.com/embed/JriI2NbAPRc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>    
+               </iframe>    
+           </div>
+          </div> 
+        </div>
+        
+        <div class="page5">
+           <div class="imgWrap">
+              <h2 class="wrapTit">고객의 소리</h2>
+               <div class="feedBox">
+                   <h4 class="feedTit">태국 서장원 가이드님 건강하세요.</h4>
+                   <p class="feedCom">김**</p>
+                   <p class="date">2019-03-04</p>
+               </div>
+               <div class="feedBox">
+                   <h4 class="feedTit">지구별여행학교</h4>
+                   <p class="feedCom">유**</p>
+                   <p class="date">2019-03-04</p>
+               </div>
+               <div class="feedBox">
+                   <h4 class="feedTit">패키지 여행중에 산 물건을 <br>환불하고 싶은데요</h4>
+                   <p class="feedCom">한**</p>
+                   <p class="date">2019-03-04</p>
+               </div>
+               <div class="feedBox">
+                   <h4 class="feedTit">호텔 예약시 예약한 시점으로 <br>환율이 적용되나요?</h4>
+                   <p class="feedCom">이**</p>
+                   <p class="date">2019-03-04</p>
+               </div>
+               <div class="feedBox">
+                   <h4 class="feedTit">예약했는데 예약/결제에 안떠요</h4>
+                   <p class="feedCom">윤**</p>
+                   <p class="date">2019-03-04</p>
+               </div>
+           </div> 
+        </div>
+        
+        <div class="page6">
+            <div class="telWrap">
+               <div class="telBox item1">
+                <h4 class="telTit">하나투어닷컴 고객센터<br><span class="txt_p">1577-1233</span></h4>
+                <p class="telCom">고객님의 문의사항에 대해 <br>담당자가 친절히 안내해 드립니다.</p>
+               </div>
+               <div class="telBox">
+                <h5 class="telBoxTit">해외여행 문의</h5>
+                <p class="telBoxCom">1. 평일 해외여행 상담시간(월~금)</p>
+                <p class="telSubCom">1) 기본 상담시간 : 09:00~18:00 <br>2) 당직 상담시간 : 18:00~20:00</p>
+                <p class="telBoxCom">2. 토요일 해외여행 상담시간</p>
+                <p class="telSubCom">1) 09:00~18:00</p>
+                <p class="telBoxCom">3. 일요일 및 공휴일은 휴무</p>
+               </div>
+               <div class="telBox">
+                <h5 class="telBoxTit">국내여행/기업출장/교육여행 단체 문의</h5>
+                <p class="telBoxCom">평일 : 09:00~18:00</p>
+                <p class="telSubCom">SM면세점 최대 30% 할인주문</p>
+                <p class="telBoxCom">평일 : 10:00~19:00 [점심시간 : 13:00~14:00] <br>(토요일/일요일/공휴일은 휴무)</p>
+               </div>
+               <div class="telBox">
+                <h5 class="telBoxTit">ARS 상담번호 안내</h5>
+                <p class="telBoxCom">1번 예약상담</p>
+                <p class="telBoxCom">2번 ARS 예약 확인 및 결제 확인</p>
+                <p class="telBoxCom">3번 국내공연예매, 마일리지 및 제휴카드, 기타문의</p>
+               </div>
+            </div>
+        </div>
+        
+        <footer id="ft">
+        <div class="ftWrap1">
+            <ul class="snsBox">
+                <li class="item1"><a href="https://www.facebook.com/HanaTour.fb"></a></li>
+                <li class="item2"><a href="https://www.instagram.com/hanatour_official/"></a></li>
+                <li class="item3"><a href="https://story.kakao.com/#ch/hanatour"></a></li>
+                <li class="item4"><a href="https://pf.kakao.com/_ftrPI"></a></li>
+                <li class="item5"><a href="http://blog.hanatour.com/"></a></li>
+                <li class="item6"><a href="https://twitter.com/hanatour"></a></li>
+                <li class="item7"><a href="https://www.youtube.com/user/HanaTour"></a></li>
+            </ul>
+        </div>
+        <div class="ftWrap2">
+            <p class="copy item1">(주)하나투어 ┃ 대표:김진국 <br>주소:(03161) 서울특별시 종로구 인사동 5길 41 <br>사업자 등록번호: 102-81-39440 <br>관광사업자 등록번호: 제1993-000006호</p>
+            <p class="copy item2">COPYRIGHT(C) HANATOUR SERVICE INC. ALL RIGHTS RESERVED </p>
+        </div>
+    </footer>
+    
+    </div>
+    <div id="splash">
+    <div class="splashWrap"></div>
+    </div>
+    
+    
+</body>
+</html>

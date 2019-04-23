@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>::: 하나투어를 방문해주셔서 감사합니다 :::</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="reset.css">
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic" rel="stylesheet">
+    
+    
+    <!--  데스크탑 기본 IE/Window -->
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon16.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon32.ico">
+    
+     <!-- iPhone iOS 7이상   -->
+    <link rel="apple-touch-icon" size="120X120" href="./ico/favicon120.png">
+    <!--  표준 iOS 홈스크린  -->
+    <link rel="apple-touch-icon" size="57X57" href="./ico/favicon57.png">
+    <!--  iOS 홈스크린  -->
+    <link rel="apple-touch-icon" size="72X72" href="./ico/favicon72.png">
+    <!--  아이폰 레티나  -->
+    <link rel="apple-touch-icon" size="114X114" href="./ico/favicon114.png">
+    <!--  iPhone iOS  -->
+    <link rel="apple-touch-icon" size="180X180" href="./ico/favicon180.png">
+    <!--  안드로이드/iOS 기본   -->
+    <link rel="apple-touch-icon" size="152X152" href="./ico/favicon152.png">
+    <!--  안드로이드 크롬 홈  -->
+    <link rel="apple-touch-icon" size="196X196" href="./ico/favicon196.png">
+     <!--  아이패트 레티나 터치  -->
+    <link rel="apple-touch-icon" size="167X167" href="./ico/favicon167.png">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="application-name" content="HANATOUR Web Site">
+    <meta name="author" content="SoeunPark">
+    <meta name="description" content="HANATOUR Mobilepage">
+    <meta name="generator" content="Brackets">
+    <meta name="keywords" content="하나, 하나투어, 투어, 여행사, 하나투어 홈페이지, 하나투어 웹사이트, 여행">
+    
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+<!--
+    <script>
+     $(document).ready(function(){
+       $(window).scroll(function(){
+          $("#hd").removeClass("on");
+          var scTop = $(window).scrollTop();
+          if(scTop>=300){
+               $("#hd").addClass("on");
+          } 
+       }); 
+    });
+    </script>
+-->
+    
+    <style>
+    #hd.on { width: 100%; height: 60px; background: #fff; position: relative; border-bottom: 1px solid #333; }
+    #hd.on .logo { display: block; width: 74px; height: 40px; margin-top: 10px; margin-left: 20px; background-image: url("./icon/iconset.png"); background-repeat: no-repeat; background-position: -83px -49px; text-indent: -9999px; float: left;}
+    #hd.on label.menu { display: block; float: right; width: 44px; height: 31px; background-image: url("./icon/iconset.png"); background-repeat: no-repeat; background-position: -9px -13px; text-indent: -9999px; margin-top: 14px; margin-right: 20px; background-color: transparent; }
+    .logo { display: block; width: 74px; height: 40px; margin-top: 10px; margin-left: 20px; background-image: url("./icon/iconset.png"); background-repeat: no-repeat; background-position: -10px -51px; text-indent: -9999px; float: left; }
+    #hd label.menu { display: block; float: right; width: 44px; height: 31px; background-image: url("./icon/iconset.png"); background-repeat: no-repeat; background-position: -56px -13px; text-indent: -9999px; margin-top: 14px; margin-right: 20px; background-color: transparent; }
+    #ck1:checked ~ #gnb { opacity: 1; top: 0; right: 0; }
+    #ck1:not(:checked) ~ #gnb { opacity: 0; top: 0; right: -100%; }
+    .ckItem { display: none; }
+    #gnb { position: fixed; top: 0px; right: -100%; width: 100%; height: 100%; opacity: 0; transition: 0.6s; transition-delay: 0.2s; clear: both; }
+    .hdWrap { width: 100%; height: 60px; background: #fff; position: relative; clear: both; }
+    .login { display: block; color: #666; font-size: 1.25em; width: 108px; height: 37px; margin-top: 10px; margin-left: 20px; background-image: url("./icon/iconset.png"); background-repeat: no-repeat; background-position: -148px -8px; text-indent: -9999px; float: left; }
+    .close { display: block; width: 36px; height: 35px; background-color: transparent; float: right; background-image: url("./icon/iconset.png"); background-repeat: no-repeat; background-position: -107px -11px; text-indent: -9999px; margin-top: 12px; margin-right: 20px; }
+    #gnb ul { width: 100%; height: 100%; background: #333; }
+    #gnb li { clear: both; width: 100%; line-height: 45px; background: #333; border-bottom: 1px solid #666; }
+    #gnb li:last-child { border-bottom: 0px; }
+    #gnb li label { display: block; color: #fff; padding-left:40px; float: left; width: 100%; }
+    #gnb li label span.more { float: right; color: #fff; font-weight: bold; margin-right: 40px; width: 10%; }
+    .sub { position: relative; width: 100%; height: 0px; opacity: 0; transition: 0.6s; transition-delay: 0.2s; overflow: hidden; background: #333; border-top: 1px solid #666; }
+    #ck2:checked ~ .sub.item1 { height: 137px; opacity: 1; }
+    #ck2:checked ~ .mnDep1 { color: #e45b85; font-weight: bold; }
+    #ck2:not(:checked) ~ .sub.item1 { height: 0; opacity: 0; }
+    #ck3:checked ~ .sub.item2 { height: 137px; opacity: 1; }
+    #ck3:checked ~ .mnDep1 { color: #e45b85; font-weight: bold; }
+    #ck3:not(:checked) ~ .sub.item2 { height: 0; opacity: 0; }
+    #ck4:checked ~ .sub.item3 { height: 182px; opacity: 1; }
+    #ck4:checked ~ .mnDep1 { color: #e45b85; font-weight: bold; }
+    #ck4:not(:checked) ~ .sub.item3 { height: 0; opacity: 0; }
+    #ck5:checked ~ .sub.item4 { height: 182px; opacity: 1; }
+    #ck5:checked ~ .mnDep1 { color: #e45b85; font-weight: bold; }
+    #ck5:not(:checked) ~ .sub.item4 { height: 0; opacity: 0; }
+    #ck6:checked ~ .sub.item5 { height: 137px; opacity: 1; }
+    #ck6:checked ~ .mnDep1 { color: #e45b85; font-weight: bold; }
+    #ck6:not(:checked) ~ .sub.item5 { height: 0; opacity: 0; }
+    
+    .sub li { width: 100%; }
+    .sub li a { display: block; width: 100%; color: #fff; padding-left: 60px; }
+    
+    
+    
+    </style>
+    
+    <style>
+    #main { width: 100%; height: auto; clear: both; }
+    .content { width: 90%; margin: 0 auto; margin-top: 20px; background: transparent; min-height: 100%; }
+    .conBox { width: 90%; margin: 0 auto; padding: 20px 0px 20px 0px; }
+    .conBox li { width: 100%; background: #fff; border-radius: 20px; clear: both; padding: 10px 0px 15px 0px; margin-top: 20px; box-shadow: 5px 5px 10px #333; }
+    .conBox li:first-child { margin-top: 0; }
+    .conBox li a { display: block; width: 100%; margin: 0 auto; background-repeat: no-repeat; background-image: url("./icon/iconset.png"); }
+    .conBox li a.icon1 { width: 58px; height: 53px; background-position: -9px -257px; } 
+    .conBox li a.icon2 { width: 58px; height: 53px; background-position: -69px -257px; }
+    .conBox li a.icon3 { width: 58px; height: 53px; background-position: -127px -257px; }
+    .conBox li a.icon4 { width: 58px; height: 53px; background-position: -194px -257px; }
+    .conBox li a.icon5 { width: 58px; height: 53px; background-position: -255px -257px; }
+    .conBox li a.icon6 { width: 58px; height: 53px; background-position: -313px -257px; }
+    .conBox li p.tit { color: #333; font-weight: bold; text-align: center; margin-top: 10px; } 
+    .subBox { width: 100%; height: 100%; padding: 50px 0px 20px 0px; background-image: url("./img/thema_img.jpg"); background-repeat: no-repeat; background-size: cover; margin-top: 20px; background-position: center center; }
+    .pageTit { color: #fff; font-weight: bolder; text-align: center; text-shadow:3px 3px 20px #333, -3px -3px 20px #333; }
+    .pageTit .txt_p { color: #e45b85; font-size: 1.5em; padding-right: 2px; }
+   
+    </style>
+  
+    <style>
+    #ft { width: 100%; height: 120px; clear: both; position: relative; }
+    .ftWrap1 { width: 90%; height: 30px; margin: 0 auto; margin-bottom: 30px; position: relative; margin-top: 30px; }
+    .snsBox { width: 259px; margin: 0 auto; height: 100%; } 
+    .snsBox li { float: left; background-repeat: no-repeat; }
+    .subBox li a { display: block; text-indent: -9999px; }
+    .snsBox li.item1 { width: 37px; height: 37px; background-image: url(./icon/iconset.png); background-position: -11px -97px; }
+    .snsBox li.item2 { width: 37px; height: 37px; background-image: url(./icon/iconset.png); background-position: -84px -97px; }
+    .snsBox li.item3 { width: 37px; height: 37px; background-image: url(./icon/iconset.png); background-position: -12px -137px; }
+    .snsBox li.item4 { width: 37px; height: 37px; background-image: url(./icon/iconset.png); background-position: -85px -137px; }
+    .snsBox li.item5 { width: 37px; height: 37px; background-image: url(./icon/iconset.png); background-position: -11px -178px; }
+    .snsBox li.item6 { width: 37px; height: 37px; background-image: url(./icon/iconset.png); background-position: -85px -178px; }
+    .snsBox li.item7 { width: 37px; height: 37px; background-image: url(./icon/iconset.png); background-position: -11px -218px; }
+    .ftWrap2 { width: 90%; height: 90px; margin: 0 auto; position: relative; padding-bottom: 20px; }
+    .copy { font-size: 0.75em; text-align: center; line-height: 1.6; }
+    .copy.item2 { font-size: 0.6em; }
+    </style>
+    
+</head>
+<body>
+    <header id="hd" class="on">
+        <a href="index.html" class="logo">로고</a>
+        <input type="checkbox" class="ckItem" id="ck1">
+        <label for="ck1" class="menu">메뉴</label>
+        <nav id="gnb">
+               <div class="hdWrap">
+                   <a href="" class="login">login</a>
+                   <input type="checkbox" id="ck1" class="ckItem">
+                   <label for="ck1" class="close">닫기</label>    
+               </div>
+               <ul>
+                   <li class="item1">
+                       <input type="checkbox" class="ckItem" id="ck2">
+                       <label for="ck2" class="mnDep1">해외<span class="more">+</span></label>
+                       <ul class="sub item1">
+                           <li><a href="">패키지 여행</a></li>
+                           <li><a href="">자유 여행</a></li>
+                           <li><a href="thema.html">테마 여행</a></li>
+                       </ul>
+                   </li>
+                   <li class="item2">
+                       <input type="checkbox" class="ckItem" id="ck3">
+                       <label for="ck3" class="mnDep1">국내<span class="more">+</span></label>
+                       <ul class="sub item2">
+                           <li><a href="">내륙 여행</a></li>
+                           <li><a href="">자유 여행</a></li>
+                           <li><a href="">제주 여행</a></li>
+                       </ul>
+                   </li>
+                   <li class="item3">
+                       <input type="checkbox" class="ckItem" id="ck4">
+                       <label for="ck4" class="mnDep1">연계서비스<span class="more">+</span></label>
+                       <ul class="sub item3">
+                           <li><a href="">공연/전시</a></li>
+                           <li><a href="">기업출장/단체</a></li>
+                           <li><a href="">여행용품샵</a></li>
+                           <li><a href="">비자 수속</a></li>
+                       </ul>
+                   </li>
+                   <li class="item4">
+                       <input type="checkbox" class="ckItem" id="ck5">
+                       <label for="ck5" class="mnDep1">여행정보<span class="more">+</span></label>
+                       <ul class="sub item4">
+                           <li><a href="">패키지피플</a></li>
+                           <li><a href="">인기여행도시</a></li>
+                           <li><a href="">전문가 여행기</a></li>
+                           <li><a href="">테마여행 동영상</a></li>
+                       </ul>
+                   </li>
+                   <li class="item5">
+                       <input type="checkbox" class="ckItem" id="ck6">
+                       <label for="ck6" class="mnDep1">MY HANA<span class="more">+</span></label>
+                       <ul class="sub item5">
+                           <li><a href="">예약확인/결제</a></li>
+                           <li><a href="">쿠폰</a></li>
+                           <li><a href="">나의 혜택 확인</a></li>
+                       </ul>
+                   </li>
+                   <li class="item6">
+                       <label for="ck7">이벤트</label>
+                   </li>
+               </ul>
+        </nav> 
+    </header>
+   
+    <div id="main">  
+        <div class="subBox">
+            <p class="pageTit"><span class="txt_p">테마별</span>로 만나보는 여행의 매력</p>
+            <div class="content">
+                <ul class="conBox">
+                    <li>
+                        <a href="thema_sub1.html" class="icon1"></a>
+                        <p class="tit">동반자</p>
+                    </li>
+                    <li>
+                        <a href="" class="icon2"></a>
+                        <p class="tit">음식</p>
+                    </li>
+                    <li>
+                        <a href="" class="icon3"></a>
+                        <p class="tit">예술·문화·역사</p>
+                    </li>
+                    <li>
+                        <a href="" class="icon4"></a>
+                        <p class="tit">레포츠·액티비티</p>
+                    </li>
+                    <li>
+                        <a href="" class="icon5"></a>
+                        <p class="tit">쇼핑·이벤트</p>
+                    </li>
+                    <li>
+                        <a href="" class="icon6"></a>
+                        <p class="tit">체험·취미·휴식</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <footer id="ft">
+        <div class="ftWrap1">
+            <ul class="snsBox">
+                <li class="item1"><a href="https://www.facebook.com/HanaTour.fb"></a></li>
+                <li class="item2"><a href="https://www.instagram.com/hanatour_official/"></a></li>
+                <li class="item3"><a href="https://story.kakao.com/#ch/hanatour"></a></li>
+                <li class="item4"><a href="https://pf.kakao.com/_ftrPI"></a></li>
+                <li class="item5"><a href="http://blog.hanatour.com/"></a></li>
+                <li class="item6"><a href="https://twitter.com/hanatour"></a></li>
+                <li class="item7"><a href="https://www.youtube.com/user/HanaTour"></a></li>
+            </ul>
+        </div>
+        <div class="ftWrap2">
+            <p class="copy item1">(주)하나투어 ┃ 대표:김진국 <br>주소:(03161) 서울특별시 종로구 인사동 5길 41 <br>사업자 등록번호: 102-81-39440 <br>관광사업자 등록번호: 제1993-000006호</p>
+            <p class="copy item2">COPYRIGHT(C) HANATOUR SERVICE INC. ALL RIGHTS RESERVED </p>
+        </div>
+    </footer>
+    
+    </div>
+    <div id="splash">
+    <div class="splashWrap"></div>
+    </div>
+    
+    
+</body>
+</html>
