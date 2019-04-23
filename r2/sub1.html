@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>공차</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon16.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon32.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon48.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon64.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon128.png">
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon150.png">
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta name="msapplication-TileImage" content="./ico/favicon144.png">
+    <!-- iPhone iOS 7이상   -->
+    <link rel="apple-touch-icon" size="120X120" href="./ico/favicon120.png">
+    <!--  표준 iOS 홈스크린  -->
+    <link rel="apple-touch-icon" size="57X57" href="./ico/favicon57.png">
+    <!--  iOS 홈스크린  -->
+    <link rel="apple-touch-icon" size="72X72" href="./ico/favicon72.png">
+    <!--  아이폰 레티나  -->
+    <link rel="apple-touch-icon" size="114X114" href="./ico/favicon114.png">
+    <!--  iPhone iOS  -->
+    <link rel="apple-touch-icon" size="180X180" href="./ico/favicon180.png">
+    <!--  안드로이드/iOS 기본   -->
+    <link rel="apple-touch-icon" size="152X152" href="./ico/favicon152.png">
+    <!--  안드로이드 크롬 홈  -->
+    <link rel="apple-touch-icon" size="196X196" href="./ico/favicon196.png">
+    <!--  아이패트 레티나 터치  -->
+    <link rel="apple-touch-icon" size="167X167" href="./ico/favicon167.png">
+   
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="application-name" content="Gong Cha Web Site">
+    <meta name="author" content="SoeunPark">
+    <meta name="description" content="Gong Cha Mainpage">
+    <meta name="generator" content="Brackets">
+    <meta name="keywords" content="Gong Cha, GongCha, Gongcha, gongcha, 공차, 밀크티">
+    
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR" rel="stylesheet">
+    
+    <link rel="stylesheet" href="reset.css">
+    
+    <script>
+    $(document).ready(function(){
+        var vr_cnt=0;
+        var vr_src;
+        var vrIntv = setInterval(function(){
+            vr_cnt++;
+            if(vr_cnt>50){
+                vr_cnt=0;
+            }
+            vrAni(vr_cnt);
+        }, 40);
+        function vrAni(vrNum){
+            if(vrNum>=10){
+                $("#vr_img1").attr("src", "./img/ro00"+vrNum+".png");
+            } else {
+                $("#vr_img1").attr("src", "./img/ro000"+vrNum+".png");
+            }
+        }
+    });
+    </script>
+    
+    <script>
+    $(document).ready(function(){
+        var vr_cnt=0;
+        var vr_src;
+        var vrIntv = setInterval(function(){
+            vr_cnt++;
+            if(vr_cnt>50){
+                vr_cnt=0;
+            }
+            vrAni(vr_cnt);
+        }, 40);
+        function vrAni(vrNum){
+            if(vrNum>=10){
+                $("#vr_img2").attr("src", "./img/ro00"+vrNum+".png");
+            } else {
+                $("#vr_img2").attr("src", "./img/ro000"+vrNum+".png");
+            }
+        }
+    });
+    </script>
+    
+    <script>
+     $(document).ready(function(){
+       $(".hd").removeClass("on");
+       $(window).scroll(function(){
+          $(".hd").removeClass("on");
+          var scTop = $(window).scrollTop();
+          if(scTop>=100){
+               $(".hd").addClass("on");
+          } 
+       }); 
+        $(".openBtn").click(function(){
+           $("#gnb").slideDown(400); 
+        });
+        $(".closeBtn").click(function(){
+           $("#gnb").slideUp(400);  
+        });
+    });
+    </script>
+    
+    <style>
+    @media screen and (max-width:767px){
+    /*  모바일  */
+        .mo { display: block; }
+        .desk { display: none; }
+        .hd { width: 100%; height: 60px; position: fixed; top: 0; left: 0; z-index: 999; }
+        .logo { display: block; width: 49px; height: 40px; margin: 0 auto; text-align: center; background-image: url("./img/logo.png"); background-repeat: no-repeat; background-position: center center; background-size: 100% 40px; margin-top: 10px; }
+        .hd button { display: block; width: 45px; height: 33px; background-image: url("./icon/iconset.png"); background-repeat: no-repeat; background-position: -55px -12px; position: absolute; top: 12px; right: 4%; background-color: transparent; }
+        .hd.on { background: #fff; }
+        .hd.on .logo { background-image: url(./img/logo_on.png); width: 120px; height: 40px; }
+        .hd.on button.openBtn { background-position: -8px -12px; }
+        
+        #gnb { width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.6); display: none; position: fixed; z-index: 9999; top: 0; left: 0; }
+        #gnb .gnb.imgBox { width: 100%; height: 95%; background-image: url("./img/gnb_img.png"); background-repeat: no-repeat; background-size: 100% 100%; background-position: center center; }
+        #gnb .gnb.imgBox .logo { display: block; width: 120px; height: 40px; margin: 0 auto; text-align: center; background-image: url("./img/logo_on.png"); background-repeat: no-repeat; background-position: center center; background-size: 100% 40px; padding-top: 20px; }
+        #gnb .gnb.imgBox button { display: block; width: 45px; height: 33px; background-image: url("./icon/iconset.png"); background-repeat: no-repeat; background-position: -55px -12px; position: absolute; top: 12px; right: 4%; background-color: transparent; }
+        #gnb .gnb.imgBox button.closeBtn { background-position: -103px -12px; }
+        #gnb ul { width: 80%; margin: 0 auto; height: 80%; margin-top: 20%; }
+        #gnb li { clear: both; width: 100%; height: 12vh; line-height: 12vh; }
+        #gnb li a { display: block; text-align: center; color: #333; font-weight: bolder; font-size: 1.2em; }
+        #gnb li a span.txtp { color: #f58492; font-size: 1.35em; padding-right: 3px; }
+        
+        .content { width: 100%; }
+        .vsBox { width: 100%; height: 40vh; background-image: url("./img/sub1.jpg"); background-repeat: no-repeat; background-position: center center; background-size: 100% 100%; position: relative; }
+        .vsTit { font-size: 1.25em; font-weight: 500; line-height: 1.5; color: #000; text-align: center; padding-top: 20px; }
+        .conBoxFrm { width: 100%; height: 600px; background-image: url("./img/sub1_back_mo.png"); background-repeat: no-repeat; background-position: center center; background-size: 68% 68%; }
+        .conBox { width: 90%; margin: 0 auto; height: 120px; }
+        .conBox.item1 { padding-top: 100px; }
+        .conBox.item1 img { float: left; width: 120px; height: 120px; }
+        .conBox .txtBox { width: 50%; height: 120px; }
+        .conBox.item1 .txtBox { float: right; }
+        .conBox.item2 { padding-top: 50px; }
+        .conBox.item2 img { float: right; width: 120px; height: 120px; }
+        .conBox.item2 .txtBox { float: left; }
+        .conBox.item2 .txtBox .conTit { padding-top: 15px; }
+        .conBox.item3 { padding-top: 50px; padding-bottom: 100px; }
+        .conBox.item3 img { float: left; width: 120px; height: 120px; }
+        .conBox.item3 .txtBox { float: right; }
+        .conBox .conTit { font-size: 1.1em; color: #f58492; font-weight: bolder; text-align: center; padding-bottom: 10px; padding-top: 20px; }
+        .conBox .conCom { font-size: 0.85em; color: #000; text-align: center; font-weight: 500; line-height: 1.6; word-break: keep-all; word-wrap: normal; }
+        
+        .ft { width: 100%; height: 150px; background: #666; position: relative; margin: 0 auto; }
+        .ft .snsBox { width: 90%; margin: 0 auto; height: 20px; line-height: 20px; padding: 20px 0px; }
+        .ft .snsBox li { float: left; width: 50%; }
+        .ft .snsBox li.item1 a { background-image: url("./icon/sns1.png"); }
+        .ft .snsBox li.item2 a { background-image: url("./icon/sns2.png"); }
+        .ft .snsBox li a { display: block; text-align: center; color: #fff; font-size: 0.65em; background-position: left center; background-size: 20px 20px; background-repeat: no-repeat; }
+        .ft .copy { text-align: center; font-size: 0.65em; width: 80%; margin: 0 auto; color: #fff; word-break: keep-all; word-wrap: normal; }
+        .ft .copyBox { width: 90%; margin: 0 auto; height: 20px; line-height: 20px; padding-top: 20px; }
+        .ft .copyBox li { float: left; width: 30%; margin-right: 5%; }
+        .ft .copyBox li:last-child { margin-right: 0; }
+        .ft .copyBox li a { display: block; width: 100%; height: 100%; text-align: center; background: #ccc; padding-top: 5px 0px; border-radius: 30px; color: #333; font-size: 0.6em; }
+
+    }
+    @media screen and (min-width:768px) and (max-width:959px){
+    /*  태블릿  */
+        .mo { display: block; }
+        .desk { display: none; }
+        .hd { width: 100%; height: 60px; position: fixed; top: 0; left: 0; z-index: 999; }
+        .logo { display: block; width: 49px; height: 40px; margin: 0 auto; text-align: center; background-image: url("./img/logo.png"); background-repeat: no-repeat; background-position: center center; background-size: 100% 40px; margin-top: 10px; }
+        .hd button { display: block; width: 45px; height: 33px; background-image: url("./icon/iconset.png"); background-repeat: no-repeat; background-position: -55px -12px; position: absolute; top: 12px; right: 4%; background-color: transparent; }
+        .hd.on { background: #fff; }
+        .hd.on .logo { background-image: url(./img/logo_on.png); width: 120px; height: 40px; }
+        .hd.on button.openBtn { background-position: -8px -12px; }
+        
+        #gnb { width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.6); display: none; position: fixed; z-index: 9999; top: 0; left: 0; }
+        #gnb .gnb.imgBox { width: 100%; height: 95%; background-image: url("./img/gnb_img.png"); background-repeat: no-repeat; background-size: 100% 100%; background-position: center center; }
+        #gnb .gnb.imgBox .logo { display: block; width: 120px; height: 40px; margin: 0 auto; text-align: center; background-image: url("./img/logo_on.png"); background-repeat: no-repeat; background-position: center center; background-size: 100% 40px; padding-top: 20px; }
+        #gnb .gnb.imgBox button { display: block; width: 45px; height: 33px; background-image: url("./icon/iconset.png"); background-repeat: no-repeat; background-position: -55px -12px; position: absolute; top: 12px; right: 4%; background-color: transparent; }
+        #gnb .gnb.imgBox button.closeBtn { background-position: -103px -12px; }
+        #gnb ul { width: 80%; margin: 0 auto; height: 80%; margin-top: 20%; }
+        #gnb li { clear: both; width: 100%; height: 12vh; line-height: 12vh; }
+        #gnb li a { display: block; text-align: center; color: #333; font-weight: bolder; font-size: 1.2em; }
+        #gnb li a span.txtp { color: #f58492; font-size: 1.35em; padding-right: 3px; }
+        
+        .content { width: 100%; }
+        .vsBox { width: 100%; height: 40vh; background-image: url("./img/sub1.jpg"); background-repeat: no-repeat; background-position: center center; background-size: 100% 100%; position: relative; }
+        .vsTit { font-size: 1.25em; font-weight: 500; line-height: 1.5; color: #000; text-align: center; padding-top: 20px; }
+        .conBoxFrm { width: 100%; height: 600px; background-image: url("./img/sub1_back_tablet.png"); background-repeat: no-repeat; background-position: center center; background-size: 68% 68%; }
+        .conBox { width: 90%; margin: 0 auto; height: 120px; }
+        .conBox.item1 { padding-top: 100px; }
+        .conBox.item1 img { float: left; width: 120px; height: 120px; }
+        .conBox .txtBox { width: 50%; height: 120px; }
+        .conBox.item1 .txtBox { float: right; }
+        .conBox.item2 { padding-top: 50px; }
+        .conBox.item2 img { float: right; width: 120px; height: 120px; }
+        .conBox.item2 .txtBox { float: left; }
+        .conBox.item2 .txtBox .conTit { padding-top: 15px; }
+        .conBox.item3 { padding-top: 50px; padding-bottom: 100px; }
+        .conBox.item3 img { float: left; width: 120px; height: 120px; }
+        .conBox.item3 .txtBox { float: right; }
+        .conBox .conTit { font-size: 1.1em; color: #f58492; font-weight: bolder; text-align: center; padding-bottom: 10px; padding-top: 20px; }
+        .conBox .conCom { font-size: 0.85em; color: #000; text-align: center; font-weight: 500; line-height: 1.6; word-break: keep-all; word-wrap: normal; }
+        
+        .ft { width: 100%; height: 150px; background: #666; position: relative; margin: 0 auto; }
+        .ft .snsBox { width: 70%; margin: 0 auto; height: 20px; line-height: 20px; padding: 20px 0px; }
+        .ft .snsBox li { float: left; width: 50%; }
+        .ft .snsBox li.item1 a { background-image: url("./icon/sns1.png"); border-right: 1px solid #999; }
+        .ft .snsBox li.item2 a { background-image: url("./icon/sns2.png"); }
+        .ft .snsBox li a { display: block; text-align: center; color: #fff; font-size: 0.65em; background-position: 18% center; background-size: 20px 20px; background-repeat: no-repeat; }
+        .ft .copy { text-align: center; font-size: 0.65em; width: 80%; margin: 0 auto; color: #fff; word-break: keep-all; word-wrap: normal; }
+        .ft .copyBox { width: 80%; margin: 0 auto; height: 20px; line-height: 20px; padding-top: 20px; }
+        .ft .copyBox li { float: left; width: 30%; margin-right: 5%; }
+        .ft .copyBox li:last-child { margin-right: 0; }
+        .ft .copyBox li a { display: block; width: 100%; height: 100%; text-align: center; background: #ccc; padding-top: 5px 0px; border-radius: 30px; color: #333; font-size: 0.6em; }
+    }
+    @media screen and (min-width:960px) and (max-width:1024px){
+    /*  데스크탑 저화질  */
+        .mo { display: block; }
+        .desk { display: none; }
+        .hd { width: 100%; height: 60px; position: fixed; top: 0; left: 0; z-index: 999; }
+        .logo { display: block; width: 49px; height: 40px; margin: 0 auto; text-align: center; background-image: url("./img/logo.png"); background-repeat: no-repeat; background-position: center center; background-size: 100% 40px; margin-top: 10px; }
+        .hd button { display: block; width: 45px; height: 33px; background-image: url("./icon/iconset.png"); background-repeat: no-repeat; background-position: -55px -12px; position: absolute; top: 12px; right: 4%; background-color: transparent; }
+        .hd.on { background: #fff; }
+        .hd.on .logo { background-image: url(./img/logo_on.png); width: 120px; height: 40px; }
+        .hd.on button.openBtn { background-position: -8px -12px; }
+        
+        #gnb { width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.6); display: none; position: fixed; z-index: 9999; top: 0; left: 0; }
+        #gnb .gnb.imgBox { width: 100%; height: 95%; background-image: url("./img/gnb_img.png"); background-repeat: no-repeat; background-size: 100% 100%; background-position: center center; }
+        #gnb .gnb.imgBox .logo { display: block; width: 120px; height: 40px; margin: 0 auto; text-align: center; background-image: url("./img/logo_on.png"); background-repeat: no-repeat; background-position: center center; background-size: 100% 40px; padding-top: 20px; }
+        #gnb .gnb.imgBox button { display: block; width: 45px; height: 33px; background-image: url("./icon/iconset.png"); background-repeat: no-repeat; background-position: -55px -12px; position: absolute; top: 12px; right: 4%; background-color: transparent; }
+        #gnb .gnb.imgBox button.closeBtn { background-position: -103px -12px; }
+        #gnb ul { width: 80%; margin: 0 auto; height: 80%; margin-top: 20%; }
+        #gnb li { clear: both; width: 100%; height: 12vh; line-height: 12vh; }
+        #gnb li a { display: block; text-align: center; color: #333; font-weight: bolder; font-size: 1.2em; }
+        #gnb li a span.txtp { color: #f58492; font-size: 1.35em; padding-right: 3px; }
+        
+        .content { width: 100%; }
+        .vsBox { width: 100%; height: 40vh; background-image: url("./img/sub1.jpg"); background-repeat: no-repeat; background-position: center center; background-size: 100% 100%; position: relative; }
+        .vsTit { font-size: 1.25em; font-weight: 500; line-height: 1.5; color: #000; text-align: center; padding-top: 20px; }
+        .conBoxFrm { width: 100%; height: 600px; background-image: url("./img/sub1_back_tablet.png"); background-repeat: no-repeat; background-position: center center; background-size: 68% 68%; }
+        .conBox { width: 90%; margin: 0 auto; height: 120px; }
+        .conBox.item1 { padding-top: 100px; }
+        .conBox.item1 img { float: left; width: 120px; height: 120px; }
+        .conBox .txtBox { width: 50%; height: 120px; }
+        .conBox.item1 .txtBox { float: right; }
+        .conBox.item2 { padding-top: 50px; }
+        .conBox.item2 img { float: right; width: 120px; height: 120px; }
+        .conBox.item2 .txtBox { float: left; }
+        .conBox.item2 .txtBox .conTit { padding-top: 15px; }
+        .conBox.item3 { padding-top: 50px; padding-bottom: 100px; }
+        .conBox.item3 img { float: left; width: 120px; height: 120px; }
+        .conBox.item3 .txtBox { float: right; }
+        .conBox .conTit { font-size: 1.1em; color: #f58492; font-weight: bolder; text-align: center; padding-bottom: 10px; padding-top: 20px; }
+        .conBox .conCom { font-size: 0.85em; color: #000; text-align: center; font-weight: 500; line-height: 1.6; word-break: keep-all; word-wrap: normal; }
+        
+        .ft { width: 100%; height: 150px; background: #666; position: relative; margin: 0 auto; margin-top: 20px; }
+        .ft .snsBox { width: 70%; margin: 0 auto; height: 20px; line-height: 20px; padding: 20px 0px; }
+        .ft .snsBox li { float: left; width: 50%; }
+        .ft .snsBox li.item1 a { background-image: url("./icon/sns1.png"); border-right: 1px solid #999; }
+        .ft .snsBox li.item2 a { background-image: url("./icon/sns2.png"); }
+        .ft .snsBox li a { display: block; text-align: center; color: #fff; font-size: 0.65em; background-position: 18% center; background-size: 20px 20px; background-repeat: no-repeat; }
+        .ft .copy { text-align: center; font-size: 0.65em; width: 80%; margin: 0 auto; color: #fff; word-break: keep-all; word-wrap: normal; }
+        .ft .copyBox { width: 80%; margin: 0 auto; height: 20px; line-height: 20px; padding-top: 20px; }
+        .ft .copyBox li { float: left; width: 30%; margin-right: 5%; }
+        .ft .copyBox li:last-child { margin-right: 0; }
+        .ft .copyBox li a { display: block; width: 100%; height: 100%; text-align: center; background: #ccc; padding-top: 5px 0px; border-radius: 30px; color: #333; font-size: 0.6em; }
+    }
+    @media screen and (min-width:1025px){
+    /*  데스크탑 고화질  */
+        .wrap { width: 100%; min-height: 100%; position: relative; }
+        .mo { display: none; }
+        .desk { display: block; }
+        .left { width: calc((100% - 120px) / 2); height: 100%; background-image: url("./img/desk_img.png"); background-repeat: no-repeat; background-position: center center; background-size: 100% 100%; position: fixed; left: 0; top: 0; }
+        .videoWrap { width: 70%; margin: 0 auto; height: 35vh; padding-top: 31vh; padding-bottom: 34vh; }
+        .videoWrap iframe { width: 100%; height: 100%; box-shadow: 7px 7px 3px #f58492; }
+        
+        #center { width: 120px; height: 100%; position: fixed; top: 0; left: calc((100% - 120px) / 2); }
+        #center .menu { width: 100%; }
+        .menu li { clear: both; width: 100%; height: 15vh; background-repeat: no-repeat; background-position: center center; background-size: 100% 100%; }
+        .menu li:first-child { margin-top: 12vh; }
+        .menu li:last-child { margin-bottom: 13vh; }
+        .menu li.item1 { background-image: url("./img/menu1.png"); }
+        .menu li.item2 { background-image: url("./img/menu2.png"); }
+        .menu li.item3 { background-image: url("./img/menu3.png"); }
+        .menu li.item4 { background-image: url("./img/menu4.png"); }
+        .menu li.item5 { background-image: url("./img/menu5.png"); }
+        .menu li a { display: block; width: 70%; margin: 0 auto; height: 100%; border-bottom: 1px solid #ddd; }
+        .menu li:last-child a { border-bottom: 0px; }
+        
+        .right { width: calc((100% - 120px) / 2); position: absolute; top: 0; right: 0; }
+        .vsBox { width: 100%; height: 60vh; background-image: url("./img/sub1.jpg"); background-repeat: no-repeat; background-position: center center; background-size: 100% 100%; position: relative; }
+        .vsTit { font-size: 1.5em; font-weight: 500; line-height: 1.5; color: #000; text-align: center; padding-top: 20px; }
+        .blank { width: 60px; margin: 0 auto; height: 5px; background: #f58492; margin-top: 50px; margin-bottom: 30px; }
+        .conBoxFrm { width: 100%; height: 840px; background-image: url("./img/sub1_back.png"); background-repeat: no-repeat; background-position: center center; background-size: 80% 80%; }
+        .conBox { width: 80%; margin: 0 auto; height: 180px; }
+        .conBox.item1 { padding-top: 100px; }
+        .conBox.item1 img { float: left; width: 180px; height: 180px; }
+        .conBox .txtBox { width: 60%; height: 180px; }
+        .conBox.item1 .txtBox { float: right; }
+        .conBox.item2 { padding-top: 50px; }
+        .conBox.item2 img { float: right; width: 180px; height: 180px; }
+        .conBox.item2 .txtBox { float: left; }
+        .conBox.item3 { padding-top: 50px; padding-bottom: 100px; }
+        .conBox.item3 img { float: left; width: 180px; height: 180px; }
+        .conBox.item3 .txtBox { float: right; }
+        .conBox .conTit { font-size: 1.5em; color: #f58492; font-weight: bolder; text-align: center; padding-bottom: 30px; padding-top: 35px; }
+        .conBox .conCom { font-size: 1.2em; color: #000; text-align: center; font-weight: 500; line-height: 1.6; word-break: keep-all; word-wrap: normal; }
+        
+        .ft { width: 100%; height: 150px; background: #666; position: relative; margin: 0 auto; }
+        .ft .snsBox { width: 60%; margin: 0 auto; height: 20px; line-height: 20px; padding: 20px 0px; }
+        .ft .snsBox li { float: left; width: 50%; }
+        .ft .snsBox li.item1 a { background-image: url("./icon/sns1.png"); border-right: 1px solid #999; }
+        .ft .snsBox li.item2 a { background-image: url("./icon/sns2.png"); }
+        .ft .snsBox li a { display: block; text-align: center; color: #fff; font-size: 0.7em; background-position: left center; background-size: 20px 20px; background-repeat: no-repeat; }
+        .ft .copy { text-align: center; font-size: 0.7em; width: 80%; margin: 0 auto; color: #fff; word-break: keep-all; word-wrap: normal; }
+        .ft .copyBox { width: 70%; margin: 0 auto; height: 20px; line-height: 20px; padding-top: 20px; }
+        .ft .copyBox li { float: left; width: 30%; margin-right: 5%; }
+        .ft .copyBox li:last-child { margin-right: 0; }
+        .ft .copyBox li a { display: block; width: 100%; height: 100%; text-align: center; background: #ccc; padding-top: 5px 0px; border-radius: 30px; color: #333; font-size: 0.7em; }
+    }
+    @media screen and (min-width:1444px){
+        .ft .snsBox li a { background-position: 15% center; }
+    }
+    </style>
+    
+</head>
+<body>
+<div class="wrap mo">
+    <header class="hd on">
+        <a href="index.html" class="logo"></a>
+        <button for="" class="openBtn"></button>        
+    </header>
+    <nav id="gnb">
+        <div class="gnb imgBox">
+            <a href=".index.html" class="logo"></a>
+            <button for="" class="closeBtn"></button> 
+            <ul>
+                <li>
+                    <a href="sub1.html"><span class="txtp">B</span>rand</a>
+                </li>
+                <li>
+                    <a href="sub2.html"><span class="txtp">M</span>enu</a>
+                </li>
+                <li>
+                    <a href="sub3.html"><span class="txtp">S</span>tore</a>
+                </li>
+                <li>
+                    <a href="sub4.html"><span class="txtp">M</span>embership</a>
+                </li>
+                <li>
+                    <a href="sub5.html"><span class="txtp">E</span>vent &amp; <span class="txtp">N</span>ews</a>
+                </li>
+            </ul> 
+        </div>  
+    </nav>
+    <main class="content">
+        <div class="vsBox"></div>
+        <p class="vsTit">공들여 맛있는 차 공차</p>
+        <div class="conBoxFrm">
+            <div class="conBox item1">
+                <img src="./img/sub1_img1.png" alt="공차">
+                <div class="txtBox">
+                    <h3 class="conTit">고른다</h3>
+                    <p class="conCom">세상의 茶가 빠름을 쫓을 때 공차는 느림을 쫓습니다.</p>
+                </div>
+            </div> 
+            <div class="conBox item2">
+                <img src="./img/sub1_img2.png" alt="공차">
+                <div class="txtBox">
+                    <h3 class="conTit">우린다</h3>
+                    <p class="conCom">세상의 茶가 간편함을 품을 때 공차는 불편함을 품습니다.</p>
+                </div>
+            </div>
+            <div class="conBox item3">
+                <img src="./img/sub1_img3.png" alt="공차">
+                <div class="txtBox">
+                    <h3 class="conTit">더한다</h3>
+                    <p class="conCom">세상의 茶가 틀 안을 향할때 공차는 틀 밖을 향합니다.</p>
+                </div>
+            </div>
+        </div> 
+        <footer class="ft">
+            <ul class="snsBox">
+                <li class="item1">
+                    <a href="https://www.facebook.com/GongCha.Korea">공차 공식 페이스북</a>
+                </li>
+                <li class="item2">
+                    <a href="https://www.instagram.com/gongcha.official/">공차 공식 인스타그램</a>
+                </li>
+            </ul>
+            <p class="copy">서울 서초구 잠원로 46-6 2,3층(잠원동) (C)GONGCHA KOREA CO.,LTD ALL RIGHTS RESERVED.</p>
+            <ul class="copyBox">
+                <li class="item1">
+                    <a href="">개인정보처리방침</a>
+                </li>
+                <li class="item2">
+                    <a href="">제휴/제안</a>
+                </li>
+                <li class="item3">
+                    <a href="">이메일무단수집거부</a>
+                </li>
+            </ul>
+        </footer>      
+    </main>
+</div>
+<div class="wrap desk">
+    <div class="left">
+        <div class="videoWrap">
+        <iframe width="2560" height="850" src="https://www.youtube.com/embed/AYMpuJofWJw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>    
+        </div>
+    </div>    
+    <nav id="center">
+        <ul class="menu">
+            <li class="item1">
+                <a href="sub1.html"></a>
+            </li>
+            <li class="item2">
+                <a href="sub2.html"></a>
+            </li>
+            <li class="item3">
+                <a href="sub3.html"></a>
+            </li>
+            <li class="item4">
+                <a href="sub4.html"></a>
+            </li>
+            <li class="item5">
+                <a href="sub5.html"></a>
+            </li>
+        </ul>    
+    </nav>
+    <div class="right">
+        <div class="vsBox"></div>
+        <p class="vsTit">공들여 맛있는 차 공차</p>
+        <div class="conBoxFrm">
+            <div class="conBox item1">
+                <img src="./img/sub1_img1.png" alt="공차">
+                <div class="txtBox">
+                    <h3 class="conTit">고른다</h3>
+                    <p class="conCom">세상의 茶가 빠름을 쫓을 때 공차는 느림을 쫓습니다.</p>
+                </div>
+            </div> 
+            <div class="conBox item2">
+                <img src="./img/sub1_img2.png" alt="공차">
+                <div class="txtBox">
+                    <h3 class="conTit">우린다</h3>
+                    <p class="conCom">세상의 茶가 간편함을 품을 때 공차는 불편함을 품습니다.</p>
+                </div>
+            </div>
+            <div class="conBox item3">
+                <img src="./img/sub1_img3.png" alt="공차">
+                <div class="txtBox">
+                    <h3 class="conTit">더한다</h3>
+                    <p class="conCom">세상의 茶가 틀 안을 향할때 공차는 틀 밖을 향합니다.</p>
+                </div>
+            </div>
+        </div> 
+        <footer class="ft">
+            <ul class="snsBox">
+                <li class="item1">
+                    <a href="https://www.facebook.com/GongCha.Korea">공차 공식 페이스북</a>
+                </li>
+                <li class="item2">
+                    <a href="https://www.instagram.com/gongcha.official/">공차 공식 인스타그램</a>
+                </li>
+            </ul>
+            <p class="copy">서울 서초구 잠원로 46-6 2,3층(잠원동) (C)GONGCHA KOREA CO.,LTD ALL RIGHTS RESERVED.</p>
+            <ul class="copyBox">
+                <li class="item1">
+                    <a href="">개인정보처리방침</a>
+                </li>
+                <li class="item2">
+                    <a href="">제휴/제안</a>
+                </li>
+                <li class="item3">
+                    <a href="">이메일무단수집거부</a>
+                </li>
+            </ul>
+        </footer>  
+    </div> 
+</div>
+</body>
+</html>
