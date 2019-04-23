@@ -1,0 +1,84 @@
+    @charset="UTF-8";
+    * { margin: 0; padding: 0; } 
+    body, html { width: 100%; height: 100%; font-family: 'Noto Sans KR', sans-serif; }
+/*    font-family: 'Noto Serif KR', serif;*/
+    ul { list-style: none; }
+    a { text-decoration: none; }
+   
+    #hd { width: 100%; height: 100px; clear: both; position: fixed; z-index: 90; left: 0; top: 0; }
+    .wrap { width: 80%; margin: 0 auto; }
+/*        min-width : px > 초과하면 스크롤이 생겨서 옆으로 밀어서 볼 수 있게됨*/
+    .logo { display: block; float: left; margin-top: 30px; width: 150px; }
+    #gnb { float: right; height: 25px; margin-top: 25px; margin-right: 50px; width: 70%; }
+    #gnb li { float: left; width: 20%; } 
+    #gnb a { display: block; line-height: 70px; color: #ffffff; font-size: 1em; }
+    #gnb a:after { content: "·"; padding-left: 45px; }
+    #gnb li:last-child a:after { content: ""; }
+    #hd .wrap { position: relative; }
+    .lstBtn { display: block; width: 60px; height: 60px; position: absolute; top: 27px; right: 0px; cursor: pointer; }
+    .lstBtn span { display: block; width: 30px; height: 3px; margin: 0 auto; margin-top: 6px; background: #ffffff; float: right; clear: both; border-radius: 5px; }
+    .lstBtn span:first-child { margin-top: 16px;}
+    .lstBtn span:nth-child(2n) { width: 23px; transition: 0.5s; }
+    .lstBtn:hover span:nth-child(2n) { width: 30px; }
+
+    .hdFrame { width: 100%; height: 100px; background: rgba(255, 255, 255, 0.8); position: fixed; z-index: 88; left: 0; top: -101px; border-bottom: 1px solid #ccc; transition: 0.6s; }
+    .hdFrame.on { top: 0px; }
+    #gnb a.on { color: #333; }
+    .lstBtn span.on { background: #333; }
+/*    스크롤이 내려가면 자동으로 배경에 깔리고 글자 색이 바뀌게 함   
+      jquery를 추가해야 자동으로 움직임     */
+    
+    #content { width: 100%; }
+    #vs { width: 100%; height: auto; overflow-x: hidden; position: relative; }
+/*        overflow-x 는 가로만 설정 -y는 세로만 설정*/
+    .banBox { width: 200%; height: auto; transition: 0.6s; }
+    .banBox li { float: left; width: 50%; }
+    .banBox li img { display: block; width: 100%; height: auto; }
+    #ra1:checked ~ .banBox { margin-left: 0;}
+    #ra2:checked ~ .banBox { margin-left: -100%;}
+/*    라디오헤드 체크 여부에 따라 이미지1이 보이느냐 2가 보이느냐 / 물결 다음에는 형제 태그만 올 수 있음 / + 다음에는 바로 아래 형제태그만 옴 */
+    .btnBox { position: absolute; width: 100%; bottom: 5%; z-index: 10; }
+    .btnBox li { position: relative; width: 40px; height: 24px; float: left; }
+    .btnBox li.item1 { margin-left: calc(50% - 40px); float: left; }
+    .btnBox li .vsbtn { display: block; width: 24px; height: 24px; background: #12564a; border-radius: 14px; cursor: pointer; position: absolute; }
+    .btnBox li.item1 .vsbtn { left: 0; }
+    .btnBox li.item2 .vsbtn { right: 0; }
+    #ra1, #ra2 { display: none; }
+    #ra1:checked ~ .btnBox li:first-child .vsbtn { width: 40px; background: #fff; }
+    #ra2:checked ~ .btnBox li:last-child .vsbtn { width: 40px; background: #fff; } 
+        
+    #popFrm { width: 100%; height: 100%; background:rgba(18, 18, 18, 0.7); position: fixed; top: -110%; left: 0; z-index: 100; transition: 0.8s; }
+    #ck { display: none; }
+    #ck:checked + #popFrm { top: 0;}
+    .closeBtn { position: absolute; right: 24%; top: 5%; width: 60px; height: 60px; display: block; background-image: url(./img/close.png); border: 1px solid #fff; text-indent: -9999px; cursor: pointer; }
+    .popBox { width: 1000px; height: 60%; margin: 0 auto; margin-top: 10%; background: #fff; }
+    .popBox ul { float: left; height: 100%; width: 20%; border-right: 1px solid #d4dcd3; box-sizing: border-box; }
+    .popBox li a { display: block; color: #696969; line-height: 40px; text-indent: 30px; }
+    .popBox li h2 { background: #31b69f; text-align: center; line-height: 40px; }
+    .popBox li h2 a { color: #fff; font-size: 0.8em; text-indent: 0px; }
+    .popBox li h4 a { display: block; color: #333; line-height: 40px; text-indent: 30px; margin-top: 10px;}
+        
+    #quick { position: fixed; right: 0; top: 0; height: 100%; width: 100px; background: #fff; z-index: 95; box-shadow: -5px 0px 40px #9a9a9a; }
+    .qWrap { position: relative; width: 100%; height: 100%; border-left: 1px solid #f0f0f0; }
+    #quick ul { position: absolute; right: 0; width: 100%; }
+    #quick .top { top: 0; }
+    #quick .bottom { bottom: 0; }
+    #quick li { clear: both; width: 100%; }
+    #quick li a { display: block; line-height: 40px; color: #999; font-size: 0.85em; text-align: center; }
+    #quick li a.qlogo { height: 60px; background-image: url("./img/qlogo.png"); background-color: #2861b6; background-repeat: no-repeat; background-position: center center; border-bottom: 1px solid #e0e0e0; }
+    #quick li a.yellow { background-color: #f3d71d; color: #000; }
+    #quick li a.cyan { background-color: #1dc3f3; color: #000; }
+    #quick li a.toTop { height: 60px; background-color: #333; color: #fff; line-height: 28px; padding-top: 15px; }
+    #quick li a.toTop:before { content: "^"; display: block; width: 100%; font-size: 1.25em;}
+    #quick li a.hv:hover { background-color: #999; color: #fff; }
+
+    #ft { width: 100%; height: 42px; background: #31b69f; color: #fff; line-height: 42px; clear: both; }
+    .ftLogo { width: 110px; height: 42px; background-image: url("./icon/ftLogo2.png"); background-repeat: no-repeat; background-position: center center; background-color: #1b6558; float: right; position: absolute; right: 0; top: 0; }
+    #ft .wrap { position: relative; }
+    .copyright { font-size: 0.7em; text-align: center; }
+        
+    @media screen and (max-width:767px) 
+    @media screen and (min-width:768px) and (max-width:959px) 
+    @media screen and (min-width:960px) 
+    @media screen and (min-width:960px) 
+    @media all 

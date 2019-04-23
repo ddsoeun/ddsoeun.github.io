@@ -1,0 +1,16 @@
+@charset "utf-8";
+[class^=col] { float: left; }
+[class^=col]:first-child { clear: both; }
+[class^=col].first { clear: both; }
+.col1 { width: 8.333333%; }
+.col2 { width: 16.666666%; }
+.col3 { width: 25%; }
+.col4 { width: 33.333333%; }
+.col5 { width: 41.666666%; }
+.col6 { width: 50%; }
+.col7 { width: 58.333333%; }
+.col8 { width: 66.666666%; }
+.col9 { width: 75%; }
+.col10 { width: 83.333333%; }
+.col11 { width: 91.666666%; }
+.col12 { width: 100%; }

@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> <!-- meta http-equiv의 content-type설정 -->
+    <title>스마트 이비인후과 - 전문클리닉</title>
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR" rel="stylesheet">
+<!--    <link href="https://fonts.googleapis.com/css?family=Noto+Serif+KR" rel="stylesheet">-->
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon16.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon32.ico">
+    <!-- 페이지 최상단 탭 앞에 나오는 작은 아이콘 ico,ong 둘다 가능함. ico는 옛날버전. png는 안뜨는 버전도 있음
+    size 32.ico는 신형브라우저와 안드로이드폰, 57은 아이폰3이하, 72는 아이패드, 114는 아이폰4 이상
+    -->
+    <link rel="apple-touch-icon" size="152x152 "href="./ico/favicon152.png">
+    <!-- 애플용 아이콘 href앞에 size설정 가능 예시) size="64x64" --> 
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta name="msapplication-TileImage" content="./ico/favicon144.png">
+    <!-- IE10 이상 -->
+    
+    <!-- 메타데이터 개발 공통 사항(구글 등 에서 검색이 될 수 있게끔) -->
+    
+    <!-- 자동으로 새로고침되게끔 초단위(content)-->
+    <meta http-equiv="refresh" content="180">
+    
+    <!-- 데스크탑에서 IE로 웹문서를 열 때 가장 최신 버전으로 실행 ua는 웹브라우저를 의미 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    
+    <!-- name은 항상 문서정보. 앱 이름. content가 실제로 뜨는 이름 author는 저작자이름 description은 현재 문서의 설명 
+    generator은 저작도구 keywords는 검색엔진에서 검색되게 할 키워드-->
+    <meta name="application-name" content="smart hospital Site">
+    <meta name="author" content="SoeunPark">
+    <meta name="description" content="smart hospital Site Mainpage">
+    <meta name="generator" content="Brackets">
+    <meta name="keywords" content="스마트이비인후과, 대전병원, 반석역병원, 반석동이비인후과, 대전이비인후과, 반석역이비인후과">
+    
+    <!-- 반응형, 모바일, 태블릿 사이트일 경우 initial : 처음 접속했을 때 1배로 보여줌 user-scalable 손가락으로 늘였다 줄였다가 되지 않게 -->
+    <meta name="viewport" content="width=device-width, initial-scal=1.0, user-scalable=no">
+    <link rel="stylesheet" href="com.css">
+    <link rel="stylesheet" href="grid.css">
+    <link rel="stylesheet" href="sub.css">
+    <link rel="stylesheet" href="sub3.css">
+    
+    <style>
+/*        스크롤 없애는 법       */
+    body, html { -ms-overflow-style:none; }
+    ::-webkit-scrollbar { display: none; }
+    ::-o-scrollbar { display: none; }
+/*   -ms 마이크로소프트 -moz 모질라(파이어폭스) -webkit(크롬, 사파리) -o(오페라)   */
+    </style>
+<!--    <script src="http://code.jquery.com/jquery-latest.js"></script>-->
+    <script src="./js/jquery-1.11.1.js">
+    /* 저장한 경우, 다운받지 않은 경우 */
+    </script>
+    <script>
+    /* 여기가 스크립트 처리 구간 */
+    $(function(){ 
+        var intv = setInterval(function(){ lAni(); }, 3000);
+        function lAni(){
+            $(".imgBox").not(":animated").animate({"margin-left":"-500px"}, 600, function(){
+                $(".imgBox li").eq(0).appendTo($(".imgBox"));
+                $(".imgBox").css("margin-left", "0px");
+            });
+        }
+//        $(window).scroll(function(){
+//            var scTop = $("body, html").scrollTop();
+//            if(scTop>=101){
+//                $(".hdFrame, #gnb a, .lstBtn span").addClass("on");
+//            } else {
+//                $(".hdFrame, #gnb a, .lstBtn span").removeClass("on");
+//            }
+//        })
+        });
+    </script>
+     <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script> 
+<!--    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjO5QRbPVzMm_3xad41UvAcIsbqiFOqME&callback=initMap"></script> -->
+
+<script> 
+
+//좌표 값을 바꿔서 입력 36.3491563,127.3776857
+
+function initialize() {
+
+  var myLatlng = new google.maps.LatLng(36.38720540000001,127.3175549);
+
+  var mapOptions = {
+
+    zoom: 17,
+
+    center: myLatlng
+
+  }
+
+  var map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
+
+ 
+
+  var marker = new google.maps.Marker({
+
+      position: myLatlng,
+
+      map: map,
+
+      title: '스마트 이비인후과'	  //레이블을 바꿔서 입력
+
+  });
+
+}
+
+ 
+
+google.maps.event.addDomListener(window, 'load', initialize);
+
+ </script>
+ 
+</head>
+<body onload="initialize()">
+    <div class="hdFrame on"></div>
+    <header id="hd">
+        <div class="wrap">
+            <a href="index.html" class="logo">
+            <img src="./icon/logo.png" alt="앰블럼">
+            </a>
+            <nav id="gnb">
+                <ul class="main">
+                    <li><a href="intro.html#page1" class="on">병원소개</a></li>
+                    <li><a href="info.html#page1" class="on">진료안내</a></li>
+                    <li><a href="clinic.html#page1" class="on">전문클리닉</a></li>
+                    <li><a href="equipment.html#page1" class="on">의료장비</a></li>
+                    <li><a href="community.html#page1" class="on">커뮤니티</a></li>
+                </ul>
+            </nav>
+            <label for="ck" class="lstBtn">
+                <span class="item1 on"></span>
+                <span class="item2 on"></span>
+                <span class="item3 on"></span>
+                <span class="item4 on"></span>
+<!--                윈도우 xp 등에서는 first-child 등이 안먹히는 경우가 있을 수 있음. 그럴때는 각각 태그에 클래스를 매겨서 사용       -->
+            </label>
+        </div>
+    </header>
+    
+    <main id="content">
+       <div class="blank"></div>
+        
+        <div class="page" id="page1">
+            <a href="#page1" class="btn1 item1">특수클리닉</a>
+            <div class="con">
+                
+                <figure class="vsBox">
+                    <img src="./img/sub_titleimg2.jpg" alt="서브이미지" class="vsImg">
+                    <div class="vsTitBox">
+                        <h1 class="vsTitle">특수클리닉</h1>
+                        <p class="vsComent"><span class="atxt">스마트 이비인후과</span>는 수술·비수술 포함 다양한 치료방법을 보유하고 있습니다.</p>
+                    </div>
+                </figure>
+                 
+
+            <section class="sec1">
+                <input type="radio" name="ra11" id="ra11" class="raItem raItem1" checked>
+                <input type="radio" name="ra11" id="ra12" class="raItem raItem2">
+                <ul class="btnFrame">
+                    <li class="col6"><label for="ra11" class="raBtn item1">음성클리닉</label></li>
+                    <li class="col6"><label for="ra12" class="raBtn item2">두경부암 검진</label></li>
+                </ul>
+                
+                <div class="subBox item1">
+                 
+                  <ul class="thumLst">
+                        <li class="item1">
+                            <h3 class="thumTitle">음성장애
+</h3>
+                            <p class="thumCom">음성 장애는 주로 쉰 목소리를 주 증상으로 하며 그 외 조금만 말해도 목소리가 쉬면서 잠기는 음성피로, <br>말을 할 때 목에 통증이 생기는 발성통, 고음발성장애 등 여러 양상으로 나타날 수 있습니다.<br>
+음성 장애의 원인에는 과도한 목소리 사용과 잘못된 발성법이 가장 흔한 원인이며 그 외에도 흡연이나 음주, 약물, 심리적 요인,<br> 성대 자체의 구조 및 기능의 변화, 갑상선 수술(반회후두신경 손상) 등 도 음성 장애를 초래할 수 있습니다.<br>
+음성 장애를 일으키는 음성질환으로는 성대용종(폴립), 성대결절, 성대낭종, 성대부종, 성대마비, 역류성 후두염, <br>성대주름, 사춘기 음성 장애, 기능성 음성 장애, 후두암 등이 있습니다.
+</p>
+                        </li>
+                    </ul>
+                 <ul class="thumLst">
+                        <li class="item2">
+                            <h3 class="thumTitle">음성장애의 원인이 되는 흔한 성대질환들
+</h3>
+                            <p class="thumCom">
+                            - 성대결절 <br>
+- 성대용종(폴립)<br>
+- 성대구증<br>
+- 성대내낭종<br>
+- 접촉성 육아종<br>
+- 성대마비
+</p>
+                        </li>
+                    </ul>
+                    <h1 class="thumBigTitle">성대질환에 따른 다양한 수술법</h1>
+                     <ul class="thumLst">
+                        <li class="item3">
+                            <h3 class="thumTitle">성대결절, 성대용종(폴립)환자를 위한 스테로이드 성대 주입술
+</h3>
+                            <p class="thumCom">성대결절과 성대폴립은 과기능성 음성장애의 대표적인 질환으로 교사, 전화상담사, 종교인처럼 직업적으로 음성 사용이 많은 사람에서 호발합니다.<br>
+스테로이드 성대 주입술은 강력한 염증 억제제인 스테로이드를 직접 성대에 주사하여 전신적인 부작용 없이 성대 결절과 성대폴립을 치료하는 방법입니다.<br>
+이 방법은 국소마취 하에 비교적 간단한 시술로 60~70% 정도의 좋은 치료성적을 보입니다.
+이 시술의 장점은 우선 마취와 수술을 피할 수 있어 안정합니다.<br>
+또한 시간과 비용 면에서 효과적이며 반복치료가 가능합니다.
+따라서 수술을 받기 어려운 경우 시도해 볼 수 있는 효과적인 치료법입니다.
+</p>
+                        </li>
+                    </ul>
+                     <ul class="thumLst">
+                        <li class="item4">
+                            <h3 class="thumTitle">성대마비환자를 위한 경피적 성대 성형술
+</h3>
+                            <p class="thumCom">성대마비는 다양한 원인에 의해 발생할 수 있는데 최근에는 갑상선암 수술이 늘어나면서 수술 후 합병증으로 발생하는 경우가 늘어나고 있습니다. <br>
+원인에 관계없이 성대마비로 인해 음성장애, 흡인(사래) 등이 발생하면 적절한 치료를 해주어야 합니다.<br>
+경피적 성대성형술은 전신마취가 필요 없고, 약 15-20분 정도의 짧은 수술시간이 소요되며, 입원 없이 주사 후 바로 귀가가 가능하고,<br> 피부절개를 하지 않으며, 환자질환의 상태에 맞게 다양한 약물을 정확한 부위에 주입이 가능하다는 장점이 있습니다.<br>
+스마트 이비인후과 의료진은 수술 없이 성대마비의 증상을 개선시켜주는 경피적 성대 성형술의 많은 임상 경험을 가지고 있습니다.
+
+</p>
+                        </li>
+                    </ul>
+                     <ul class="thumLst">
+                        <li class="item5">
+                            <h3 class="thumTitle">경련성발성장애 환자를 위한 보톡스 성대주입술
+</h3>
+                            <p class="thumCom">연축성발성장애는 후두에 국한적으로 발생하는 근긴장 이상증으로 후두근육이 불수의적으로 수축하여 발생하는 음성장애 입니다. <br>
+특징적인 쥐어짜는 듯한 음성과 음성 단절 현상이 있어 경험있는 이비인후과 의사가 환자의 목소리를 들어보면 쉽게 진단할 수 있습니다.<br>
+보툴리눔 독소를 성대에 주입하는 치료법이 가장 안전하고 효과적인 표준치료 방법으로 인정되고 있습니다.<br>
+스마트 이비인후과 의료진은 대전지역 최초로 경련성 발성장애 환자에서 보톡스 성대주입술을 성공적으로 시술하였습니다.
+
+</p>
+                        </li>
+                    </ul>
+                     <ul class="thumLst">
+                        <li class="item5">
+                            <h3 class="thumTitle">후두미세수술
+</h3>
+                            <p class="thumCom">후두미세수술은 음성치료, 약물치료, 성대 주입술 등에 반응하지 않는 성대폴립, 성대낭종, 성대유두종 등의 질환을 제거하는 수술입니다. <br>
+마취시간을 포함해 전체 수술시간은 20분 내외로 간단한 수술이지만 수술의 특성상 전신마취 및 당일 입원이 필요합니다.<br>
+먼저 전신마취를 한 후 강직형 후두경을 입을 통해 넣어 후두를 노출시킵니다.<br>
+그 후 수술 현미경으로 병변을 확대한 다음 미세수술 기구를 이용하여 병변을 제거하게 됩니다.<br>
+수술 후 1주일 정도의 음성 안정 기간이 필요합니다.
+스마트이비인후과 의료진은 700회 이상의 후두미세수술의 집도 경험을 가지고 있습니다.
+</p>
+                        </li>
+                    </ul>
+                     <ul class="thumLst">
+                        <li class="item5">
+                            <h3 class="thumTitle">올바른 목소리 사용법
+</h3>
+                            <p class="thumCom">좋은 목소리는 타고 나는 것도 있지만 노력과 관심에 따라 얼마든지 가능합니다.<br><br>
+- 가능하면 말은 적게 하는 것이 좋습니다.<br>
+- 장시간, 큰소리로 말하는 것을 피합니다. 또한 속삭이듯 말하는 것도 음성에 좋지 않습니다.<br>
+- 말은 천천히, 가능하면 입은 크게 벌리면서 말하는 습관을 가지세요.<br>
+- 감기에 걸려 기침이 심할 때는 가급적 말하는 것을 피하세요.<br>
+- 술, 담배는 목소리의 가장 나쁜 적입니다.<br>
+- 커피는 이뇨작용으로 후두를 건조하게 할 수 있어 피하는 것이 좋습니다.<br>
+- 목에 이물감이 느껴져 반복적으로 목청을 가다듬는 행위, 즉 헛기침을 반복적으로 하게 되면 목소리가 나빠질 수 있습니다.<br>
+- 물을 충분히 마시도록 합니다. 식사와 관계없이 하루에 8컵 정도를 마셔보세요.<br>
+- 근무환경이 시끄럽다면 목소리가 커질 수 있습니다. 주변이 시끄러울 때는 오히려 평소보다 작게 말한다는 느낌으로 말하세요.<br>
+</p>
+                        </li>
+                    </ul>
+                      
+                </div>
+                
+                
+                <div class="subBox item2">
+                    <ul class="thumLst">
+                        <li class="item1">
+                            <h3 class="thumTitle">두경부암이란?
+</h3>
+                            <p class="thumCom">두경부 영역(머리와 목 부위)은 말하고, 숨쉬고, 삼키는 등 삶을 유지하기 위한 가장 기본적이면서도 필수적인 기능을 담당하고 있으며, <br>
+혈관, 뇌신경 등의 중요한 구조물이 우리 몸의 어느 다른 부위보다 복잡하게 위치하는 해부학적 특징이 있습니다.<br>
+이러한 부위 즉 비강(코안), 구강(입안), 인두와 후두(목안) 등에 발생하는 악성종양(암)을 두경부암이라 합니다.<br>
+한국인의 경우 후두암, 구강암, 인두암, 타액선암, 비강 및 부비동암의 순서로 호발하는데 두경부암의 발생 빈도는 전체 악성 종양 중 8위에 해당합니다.</p>
+                        </li>
+                        <li class="item2">
+                            <h3 class="thumTitle">두경부암 검진 대상</h3>
+                            <p class="thumCom">다음에 해당하는 경우에는 두경부암 검진을 받아보시는 것이 좋습니다. <br><br>
+ - 40세 이상이며 흡연력이 있는 경우<br>
+- 감기 증상이 없는 데도 쉰 목소리가 2주 이상 지속되는 경우<br>
+ - 통증 없이 몇 주 또는 몇 개월에 걸쳐 서서히 커지는 혹이 목에서 만져지는 경우<br>
+ - 입안에 좌우 비대칭인 통증이 없는 혹이 관찰되며 쉽게 출혈이 있는 경우<br>
+ - 코가 막히며 코피가 반복적으로 나는 경우<br>
+ - 성인에게 한쪽 귀에만 삼출성중이염(중이에 물이 차는 경우)이 반복되는 경우<br>
+ - 식사할 때 음식물이 잘 안 넘어가고 숨이 차는 경우<br>
+ - 평소 음주 흡연을 많이 하며 가족 중에 암으로 치료받은 분이 있는 경우<br><br>
+                       두경부암 검진은 다른 암 검진처럼 금식을 하거나 검사 전 처치가 필요 없어 20분 정도면 충분합니다.
+흡연력, 가족력이 있는 40대 이상, <br>특히 남성의 경우 일년에 한차례 두경부암 검진을 받아보시는 것이 좋습니다.</p>
+                        </li>
+                        <li class="item3">
+                            <h3 class="thumTitle">왜 두경부암 검진이 필요한가?</h3>
+                            <p class="thumCom">
+- 최근 다양한 암 검진 프로그램으로 위암, 대장암, 유방암, 갑상선암 등이 조기에 진단되어 좋은 치료결과를 보이고 있습니다.<br>
+- 두경부암의 경우 발생빈도가 비교적 적어 일반인들에게는 잘 알려져 있지 않아 정기 검진이 잘 시행되고 있지 않습니다.<br>
+- 두경부암의 치료과정은 다른 암에 비해 복잡하고, 치료 합병증이 심각하여 조기 진단 및 치료가 절실한 암입니다.<br>
+&nbsp;&nbsp;하지만 두경부암은 증상이 뚜렷하지 않아 많은 환자들이 병이 진행된 후에 진단되는 경우가 많고 치료 후 삶의 질 저하가 문제가 되고 있습니다.<br>
+- 두경부에 발생하는 암은 경험 많은 이비인후과 전문의가 간단한 진찰과 검사만 하여도 충분히 조기에 발견할 수 있습니다.<br>
+- 대학병원에서 두경부암을 전문적으로 치료한 경험을 바탕으로 특수 진단 장비를 이용한 두경부암의 조기 진단 및 검진에 최적의 환경을 제공합니다.</p>
+                        </li>
+                        <li class="item4">
+                            <h3 class="thumTitle">두경부암의 진단과정</h3>
+                            <p class="thumComent">두경부암의 진단에 있어 가장 중요한 점은 정밀한 신체검사에 있습니다.<br>
+대부분의 두경부암은 담배 등의 발암물질에 노출되는 구강, 인두, 후두 등의 점막에 발생하기 때문에 경험 많은 전문의의 세심한 진찰이 필요합니다.</p>
+                            <p class="thumCom">
+                                <span class="thumNum">1</span>
+                                내시경 검사<br>
+두경부암은 정밀한 고화질 내시경 장비로 관찰해야 합니다.<br>
+스마트 이비인후과의 고화질 전자내시경은 Olympus 사의 가장 최신 기종으로 국내에 최초로 도입된 장비입니다(2014년 2월 기준).<br>
+전자내시경은 눈으로 확인이 어려운 미세한 병변의 확인이 가능하며 또한 특수파장의 빛을 이용하여 암 조직의 조기발견을 도와주는 NBI(Narrow Band Image)기능도 있습니다.
+                            </p>
+                            <p class="thumCom">
+                                <span class="thumNum">2</span>
+                                조직검사<br>
+신체검사에서 병변이 관찰된 경우 국소 마취하에 다양한 기구를 이용하여 조직검사를 하게 됩니다.<br>
+후두에 발생한 경우를 제외하고 대부분의 경우 외래 진료실에서 진료 후 바로 시행하게 됩니다.<br>
+후두에 암이 의심되는 경우에는 조직검사를 위해 전신마취가 필요할 수도 있습니다.<br>
+조직검사는 대개 3-4일 후에 결과를 확인할 수 있으며,검사결과에 따라 향후 치료방법이 결정됩니다.<br>
+또한 목에서 커진 림프절이 만져지면 세침흡인검사를 시행하게 됩니다.<br>
+세침흡인검사는 바늘을 이용하여 목에서 만져지는 혹의 세포를 채취한 후 현미경으로 관찰하는 검사입니다.
+                            </p>
+                            <p class="thumCom">
+                                <span class="thumNum">3</span>
+                                영상검사<br>
+조직검사에서 악성종양 즉 암으로 진단되면 병기과 치료방침을 정하기 위해서 초음파, CT, MRI, PET-CT 등을 촬영하게 됩니다.
+                            </p>
+                        </li>
+                        <li class="item5">
+                            <h3 class="thumTitle">
+                            두경부암의 치료
+                           </h3>
+                           <p class="thumComent">두경부암은 발생 부위에 따라 치료방법에 약간의 차이는 있지만 일반적으로 조기암은 수술 혹은 방사선 치료로, <br> 진행암은 항암방사선 치료 혹은 수술후 항암방사선 치료를 하게 됩니다.</p>
+                            <p class="thumCom">
+                               <span class="thumNum">1</span>
+                                구강 및 구인두암의 치료<br>
+일반적으로 구강과 구인두의 조기암은 수술과 방사선치료의 성적이 유사합니다.<br>
+3,4병기의 진행된 암은 수술 후 방사선치료를 병행하는 경우가 많습니다.<br>
+진행한 구강 및 구인두암의 경우 수술 후 발성 및 섭식의 재활을 위해 대부분 재건수술을 같이 시행하게 됩니다.
+                            </p>
+                            <p class="thumCom">
+                                <span class="thumNum">2</span>
+                               타액선암(침샘암)의 치료<br>
+타액선암은 조직학적 유형 및 악성도에 따라 수술과 수술후 방사선치료를 시행하게 됩니다.<br>
+타액선암의 수술에 있어 안면신경의 보존이 중요하며 이 신경이 손상되면 다른 신경을 이용해 재건을 합니다. 
+                            </p>
+                            <p class="thumCom">
+                                <span class="thumNum">3</span>
+                                비인두암, 하인두암의 치료<br>
+비인두암은 수술적으로 접근하기 어려우며 방사선에 대한 반응에 우수하여 주로 방사선치료를 시행하게 됩니다.<br>
+초기 하인두암의 경우 후두의 기능을 보존하는 술식이 가능하지만 진행된 하인두암은 후두와 함께 인두를 절제하고 재건술을 시행하게 됩니다.
+                            </p>
+                            <p class="thumCom">
+                                <span class="thumNum">4</span>
+                             후두암의 치료<br>
+조기 후두암은 방사선 치료와 수술 모두 높은 치료율을 보이고 있습니다.<br>
+최근에는 레이저를 이용하여 조기 후두암 절제술을 시행하고 있으며, 종양학적으로나 기능적으로 우수한 결과를 보이고 있습니다.<br>
+좀 더 진행된 후두암에서도 다양한 술식을 이용하여 음성을 보존하는 수술이 가능합니다.<br>
+많이 진행된 후두암의 경우 후두 전절제술이 필요하므로 흡연자에서 음성변화가 2주 이상 지속되면 반드시 이비인후과 전문의 진료가 필요합니다.   
+                            </p>
+                            <p class="thumCom">
+                                <span class="thumNum">5</span>
+                             경부 악성종양의 치료<br>
+경부에 일차적으로 발생하는 악성종양은 드물며, 두경부 영역의 원발암에서 경부전이를 한 경우가 대부분입니다.<br>
+많은 두경부암에서 경부전이가 있으므로 예방적 혹은 치료적 목적의 경부절제술을 시행하게 됩니다.
+   
+                            </p>
+                        </li>
+                        <li class="item6">
+                            <h3 class="thumTitle">
+                              두경부암의 예방  
+                            </h3>
+                            <p class="thumCom">
+                             - 무엇보다도 금연이 중요합니다. 흡연자라도 금연한 지 6년이 지나면 후두암 발병률이 크게 떨어지고, 15년이 지나면 비흡연자와 비슷해진다는 보고가 있습니다.<br>
+- 술 또한 암을 유발할 수 있으므로 가능한 피해야 합니다.<br>
+- 과일과 채소의 섭취를 충분히 합니다.<br>
+- 하루에 8컵 이상의 물을 마십니다.<br>
+- 항상 구강을 청결히 합니다.<br>
+- 자극성 음식물을 피합니다. 뜨겁고, 짜고, 매운 음식, 검게 탄 음식을 섭취하지 않도록 합니다.<br>
+- 날카로운 치아, 잘 맞이 않는 틀니 등이 구강 점막을 만성적으로 자극하는 일이 없도록 합니다.<br>
+- 모든 구강병은 초기에 치료받도록 하고 만성적 염증상태가 없도록 하며 점막이 헐어서 10일 이상 지속되는 궤양 등은 초기에 치과를 방문하여 진단 받아야 합니다.<br>
+- 구강 백반증 같은 구강 내 백색 병소 및 홍반증 등 전암 병소가 나탄날 때에는 즉시 치료받도록 합니다.<br>
+- 1년에 한번씩, 특히 장년 이후에는 정기 두경부 검진을 받도록 합니다.   
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+             </section>    
+            </div>
+        </div>
+        
+        <div class="page" id="page2">
+            <a href="#page2" class="btn1 item2">수술클리닉</a>
+            <div class="con">
+               
+               <figure class="vsBox">
+                    <img src="./img/sub_titleimg.jpg" alt="서브이미지" class="vsImg">
+                    <div class="vsTitBox">
+                        <h1 class="vsTitle">수술클리닉</h1>
+                        <p class="vsComent"><span class="atxt">스마트 이비인후과</span>는 축농증 수술·비염수술 등 최고의 수술실력을 보유하고 있습니다.</p>
+                    </div>
+                </figure>
+              
+               <section class="sec2">
+                <input type="radio" name="ra21" id="ra21" class="raItem raItem1" checked>
+                <input type="radio" name="ra21" id="ra22" class="raItem raItem2">
+                <input type="radio" name="ra21" id="ra23" class="raItem raItem3">
+                <ul class="btnFrame">
+                    <li class="col4"><label for="ra21" class="raBtn item1">목수술</label></li>
+                    <li class="col4"><label for="ra22" class="raBtn item2">귀수술</label></li>
+                    <li class="col4"><label for="ra23" class="raBtn item3">코수술</label></li>
+                </ul>
+                
+                <div class="subBox item1">
+                 
+                  <ul class="thumLst">
+                        <li class="item1">
+                            <h3 class="thumTitle">구강 낭종, 종양 수술
+</h3>
+                            <p class="thumCom">입안에는 낭종(주머니), 양성종양(물혹), 악성종양(암) 등 다양한 질병이 생길 수 있습니다. <br>
+경험 있는 이비인후과 전문의는 대개 눈으로 보고 만져보면 입안의 혹이 어떤 유형의 것인지 알 수 있습니다.<br>
+낭종이나 양성 종양의 경우 완전히 절제하면, 확진을 위한 조직검사와 동시에 치료가 됩니다.<br>
+악성 종양이 의심되는 경우에는 병변의 일부만 먼저 절제하여 조직검사를 확인한 후에 충분한 치료 계획을 세우고 치료에 들어가게 됩니다.<br>
+구강에 생기는 흔한 양성 종물은 다음과 같습니다.
+이들 질환은 국소마취 하에 간단한 수술로 제거하면 되고 수일 이내에 호전됩니다.<br><br>
+- 유두종 : 주로 목젖, 편도 주위에 흔합니다. 포도송이 모양의 양성 종양으로 바이러스가 원인으로 생각됩니다.<br>
+- 섬유종 : 치아 상태가 좋지 않아 반복적으로 손상 받는 혀의 측면에 주로 생깁니다. 많은 경우 치과 치료도 같이 받아야 합니다.<br>
+- 하마종 : '설하선'이라는 침샘의 입구가 막혀 생긴 점액 주머니입니다. 보통 혀의 아랫쪽, 앞니 뒤쪽에 생기며, 터지면 찐득한 노란 액체가 나옵니다.<br>
+&nbsp;&nbsp;하마종은 단순히 주머니를 터치거나 절제만 해서는 재발이 흔하므로 원인이 되는 침샘도 같이 제거해 주어야 합니다. <br>
+&nbsp;&nbsp;구강수술에 경험이 많은 이비인후과 전문의에게 치료를 받으셔야 재발이 적습니다.<br>
+- 점액낭종 : 주로 아랫입술의 양끝에 생기며 입술에 있는 작은 침샘의 입구가 막혀서 생깁니다.
+</p>
+                        </li>
+                    </ul>
+                 <ul class="thumLst">
+                        <li class="item2">
+                            <h3 class="thumTitle">타석 제거술
+</h3>
+                            <p class="thumCom">
+                           타석은 주로 양쪽 턱밑에 있는 악하선과 악하선관에 생기며, 식사 중 혹은 식사 후에 반복적으로 턱 밑이 통증과 함께 붓는 증상이 생깁니다. <br>
+대부분의 경우 손으로 촉지 해 보면 타석이 구강저에서 만져지는 경우가 대부분입니다.<br>
+타석증이 의심되면 초음파 혹은 CT를 촬영하여 타석의 위치와 개수, 크기 등을 확인한 후에 치료 계획을 세우게 됩니다.<br>
+타석이 악하선관 개구부 주위에 있는 경우와 입안을 통해 촉지 되는 경우에는 국소마취를 한 후 구강을 통해 제거할 수 있습니다.<br>
+타석에 의해 악하선관 내부가 손상되어 악하선관이 좁아질 위험이 있어 보이면 악하선관 성형술을 시행해 주기도 합니다.<br>
+대부분 10분 이내의 수술시간이 소요되며 2-3일 정도 가벼운 통증이 지속됩니다.<br>
+타석이 악하선 침샘 안쪽에 깊숙히 박혀있거나 오랜 증상으로 만성 침샘염증이 동반되어 있는 경우에는 전신마취 하에 침샘도 같이 절제해야 합니다.
+
+</p>
+                        </li>
+                    </ul>
+                    <ul class="thumLst">
+                        <li class="item3">
+                            <h3 class="thumTitle">설소대 절제술
+</h3>
+                            <p class="thumCom">혀밑의 설소대가 짧거나, 비정상적으로 두꺼워진 경우, 혹은 혀끝에 부착된 경우로 발음이 부정확하거나,<br> 혀가 아랫니 앞으로 충분히 나오지 않으며 혀끝이 하트모양으로 말릴 때 의심해 볼 수 있습니다.<br>
+수술시기는 확립되어 있지 않지만 대개 3-4세경 이후로 시행하는 것이 좋습니다.<br>
+이 시기에 말을 열심히 배우기 시작하며 놀이방, 유치원 등 사회 생활이 시작되기 때문입니다.<br>
+얇은 막으로만 된 경우에는 절제만 해주어도 되지만 섬유조직으로 두꺼워진 경우에는 절제 후 다시 봉합해 주는 성형술을 시행하는 것이 좋습니다.<br>
+협조가 잘되는 초등학생 이상인 경우에는 국소마취 하에 시행할 수 있으며 수술시간은 10분 내외입니다.<br>
+수술 후 지속적인 언어치료를 해주면 좋은 결과를 얻을 수 있습니다.
+
+</p>
+                        </li>
+                    </ul>
+                     <ul class="thumLst">
+                        <li class="item4">
+                            <h3 class="thumTitle">경부종물/림프절 절제수술
+</h3>
+                            <p class="thumCom">목에는 다양한 혹이 생길 수 있습니다.
+젊은 층에서는 주로 염증과 동반된 림프절비후가 흔하며 소아의 경우 선천성 종물도 비교적 흔히 관찰됩니다.<br>
+성인에서 수주 혹은 수개월에 걸쳐 목에서 혹이 만져지면 반드시 악성 종양의 가능성을 배제하기 위해 적절한 조직검사가 필요합니다.<br>
+대부분의 경우 세포흡인검사로 알 수 있지만 경우에 따라서는 절제 생검을 해야 하는 경우도 있습니다.<br>
+절제 생검은 국소 마취하에 병변의 일부 혹은 전체를 절제하여 조직검사를 통해 확진하는 검사입니다.
+조직검사는 4~5일 후에 결과를 알 수 있습니다.
+
+
+</p>
+                        </li>
+                    </ul>
+                        
+                </div>
+                
+                <div class="subBox item2">
+                    <ul class="thumLst">
+                        <li class="item1">
+                            <h3 class="thumTitle">삼출성 중이염 수술
+</h3>
+                            <p class="thumCom">급성 중이염의 후유증으로 삼출성 중이염이 흔히 생깁니다. <br>
+이는 소아에서 중이의 환기관 역할을 하는 유스타키오관의 기능이 저하되어 있기 때문이며 성장하면서 중이염이 생기는 빈도는 줄어듭니다.<br>
+삼출성 중이염은 진단 후 1개월 째에 60%, 2개월 경과 후에 80%, 그리고 3개월이 지나면 90%에서 자연히 호전되기 때문에 정기적으로 관찰만 해주면 됩니다.<br>
+이 기간 동안 항생제를 복용하는 것은 도움이 되지 않으며 항생제는 1주일 정도 복용하는 것으로 충분합니다.<br>
+하지만 관찰 도중 청력이 저하되어 있거나 고막 혹은 이소골의 변화가 관찰되면 환기관을 삽입해주면 됩니다.<br>
+협조가 잘 되는 소아는 국소마취로도 충분히 수술이 가능합니다. <br>
+수술은 외이도와 고막을 마취한 후 고막의 전하방 부위에 조그만 절개창을 만든 후 중이에 고인 삼출액을 흡입해 줍니다.<br>
+그 후 환기관을 고막에 유치시킵니다.
+환기관은 중이의 상태가 좋아지면 자연히 배출되는데 보통 6~12개월이 소요됩니다.</p>
+                        </li>
+                        <li class="item2">
+                            <h3 class="thumTitle">고막 성형술(고막팻치술)</h3>
+                            <p class="thumCom">외상 혹은 중이염에 의한 고막 천공이 있는 환자에게 주로 사용됩니다.<br>
+국소 마취제를 귀 안에 도포하여 마취를 진행합니다.<br>
+외이도를 소독하고 수술 현미경을 이용하여 천공된 고막 부위의 염증조직을 제거하고 말려 들어간 고막을 잘 펴준 후에<br> 인공 고막으로 천공 부위를 덮어준 후 수술을 마칩니다.
+경우에 따라서는 귓볼의 지방조직을 이용하기도 합니다.<br>
+수술 시간은 10분 가량 소요되며, 2~4주째 인조고막을 제거하고 고막의 재생여부를 확인합니다.<br>
+가능한 외상 후 빨리 시행하는 것이 좋으나, 염증이 심한 상태에서 시행하지 않습니다.</p>
+                        </li>
+                        <li class="item3">
+                            <h3 class="thumTitle">이개전누공 수술</h3>
+                            <p class="thumCom">
+선천적으로 귀 앞 쪽에 작은 구멍이 있는 이개전 누공 또는 낭종에 반복적으로 염증이 생길 때 수술을 합니다.<br>
+염증이 심해서 농양이 형성되어 있을 때는 우선 배농을 실시하여 염증이 가라앉은 후에 수술을 합니다.<br>
+귀 주위에 국소 마취를 하고, 최소한의 피부절개를 시행한 수 누공 및 낭종을 따라 뿌리까지 확인한 후 주위 염증 조직들을 모두 제거합니다.<br>
+피부 봉합을 하고 필요에 따라 수술 부위를 압박 소독한 후 수술을 마칩니다.<br>
+수술시간은 약 30분 가량 소요되며 수술 후 약 1주일간 매일 상처 부위를 확인하고 소독합니다.
+</p>
+                        </li>
+                        <li class="item4">
+                            <h3 class="thumTitle">피지낭종 제거술</h3>
+                            <p class="thumCom">
+                              귀 주변에서 흔히 볼 수 있는 피지낭종은 주로 귓볼 전방, 하방에 흔하며, 미용적으로 문제가 될 뿐만 아니라 감염에 의한 반복적인 염증의 원인이 되기도 합니다.<br>
+완전히 절제하지 못하면 재발하게 되고, 재발하게 되면 수술에 따른 섬유조직 증식으로 재수술이 어려워 질 수 있습니다.<br>
+따라서 첫 수술 시 완벽하게 병변을 절제해 주는 것이 중요합니다.<br>
+수술은 정상적인 주름선을 이용하여 제거하기 때문에 수술 후 흉터가 많이 보이지 않습니다.  
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="subBox item3">
+                    <ul class="thumLst">
+                        <li class="item1">
+                            <h3 class="thumTitle">하비갑개 고주파 수술(비염수술)
+</h3>
+                            <p class="thumCom">만성 비후성 비염, 알레르기성 비염, 혈관 운동성 비염 등으로 약물치료에도 반응하지 않는 만성적인 코막힘을 치료하는 수술입니다. <br>
+고주파를 이용한 비갑개 수술은 하비갑개의 점막하 조직만을 선택적으로 섬유화시켜, 점막을 최대한 보존하고, 하비갑개의 부피를 효과적으로 감소시키며, <br>코의 분비물을 줄여줄 수 있는 수술입니다.
+스마트 이비인후과에서는 독일 Sutter사의 최신 고주파 장비를 이용합니다.<br>
+수술시간이 짧고 통증 및 출혈이 적고 회복이 빠르다는 장점이 있습니다.
+코 안을 국소마취한 후에 비후된 비갑개에 고주파 수술 칩을 삽입하여 수축시킵니다.<br>
+필요에 따라 하비갑개를 골절시켜 비강의 공간을 확보합니다.
+유착방지를 위해 거즈나 스폰지를 넣고 수술을 마칩니다.<br>
+수술 후에 발생하는 가피를 적절히 제거하고 점막의 재생을 촉진하기 위해서는 생리식염수를 이용한 비강 세척과 정기적인 외래 치료가 필요합니다.
+</p>
+                        </li>
+                        <li class="item2">
+                            <h3 class="thumTitle">비중격 성형술(비중격 만곡증 수술)</h3>
+                            <p class="thumCom">비강을 가운데에서 양쪽으로 나누어 주는 비중격은 선천적 원인, 출산 과정에서 또는 후천적 외상 등의 이유로 22~68%의 인구에서 휘어져 있는데<br> 이를 비중격 만곡증이라고 합니다.
+비중격이 휘어 있어 한 쪽 코가 만성적으로 막히는 경우, 비염이나 축농증의 약화 요인이 되는 경우, <br>코피가 자주 나는 경우 또는 코골이나 두통을 유발하는 경우에 수술의 적응증이 됩니다.<br>
+수술은 국소마취로 진행되며, 점막에만 절개가 가해지므로 얼굴에 흉터가 남지 않는 수술입니다.
+동시에 비갑개 수술을 할 경우 더 큰 효과가 있을 수 있습니다.<br>
+코 안을 국소마취한 후에 코 안의 점막을 절개하고 휘어진 연골과 뼈를 제거하고 다듬어, 휜 비중격을 교정합니다.<br>
+점막을 봉합하고 필요에 따라서는 코 안에 얇은 부목을 고정하고 나옵니다.<br>
+양측 비강에 거즈나 스폰지를 넣고 지혈합니다.
+치료 기간 동안 양측 비강을 생리식염수를 이용해 세척해주어야 합니다.<br>
+수술 후 비폐색 및 콧등의 압박감이 발생할 경우에는 반드시 외래를 찾아 비중격혈종 등을 확인해야 합니다.</p>
+                        </li>
+                        <li class="item3">
+                            <h3 class="thumTitle">부비동 내시경 수술(축농증 수술)</h3>
+                            <ul class="imgCom">
+                                <li class="imgCom1"><h2 class="imgTitle">수술대상</h2>
+                                <p class="imgComent">비용종(물혹)을 동반한 만성 부비동염(축농증), 약물에 반응하지 않는 재발성 세균성 부비동염, 진균성(곰팡이) 부비동염</p></li>
+                                <li class="imgCom2"><h2 class="imgTitle">수술의 특징</h2>
+                                <p class="imgComent">부비동은 자연공이라는 통로로 비강으로 열리게 되는데, 해부학적 변형이나, 물혹, 주변 조직의 염증 등으로 <br>이 자연공이 막히게 되면 부비동은 세균 감염과 점막비후에 의해서 부비동염이 발생하게 됩니다.<br>약물 치료 등으로 해결되지 않는 부비동염을 방치할 경우, 부비동염은 두통, 후비루, 기츰 등의 증상부터<br>안구와 두개내 합병증에 이르는 심각한 증상까지 이를 수 있습니다.<br>
+부비동 내시경 수술은 처음부터 끝까지 내시경으로 병변과 코 안의 주요 구조들을 정확히 확인하며 수술을 진행하기 때문에 <br>안전하고 정상 점막은 최대한 보존할 수 있어 회복이 빠릅니다.</p></li>
+                                 <li class="imgCom3"><h2 class="imgTitle">수술방법</h2>
+                                <p class="imgComent">코 안을 국소마취한 후에 코 내시경과 데브라이더(미세흡입분쇄기)를 이용해서 물혹을 갈아서 제거합니다.<br>
+염증이 있는 점막과 골편을 데브라이더와 다양한 겸자를 이용하여 제거하고, 정상점막을 최대한 보존합니다.<br>
+                                    각 부비동의 입구를 넓혀주고 지혈을 한 후, 스폰지를 넣고 수술을 마칩니다.</p></li>
+                                <li class="imgCom4"><h2 class="imgTitle">치료 기간 및 주의사항</h2>
+                                <p class="imgComent">치료기간은 주당 2-3회, 3-4주 걸립니다.
+코 안에 넣은 스폰지는 수술 후 2일 째 제거합니다. <br>
+                                    수술 후 약 1주일 째부터는 생리식염수를 이용한 세척을 시작하며, 점막이 유착되거나 자연공이 다시 좁아지는 것을 <br>방지하기 위해 자주 외래에서 드레싱을 시행해야 합니다.</p></li>
+                            </ul>
+
+                            
+                        </li>
+                        <li class="item4">
+                            <h3 class="thumTitle">코골이 수술</h3>
+                            <ul class="imgCom">
+                                <li class="imgCom1"><h2 class="imgTitle">수술대상</h2>
+                                    <p class="imgComent">단순 코골이, 수면 무호흡</p></li>
+                                <li class="imgCom2"><h2 class="imgTitle">수술의 특징</h2>
+                                <p class="imgComent">코골이는 수면 중 호흡기류가 여러 원인으로 인해 좁아진 인두 기도를 통과하면서 생긴 기압차 때문에 <br>연구개(입천장), 목젖, 주위 구조물들이 진동하여 생기는 호흡 잡음입니다.<br>
+여기에 수면 무호흡 증상까지 동반될 경우, 고혈압, 부정맥 등의 심혈관계 합병증 및 뇌혈관계 합병증을 가져올 수 있는 질환입니다.<br>
+코골이를 정확히 분석할 수 있는 수면다원검사와 실제 폐쇄되는 구조를 찾는 내시경 검사를 통하여 수술적 치료가 필요한 경우에 코골이 수술을 시행합니다.<br>
+                                    본원에서는 고주파 수술 기구를 이용하여 연구개의 늘어짐을 줄이고, 목젖을 축소시키며 필요한 경우 절제하는 시술을 하게 되므로 <br>통증 및 출혈을 최소화하고 빠른 회복이 가능합니다.</p></li>
+                                <li class="imgCom3"><h2 class="imgTitle">수술방법</h2>
+                                <p class="imgComent">구인두 부위를 국소마취한 후에 고주파 수술 기구를 이용하여 비대된 목젖을 제거하고, <br>목젖 주변의 늘어나 있는 연구개 점막을 절개, 절제 및 봉합하여 구인두의 공간을 넓게 만들어 줍니다.<br>
+필요에 따라서는 편도를 절제한 수 남은 점막을 봉합하기도 합니다.
+                                    수술 후 지혈을 하고 수술을 마칩니다.</p></li>
+                                <li class="imgCom4"><h2 class="imgTitle">주의사항</h2>
+                                <p class="imgComent">수술 후 출혈을 방지하기 위해 1-2주간 부드러운 음식을 드시는 것이 좋습니다.<br>
+                                    체중 조절이 안 될 경우 목젖 주위 점막이 다시 늘어날 수 있으므로, 적절한 체중을 유지하는 것이 도움이 됩니다.</p></li>
+                            </ul>
+
+                            
+                        </li>
+                        
+                    </ul>
+                </div>
+                
+                
+             </section>
+              
+            </div>
+        </div>
+        
+        
+     
+     
+        
+        <div class="page" id="lastpage"> 
+           <div class="wrap">
+               <ul>
+                   <li class="col4 first item1">
+                       <h2 class="itemTitle">스마트 이비인후과</h2>
+                       <p class="telTxt">042-863-0075</p>
+                       <p class="itemData">305-330<br>대전광역시 유성구 지족로 373, 401호</p>
+                       <p class="itemData">팩스번호 : 042-863-0079</p>
+                   </li>
+                   <li class="col4 item2">
+                       <h2 class="itemTitle">진료시간</h2>
+                       <p class="itemData" style="padding-bottom: 50px">평일 9:00 - 19:00 [PM 7:00]<br>토요일 9:00 - 16:00 [PM 4:00]<br>점심시간 12:30 - 14:00 [PM 2:00]</p>
+                       <p class="itemData">일요일 공휴일은 휴진입니다.</p>
+                   </li>
+                   <li class="col4 item3">
+                       <h2 class="itemTitle">찾아오시는 길</h2>
+                       <div id="mapFrame">
+                           <div id="map_canvas" style="width:300px; height:160px"></div>
+                       </div>
+                   </li>
+               </ul>
+           </div> 
+        </div>
+        
+    </main>
+    
+    <input type="checkbox" id="ck">
+    <div id="popFrm">
+       <label for="ck" class="closeBtn">닫기</label>
+        <div class="popBox">
+            <ul class="item1">
+                <li><h2><a href="intro.html#page1">병원소개</a></h2></li>
+                <li><h4><a href="intro.html#page1">인사말</a></h4></li>
+                <li><h4><a href="intro.html#page2">의료진소개</a></h4></li>
+                <li><h4><a href="intro.html#page3">시설안내</a></h4></li>
+                <li><h4><a href="intro.html#page4">오시는길</a></h4></li>
+            </ul>
+            <ul class="item2">
+                <li><h2><a href="info.html#page1">진료안내</a></h2></li>
+                <li><h4><a href="info.html#page1">진료과목</a></h4></li>
+                <li><h4><a href="info.html#page2">수술센터</a></h4></li>
+            </ul>
+            <ul class="item3">
+                <li><h2><a href="clinic.html#page1">전문클리닉</a></h2></li>
+                <li><h4><a href="clinic.html#page1">특수클리닉</a></h4></li>
+                <li><a href="clinic.html#page1">- 음성클리닉</a></li>
+                <li><a href="clinic.html#page1">- 두경부암검진</a></li>
+                <li><h4><a href="clinic.html#page2">수술클리닉</a></h4></li>
+                <li><a href="clinic.html#page2">- 목수술</a></li>
+                <li><a href="clinic.html#page2">- 귀수술</a></li>
+                <li><a href="clinic.html#page2">- 코수술</a></li>
+            </ul>
+            <ul class="item4">
+                <li><h2><a href="equipment.html#page1">의료장비</a></h2></li>
+            </ul>
+            <ul class="item5">
+                <li><h2><a href="community.html#page1">커뮤니티</a></h2></li>
+                <li><h4><a href="community.html#page1">공지사항</a></h4></li>
+                <li><h4><a href="community.html#page2">진료후기</a></h4></li>
+                <li><h4><a href="community.html#page3">포토앨범</a></h4></li>
+                <li><h4><a href="community.html#page4">온라인상담</a></h4></li>
+                <li><a href="community.html#page4">- 자주묻는질문</a></li>
+                <li><a href="community.html#page4">- 1:1상담</a></li>
+            </ul>
+        </div>
+    </div>
+    
+    <aside id="quick">
+            <div class="qWrap">
+                <ul class="top">
+                    <li><a href="index.html" class="qlogo"></a></li>
+                    <li><a href="joinForm.html" class="hv">회원가입</a></li>
+                    <li><a href="loginForm.html" class="hv">로그인</a></li>
+                    <li><a href="info.html#page1" class="hv">진료과목</a></li>
+                    <li><a href="intro.html#page4" class="hv">오시는길</a></li>
+                </ul>
+                <ul class="bottom">
+                    <li><a href="community.html#page4" class="yellow">자주묻는질문</a></li>
+                    <li><a href="community.html#page4" class="cyan">1:1상담</a></li>
+                    <li><a href="#" class="toTop">위로</a></li>
+                </ul>
+            </div>
+    </aside>
+    
+    <footer id="ft">
+      <div class="wrap">
+          <p class="copyright">copyrights ⓒ 2019 스마트 이비인후과 SMARTENT ALL RIGHTS RESERVED. SITE BY PSE GROUP.</p>
+          <div class="ftLogo"></div>
+      </div>      
+    </footer>
+</body>
+</html>

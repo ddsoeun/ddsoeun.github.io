@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> <!-- meta http-equiv의 content-type설정 -->
+    <title>스마트 이비인후과 - 커뮤니티</title>
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR" rel="stylesheet">
+<!--    <link href="https://fonts.googleapis.com/css?family=Noto+Serif+KR" rel="stylesheet">-->
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon16.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon32.ico">
+    <!-- 페이지 최상단 탭 앞에 나오는 작은 아이콘 ico,ong 둘다 가능함. ico는 옛날버전. png는 안뜨는 버전도 있음
+    size 32.ico는 신형브라우저와 안드로이드폰, 57은 아이폰3이하, 72는 아이패드, 114는 아이폰4 이상
+    -->
+    <link rel="apple-touch-icon" size="152x152 "href="./ico/favicon152.png">
+    <!-- 애플용 아이콘 href앞에 size설정 가능 예시) size="64x64" --> 
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta name="msapplication-TileImage" content="./ico/favicon144.png">
+    <!-- IE10 이상 -->
+    
+    <!-- 메타데이터 개발 공통 사항(구글 등 에서 검색이 될 수 있게끔) -->
+    
+    <!-- 자동으로 새로고침되게끔 초단위(content)-->
+    <meta http-equiv="refresh" content="180">
+    
+    <!-- 데스크탑에서 IE로 웹문서를 열 때 가장 최신 버전으로 실행 ua는 웹브라우저를 의미 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    
+    <!-- name은 항상 문서정보. 앱 이름. content가 실제로 뜨는 이름 author는 저작자이름 description은 현재 문서의 설명 
+    generator은 저작도구 keywords는 검색엔진에서 검색되게 할 키워드-->
+    <meta name="application-name" content="smart hospital Site">
+    <meta name="author" content="SoeunPark">
+    <meta name="description" content="smart hospital Site Mainpage">
+    <meta name="generator" content="Brackets">
+    <meta name="keywords" content="스마트이비인후과, 대전병원, 반석역병원, 반석동이비인후과, 대전이비인후과, 반석역이비인후과">
+    
+    <!-- 반응형, 모바일, 태블릿 사이트일 경우 initial : 처음 접속했을 때 1배로 보여줌 user-scalable 손가락으로 늘였다 줄였다가 되지 않게 -->
+    <meta name="viewport" content="width=device-width, initial-scal=1.0, user-scalable=no">
+    <link rel="stylesheet" href="com.css">
+    <link rel="stylesheet" href="grid.css">
+    <link rel="stylesheet" href="sub.css">
+    <link rel="stylesheet" href="sub5.css">
+   
+    
+    
+    <style>
+/*        스크롤 없애는 법       */
+    body, html { -ms-overflow-style:none; }
+    ::-webkit-scrollbar { display: none; }
+    ::-o-scrollbar { display: none; }
+/*   -ms 마이크로소프트 -moz 모질라(파이어폭스) -webkit(크롬, 사파리) -o(오페라)   */
+    </style>
+<!--    <script src="http://code.jquery.com/jquery-latest.js"></script>-->
+    <script src="./js/jquery-1.11.1.js">
+    /* 저장한 경우, 다운받지 않은 경우 */
+    </script>
+    <script>
+    /* 여기가 스크립트 처리 구간 */
+    $(function(){ 
+        var intv = setInterval(function(){ lAni(); }, 3000);
+        function lAni(){
+            $(".imgBox").not(":animated").animate({"margin-left":"-500px"}, 600, function(){
+                $(".imgBox li").eq(0).appendTo($(".imgBox"));
+                $(".imgBox").css("margin-left", "0px");
+            });
+        }
+//        $(window).scroll(function(){
+//            var scTop = $("body, html").scrollTop();
+//            if(scTop>=101){
+//                $(".hdFrame, #gnb a, .lstBtn span").addClass("on");
+//            } else {
+//                $(".hdFrame, #gnb a, .lstBtn span").removeClass("on");
+//            }
+//        })
+        });
+    </script>
+     <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script> 
+<!--    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjO5QRbPVzMm_3xad41UvAcIsbqiFOqME&callback=initMap"></script> -->
+
+<script> 
+
+//좌표 값을 바꿔서 입력 36.3491563,127.3776857
+
+function initialize() {
+
+  var myLatlng = new google.maps.LatLng(36.38720540000001,127.3175549);
+
+  var mapOptions = {
+
+    zoom: 17,
+
+    center: myLatlng
+
+  }
+
+  var map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
+
+ 
+
+  var marker = new google.maps.Marker({
+
+      position: myLatlng,
+
+      map: map,
+
+      title: '스마트 이비인후과'	  //레이블을 바꿔서 입력
+
+  });
+
+}
+
+ 
+
+google.maps.event.addDomListener(window, 'load', initialize);
+
+ </script>
+ 
+</head>
+<body onload="initialize()">
+    <div class="hdFrame on"></div>
+    <header id="hd">
+        <div class="wrap">
+            <a href="index.html" class="logo">
+            <img src="./icon/logo.png" alt="앰블럼">
+            </a>
+            <nav id="gnb">
+                <ul class="main">
+                    <li><a href="intro.html#page1" class="on">병원소개</a></li>
+                    <li><a href="info.html#page1" class="on">진료안내</a></li>
+                    <li><a href="clinic.html#page1" class="on">전문클리닉</a></li>
+                    <li><a href="equipment.html#page1" class="on">의료장비</a></li>
+                    <li><a href="community.html#page1" class="on">커뮤니티</a></li>
+                </ul>
+            </nav>
+            <label for="ck" class="lstBtn">
+                <span class="item1 on"></span>
+                <span class="item2 on"></span>
+                <span class="item3 on"></span>
+                <span class="item4 on"></span>
+<!--                윈도우 xp 등에서는 first-child 등이 안먹히는 경우가 있을 수 있음. 그럴때는 각각 태그에 클래스를 매겨서 사용       -->
+            </label>
+        </div>
+    </header>
+    
+    <main id="content">
+       <div class="blank"></div>
+        
+        <div class="page" id="page1">
+            <a href="#page1" class="btn1 item1">공지사항</a>
+            <div class="con">
+                 <h1 class="pageTitle">공지사항</h1>
+                 <section class="sec1">
+                     
+                    <div class="subBox">
+                         <ul class="notBox">
+                             <li class="item1">
+                                 <input type="radio" name="notRa" id="notRa1">
+                                 <label for="notRa1" class="notBtn">
+                                   혈관영양 주사 안내  
+                                 </label>
+                                 <div class="notTxt">
+                                 <img src="./img/notice_img.jpg" alt="">
+                                  <br>스마트 이비인후과에서 추천하는 영양 혈관 주사(IVNT : intravenous nutritional therapy) 안내입니다. <br>
+자세한 내용은 원장님과 상의하세요.   
+                                
+                                 </div>
+                             </li>
+                             <li class="item2">
+                                 <input type="radio" name="notRa" id="notRa2">
+                                 <label for="notRa2" class="notBtn">
+                                    진료시간 예약 안내 
+                                 </label>
+                                 <div class="notTxt">
+                                   이비인후과 질환중 이명 난청 어지럼증 등은 충분한 문진과 진찰, 그리고 검사가 필요합니다. <br>
+또한 초음파, 조직검사, 혹은 당일 수술등을 의뢰받아 방문하시는 분들은 
+사전에 병원에 연락을 주시면 진료시간을 예약해 드립니다.   
+                                 </div>
+                             </li>
+                             <li class="item3">
+                                 <input type="radio" name="notRa" id="notRa3">
+                                 <label for="notRa3" class="notBtn">
+                                   병원 전용주차장 안내  
+                                 </label>
+                                 <div class="notTxt">
+                                   병원 건물 뒷편에 스마트이비인후과 전용 지상 주차장이 있습니다. <br>
+전용주차장을 이용하시면 병원을 더욱 편리하게 이용하실 수 있을 것 같습니다. <br>
+항상 최선을 다하는 스마트 이비인후과가 되겠습니다. 감사합니다.  
+                                 </div>
+                             </li>
+                             <li class="item4">
+                                 <input type="radio" name="notRa" id="notRa4">
+                                 <label for="notRa4" class="notBtn">
+                                   토요일 점심시간 안내  
+                                 </label>
+                                 <div class="notTxt">
+                                  2016년 3월 5일 토요일 부터
+오후 1시부터 30분간 점심시간입니다. <br>
+오후 진료 준비를 위한 휴식시간 입니다.   
+                                 </div>
+                             </li>
+                        </ul>
+                   </div>
+                 </section>
+                 
+            </div>
+        </div>
+        <div class="page" id="page2">
+            <a href="#page2" class="btn1 item2">진료후기</a>
+            <div class="con">
+                <h1 class="pageTitle">진료후기</h1>
+                <section class="sec2">
+                  
+                  <div class="fbBox">
+                  
+                  <form action="feedback.php" class="searchForm">
+                      <p>
+                          <input type="text" id="keyword" class="searchKey" placeholder="검색어를 입력해주세요">
+                          <button class="submitBtn">
+                          <i class="icon-search"></i>
+                          </button>
+                      </p>
+                  </form>
+                  
+                   <ul class="feedBack">
+                       <li class="item1">
+                           <h2 class="fTitle">이래서는 안되요</h2>
+                           <p class="fCon">
+                           <span class="fDate">2017-07-27
+                           <i class="icon-calender"></i>
+                           </span>
+                           <span class="fNum">326
+                           <i class="icon-eye"></i>
+                           </span>
+                           </p>
+                       </li>
+                       <li class="item2">
+                           <h2 class="fTitle">고맙습니다.감사합니다.</h2>
+                           <p class="fCon">
+                           <span class="fDate">2017-03-28
+                           <i class="icon-calender"></i>
+                           </span>
+                           <span class="fNum">281
+                           <i class="icon-eye"></i>
+                           </span>
+                           </p>
+                       </li>
+                       <li class="item3">
+                           <h2 class="fTitle">홈피좀 손봐주세요</h2>
+                           <p class="fCon">
+                           <span class="fDate">2016-06-08
+                           <i class="icon-calender"></i>
+                           </span>
+                           <span class="fNum">368
+                           <i class="icon-eye"></i>
+                           </span>
+                           </p>
+                       </li>
+                       <li class="item4">
+                           <h2 class="fTitle">목소리</h2>
+                           <p class="fCon">
+                           <span class="fDate">2016-05-30
+                           <i class="icon-calender"></i>
+                           </span>
+                           <span class="fNum">309
+                           <i class="icon-eye"></i>
+                           </span>
+                           </p>
+                       </li>
+                       <li class="item5">
+                           <h2 class="fTitle">후기는 아니고 문의 사항입니다</h2>
+                           <p class="fCon">
+                           <span class="fDate">2016-05-27
+                           <i class="icon-calender"></i>
+                           </span>
+                           <span class="fNum">435
+                           <i class="icon-eye"></i>
+                           </span>
+                           </p>
+                       </li>
+                       <li class="item6">
+                           <h2 class="fTitle">믿음가는 선생님 감사해요</h2>
+                           <p class="fCon">
+                           <span class="fDate">2016-02-13
+                           <i class="icon-calender"></i>
+                           </span>
+                           <span class="fNum">430
+                           <i class="icon-eye"></i>
+                           </span>
+                           </p>
+                       </li>
+                       <li class="item7">
+                           <h2 class="fTitle">믿음이 가는 병원.안심이 되는 병원</h2>
+                           <p class="fCon">
+                           <span class="fDate">2015-11-05
+                           <i class="icon-calender"></i>
+                           </span>
+                           <span class="fNum">441
+                           <i class="icon-eye"></i>
+                           </span>
+                           </p>
+                       </li>
+                       <li class="item8">
+                           <h2 class="fTitle">믿음이 가네요...</h2>
+                           <p class="fCon">
+                           <span class="fDate">2015-10-28
+                           <i class="icon-calender"></i>
+                           </span>
+                           <span class="fNum">373
+                           <i class="icon-eye"></i>
+                           </span>
+                           </p>
+                       </li>
+                       <li class="item9">
+                           <h2 class="fTitle">수술받은지 벌써 일년이....</h2>
+                           <p class="fCon">
+                           <span class="fDate">2015-06-24
+                           <i class="icon-calender"></i>
+                           </span>
+                           <span class="fNum">568
+                           <i class="icon-eye"></i>
+                           </span>
+                           </p>
+                       </li>
+                       <li class="item10">
+                           <h2 class="fTitle">비염수술- 이제 안심이 됩니다.</h2>
+                           <p class="fCon">
+                           <span class="fDate">2015-06-01
+                           <i class="icon-calender"></i>
+                           </span>
+                           <span class="fNum">504
+                           <i class="icon-eye"></i>
+                           </span>
+                           </p>
+                       </li>
+                    
+                   </ul>
+                   
+                   </div>
+                   
+                </section>
+            </div>
+        </div>
+        <div class="page" id="page3">
+            <a href="#page3" class="btn1 item3">포토앨범</a>
+            <div class="con">
+                <h1 class="pageTitle">포토앨범</h1>
+                <section class="sec3">
+                     <div class="subBox">
+                         <ul class="photoBox">
+                             <li class="col4">
+                             <a href="./img/photo_bigimg1.jpg" target="_blank">
+                             <img src="./img/photo_img1.png" alt="포토앨범1">
+                             </a>
+                             </li>
+                             <li class="col4">
+                             <a href="./img/photo_bigimg2.jpg" target="_blank">
+                             <img src="./img/photo_img2.png" alt="포토앨범2">
+                             </a>
+                             </li>
+                             <li class="col4">
+                             <a href="./img/photo_bigimg3.jpg" target="_blank">
+                             <img src="./img/photo_img3.png" alt="포토앨범3">
+                             </a>
+                             </li>
+                             
+                         </ul>
+                     </div>      
+                </section>
+                
+            </div>
+
+        </div>
+        <div class="page" id="page4">
+            <a href="#page4" class="btn1 item4">온라인 상담</a>
+            <div class="con">
+                <h1 class="pageTitle">온라인 상담</h1>
+                <section class="sec4">
+                <input type="radio" name="ra31" id="ra31" class="raItem raItem1" checked>
+                <input type="radio" name="ra31" id="ra32" class="raItem raItem2">
+                <ul class="btnFrame">
+                    <li class="col6"><label for="ra31" class="raBtn item1">자주묻는질문</label></li>
+                    <li class="col6"><label for="ra32" class="raBtn item2">1:1상담</label></li>
+                </ul>
+                <div class="subBox item1">
+                  
+                    <ul class="qnaBox">
+                             <li class="item1">
+                                 <input type="radio" name="qnaRa" id="qnaRa1">
+                                 <label for="qnaRa1" class="qnaBtn">
+                                   토요일에도 진료를 하나요?  
+                                 </label>
+                                 <div class="qnaTxt">
+                                  일요일·공휴일은 휴진이지만 토요일은 9:00AM ~ 16:00PM(오후 4시)까지 진료합니다. <br> 점심시간은 12:30PM ~ 14:00PM(오후 2시)까지 입니다.
+                                
+                                 </div>
+                             </li>
+                             <li class="item2">
+                                 <input type="radio" name="qnaRa" id="qnaRa2">
+                                 <label for="qnaRa2" class="qnaBtn">
+                                    주차는 어디에 해야하나요? 
+                                 </label>
+                                 <div class="qnaTxt">
+                                   병원 건물 뒷편에 스마트이비인후과 전용 지상 주차장이 있습니다. <br>
+전용주차장을 이용하시면 병원을 더욱 편리하게 이용하실 수 있을 것 같습니다. <br>
+항상 최선을 다하는 스마트 이비인후과가 되겠습니다. 감사합니다.  
+                                 </div>
+                             </li>
+                             <li class="item3">
+                                 <input type="radio" name="qnaRa" id="qnaRa3">
+                                 <label for="qnaRa3" class="qnaBtn">
+                                   지하철 몇 번 출구로 나가야 병원이 있나요?  
+                                 </label>
+                                 <div class="qnaTxt">
+                                   지족역 2번출구로 나오셔서 좌측(세종시 방향)으로 300m 도보 이동하시면 됩니다. <br>자가용을 이용하는 경우 반석네거리를 검색하시면 됩니다. 
+                                 </div>
+                             </li>
+                             <li class="item4">
+                                 <input type="radio" name="qnaRa" id="qnaRa4">
+                                 <label for="qnaRa4" class="qnaBtn">
+                                   방문해야만 상담이 가능한가요? 
+                                 </label>
+                                 <div class="qnaTxt">
+                                  웹사이트의 1:1상담 메뉴에서 온라인 상담이 가능합니다. <br> 언제든지 문의주세요.   
+                                 </div>
+                             </li>
+                        </ul>
+                        
+                </div>
+                <div class="subBox item2">
+                  
+                    <form action="qna.php" class="searchForm">
+                      <p>
+                          <input type="text" id="keyword" class="searchKey" placeholder="검색어를 입력해주세요">
+                          <button class="submitBtn">
+                          <i class="icon-search"></i>
+                          </button>
+                      </p>
+                  </form>
+                        
+                </div>
+                
+               </section> 
+            </div> 
+            
+        </div>
+        
+        <div class="page" id="lastpage"> 
+           <div class="wrap">
+               <ul>
+                   <li class="col4 first item1">
+                       <h2 class="itemTitle">스마트 이비인후과</h2>
+                       <p class="telTxt">042-863-0075</p>
+                       <p class="itemData">305-330<br>대전광역시 유성구 지족로 373, 401호</p>
+                       <p class="itemData">팩스번호 : 042-863-0079</p>
+                   </li>
+                   <li class="col4 item2">
+                       <h2 class="itemTitle">진료시간</h2>
+                       <p class="itemData" style="padding-bottom: 50px">평일 9:00 - 19:00 [PM 7:00]<br>토요일 9:00 - 16:00 [PM 4:00]<br>점심시간 12:30 - 14:00 [PM 2:00]</p>
+                       <p class="itemData">일요일 공휴일은 휴진입니다.</p>
+                   </li>
+                   <li class="col4 item3">
+                       <h2 class="itemTitle">찾아오시는 길</h2>
+                       <div id="mapFrame">
+                           <div id="map_canvas" style="width:300px; height:160px"></div>
+                       </div>
+                   </li>
+               </ul>
+           </div> 
+        </div>
+        
+    </main>
+    
+    <input type="checkbox" id="ck">
+    <div id="popFrm">
+       <label for="ck" class="closeBtn">닫기</label>
+        <div class="popBox">
+            <ul class="item1">
+                <li><h2><a href="intro.html#page1">병원소개</a></h2></li>
+                <li><h4><a href="intro.html#page1">인사말</a></h4></li>
+                <li><h4><a href="intro.html#page2">의료진소개</a></h4></li>
+                <li><h4><a href="intro.html#page3">시설안내</a></h4></li>
+                <li><h4><a href="intro.html#page4">오시는길</a></h4></li>
+            </ul>
+            <ul class="item2">
+                <li><h2><a href="info.html#page1">진료안내</a></h2></li>
+                <li><h4><a href="info.html#page1">진료과목</a></h4></li>
+                <li><h4><a href="info.html#page2">수술센터</a></h4></li>
+            </ul>
+            <ul class="item3">
+                <li><h2><a href="clinic.html#page1">전문클리닉</a></h2></li>
+                <li><h4><a href="clinic.html#page1">특수클리닉</a></h4></li>
+                <li><a href="clinic.html#page1">- 음성클리닉</a></li>
+                <li><a href="clinic.html#page1">- 두경부암검진</a></li>
+                <li><h4><a href="clinic.html#page2">수술클리닉</a></h4></li>
+                <li><a href="clinic.html#page2">- 목수술</a></li>
+                <li><a href="clinic.html#page2">- 귀수술</a></li>
+                <li><a href="clinic.html#page2">- 코수술</a></li>
+            </ul>
+            <ul class="item4">
+                <li><h2><a href="equipment.html#page1">의료장비</a></h2></li>
+            </ul>
+            <ul class="item5">
+                <li><h2><a href="community.html#page1">커뮤니티</a></h2></li>
+                <li><h4><a href="community.html#page1">공지사항</a></h4></li>
+                <li><h4><a href="community.html#page2">진료후기</a></h4></li>
+                <li><h4><a href="community.html#page3">포토앨범</a></h4></li>
+                <li><h4><a href="community.html#page4">온라인상담</a></h4></li>
+                <li><a href="community.html#page4">- 자주묻는질문</a></li>
+                <li><a href="community.html#page4">- 1:1상담</a></li>
+            </ul>
+        </div>
+    </div>
+    
+    <aside id="quick">
+            <div class="qWrap">
+                <ul class="top">
+                    <li><a href="index.html" class="qlogo"></a></li>
+                    <li><a href="joinForm.html" class="hv">회원가입</a></li>
+                    <li><a href="loginForm.html" class="hv">로그인</a></li>
+                    <li><a href="info.html#page1" class="hv">진료과목</a></li>
+                    <li><a href="intro.html#page4" class="hv">오시는길</a></li>
+                </ul>
+                <ul class="bottom">
+                    <li><a href="community.html#page4" class="yellow">자주묻는질문</a></li>
+                    <li><a href="community.html#page4" class="cyan">1:1상담</a></li>
+                    <li><a href="#" class="toTop">위로</a></li>
+                </ul>
+            </div>
+    </aside>
+    
+    <footer id="ft">
+      <div class="wrap">
+          <p class="copyright">copyrights ⓒ 2019 스마트 이비인후과 SMARTENT ALL RIGHTS RESERVED. SITE BY PSE GROUP.</p>
+          <div class="ftLogo"></div>
+      </div>      
+    </footer>
+</body>
+</html>

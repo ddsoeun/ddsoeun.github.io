@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> <!-- meta http-equiv의 content-type설정 -->
+    <title>스마트이비인후과에 오신 것을 환영합니다.</title>
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR" rel="stylesheet">
+<!--    <link href="https://fonts.googleapis.com/css?family=Noto+Serif+KR" rel="stylesheet">-->
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon16.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon32.ico">
+    <!-- 페이지 최상단 탭 앞에 나오는 작은 아이콘 ico,ong 둘다 가능함. ico는 옛날버전. png는 안뜨는 버전도 있음
+    size 32.ico는 신형브라우저와 안드로이드폰, 57은 아이폰3이하, 72는 아이패드, 114는 아이폰4 이상
+    -->
+    <link rel="apple-touch-icon" size="152x152 "href="./ico/favicon152.png">
+    <!-- 애플용 아이콘 href앞에 size설정 가능 예시) size="64x64" --> 
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta name="msapplication-TileImage" content="./ico/favicon144.png">
+    <!-- IE10 이상 -->
+    
+    <!-- 메타데이터 개발 공통 사항(구글 등 에서 검색이 될 수 있게끔) -->
+    
+    <!-- 자동으로 새로고침되게끔 초단위(content)-->
+    <meta http-equiv="refresh" content="180">
+    
+    <!-- 데스크탑에서 IE로 웹문서를 열 때 가장 최신 버전으로 실행 ua는 웹브라우저를 의미 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    
+    <!-- name은 항상 문서정보. 앱 이름. content가 실제로 뜨는 이름 author는 저작자이름 description은 현재 문서의 설명 
+    generator은 저작도구 keywords는 검색엔진에서 검색되게 할 키워드-->
+    <meta name="application-name" content="smart hospital Site">
+    <meta name="author" content="SoeunPark">
+    <meta name="description" content="smart hospital Site Mainpage">
+    <meta name="generator" content="Brackets">
+    <meta name="keywords" content="스마트이비인후과, 대전병원, 반석역병원, 반석동이비인후과, 대전이비인후과, 반석역이비인후과">
+    
+    <!-- 반응형, 모바일, 태블릿 사이트일 경우 initial : 처음 접속했을 때 1배로 보여줌 user-scalable 손가락으로 늘였다 줄였다가 되지 않게 -->
+    <meta name="viewport" content="width=device-width, initial-scal=1.0, user-scalable=no">
+    <link rel="stylesheet" href="com.css">
+    <link rel="stylesheet" href="grid.css">
+    <link rel="stylesheet" href="main.css">
+    
+    <style>
+/*        스크롤 없애는 법       */
+    body, html { -ms-overflow-style:none; }
+    ::-webkit-scrollbar { display: none; }
+    ::-o-scrollbar { display: none; }
+/*   -ms 마이크로소프트 -moz 모질라(파이어폭스) -webkit(크롬, 사파리) -o(오페라)   */
+    </style>
+<!--    <script src="http://code.jquery.com/jquery-latest.js"></script>-->
+    <script src="./js/jquery-1.11.1.js">
+    /* 저장한 경우, 다운받지 않은 경우 */
+    </script>
+    <script>
+    /* 여기가 스크립트 처리 구간 */
+    $(function(){ 
+        var intv = setInterval(function(){ lAni(); }, 3000);
+        function lAni(){
+            $(".imgBox").not(":animated").animate({"margin-left":"-500px"}, 600, function(){
+                $(".imgBox li").eq(0).appendTo($(".imgBox"));
+                $(".imgBox").css("margin-left", "0px");
+            });
+        }
+        $(window).scroll(function(){
+            var scTop = $("body, html").scrollTop();
+            if(scTop>=101){
+                $(".hdFrame, #gnb a, .lstBtn span").addClass("on");
+            } else {
+                $(".hdFrame, #gnb a, .lstBtn span").removeClass("on");
+            }
+        })
+        });
+    </script>
+     <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script> 
+<!--    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjO5QRbPVzMm_3xad41UvAcIsbqiFOqME&callback=initMap"></script> -->
+
+<script> 
+
+//좌표 값을 바꿔서 입력 36.3491563,127.3776857
+
+function initialize() {
+
+  var myLatlng = new google.maps.LatLng(36.38720540000001,127.3175549);
+
+  var mapOptions = {
+
+    zoom: 17,
+
+    center: myLatlng
+
+  }
+
+  var map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
+
+ 
+
+  var marker = new google.maps.Marker({
+
+      position: myLatlng,
+
+      map: map,
+
+      title: '스마트 이비인후과'	  //레이블을 바꿔서 입력
+
+  });
+
+}
+
+ 
+
+google.maps.event.addDomListener(window, 'load', initialize);
+
+ </script>
+ 
+</head>
+<body onload="initialize()">
+    <div class="hdFrame"></div>
+    <header id="hd">
+        <div class="wrap">
+            <a href="index.html" class="logo">
+            <img src="./icon/logo.png" alt="앰블럼">
+            </a>
+            <nav id="gnb">
+                <ul class="main">
+                    <li><a href="intro.html#page1">병원소개</a></li>
+                    <li><a href="info.html#page1">진료안내</a></li>
+                    <li><a href="clinic.html#page1">전문클리닉</a></li>
+                    <li><a href="equipment.html#page1">의료장비</a></li>
+                    <li><a href="community.html#page1">커뮤니티</a></li>
+                </ul>
+            </nav>
+            <label for="ck" class="lstBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+<!--                윈도우 xp 등에서는 first-child 등이 안먹히는 경우가 있을 수 있음. 그럴때는 각각 태그에 클래스를 매겨서 사용       -->
+            </label>
+        </div>
+    </header>
+    
+    <main id="content">
+        
+        <figure id="vs">
+           <input type="radio" name="raItem" id="ra1" checked>
+           <input type="radio" name="raItem" id="ra2">
+            <ul class="banBox">
+                <li>
+                 <a href="">
+                        <img src="./img/main_visual2.jpg" alt="기본 비주얼">
+                 </a>
+                </li>
+                <li>
+                 <a href="">
+                        <img src="./img/main_visual1.jpg" alt="기본 비주얼2">
+                 </a>
+                </li>
+            </ul>
+            <ul class="btnBox">
+                <li class="item1"><label for="ra1" class="vsbtn active"></label></li>
+                <li class="item2"><label for="ra2" class="vsbtn"></label></li>
+<!--                아이디가 ra1 /2인 것을 선택하라 -->
+            </ul>
+        </figure>
+        
+        <div class="page" id="page1">
+          <aside class="page1_side">
+              <h1 class="pageTitle">스마트 이비인후과</h1>
+              <p class="pageComent">스마트 이비인후과만의 장점을 소개합니다.</p>
+              <a href="intro.html#page1" class="detail">병원소개 바로가기</a>
+          </aside>
+          <div class="banBox2">
+              <ul class="imgBox">
+                  <li class="item1">
+                      <h1 class="num">01</h1>
+                      <h2 class="banTitle">최상의 진료서비스</h2>
+                      <img src="./img/imgBox1.jpg" alt="">
+                  </li>
+                  <li class="item2">
+                      <h1 class="num">02</h1>
+                      <h2 class="banTitle">최신 고성능 의료장비를 활용한 정확한 진단</h2>
+                      <img src="./img/imgBox2.jpg" alt="">
+                  </li>
+                  <li class="item3">
+                      <h1 class="num">03</h1>
+                      <h2 class="banTitle">진단부터 수술까지 One Stop 진료</h2>
+                      <img src="./img/imgBox3.jpg" alt="">
+                  </li>
+                  <li class="item3">
+                      <h1 class="num">04</h1>
+                      <h2 class="banTitle">전문적인 진료 과목</h2>
+                      <img src="./img/imgBox4.jpg" alt="">
+                  </li>
+              </ul>
+          </div>  
+        </div>
+        
+        <div class="page" id="page2">
+          <div class="wrap">
+              <h1 class="pageTitle">전문클리닉</h1>
+              <p class="pageComent">진료 과목을 세부적으로 나누어 더 좋은 치료와 서비스를 제공하기 위해 노력합니다</p>
+              <ul class="lst">
+                  <li><a href="clinic.html#page1"><img src="./icon/icon1.png" alt="음성클리닉 썸네일"></a><span class="itemTitle">음성클리닉</span></li>
+                  <li><a href="clinic.html#page1"><img src="./icon/icon2.png" alt="두경부암검진 썸네일"></a><span class="itemTitle">두경부암검진</span></li>
+                  <li><a href="clinic.html#page2"><img src="./icon/icon3.png" alt="목수술 썸네일"></a><span class="itemTitle">목수술</span></li>
+                  <li><a href="clinic.html#page2"><img src="./icon/icon4.png" alt="귀수술 썸네일"></a><span class="itemTitle">귀수술</span></li>
+                  <li><a href="clinic.html#page2"><img src="./icon/icon5.png" alt="코수술 썸네일"></a><span class="itemTitle">코수술</span></li>
+              </ul>
+          </div>  
+        </div>
+        
+        <div class="page" id="page3">
+          <div class="wrap">
+              <ul>
+                  <li class="col12 first item1">
+                    <a href="community.html#page1" class="box">
+                      <h3 class="nTitle">NOTICE</h3>
+                      <h2 class="pTitle">토요일 점심시간 안내</h2>
+                      <p class="pContent">2016년 3월 5일 토요일부터 오후 1시부터 30분간 점심시간입니다.<br>오후 진료 준비를 위한 휴식시간 입니다.</p>
+                      <p class="nDate">2016-02-24</p>
+                    </a>
+                    <a href="community.html#page1" class="box abs" style="padding-left: 100px">
+                      <img src="./img/main_notice.jpg" alt="공지사항 썸네일">
+                    </a>
+                  </li>
+                  <li class="col6 first item2">
+                    <a href="community.html#page2" class="box">
+                      <h3 class="nTitle">FEEDBACK</h3>
+                      <h2 class="pTitle">이래서는 안되요</h2>
+                      <p class="nDate">2017-07-27</p>
+                    </a>
+                  </li>
+                  <li class="col6 item3">
+                    <a href="community.html#page4" class="box">
+                      <h3 class="nTitle">FAQs</h3>
+                      <h2 class="pTitle">궁금하신 사항을 남겨주시면 성심껏 답변해 드리겠습니다.</h2>
+                      <p class="nDate">2016-03-19</p>
+                    </a>
+                  </li>
+              </ul>
+          </div>  
+        </div>
+        
+        <div class="page" id="page4">
+           <div class="wrap">
+               <ul>
+                   <li class="col4 first"><a href="http://www.naver.com" class="item1" target="_blank">
+                   <p class="com">스마트 이비인후과<br>네이버블로그 바로가기</p>
+                   </a></li>
+                   <li class="col4"><a href="http://www.facebook.com" class="item2" target="_blank">
+                   <p class="com">스마트 이비인후과<br>페이스북 바로가기</p>
+                   </a></li>
+                   <li class="col4"><a href="http://www.youtube.com" class="item3" target="_blank">
+                   <p class="com">스마트 이비인후과<br>유튜브 바로가기</p>
+                   </a></li>
+               </ul>
+           </div> 
+        </div>
+        
+        <div class="page" id="lastpage"> 
+           <div class="wrap">
+               <ul>
+                   <li class="col4 first item1">
+                       <h2 class="itemTitle">스마트 이비인후과</h2>
+                       <p class="telTxt">042-863-0075</p>
+                       <p class="itemData">305-330<br>대전광역시 유성구 지족로 373, 401호</p>
+                       <p class="itemData">팩스번호 : 042-863-0079</p>
+                   </li>
+                   <li class="col4 item2">
+                       <h2 class="itemTitle">진료시간</h2>
+                       <p class="itemData" style="padding-bottom: 50px">평일 9:00 - 19:00 [PM 7:00]<br>토요일 9:00 - 16:00 [PM 4:00]<br>점심시간 12:30 - 14:00 [PM 2:00]</p>
+                       <p class="itemData">일요일 공휴일은 휴진입니다.</p>
+                   </li>
+                   <li class="col4 item3">
+                       <h2 class="itemTitle">찾아오시는 길</h2>
+                       <div id="mapFrame">
+                           <div id="map_canvas" style="width:300px; height:160px"></div>
+                       </div>
+                   </li>
+               </ul>
+           </div> 
+        </div>
+        
+    </main>
+    
+    <input type="checkbox" id="ck">
+    <div id="popFrm">
+       <label for="ck" class="closeBtn">닫기</label>
+        <div class="popBox">
+            <ul class="item1">
+                <li><h2><a href="intro.html#page1">병원소개</a></h2></li>
+                <li><h4><a href="intro.html#page1">인사말</a></h4></li>
+                <li><h4><a href="intro.html#page2">의료진소개</a></h4></li>
+                <li><h4><a href="intro.html#page3">시설안내</a></h4></li>
+                <li><h4><a href="intro.html#page4">오시는길</a></h4></li>
+            </ul>
+            <ul class="item2">
+                <li><h2><a href="info.html#page1">진료안내</a></h2></li>
+                <li><h4><a href="info.html#page1">진료과목</a></h4></li>
+                <li><h4><a href="info.html#page2">수술센터</a></h4></li>
+            </ul>
+            <ul class="item3">
+                <li><h2><a href="clinic.html#page1">전문클리닉</a></h2></li>
+                <li><h4><a href="clinic.html#page1">특수클리닉</a></h4></li>
+                <li><a href="clinic.html#page1">- 음성클리닉</a></li>
+                <li><a href="clinic.html#page1">- 두경부암검진</a></li>
+                <li><h4><a href="clinic.html#page2">수술클리닉</a></h4></li>
+                <li><a href="clinic.html#page2">- 목수술</a></li>
+                <li><a href="clinic.html#page2">- 귀수술</a></li>
+                <li><a href="clinic.html#page2">- 코수술</a></li>
+            </ul>
+            <ul class="item4">
+                <li><h2><a href="equipment.html#page1">의료장비</a></h2></li>
+            </ul>
+            <ul class="item5">
+                <li><h2><a href="community.html#page1">커뮤니티</a></h2></li>
+                <li><h4><a href="community.html#page1">공지사항</a></h4></li>
+                <li><h4><a href="community.html#page2">진료후기</a></h4></li>
+                <li><h4><a href="community.html#page3">포토앨범</a></h4></li>
+                <li><h4><a href="community.html#page4">온라인상담</a></h4></li>
+                <li><a href="community.html#page4">- 자주묻는질문</a></li>
+                <li><a href="community.html#page4">- 1:1상담</a></li>
+            </ul>
+        </div>
+    </div>
+    
+    <aside id="quick">
+            <div class="qWrap">
+                <ul class="top">
+                    <li><a href="index.html" class="qlogo"></a></li>
+                    <li><a href="joinForm.html" class="hv">회원가입</a></li>
+                    <li><a href="loginForm.html" class="hv">로그인</a></li>
+                    <li><a href="info.html#page1" class="hv">진료과목</a></li>
+                    <li><a href="intro.html#page4" class="hv">오시는길</a></li>
+                </ul>
+                <ul class="bottom">
+                    <li><a href="community.html#page4" class="yellow">자주묻는질문</a></li>
+                    <li><a href="community.html#page4" class="cyan">1:1상담</a></li>
+                    <li><a href="#" class="toTop">위로</a></li>
+                </ul>
+            </div>
+    </aside>
+    
+    <footer id="ft">
+      <div class="wrap">
+          <p class="copyright">copyrights ⓒ 2019 스마트 이비인후과 SMARTENT ALL RIGHTS RESERVED. SITE BY PSE GROUP.</p>
+          <div class="ftLogo"></div>
+      </div>      
+    </footer>
+</body>
+</html>
