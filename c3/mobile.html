@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>::: 사회복지법인 계룡에 오신 것을 환영합니다 :::</title>
+    
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon16.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon32.ico">
+    <link rel="apple-touch-icon" size="57X29" href="./ico/favicon57.png">
+    <link rel="apple-touch-icon" size="72X36" href="./ico/favicon72.png">
+    <link rel="apple-touch-icon" size="114X57" href="./ico/favicon114.png">
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta name="msapplication-TileImage" content="./ico/favicon144.png">
+    
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="application-name" content="DOOSAN Web Site">
+    <meta name="author" content="SoeunPark">
+    <meta name="description" content="DOOSAN Site Mainpage">
+    <meta name="generator" content="Brackets">
+    <meta name="keywords" content="사회복지법인계룡, 효성요양원, 사회복지법인, 계룡, 요양원, 효성, 사회복지">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    
+    <!--    적응형 미디어 스크립트 연결     -->
+<!--    <script src="./js/media.js"></script>-->
+    
+<!--    <link rel="stylesheet" href="./font.css">-->
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR" rel="stylesheet">
+    <link rel="stylesheet" href="reset.css">
+<!--    <link rel="stylesheet" href="./js/jquery-3.3.1.js">-->
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    
+     <script>
+    $(document).ready(function(){
+        var wd = $(window).width();
+        var cnt = $(".imgBox li").length - 1;
+        var intv = setInterval(function(){ nextAni(); }, 5000);
+        
+        function nextAni(){
+            $(".imgBox").not(":animated").animate({"margin-left":-wd+"px"}, 800, function(){
+                $(".imgBox li").eq(0).appendTo($(".imgBox"));
+                $(".imgBox").css("margin-left", "0px");
+                $(".numBtnFrame li").eq(0).appendTo($(".numBtnFrame"));
+                $(".numBtnFrame li button").removeClass("on");
+                $(".numBtnFrame li").eq(0).find("button").addClass("on");   
+            }); 
+        }
+        function prevAni(){
+                   $(".imgBox li").eq(cnt).prependTo($(".imgBox"));
+                   $(".imgBox").css("margin-left", -wd+"px");
+                   $(".imgBox").not(":animated").animate({"margin-left":"0px"}, 800, function(){
+                   $(".numBtnFrame li").eq(cnt).prependTo($(".numBtnFrame"));
+                   $(".numBtnFrame li button").removeClass("on");
+                   $(".numBtnFrame li").eq(0).find("button").addClass("on");
+       });
+       }
+       $(".direc.right").click(function(){
+           clearInterval(intv);
+           nextAni();
+           intv = setInterval(function() { nextAni(); }, 5000);
+       });
+       $(".direc.left").click(function(){
+           clearInterval(intv);
+           prevAni();
+           intv = setInterval(function() { nextAni(); }, 5000);
+       });  
+        function numAni(num){
+        for(var x=0;x<num-1;x++){
+            $(".imgBox li").eq(0).appendTo($(".imgBox"));
+            $(".numBtnFrame li").eq(0).appendTo($(".numBtnFrame"));
+        }
+        nextAni();
+       }
+       $(".numBtnFrame li button").click(function(){
+            var btnNum = $(this).parents("li").index();
+            clearInterval(intv);
+            numAni(btnNum);
+            intv = setInterval(function(){
+                neatAni();    
+            }, 5000);
+       }); 
+    });
+        
+    </script>
+    
+    
+    <script>
+    $(document).ready(function(){
+       $("#gnb label").click(function(){
+         var th = $(this).attr("for");
+         var thId = "."+th;
+         var sc0bj = $(thId).offset();
+         var scDist = sc0bj.top;
+         $("body, html").not(":animated").animate({"scrollTop":scDist}, 600);
+         $("#gnb label").removeClass("on");
+         $(this).addClass("on");
+       });
+    });
+    </script>
+    
+    <script></script>
+    
+    <style>
+    
+    /*    font-family: 'Noto Sans KR', sans-serif;*/
+    .hd { width: 100%; height: auto; background-color: #548235; position: fixed; top: 0; left: 0; z-index: 99998; }
+    .hdWrap1 { width: 100%; height: 80px; background-color: #548235; }
+    .logo { width: 100%; text-align: center; height: 80px; line-height: 80px; color: #fff; text-indent: -9999px; background-image: url("./mobile/logo.png"); background-repeat: no-repeat; background-position: center center; border-bottom: 1px solid #fff; background-size: auto 40px; background-color: #548235; position: relative; }
+    .hdWrap2 { width: 100%; height: 100vh; margin: 0 auto; position: fixed; z-index: 99999; top: -800px; left: 0; transition: 0.6s; min-height: 700px; }
+    #gnb { width: 100%; height: auto; margin: 0 auto; }
+    #gnb li { width: 100%; text-align: center; cursor: pointer; height: 90px; line-height: 90px; background-color: #548235; border-bottom: 1px solid #fff; }
+    #gnb label { display: block; line-height: 90px; font-size: 14px; cursor: pointer; color: #fff; }
+    #gnb label:hover { color: #c9761e; font-weight: 800; }
+    .menuBtn { display: block; position: absolute; height: 80px; width: 80px; right: 10px; top: 3px; background-repeat: no-repeat; background-position: center center; background-size: auto 20px; z-index: 99; }
+    .openBtn { background-image: url("./mobile/openbtn.png"); }
+    .closeBtn { background-image: url("./mobile/closebtn.png"); }
+    #menuOpen:checked ~ .hdWrap2 { top: 0; }
+    
+    </style>
+    
+    <style>    
+    .pg { width: 100%; clear: both; min-height: 500px; position: relative; background-color:#548235; }
+    #main { width: 100%; height: 100%; }
+    .vs { width: 100%; height: 100%; clear: both; position: relative; overflow: hidden; }
+    .imgBox { width: 400%; height: 100%; }
+    .imgBox li { width: 25%; float: left; height: 100%; }
+    .imgBox li img { width: 100%; height: 100%; }
+        
+    .btnBox { position: absolute; z-index: 60; width: 100%; top: 45%; }
+    .direc { display: block; width: 30px; height: 46px; background-size: 30px 46px; background-repeat: no-repeat; background-color: transparent; background-position: center center; position: absolute; cursor: pointer;  }
+    .direc.left { background-image: url("./mobile/leftbtn.png"); left: 7%; }
+    .direc.right { background-image: url("./mobile/rightbtn.png"); right: 7%; }
+
+    .numBtnBox { width: 100%; height: 10px; position: absolute; z-index: 61; top: 80%; }
+    .numBtnFrame { position: relative; width: 200px; margin: 0 auto; height: 50px; }
+    .numBtnFrame li { position: absolute; top: 0; width: 41px; height: 50px; }
+    .numBtnFrame li.item1 { left: 0; }
+    .numBtnFrame li.item2 { left: 50px; }
+    .numBtnFrame li.item3 { left: 100px; }
+    .numBtnFrame li.item4 { left: 150px; }   
+    .numBtnFrame li button { width: 41px; height: 50px; background-image: url("./mobile/logo2.png"); background-repeat: no-repeat; background-color: transparent; background-size: auto 30px; cursor: pointer; background-position: center center; }
+    .numBtnFrame li button.on { width: 41px; height: 50px; background-image: url("./mobile/logo1.png"); background-repeat: no-repeat; background-color: transparent; background-size: auto 30px; cursor: pointer; background-position: center center; }    
+    
+    </style>
+    
+    <style>
+    .sub1 { width: 100%; height: 250vw; background-image: url("./mobile/page1_1.png"); background-repeat: no-repeat; background-position: center top; background-size: 100% auto; overflow: visible; position: static; }
+    .titBox { width: 100%; height: 30vw; line-height: 50px; padding-top: 50px; }
+    .titCom { color: #333; text-align: center; font-size: 1.8em; padding-top: 3vw; }
+    .subCom { text-align: center; color: #666; font-size: 0.9em; padding-top: 2vw; line-height: 1.6;  }
+    .blankBox { width: 80%; height: 10vw; margin: 0 auto; border-bottom: 2px solid #ebebeb; }
+    .imgBoxTit { text-align: center; color: #333; font-size: 1.1em; margin-top: 30px; font-weight: 600; }
+    .imgBoxFrm { width: 100%; padding-top: 5vw; margin: 0 auto; height: auto; }
+    .imgBoxFrm li { width: 100%; overflow: hidden; clear: both; }
+    .sub1 .boxFrm { border: 1px solid #ebebeb; height: 43vw; clear: both; overflow: hidden; }
+    .boxFrm img { width: 50%; height: auto; float: left; }
+    .boxCom { font-size: 0.85em; color: #333; font-weight: 300; text-align: center; box-sizing: border-box; height: 43vw; padding: 10px; line-height: 40vw; width: 50%; float: right; }
+        
+    .comBox { width: 80%; margin: 0 auto; padding-top: 9vw; }
+    .comTit { text-align: center; color: #333; font-weight: 400; font-size: 0.8em; }
+    .btxt { color: #c9761e; font-size: 0.9em; font-weight: 700; }
+    .comment { padding-top: 2px; text-align: center; color: #333; font-weight: 400; font-size: 0.65em; padding-bottom: 50px; }
+
+    </style>
+    
+     <style> 
+    .sub2 { width: 100%; height: 440vw; position: static; }
+    .sub2 .subPage1 { width: 100%; height: 180vw; background-image: url("./mobile/page2.png"); background-repeat: no-repeat; background-position: center top; background-size: 100% auto; overflow: visible; }
+    .subPage1 .titBox2 { width: 100%; height: auto; padding-top: 35vw; }
+    .titBox2 .pageTit { color: #fff; font-size: 1.8em; text-align: center; padding-bottom: 10vw; border-bottom: 2px solid #f5f5f5; line-height: 1.2; font-weight: 700; }
+    .titBox2 .pageCom { color: #fff; font-size: 0.9em; text-align: center; padding-top: 8vw; font-weight: 300; padding-left: 5vw; padding-right: 5vw; }
+    .subPage2 { width: 100%; height: 260vw; }
+    .subPage2 .subBox { width: 100%; margin: 0 auto; }
+    .subPage2 .imgBoxFrm { width: 100%; min-height: 150vw; }
+    .subPage2 .imgBoxFrm li { width: 60%; padding-top: 5vw; margin: 0 auto; }
+    .subPage2 .imgBoxFrm li .boxFrm { width: 100%; height: 100%; }
+    .subPage2 .imgBoxFrm li .boxFrm img { width: 100%; }
+    .subPage2 .comBox { width: 80%; margin: 0 auto; border: 2px solid #c9761f; height: auto; margin-top: 8vw; margin-bottom: 10vw; padding-top: 0; }
+    .subPage2 .comment { text-align: center; color: #333; font-weight: 500; line-height: 1.6; padding: 5vw 5vw; }
+    
+    </style>
+    
+    <style>
+    .sub3 { width: 100%; height: 177vw; background-image: url("./mobile/page3.png"); background-repeat: no-repeat; background-position: center top; background-size: 100% auto; overflow: visible; } 
+    .titBox2 { width: 100%; height: auto; padding-top: 35vw; margin: 0 auto; text-align: center; }
+    .sub3 .pageCom { padding-bottom: 0; font-size: 0.8em; }
+    .popOpenBtn { color: #fff; background-color: #c9761f; font-weight: 400; font-size: 0.7em; border-radius: 30px; padding: 2vw 8vw; display: inline-block; cursor: pointer; text-align: center; margin-top: 8vw; }
+    
+    </style>
+    
+    <style>
+    .sub4 { width: 100%; height: 850vw; }
+    .sub4 .subPage1 { width: 100%; height: 177vw; background-image: url("./mobile/page4-1.png"); background-repeat: no-repeat; background-position: center top; background-size: 100% auto; overflow: visible; }
+    .sub4 .subPage3 { width: 100%; height: 177vw; background-image: url("./mobile/page4-2.png"); background-repeat: no-repeat; position: relative; background-position: center top; background-size: 100% auto; overflow: visible; }
+    .sub4 .subPage2 { position: relative; height: 180vw; }
+    .sub4 .pageTit { padding-top: 15vw; }
+    .sub4 .pageCom { padding-bottom: 0; font-size: 0.7em; }
+    .pagesubCom { color: #fff; font-size: 10px; font-weight: 100; text-align: center; padding: 5vw 10vw; line-height: 1.3; }
+    .txtBoxFrm { width: 80%; margin: 0 auto; padding-top: 10vw; } 
+    .txtTit { text-align: center; color: #333; font-size: 1.5em; font-weight: 600; }
+    .tit { font-size: 0.65em; border: 2px solid #c9761f; padding: 0vw 2vw; border-radius: 20px; font-weight: 600; width: 15vw; text-align: center; }
+    .tit span { text-align: center; width: 100%; }
+    .txtBox { width: 100%; min-height: 45vw; }
+    .txtCom { font-weight: 500; font-size: 0.65em; padding-top: 2vw; }
+    .subtxtCom { font-size: 0.6em; color: #666; }
+    .txtBox.first { padding-top: 8vw; width: 100%; min-height: 20vw; }
+    .txtBox:last-child { position: relative; }
+    .txtBox:last-child li.linkItem { position: absolute; top: 40%; height: 10vw; width: 100%; }
+    .link { position: relative; width: 100%; height: 10vw; }
+    .linkBox { width: 100%; height: 10vw; }
+    .linkBox li { float: left; width: 45%; height: 10vw; margin-right: 10%; }
+    .linkBox li:last-child { margin-right: 0; }
+    .linkBox li a { display: block; width: 100%; height: 10vw; line-height: 10vw; color: #fff; font-size: 10px; text-align: center; background-color: #666; }
+    .sub4 .subPage3 .titBox2 { padding-top: 15vw; }
+    .lstBox { width: 100%; margin: 0 auto; margin-top: 10vw; }
+    .lstBox li { float: left; width: 50%; }
+    .lstBox li a { display: block; width: 50%; margin: 0 auto; }
+    .lstBox li a img { width: 100%; height: 100%; }
+    .lstBox li.third, .lstBox li.last { padding-top: 5vw; }
+    .lstTxt { text-align: center; color: #fff; margin-top: 5vw; font-size: 0.7em; }
+    .mapBox { width: 100%; margin: 0 auto; margin-top: 10vw; }
+    .pageTit { text-align: center; color: #333; font-size: 1.8em; font-weight: 600; padding-top: 25vw; }
+    .info { width: 100%; margin: 0 auto; }
+    .info li h3 { text-align: center; padding-top: 10vw; font-weight: 400; color: #333; font-size: 0.85em; }
+    .info li .tel { text-align: center; color: #333; font-weight: 400; font-size: 0.7em; padding-top: 2vw; }
+    .mapBox a { display: block; width: 100%; height: auto; }
+    .mapBox a img { width: 100%; height: 100%; }
+    .sub4 .blankBox { width: 100%; height: 10vw; margin: 0 auto; border-bottom: 2px solid #ebebeb; }
+    .mapBox .mapcomBox { width: 90%; padding-top: 10vw; margin: 0 auto; }
+    .mapBox .mapcomBox.last { margin-bottom: 20vw; }
+    .mapTit { font-size: 0.85em; font-weight: 700; margin-bottom: 3vw; background-image: url("./mobile/logo1.png"); background-repeat: no-repeat; background-size: contain; text-indent: 30px; }
+    .mapCom { font-size: 0.6em; font-weight: 400; color: #666; line-height: 1.6; }
+    .mapsubCom { font-size: 0.6em; font-weight: 400; color: #666; line-height: 1.6; }
+  
+    </style>
+    
+    
+    
+    <style>   
+    .ckItem { display: none; }
+    .popBox { display: none; }
+    #popCk1:checked ~ #popBox1 { display: block; }
+    .popBox { width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.6); position: fixed; z-index: 100;  top: 80px; left: 0; }
+    .popFrame { width: 100%; height: auto; margin: 0 auto; background-color: #fff; margin-top: 150px; position: relative; border: 1px solid #ccc; }
+    .popTit { color: #ebebeb; text-indent: 15px; font-size: 12px; line-height: 5px; position: absolute; top: 8px; }
+    .popCloseBtn { display: block; width: 10px; height: 10px; position: absolute; top: 6px; right: 20px; background-image: url("./mobile/closebtn.png"); background-repeat: no-repeat; background-position: center center; cursor: pointer; }
+    .popImgBox { width: 100%; height: auto; text-align: center; }
+    .popImgBox img { width: 100%; height: auto; }
+
+        
+    .ft_area { width: 100%; height: 100px; background-color: #333; }
+    .ft { width: 100%; height: 100px; margin: 0 auto; }
+    .ftBox { width: 100%; }
+    .ftlogo { display: block; width: 30%; margin: 0 auto; padding: 5px 0px; }
+    .ftlogo img { width: 100%; }
+    .copy { width: 100%; height: 50px; }
+    .copyright { font-size: 0.5em; color: #999; font-weight: 300; text-align: center; }
+    
+    
+    </style>
+    
+</head>
+<body>
+  
+    <header class="hd">
+        <div class="hdWrap1">
+          <h2 class="logo">사회복지법인 계룡</h2> 
+          <label for="menuOpen" class="menuBtn openBtn"></label> 
+        </div>
+        <input type="checkbox" id="menuOpen" class="ckItem">
+        <div class="hdWrap2">
+            <h1 class="logo">로고</h1>
+            <label for="menuOpen" class="menuBtn closeBtn"></label>
+             <nav id="gnb">
+                  <ul class="menu">
+                      <li><label for="main">Home</label></li>
+                      <li><label for="sub1">법인소개</label></li>
+                      <li><label for="sub2">센터소개</label></li>
+                      <li><label for="sub3">장기요양보험제도</label></li>
+                      <li><label for="sub4">입소안내</label></li>
+                  </ul> 
+             </nav> 
+        </div>
+    </header>
+    <div class="pg" id="main">
+        <figure class="vs">
+            <ul class="imgBox">
+                <li class="item1">
+                    <img src="./mobile/main_1.png" alt="메인1"><span class="more"></span>
+                </li>
+                <li class="item2">
+                    <img src="./mobile/main_2.png" alt="메인2"><span class="more"></span>
+                </li>
+                <li class="item3">
+                    <img src="./mobile/main_3.png" alt="메인3"><span class="more"></span>
+                </li>
+                <li class="item4">
+                    <img src="./mobile/main_4.png" alt="메인4"><span class="more"></span>
+                </li>
+            </ul>
+        </figure>
+        <ul class="btnBox">
+            <li class="leftBtn">
+                <button class="direc left"></button>
+            </li>
+            <li class="rightBtn">
+                <button class="direc right"></button>
+            </li>
+        </ul>
+        <div class="numBtnBox">
+            <ul class="numBtnFrame">
+                <li class="item1">
+                    <button class="numBtn on"></button>
+                </li>
+                <li class="item2">
+                    <button class="numBtn"></button>
+                </li>
+                <li class="item3">
+                    <button class="numBtn"></button>
+                </li>
+                <li class="item4">
+                    <button class="numBtn"></button>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="sub1">
+       <div class="titBox">
+           <h1 class="titCom">사회복지법인 계룡</h1>
+           <h3 class="subCom">안락하고 편안한 노후를 위하여 <br>사회복지법인 계룡이 함께 하겠습니다.</h3>
+       </div> 
+       <div class="blankBox">
+           
+       </div>
+       <h2 class="imgBoxTit">주요 사업</h2>
+       <ul class="imgBoxFrm">
+           <li class="col4">
+               <div class="boxFrm">
+                   <img src="./mobile/page1_1.jpg" alt="효성요양원" class="boxImg">
+                   <p class="boxCom">노인의료복지시설 설치운영사업</p>
+               </div>
+           </li>
+           <li class="col4">
+               <div class="boxFrm">
+                   <img src="./mobile/page1_2.jpg" alt="계룡노인복지센터" class="boxImg">
+                   <p class="boxCom">재가장기요양기관 설치운영사업</p>
+               </div>
+           </li>
+           <li class="col4 last">
+               <div class="boxFrm">
+                   <img src="./mobile/page1_3.jpg" alt="노인돌봄종합서비스" class="boxImg">
+                   <p class="boxCom">지역사회서비스사업</p>
+               </div>
+           </li>
+       </ul>
+       <div class="comBox">
+           <h1 class="comTit">사회복지법인 계룡의 <span class="btxt">설립목적</span></h1>
+           <p class="comment">우리나라의 노인을 위한 노인복지사업을 운영함으로써 양질의 노인 요양서비스를 제공하는데 그 목적이 있습니다.</p>
+       </div>
+    </div>
+    
+    <div class="sub2">
+    <div class="subPage1">
+     <div class="titBox2">
+         <h1 class="pageTit">센터소개</h1>
+         <p class="pageCom">사회복지법인 계룡은 다양한 노인복지사업을 통해 복지사회 구현에 이바지하고자 합니다. 또한 적재적소의 맞춤형 노인 요양 서비스를 제공합니다.</p>
+     </div>
+     </div>
+     <div class="subPage2">
+      <div class="subBox">
+          <ul class="imgBoxFrm">
+              <li><div class="boxFrm"><img src="./mobile/page2_icon3.png" alt="요양원"></div></li>
+              <li><div class="boxFrm"><img src="./mobile/page2_icon2.png" alt="주야간보호소"></div></li>
+              <li><div class="boxFrm"><img src="./mobile/page2_icon1.png" alt="치매"></div></li>
+          </ul>
+          <div class="comBox">
+              <p class="comment">사회복지법인 계룡은 각 고객에게 적재적소의 맞춤형 서비스를 제공합니다. 주요 3개의 센터가 존재하며, 효성 요양원, 주·야간 보호소인 계룡노인복지센터, <br>치매 주·야간 보호소로 나뉘어 보다 전문적인 서비스를 제공합니다.</p>
+          </div>
+      </div>  
+     </div>   
+    </div>
+    
+    <div class="sub3">
+     <div class="titBox2">
+         <h1 class="pageTit">장기요양보험제도</h1>
+         <p class="pageCom">고령이나 노인성 질병 등의 사유로 일상생활을 혼자서 수행하기 어려운 노인 등에게 신체활동 또는 가사활동 지원 등의 장기요양급여를 제공하여 노후의 건강증진 및 생활안정을 도모하고 그 가족의 부담을 덜어줌으로써 국민의 삶의 질을 향상하도록 함을 목적으로 시행하는 사회보험제도입니다.</p>
+         <label for="popCk1" class="popOpenBtn">기존 건강보험제도 및 노인복지서비스 체계와의 차이점</label>
+     </div>
+     <input type="checkbox" id="popCk1" class="ckItem">
+     <div id="popBox1" class="popBox">
+         <div class="popFrame">
+             <h3 class="popTit">기존 건강보험제도 및 노인복지서비스 체계와의 차이점</h3>
+             <label for="popCk1" class="popCloseBtn"></label>
+             <div class="popImgBox"><img src="./mobile/sub3_pop.png" alt="팝업창"></div>
+         </div>
+     </div>   
+    </div>
+    
+    <div class="sub4">
+    <div class="subPage1">
+       <div class="titBox2">
+           <h1 class="pageTit">장기요양인정의 신청자격</h1>
+           <p class="pageCom">자격 : 장기요양보험가입자 및 그 피부양자, 의료급여수급권자 <br>
+대상 : 만65세 이상 또는 만65세 미만으로 노인성 질병을 가진 자</p>
+          <p class="pagesubCom">└ 노인성질병 : 치매, 뇌혈관성질환, 파킨슨 병 등 대통령령으로 정하는 질병<br>└ 장애인 활동지원 급여를 이용중이거나 이용을 희망하는 경우 <br>장기요양등급이 인정되면 장애인 활동지원 신청 또는 급여가 제한됨.<br>(장애인활동지원 문의 : 국민연금공단 ☏ 1355)<br>└ 단, 장애인 활동지원 신청 또는 급여 이용의 목적으로 인정된 <br>장기요양등급은 포기할 수 있도록 등급포기절차 신설('15.9.1 시행)</p>
+       </div> 
+    </div>
+    <div class="subPage2">
+      <div class="txtBoxFrm">
+         <h1 class="txtTit">장기요양의 신청</h1>
+          <ul class="txtBox first">
+             <li class="tit"><span>신청장소</span></li>
+             <li class="txtCom"><p>전국 공단지사(노인장기요양보험운영센터)</p></li>
+          </ul>
+          <ul class="txtBox">
+              <li class="tit"><span>신청방법</span></li>
+              <li class="txtCom"><p>공단 방문, 우편, 팩스, 인터넷</p>
+                  <span class="subtxtCom">└ 갱신신청의 경우 유선으로도 신청이 가능 합니다. <br>이 경우 신청서는 제출하지 않아도 되며, <br>통화자의 신분확인 절차를 거친 후에 신청이 가능합니다.<br>(’17.1.1. 시행)</span>
+              </li>
+          </ul>
+          <ul class="txtBox">
+              <li class="tit"><span>&nbsp;&nbsp;신청인&nbsp;&nbsp;</span></li>
+              <li class="txtCom"><p>본인 또는 대리인</p>
+              <span class="subtxtCom">└ 대리인 : 가족, 친족 또는 이해관계인, <br>사회복지전담공무원, 시장ㆍ군수ㆍ구청장이 지정하는 자<br>
+                  (대리 신청할 때 대리인 본인임을 확인할 수 있는 <br>신분증을 제시 또는 제출하여야 하며, <br>팩스 및 우편 접수할 경우 신분증 사본을 제출)</span>
+              </li>
+          </ul>
+          <ul class="txtBox">
+              <li class="tit"><span>제출서류</span></li>
+              <li class="txtCom"><p>장기요양인정신청서</p></li>
+              <li class="linkItem last">
+                 <div class="link">
+                  <ul class="linkBox">
+                      <li><a href="http://www.longtermcare.or.kr/npbs/d/m/000/moveBoardView?menuId=npe0000000920&bKey=B0017&search_boardId=50039" target="_blank">서식 다운받기</a></li>
+                      <li class="last"><a href="http://www.longtermcare.or.kr/npbs/u/b/101/openLtcRcgtAplyPttnChoice.web?aplyTypeScr=appltit&menuId=npe0000000500" target="_blank">장기요양인정 신청하기</a></li>
+                  </ul>
+                 </div>
+              </li>
+          </ul>
+      </div>     
+    </div>
+    <div class="subPage3">
+      <div class="titBox2">
+          <h1 class="pageTit">인정절차</h1>
+          <ul class="lstBox">
+              <li class="col3 first">
+                  <a href=""><img src="./mobile/page4_icon1.png" alt="방문조사"></a>
+                  <p class="lstTxt">01<br>장기요양인정신청 <br>및 방문조사</p>
+              </li>
+              <li class="col3 second">
+                  <a href=""><img src="./mobile/page4_icon2.png" alt="등급판정"></a>
+                  <p class="lstTxt">02<br>장기요양인정 및 <br>장기요양등급판정</p>
+              </li>
+              <li class="col3 third">
+                  <a href=""><img src="./mobile/page4_icon3.png" alt="인정서 및 계획서 송부"></a>
+                  <p class="lstTxt">03<br>장기요양인정서<br>표준장기요양<br>이용계획서 송부</p>
+              </li>
+              <li class="col3 last">
+                  <a href=""><img src="./mobile/page4_icon4.png" alt="이용계약"></a>
+                  <p class="lstTxt">04<br>장기요양급여<br>이용계약 및 <br>장기요양 급여제공</p>
+              </li>
+          </ul>
+      </div>  
+    </div>
+    <div class="subPage4">
+       <h1 class="pageTit">오시는 길</h1>
+       <div class="blankBox"></div>
+       <ul class="info">
+           <li>
+               <h3>충남 계룡시 엄사면 도곡로 46-12 (광석리 147-6)</h3>
+           </li>
+           <li>
+               <p class="tel">Tel : 042-841-4800  ｜  Fax : 042-841-4804</p>
+           </li>
+       </ul>
+       <div class="mapBox">
+           <a href=""><img src="./mobile/map.png" alt="지도"></a>
+           <div class="mapcomBox">
+               <h3 class="mapTit">자가용으로 오시는 경우</h3>
+               <p class="mapCom">서울방면 : 호남고속도로 → 계룡IC → 계룡<br>부산방면 : 경부고속도로 → 대전남부순환고속도로 → 호남고속도로 → 계룡IC → 계룡<br>인천방면 : 서해안고속도로 → 서평택분기점 → 안성분기점 → 경부고속도로 → 호남고속도로 → 계룡IC → 계룡<br>대구방면 : 경부고속도로 → 대전남부순환고속도로 → 호남고속도로 → 계룡IC → 계룡<br>광주방면 : 호남고속도로 → 계룡IC → 계룡<br>대전방면 : 국도4번 → 계룡</p>
+           </div>
+           <div class="mapcomBox">
+               <h3 class="mapTit">기차로 오시는 경우</h3>
+               <ul class="maptxtBox">
+                   <li class="maptxt"><p class="mapCom">서울방면</p><p class="mapsubCom">- 고속철도(KTX) : 용산역 → 계룡역(약 1시간 25분 소요)<br>- 일반열차 : 용산역 → 계룡역(약 2시간 소요)</p></li>
+                   <li class="maptxt"><p class="mapCom">광주방면</p><p class="mapsubCom">- 일반열차 : 광주송정역 → 계룡역(약 1시간 50분 소요)</p></li>
+                   <li class="maptxt"><p class="mapCom">대전방면</p><p class="mapsubCom">- 일반열차 : 서대전역 → 계룡역(약 15분 소요)</p></li>
+               </ul>
+           </div>
+           <div class="mapcomBox last">
+               <h3 class="mapTit">버스로 오시는 경우</h3>
+              <ul class="maptxtBox">
+                   <li class="maptxt"><p class="mapCom">서울방면</p><p class="mapsubCom">- 시외버스 : 동서울터미널 매일 06 : 10 ~ 21 : 30까지 운행 (약 2시간 소요)</p></li>
+                   <li class="maptxt"><p class="mapCom">대전방면</p><p class="mapsubCom">- 시내버스 : 대전에서 202번, 2002번 버스 → 45번, 300번 시내버스 이용</p></li>
+              </ul>
+           </div>
+       </div>
+      
+    </div>
+    </div>
+   
+    
+    <div class="ft_area">
+    <div class="ft">
+       
+       <div class="ftBox">
+              <a href="#" class="ftlogo">
+               <img src="./img/logo.png" alt="푸터로고">
+              </a>
+               <div class="copy">
+                   <p class="copyright">충남 계룡시 엄사면 도곡로 46-12 (광석리 147-6)<br>TEL : 042-841-4800 FAX : 042-841-4804 H.P : 010 9407 3103<br>Copyright© 2017 효성요양원. All Rights Reserved.</p>
+               </div>
+           </div>
+        
+    </div>
+    </div>
+    
+   
+        
+</body>
+</html>
