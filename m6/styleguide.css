@@ -1,0 +1,99 @@
+@charset "utf-8";
+
+/* 폰트 */
+.decFont { font-family: 'Song Myung', serif; }
+.baseFont { font-family: 'Noto Sans KR', sans-serif; }
+.brushFont { font-family: 'Nanum Brush Script', cursive; }
+
+/* 폰트 크기 */
+.big { font-size: 1.25em; }
+.mid { font-size: 1em; }
+.small { font-size: 0.8em; }
+.tiny { font-size: 0.65em; }
+
+/* 폰트 색상 */
+.redTxt { color: #c41e20; }
+.baseTxt { color: #333; }
+.whiteTxt { color: #fff; }
+.grayTxt { color: #666; }
+.ligyTxt { color: #999; }
+
+/* 배경색 */
+.redBg { background: #c41e20; }
+.baseBg { background: #333; }
+.whiteBg { background: #fff; }
+.grayBg { background: #ddd; }
+.ligyBg { background: #ebebeb; }
+
+/* 배경패턴 */
+[class*=vs] { background-position: center center; background-size: cover; background-repeat: no-repeat; }
+[class*=part] { background-position: center center; background-size: 100%; background-repeat: no-repeat; }
+
+/* 아이콘 */
+[class*=icon] { width: 30px; height: 30px; background-image: url("./icon/iconset.png"); background-repeat: no-repeat; display: block; }
+.icon-home { background-position: 0px -270px; }
+.icon-list { background-position: -30px -30px; }
+.icon-close { background-position: -30px 0px; }
+.icon-login { background-position: 0px 0px; }
+.icon-product { background-position: 0px -180px; }
+.icon-event { background-position: 0px -60px; }
+.icon-mail { background-position: 0px -30px; }
+.icon-call { background-position: 0px -150px; }
+.icon-noti { background-position: 0px -120px; }
+.icon-plan { background-position: 0px -90px; }
+.icon-cart { background-position: 0px -210px; }
+.icon-service { background-position: 0px -240px; }
+
+/* 목록기호 */
+
+/* 그리드 */
+/* 거터 무 */
+[class*=col] { margin-right: 5%; }
+[class*=col]:last-child { margin-right: 0; margin-bottom: 2%; }
+.col1 { width: 100%; }
+.col2 { width: 50%; }
+.col3 { width: 33.3333333%; }
+.col4 { width: 25%; }
+.col5 { width: 20%; }
+.col6 { width: 16.6666666%; }
+.col7 { width: 14.28%; }
+.col8 { width: 12.5%; }
+.col9 { width: 11.1111111%;}
+.col10 { width: 10%; }
+
+/* 거터 유 */
+[class*=pc] { margin-right: 5%; }
+[class*=pc]:last-child { margin-right: 0; margin-bottom: 2%; }
+.pc1 { width: 100%; }
+.pc2 { width: 45%; }
+.pc3 { width: 30%; }
+.pc4 { width: 21.25%; }
+.pc5 { width: 16%; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
