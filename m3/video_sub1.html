@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="reset.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    
+    <!--  데스크탑 기본 IE/Window -->
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon16.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon32.ico">
+    
+     <!-- iPhone iOS 7이상   -->
+    <link rel="apple-touch-icon" size="120X120" href="./ico/favicon120.png">
+    <!--  표준 iOS 홈스크린  -->
+    <link rel="apple-touch-icon" size="57X57" href="./ico/favicon57.png">
+    <!--  iOS 홈스크린  -->
+    <link rel="apple-touch-icon" size="72X72" href="./ico/favicon72.png">
+    <!--  아이폰 레티나  -->
+    <link rel="apple-touch-icon" size="114X114" href="./ico/favicon114.png">
+    <!--  iPhone iOS  -->
+    <link rel="apple-touch-icon" size="180X180" href="./ico/favicon180.png">
+    <!--  안드로이드/iOS 기본   -->
+    <link rel="apple-touch-icon" size="152X152" href="./ico/favicon152.png">
+    <!--  안드로이드 크롬 홈  -->
+    <link rel="apple-touch-icon" size="196X196" href="./ico/favicon196.png">
+     <!--  아이패트 레티나 터치  -->
+    <link rel="apple-touch-icon" size="167X167" href="./ico/favicon167.png">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="application-name" content="Krystal Web Site">
+    <meta name="author" content="SoeunPark">
+    <meta name="description" content="Krystal Mobilepage">
+    <meta name="generator" content="Brackets">
+    <meta name="keywords" content="Krystal, 크리스탈, 에프엑스, 정수정, 수정, f(x)">
+    
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    
+    <script>
+    $(document).ready(function(){
+        var wd = parseInt($(".banBoxFrm").width());
+        var len = $(".banBox li").length;
+        var sw1 = true;
+        var sw2 = true;
+        function nextAni(){
+            $(".banBox").not(":animated").animate({"opacity":"1"}, 900, function(){
+                $(".banBox li").removeClass("on");
+                $(".banBox li").eq(0).appendTo($(".banBox"));
+                $(".banBox li").eq(0).addClass("on");
+            });
+        }
+        function prevAni(){
+            $(".banBox li").removeClass("on");
+            $(".banBox").not(":animated").animate({"opacity":"1"}, 400, function(){
+                $(".banBox li").eq(len-1).prependTo($(".banBox"));
+                $(".banBox li").eq(0).addClass("on");
+            });
+        }
+        var intv = setInterval(function(){
+            nextAni();
+        }, 3500); 
+        $(".next").click(function(){
+            clearInterval(intv);
+            nextAni();
+            intv = setInterval(function(){ nextAni(); }, 3500); 
+        });
+        $(".prev").click(function(){
+            clearInterval(intv);
+            prevAni();
+            intv = setInterval(function(){ nextAni(); }, 3500); 
+        });
+        $(".stop").click(function(){
+            if(sw1==true){
+                clearInterval(intv);
+                $(this).find("i").removeClass("fa-stop").addClass("fa-play");
+            } else {
+                intv = setInterval(function(){ nextAni(); }, 3500);
+                $(this).find("i").removeClass("fa-play").addClass("fa-stop");
+            }
+            sw1=!sw1;
+        });
+        $(".expand").click(function(){
+           if(sw2==true){
+               $("#container #hd").fadeOut();
+               $("#container #ft").fadeOut();
+               $(this).find("i").removeClass("fa-expand").addClass("fa-compress");
+           } else {
+               $("#container #hd").fadeIn();
+               $("#container #ft").fadeIn();
+               $(this).find("i").removeClass("fa-compress").addClass("fa-expand");
+           }
+           sw2=!sw2;
+        });
+        function swiper1(){
+            $(".swiper").animate({"margin-left":"200px"}, 2500);
+        }
+        function swiper2(){
+            $(".swiper").animate({"margin-left" : "-120px"}, 20);
+        }
+        
+        var intv2 = setInterval(function(){
+            swiper1();
+            swiper2();
+        }, 3500);
+    });    
+    </script>
+    
+    <script>
+     $(document).ready(function(){
+       var lsw = [ true, true, true, true ];
+       console.log(lsw[0], lsw[1], lsw[2], lsw[3]);
+       var idx;    
+       $("#gnb .mnLst i.fas").click(function(){
+           idx = $(this).parents("li.mnLst").index();
+           console.log(idx);
+           if(lsw[idx]==true){
+               $(this).removeClass("fa-plus").addClass("fa-minus");
+               $(this).parents(".mnLst").find(".sub").slideDown();
+           } else {
+               $(this).removeClass("fa-minus").addClass("fa-plus");
+               $(this).parents(".mnLst").find(".sub").slideUp();
+           }
+           lsw[idx]=!lsw[idx];
+       }); 
+    });  
+    </script>
+    
+    <style>
+    #container { width: 100%; height: 100%; clear: both; transition: 0.6s; position: relative; }
+    .ckItem { display: none; }
+    #hd { width: 100%; height: 60px; background: #333; position: fixed; z-index: 99; clear: both; }
+    #hd a.logo { display: block; width: 38px; height: 36px; text-indent: -9999px; background-image: url("./icon/iconset.png"); background-repeat: no-repeat; background-position: -13px -260px; margin-left: 15px; float: left; margin-top: 10px; }
+    .lstFrm { position: relative; display: block; width: 60px; height: 60px; float: right; margin-right: 15px; }
+    .lst { display: block; width: 28px; height: 2px; background: #fff; float: right; clear: both; position: absolute; right: 10px; transition: 0.2s; }
+    .lst.item1 { top: 20px; }
+    .lst.item2 { top: 30px; }
+    .lst.item3 { top: 40px; }
+    #lstBox:checked ~ #container .lst.item1 { transform:rotate(45deg); top:27px; }
+    #lstBox:checked ~ #container .lst.item2 { display:none; }
+    #lstBox:checked ~ #container .lst.item3 { transform:rotate(135deg); top:27px; }  
+    </style>
+    
+    <style>
+    #main { width: 100%; height: auto; padding-top: 60px; position: relative; clear: both; }
+    .content { width: 90%; margin: 0 auto; clear: both; min-height: 100%; padding-top: 60px; position: relative; }
+    .titBox { width: 100%; margin: 0 auto; height: 20px; border-top: 1px solid #999; padding: 5px 0px 5px 0px; border-bottom: 1px solid #ddd; }
+    .pageTit { font-size: 0.8em; font-weight: bolder; color: #333; float: right; float: left; padding-left: 10px; line-height: 20px; }
+    .conBox { width: 100%; min-height: 100%; margin-top: 40px; margin-bottom: 20px; clear: both; }
+    .videoBox { width: 100%; height: 90vh; }
+    .pageTit .cate { color: #5c4fa7; font-size: 0.9em; font-weight: bolder; padding-right: 10px; }
+    .detailBox { width: 100%; height: 20px; border-bottom: 1px solid #999; }
+    .eye { font-size: 0.7em; float: left; padding-left: 15px; line-height: 20px; }
+    .date { font-size: 0.7em; float: left; padding-left: 20px; line-height: 20px; }
+    .toLst { width: 100%; line-height: 28px; }
+    .list { background: #ddd; padding: 5px 10px 5px 10px; color: #333; border-radius: 5px; float: right; font-size: 0.7em; margin: 15px 0px 20px 0px; }
+    .nextLst { width: 100%; font-size: 0.65em; margin: 0 auto; line-height: 26px; padding: 5px 0px 10px 0px; border-top: 1px solid #999; border-bottom: 1px solid #999; text-indent: 20px; }   
+    .nextLst .nextTit { padding: 0px 10px 0px 10px; }
+    
+    </style>
+    
+    <style>
+    #ft { width: 100%; height: 40px; background: #333; position: relative; clear: both; }
+    .copyright { width: 70%; margin: 0 auto; line-height: 40px; height: 100%; }
+    .copy { text-align: center; font-size: 0.6em; color: #fff; height: 100%; }    
+    </style>
+    
+    <style>
+    #lstBox:checked ~ #container { margin-left: -100%; }
+    #lstBox:checked ~ #wrap { right: 0; }
+    #wrap { width: 100%; height: 100%; position: fixed; top: 0; right: -100%; z-index: 9999; clear: both; transition: 0.6s; background: #333; }
+    #wrap #hd { width: 100%; height: 60px; background: #333; }
+    #wrap #hd .lstFrm { float: left; margin-left: 10px; margin-top: 5px; }
+    #wrap .lst.item1 { transform:rotate(45deg); top:27px; }
+    #wrap .lst.item2 { transform:rotate(135deg); top:27px; }
+    .login { display: block; float: right; width: 38px; height: 38px; margin-right: 20px; background-image: url("./icon/iconset.png"); background-repeat: no-repeat; background-position: -118px -48px; text-indent: -9999px; margin-top: 12px; }
+    #gnb { width: 100%; min-height: 100%; background: #4e4e4e; clear: both; position: relative; margin-top: 60px; }
+    #gnb ul { padding: 20px 0px 20px 0px;  width: 100%; }
+    #gnb li.mnLst { width: 80%; margin: 0 auto; line-height: 45px; border-bottom: 1px solid #666; transition: 0.3s; }
+    #gnb li.mnLst a.mnDep1 { display: block; color: #ccc; font-weight: 500; text-indent: 20px; transition: 0.5s; transition-delay: 0.5s; opacity: 0; }
+    #gnb li a.mnDep1 i { float: right; margin-right: 20px; margin-top: 15px; display: none; }
+    #gnb .sub { display: none; padding: 0; }
+    #gnb .sub li a { color: #ccc; font-size: 0.85em; display: block; }
+    #gnb .sub li { border-top: 1px solid #5c5c5c; }
+    #lstBox:checked ~ #wrap #gnb li { text-indent:2.5em; }
+    #lstBox:checked ~ #wrap #gnb li a {  color:#ccc; opacity:1; }   
+    #lstBox:checked ~ #wrap #gnb li a i.fas { display:block; }
+    
+    
+    </style>
+</head>
+<body>
+<input type="checkbox" id="lstBox" class="ckItem">
+<div id="container">
+  <header id="hd">
+      <a href="index.html" class="logo">로고</a>
+      <label for="lstBox" class="lstFrm">
+          <span class="lst item1"></span>
+          <span class="lst item2"></span>
+          <span class="lst item3"></span>
+      </label>
+  </header>
+  <div id="main">
+    <section class="content">
+        <div class="titBox">
+             <h3 class="pageTit">
+                 <span class="cate">[HOT]</span>
+                 크리스탈 레전드 직캠 첫사랑니 130803
+             </h3>
+        </div>
+        <div class="detailBox">
+            <p class="eye">
+                <i class="fas fa-eye"></i>
+                100,000
+            </p>
+            <p class="date">
+                <i class="fas fa-calendar"></i>
+                2017-03-05
+            </p>
+        </div>
+        <div class="conBox">
+            <div class="videoBox">
+                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/tAVLxl4ELFA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div> 
+        <div class="toLst">
+            <p class="nextLst">
+                <span class="nextTxt">▼</span>
+                <span class="nextTit">[ 다음글 ]</span>
+                Red Light 크리스탈 직캠 컬투쇼 공개방송
+            </p>
+        </div>
+        <a href="video.html" class="list">목록</a>
+    </section>
+  </div>
+  <footer id="ft">
+      <div class="copyright">
+          <p class="copy">COPYRIGHT ⓒ 2019 KRYSTAL ALL RIGHTS RESERVED.</p>
+      </div>
+  </footer>
+</div>
+<div id="wrap">
+    <header id="hd">
+      <label for="lstBox" class="lstFrm">
+          <span class="lst item1"></span>
+          <span class="lst item2"></span>
+      </label>  
+      <a href="" class="login">로그인</a>  
+    </header>
+    <nav id="gnb">
+        <ul class="mainMN">
+            <li class="mnLst">
+                <a class="mnDep1">About
+                    <i class="fas fa-plus"></i>
+                </a>
+                <ul class="sub">
+                    <li><a href="">프로필</a></li>
+                    <li><a href="">Album</a></li>
+                    <li><a href="">작품활동</a></li>
+                </ul>
+            </li>
+            <li class="mnLst">
+                <a class="mnDep1">Gallery
+                    <i class="fas fa-plus"></i>
+                </a>
+                <ul class="sub">
+                    <li><a href="">Image</a></li>
+                    <li><a href="video.html">Video</a></li>
+                </ul>
+            </li>
+            <li class="mnLst">
+                <a class="mnDep1">Community
+                    <i class="fas fa-plus"></i>
+                </a>
+                <ul class="sub">
+                    <li><a href="">공지사항</a></li>
+                    <li><a href="">자유게시판</a></li>
+                    <li><a href="">장터</a></li>
+                </ul>
+            </li>
+            <li class="mnLst">
+                <a class="mnDep1">MY KRYSTAL
+                    <i class="fas fa-plus"></i>
+                </a>
+                <ul class="sub">
+                    <li><a href="">회원가입</a></li>
+                    <li><a href="">등업</a></li>
+                    <li><a href="">회원정보수정</a></li>
+                    <li><a href="">쪽지함</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</div>
+</body>
+</html>
