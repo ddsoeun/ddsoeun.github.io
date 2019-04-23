@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+    <meta charset="UTF-8">
+    <title>Park Soeun Portolio</title>
+    <link rel="stylesheet" href="reset.css">
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link href="https://fonts.googleapis.com/css?family=Crete+Round|Nanum+Gothic+Coding|Noto+Sans+KR|Roboto|Ubuntu" rel="stylesheet">
+    
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon16.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon32.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon48.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon64.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon128.png">
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon150.png">
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta name="msapplication-TileImage" content="./ico/favicon144.png">
+    <link rel="apple-touch-icon" size="120X120" href="./ico/favicon120.png">
+    <link rel="apple-touch-icon" size="57X57" href="./ico/favicon57.png">
+    <link rel="apple-touch-icon" size="72X72" href="./ico/favicon72.png">
+    <link rel="apple-touch-icon" size="114X114" href="./ico/favicon114.png">
+    <link rel="apple-touch-icon" size="180X180" href="./ico/favicon180.png">
+    <link rel="apple-touch-icon" size="152X152" href="./ico/favicon152.png">
+    <link rel="apple-touch-icon" size="196X196" href="./ico/favicon196.png">
+    <link rel="apple-touch-icon" size="167X167" href="./ico/favicon167.png">
+   
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="application-name" content="SOEUN PORTFOLIO Web Site">
+    <meta name="author" content="SoeunPark">
+    <meta name="description" content="SOEUN PORTFOLIO Mainpage">
+    <meta name="generator" content="Brackets">
+    <meta name="keywords" content="SOEUN PORTFOLIO, soeun portfolio">
+    
+    <style>
+    body, html { -ms-overflow-style:none; background: #ada9d4; }
+    ::-webkit-scrollbar { display: none; }
+    ::-o-scrollbar { display: none; }
+    
+/*
+    font-family: 'Noto Sans KR', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
+    font-family: 'Nanum Gothic Coding', monospace;
+    font-family: 'Crete Round', serif;
+    font-family: 'Roboto', sans-serif;    
+*/
+    @media screen and (max-width:767px) {
+        .lstBox { width: 40px; height: 40px; background: transparent; float: right; margin-top: 4vw; position: relative; }
+        .lst { width: 30px; height: 3px; background: #fff; border-radius: 3px; position: absolute; right: 5vw; transition: 0.4s; }
+        .lst.item1 { top: 10px; }
+        .lst.item2 { top: 18px; }
+        .lst.item3 { top: 26px; }
+        
+        .menuBox { position: fixed; top: 0; right: -100%; z-index: -10; background: #ada9d4; width: 100%; height: 100%; transition-duration: 0.8s; }
+        .menuBox .menu { width: 80%; margin: 0 auto; margin-top: 55vw; }
+        .menuBox .menu .menuLst { width: 100%; }
+        .menuBox .menu .menuLst a { display: block; height: 20vw; line-height: 20vw; text-align: center; width: 100%; height: 100%; margin-top: -100%; opacity: 0; transition-duration: 0.6s; transition-delay: 0.4s; }
+        .menuBox .menu .menuLst a span { text-align: center; color: #fff; font-family: 'Crete Round', serif; font-size: 1.8rem; font-weight: bold; letter-spacing: 5px; overflow: hidden; text-transform: uppercase; text-shadow: -1px -1px 2px #8f89c9, 1px 1px 2px #8f89c9; }
+        .menuBox .closeBtn { margin-top: 10vw; margin-right: 5vw; position: relative; }
+    }
+    @media screen and (min-width:768px) and (max-width:959px) {
+        .lstBox { width: 40px; height: 40px; background: transparent; float: right; margin-top: 4vw; position: relative; }
+        .lst { width: 30px; height: 3px; background: #fff; border-radius: 3px; position: absolute; right: 5vw; transition: 0.4s; }
+        .lst.item1 { top: 10px; }
+        .lst.item2 { top: 18px; }
+        .lst.item3 { top: 26px; }
+        
+        .menuBox { position: fixed; top: 0; right: -100%; z-index: -10; background: #ada9d4; width: 100%; height: 100%; transition-duration: 0.8s; }
+        .menuBox .menu { width: 80%; margin: 0 auto; margin-top: 35vw; }
+        .menuBox .menu .menuLst { width: 100%; }
+        .menuBox .menu .menuLst a { display: block; text-align: center; width: 100%; height: 100%; margin-top: -100%; opacity: 0; transition-duration: 0.6s; transition-delay: 0.4s; height: 20vw; line-height: 20vw; }
+        .menuBox .menu .menuLst a span { text-align: center; color: #fff; font-family: 'Crete Round', serif; font-size: 1.8rem; font-weight: bold; letter-spacing: 5px; overflow: hidden; text-transform: uppercase; text-shadow: -1px -1px 2px #8f89c9, 1px 1px 2px #8f89c9; }
+        .menuBox .closeBtn { margin-top: 10vw; margin-right: 5vw; position: relative; } 
+    }
+    @media screen and (min-width:960px) and (max-width:1024px) {
+        .lstBox { width: 40px; height: 40px; background: transparent; float: right; margin-top: 4vw; position: relative; cursor: pointer; }
+        .lst { width: 30px; height: 3px; background: #fff; border-radius: 3px; position: absolute; right: 5vw; transition: 0.4s; }
+        .lst.item1 { top: 10px; }
+        .lst.item2 { top: 18px; }
+        .lst.item3 { top: 26px; }
+        
+        .menuBox { position: fixed; top: 0; right: -100%; z-index: -10; background: #ada9d4; width: 100%; height: 100%; transition-duration: 0.8s; }
+        .menuBox .menu { width: 80%; margin: 0 auto; margin-top: 35vw; }
+        .menuBox .menu .menuLst { width: 100%; }
+        .menuBox .menu .menuLst a { display: block; text-align: center; width: 100%; height: 100%; margin-top: -100%; opacity: 0; transition-duration: 0.6s; transition-delay: 0.4s; height: 20vw; line-height: 20vw; }
+        .menuBox .menu .menuLst a span { text-align: center; color: #fff; font-family: 'Crete Round', serif; font-size: 1.8rem; font-weight: bold; letter-spacing: 5px; overflow: hidden; text-transform: uppercase; text-shadow: -1px -1px 2px #8f89c9, 1px 1px 2px #8f89c9; }
+        .menuBox .closeBtn { margin-top: 10vw; margin-right: 5vw; position: relative; }
+    }
+    @media screen and (min-width:1025px) {
+        main { width: 100%; height: 100%; overflow: hidden; }
+        
+        .hd { width: 80%; margin: 0 auto; height: 100px; }
+        
+        .logo { display: block; width: 50px; height: 40px; margin-top: 30px; float: left; }
+        .logo img { width: 100%; }
+        
+        .lstBox { width: 40px; height: 40px; background: transparent; float: right; position: relative; cursor: pointer; margin-top: 30px; }
+        .lst { width: 40px; height: 3px; background: #fff; border-radius: 3px; position: absolute; transition: 0.4s; }
+        .lst.item1 { top: 10px; }
+        .lst.item2 { top: 18px; }
+        .lst.item3 { top: 26px; }  
+        .lstBox:hover .lst { background: #f9d763; }
+        
+        .slideBox { width: 100%; height: calc(100% -100px); overflow: hidden; position: relative; transition-duration: 1s; transition-delay:0.2s; }
+        .slideBox .slide { width: 300%; height: 100%; }
+        .slideBox .slide li { float: left; width: 33.333333333333%; height: 100%; position: relative; }
+        .slide_img { width: 20vw; margin: 0 auto; height: 75vh; background-position: center center; background-repeat: no-repeat; background-size: cover; margin-top: 3vh; }
+        .slide li.item1 .slide_img { background-image: url("./img/about_img1.png"); }
+        .slide li.item2 .slide_img { background-image: url("./img/about_img1.png"); }
+        .slide li.item3 .slide_img { background-image: url("./img/about_img1.png"); }
+        .slide_num { font-size: 3rem; font-family: 'Crete Round', serif; color: #fff; letter-spacing: 3px; font-style: italic; position: absolute; width: 10vw; left: 45vw; text-align: center; top: -1vh; }
+        .slide_title { font-size: 7rem; font-family: 'Crete Round', serif; position: absolute; width: 30vw; left: 35vw; text-align: center; top: 35vh; color: #fff; letter-spacing: 1vw; }
+        
+        .btnBox { width: 100%; height: 40vh; }
+        .btnBox li { float: left; position: absolute; top: 40vh; cursor: pointer; }
+        .btnBox li:before, .btnBox li:after { content: ""; position: absolute; width: 3rem; height: 1px; background: #fff; top: 50%; }
+        .btnBox li:before { left: 120%; }
+        .btnBox li:after { right: 120%; }
+        .btnBox li button { background: transparent; display: block; font-size: 1rem; color: #fff; text-align: center; transition: 0.6s; cursor: pointer; }
+        .btnBox li.item1 { transform: rotate(-90deg); left: 5vw; }
+        .btnBox li.item2 { transform: rotate(90deg); right: 5vw; }
+        .btnBox li:hover button { color: #f9d763; }
+        
+        .slidenav { width: 40px; margin: 0 auto; height: 40px; margin-top: 2vh; }
+        .slidenav button { display: block; width: 40px; height: 40px; background-color: transparent; animation: btnAni 2s ease infinite 0.2s; cursor: pointer; }
+        .slidenav button svg { width: 40px; height: 40px; transition: 0.4s; }
+        
+        .slidenav:hover button { animation-play-state: paused; }
+        .slidenav:hover button svg line { stroke: #f9d763; }
+        .slidenav:hover button svg circle { fill: #f9d763; }
+        
+        @keyframes btnAni {
+            from { transform: translateY(-0.2vw); }
+            50% { transform: translateY(0.5vw); }
+            to { transform: translateY(-0.2vw); }
+        }
+        
+        .comBox { position: fixed; top: -100%; left: 0; z-index: -10; width: 100%; height: calc(100% - 100px); transition-duration: 1s; }
+        .txtBox { width: 40%; margin-left: 10%; float: left; height: 100%; }
+        .timeBox { width: 40%; margin-right: 10%; float: right; height: 100%; }
+        
+        .txtBox .pro { width: 80%; margin: 0 auto; height: 5vh; }
+        .txtBox .pro li { float: left; width: 48%; margin-left: 4%; font-size: 1rem; font-weight: bold; color: #fff; height: 5vh; line-height: 5vh; }
+        .txtBox .pro li:first-child { margin-left: 0; }
+        .txtBox .pro li.tit { color: #f9d763; letter-spacing: 0.5vw; }
+        
+        .menuBox { position: fixed; top: 0; right: -100%; z-index: -10; background: #ada9d4; width: 100%; height: 100%; transition-duration: 0.8s; }
+        .menuBox .menu { margin-top: 25vh; position: relative; display: flex; justify-content: center; align-items: center; }
+        .menuBox .menu .menuLst { position: relative; z-index: 10; }
+        .menuBox .menu .menuLst a { display: flex; width: 100%; height: 100%; margin-top: -100%; opacity: 0; transition-duration: 0.6s; transition-delay: 0.4s; flex-direction: column; align-items: flex-start; text-align: center; }
+        .menuBox .menu .menuLst a span { text-align: center; color: #fff; font-family: 'Crete Round', serif; font-size: 1.8rem; font-weight: bold; letter-spacing: 5px; overflow: hidden; text-transform: uppercase; position: relative; display: inline-block; margin-top: 10vh; }
+        .menuBox .closeBtn { margin-top: 5vw; margin-right: 5vw; }
+        .menuBox .menu .menuLst a span::before, .menuBox .menu .menuLst a span::after { content: ""; width: 100%; height: 100%; background: #8f89c9; position: absolute; top: 0; left: 0; transform: translate3d(-100%,0,0) translate3d(-1px,0,0); transition: transform 0.7s; transition-timing-function: cubic-bezier(0.7,0,0.3,1); }
+        
+        .menuBox .menu .menuLst a:hover span::before { transform: translate3d(100%, 0, 0) translate3d(1px, 0, 0); }
+        .menuBox .menu .menuLst a:hover span::after { transform: translate3d(0, 0, 0); }
+        .menuBox .menu .menuLst a span::after { top: calc(50% - 2px); height: 4px; }
+    }
+    </style>
+   
+    <script>
+    $(document).ready(function(){
+        var wd = $("body, html").width();
+        $(".openBtn").click(function(){
+            $(".menuBox").css("right", "0").css("z-index", "99");  
+            $(".lstBox .lst.item1").css("top", "18px").css("transform", "rotate(-45deg)");
+            $(".lstBox .lst.item2").css("display", "none");
+            $(".lstBox .lst.item3").css("top", "18px").css("transform", "rotate(45deg)");
+        });
+        $(".closeBtn").click(function(){
+            $(".menuBox").css("right", "-100%").css("z-index", "-10"); 
+            $(".lstBox .lst.item1").css("top", "10px").css("transform", "rotate(0deg)");
+            $(".lstBox .lst.item2").css("display", "block").css("top", "18px");
+            $(".lstBox .lst.item3").css("top", "26px").css("transform", "rotate(0deg)");
+        });
+        $(".openBtn").click(function(){
+            var intv = setTimeout(function(){
+                $(".menuBox .menuLst a").css("margin-top", "0px").css("opacity", "1");    
+            }); 
+        }); 
+    });
+    </script>
+    <script>
+    $(document).ready(function(){
+        var wd = $(".slideBox").width();
+        var len = $(".slide li").length;
+        
+        function nextAni(){
+            $(".slide").not(":animated").animate({"margin-left":-wd+"px"}, function(){
+                $(".slide li").eq(0).appendTo($(".slide"));
+                $(".slide").css("margin-left", "0px");
+            });
+        }
+        function prevAni(){
+            $(".slide li").eq(len-1).prependTo($(".slide"));
+            $(".slide").css("margin-left", -wd+"px");
+            $(".slide").not(":animated").animate({"margin-left":"0px"});
+        }
+        $(".btnBox li.item1 button").click(function(){
+            prevAni();    
+        });
+        $(".btnBox li.item2 button").click(function(){
+            nextAni(); 
+        });
+        
+        $(".slidenav.item1").click(function(){
+            $(".slideBox").addClass("on");
+            $(".comBox.item1").addClass("on");
+        });
+        $(".slidenav.item2").click(function(){
+            $(".slideBox").addClass("on");
+            $(".comBox.item2").addClass("on");
+        });
+        $(".slidenav.item3").click(function(){
+            $(".slideBox").addClass("on");
+            $(".comBox.item3").addClass("on");
+        });
+    });
+    </script>
+</head>
+<body>
+    <main>
+        <header class="hd">
+            <a href="index.html" class="logo">
+                <img src="./img/logo.png" alt="로고">
+            </a>
+            <div class="lstBox openBtn">
+                <span class="lst item1"></span>
+                <span class="lst item2"></span>
+                <span class="lst item3"></span>
+            </div>
+        </header>
+        <div class="slideBox">
+            <ul class="slide">
+                <li class="item1">
+                    <p class="slide_num">01</p>
+                    <div class="slide_img"></div> 
+                    <h1 class="slide_title">Profile</h1> 
+                    <div class="slidenav item1">
+                        <button>
+                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="200px" height="200px" viewBox="0 0 200 200" enable-background="new 0 0 200 200" xml:space="preserve">
+                                <g>
+                                    <line fill="none" stroke="#FFFFFF" stroke-width="11" stroke-miterlimit="10" x1="13.544" y1="87.228" x2="100" y2="144.79" />
+                                    <line fill="none" stroke="#FFFFFF" stroke-width="11" stroke-miterlimit="10" x1="186.456" y1="87.228" x2="100" y2="144.79" />
+                                    <circle fill="#FFFFFF" cx="13.544" cy="87.228" r="5.531" />
+                                    <circle fill="#FFFFFF" cx="186.456" cy="87.228" r="5.53" />
+                                    <circle fill="#FFFFFF" cx="100" cy="144.79" r="5.53" />
+                                </g>
+                            </svg>
+                        </button>
+                    </div>      
+                </li>
+                <li class="item2">
+                    <p class="slide_num">02</p>
+                    <div class="slide_img"></div> 
+                    <h1 class="slide_title">Skill</h1> 
+                    <div class="slidenav item2">
+                        <button>
+                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="200px" height="200px" viewBox="0 0 200 200" enable-background="new 0 0 200 200" xml:space="preserve">
+                                <g>
+                                    <line fill="none" stroke="#FFFFFF" stroke-width="11" stroke-miterlimit="10" x1="13.544" y1="87.228" x2="100" y2="144.79" />
+                                    <line fill="none" stroke="#FFFFFF" stroke-width="11" stroke-miterlimit="10" x1="186.456" y1="87.228" x2="100" y2="144.79" />
+                                    <circle fill="#FFFFFF" cx="13.544" cy="87.228" r="5.531" />
+                                    <circle fill="#FFFFFF" cx="186.456" cy="87.228" r="5.53" />
+                                    <circle fill="#FFFFFF" cx="100" cy="144.79" r="5.53" />
+                                </g>
+                            </svg>
+                        </button>
+                    </div> 
+                </li>
+                <li class="item3">
+                    <p class="slide_num">03</p>
+                    <div class="slide_img"></div> 
+                    <h1 class="slide_title">Working</h1>  
+                    <div class="slidenav item3">
+                        <button>
+                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="200px" height="200px" viewBox="0 0 200 200" enable-background="new 0 0 200 200" xml:space="preserve">
+                                <g>
+                                    <line fill="none" stroke="#FFFFFF" stroke-width="11" stroke-miterlimit="10" x1="13.544" y1="87.228" x2="100" y2="144.79" />
+                                    <line fill="none" stroke="#FFFFFF" stroke-width="11" stroke-miterlimit="10" x1="186.456" y1="87.228" x2="100" y2="144.79" />
+                                    <circle fill="#FFFFFF" cx="13.544" cy="87.228" r="5.531" />
+                                    <circle fill="#FFFFFF" cx="186.456" cy="87.228" r="5.53" />
+                                    <circle fill="#FFFFFF" cx="100" cy="144.79" r="5.53" />
+                                </g>
+                            </svg>
+                        </button>
+                    </div>
+                </li>
+            </ul>
+            <ul class="btnBox">
+                <li class="item1">
+                    <button>Previous</button>
+                </li>
+                <li class="item2">
+                    <button>Next</button>
+                </li>
+            </ul>
+        </div>
+        <div class="comBox item1">
+            <div class="txtBox">
+                <ul class="pro item1">
+                    <li class="tit">Name</li>
+                    <li class="com">박소은</li>
+                </ul>
+                <ul class="pro item2">
+                    <li class="tit">Age</li>
+                    <li class="com">25세 (만 23세)</li>
+                </ul>
+                <ul class="pro item3">
+                    <li class="tit">Tel</li>
+                    <li class="com">010.6572.5569</li>
+                </ul>
+                <ul class="pro item4">
+                    <li class="tit">E-mail</li>
+                    <li class="com">soeun920@naver.com</li>
+                </ul>
+                <ul class="pro item5">
+                    <li class="tit">Address</li>
+                    <li class="com">대전광역시 유성구 지족동</li>
+                </ul>
+                <ul class="pro item6">
+                    <li class="tit">Career</li>
+                    <li class="com">
+                        <p class="subCom">
+                            <span class="txt_p"></span>
+                        </p>
+                        <p class="subCom">
+                            <span class="txt_p"></span>
+                        </p>
+                        <p class="subCom">
+                            <span class="txt_p"></span>
+                        </p>
+                        <p class="subCom">
+                            <span class="txt_p"></span>
+                        </p>
+                    </li>
+                </ul>
+            </div>
+            <div class="timeBox">
+                
+            </div>   
+        </div>
+        <div class="comBox item2">
+            
+        </div>
+        <div class="comBox item3">
+            
+        </div>
+    </main>
+    <div class="menuBox">
+        <div class="lstBox closeBtn">
+            <span class="lst item1"></span>
+            <span class="lst item2"></span>
+            <span class="lst item3"></span>
+        </div>
+        <div class="menu">
+            <nav class="menuLst">
+                <a href="index.html"><span>HOME</span></a>
+                <a href="about.html"><span>ABOUT</span></a>
+                <a href="portfolio.html"><span>PORTFOLIO</span></a>
+            </nav>
+        </div>
+    </div>
+</body>
+</html>
