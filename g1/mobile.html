@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    
+    <!--    뷰포트 설정    -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    
+    
+    <title>계룡시청</title>
+    
+    <!--  데스크탑 기본 IE/Window -->
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon16.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon32.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon48.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon64.ico">
+    <!--  chrome 웹스토어 & 윈도우8  -->
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon128.png">
+    <!--  window 8.1 tile  -->
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon150.png">
+    
+    
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta name="msapplication-TileImage" content="./ico/favicon144.png">
+    
+    
+    <!-- iPhone iOS 7이상   -->
+    <link rel="apple-touch-icon" size="120X120" href="./ico/favicon120.png">
+    <!--  표준 iOS 홈스크린  -->
+    <link rel="apple-touch-icon" size="57X57" href="./ico/favicon57.png">
+    <!--  iOS 홈스크린  -->
+    <link rel="apple-touch-icon" size="72X72" href="./ico/favicon72.png">
+    <!--  아이폰 레티나  -->
+    <link rel="apple-touch-icon" size="114X114" href="./ico/favicon114.png">
+    <!--  iPhone iOS  -->
+    <link rel="apple-touch-icon" size="180X180" href="./ico/favicon180.png">
+    <!--  안드로이드/iOS 기본   -->
+    <link rel="apple-touch-icon" size="152X152" href="./ico/favicon152.png">
+    <!--  안드로이드 크롬 홈  -->
+    <link rel="apple-touch-icon" size="196X196" href="./ico/favicon196.png">
+    
+    
+    <!--  아이패드 홈스크린 아이콘  -->
+    <link rel="apple-touch-icon" size="72X72" href="./ico/favicon72.png">
+    <!--  아이패드 터치  -->
+    <link rel="apple-touch-icon" size="152X152" href="./ico/favicon152.png">
+    <!--  아이패트 레티나 터치  -->
+    <link rel="apple-touch-icon" size="167X167" href="./ico/favicon167.png">
+
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="application-name" content="GYERYONG Web Site">
+    <meta name="author" content="SoeunPark">
+    <meta name="description" content="GYERYONG Mainpage">
+    <meta name="generator" content="Brackets">
+    <meta name="keywords" content="계룡, 계룡시, 계룡시청, 계룡시 웹사이트, 계룡시 홈페이지">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    
+    
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic" rel="stylesheet">
+    <link rel="stylesheet" href="reset.css">
+    
+    <!--  데스크탑 jquery  -->
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    
+    <!--  모바일/태블릿 jquery  -->
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    
+    <script src="./js/jquery.xdomainajax.js"></script>
+    
+
+    <script>
+     $(document).ready(function(){
+        var wd = $(window).width();
+        var cnt = $(".bt_banBox li").length - 1;
+        var intv = setInterval(function(){ nextAni(); }, 4000);
+        function nextAni(){
+            $(".bt_banBox").not(":animated").animate({"margin-left":-wd+"px"}, 800, function(){
+                $(".bt_banBox li").eq(0).appendTo($(".bt_banBox"));
+                $(".bt_banBox").css("margin-left", "0px");
+            }); 
+        }
+        function prevAni(){
+       $(".bt_banBox li").eq(cnt).prependTo($(".bt_banBox"));
+       $(".bt_banBox").css("margin-left", -wd+"px");
+       $(".bt_banBox").not(":animated").animate({"margin-left":"0px"}, 800);
+   }
+   $(".banbtn.right").click(function(){
+       clearInterval(intv);
+       nextAni();
+       intv = setInterval(function() { nextAni(); }, 5000);
+   });
+   $(".banbtn.left").click(function(){
+       clearInterval(intv);
+       prevAni();
+       intv = setInterval(function() { nextAni(); }, 5000);
+   });  
+     });
+    </script>
+    
+    <script>
+    var request = new XMLHttpRequest();
+    request.open('GET', '/', async=true);
+    request.send();
+    </script>
+    <script>
+        var city = "Gyeryong,KR";  //도시명 변경
+        function parseWeather() {
+            loadJSON(function (response) {
+                var jsonData = JSON.parse(response);
+                document.getElementById("todaysWeather").innerHTML = jsonData["list"][0]["weather"][0]["main"];
+            });
+        }
+        function loadJSON(callback) { //url의 json 데이터 불러오는 함수
+            var url = "http://api.openweathermap.org/data/2.5/forecast/daily?q="+city+"&cnt=7&appid=2a1ad423e9fad1a3ceda81fda56b1366";
+            var request = new XMLHttpRequest();
+            request.overrideMimeType("application/json");
+            request.open('GET', url, true);
+            request.onreadystatechange = function () {
+                if (request.readyState == 4 && request.status == "200") {
+                    callback(request.responseText);
+                }
+            };
+            request.send(null);
+        }
+        window.onload = function () {
+            parseWeather();
+        }
+    </script>
+    <script>
+    $(document).ready(function(){
+        setTimeout(function (){
+            var wed = $("#todaysWeather").text();
+            console.log(wed.trim().toLocaleLowerCase());
+            
+            if (wed.toLocaleLowerCase() == 'clear') {
+                $("#weatherTxt").text("날씨 : 맑음");
+                $("#weatherPic img").attr("src" ,"./icon/icon_01.gif");
+            } else if(wed.toLocaleLowerCase() == 'rain') {
+                $("#weatherTxt").text("날씨 : 비");
+                $("#weatherPic img").attr("src", "./icon/icon_19.gif");
+            } else if(wed.toLocaleLowerCase() == 'few clouds') {
+                $("#weatherTxt").text("날씨 : 구름조금");
+                $("#weatherPic img").attr("src", "./icon/icon_03.gif");
+            } else if(wed.toLocaleLowerCase() == 'snow') {
+                $("#weatherTxt").text("날씨 : 눈");
+                $("#weatherPic img").attr("src", "./icon/icon_23.gif");
+            } else if(wed.toLocaleLowerCase() == 'broken clouds') {
+                $("#weatherTxt").text("날씨 : 구름 많음");
+                $("#weatherPic img").attr("src", "./icon/icon_04.gif");
+            } else if(wed.toLocaleLowerCase() == 'thunderstorm') {
+                $("#weatherTxt").text("날씨 : 폭풍우");
+                $("#weatherPic img").attr("src", "./icon/icon_30.gif");
+            } else if(wed.toLocaleLowerCase() == 'mist') {
+                $("#weatherTxt").text("날씨 : 안개");
+                $("#weatherPic img").attr("src", "./icon/icon_14.gif");
+            } else if(wed.toLocaleLowerCase() == 'heavy intensity rain') {
+                $("#weatherTxt").text("날씨 : 강한 비");
+                $("#weatherPic img").attr("src", "./icon/icon_22.gif");
+            } else if(wed.toLocaleLowerCase() == 'light rain') {
+                $("#weatherTxt").text("날씨 : 여우비");
+                $("#weatherPic img").attr("src", "./icon/icon_24.gif");
+            } else {
+                $("#weatherTxt").text("날씨 : 흐림");
+                $("#weatherPic img").attr("src", "./icon/icon_16.gif");
+            }
+        }, 400);
+    });
+/* 날씨 변수
+
+broken clouds
+overcast clouds
+scattered clouds
+sky is clear
+moderate rain
+
+*/
+    </script>
+    
+    <script>
+    $("선택자").on("touchstart", function(){
+       터치 시작시 액티비티 
+    });
+    $("선택자").on("touchend", function(){
+       터치 종료시 액티비티 
+    });
+    </script>
+    
+    <style>
+    
+    .container { width: 100%; clear: both; }
+    .wrap { width: 100%; height: 142px; clear: both; }
+    #hd { width: 100%; height: 60px; position: relative; clear: both; border-bottom: 1px solid #ddd; float: left; }
+    .ckItem { display: none; }
+    #hd label { display: block; width: 20%; text-align: center; }
+    #hd label.mainL { float: left; background-image: url("./icon/main.png"); background-repeat: no-repeat; background-position: center center; text-indent: -9999px; margin-top: 22px; margin-left: 10px; }
+    #hd label.topR { float: right; background-image: url("./icon/top.png"); background-repeat: no-repeat; background-position: center center; text-indent: -9999px; margin-top: 22px; }
+    .logoFrm { width: 30%; float: left; margin-left: 50px; }
+    .logoFrm a { display: block; text-align: center; background-image: url("./logo/logo_b.png"); background-position: center center; background-size: contain; background-repeat: no-repeat; text-indent: -9999px; margin-top: 20px; }
+    #ck1:checked ~ #gnb { left: 0; opacity: 1; }
+    #ck2:checked ~ #tnb { right: 0; opacity: 1; }
+    #ck1:not(:checked) ~ #gnb { left: -100%; }
+    #ck2:not(:checked) ~ #tnb { right: -100%; }
+    #ck1:checked ~ #tnb { right:-100% }
+    #ck2:checked ~ #gnb { left:-100% } 
+    #gnb { width: 100%; position: absolute; z-index: 999; background: #fff; left: -100%; top: 62px; transition: 0.4s; opacity: 0; }
+    #gnb ul { width: 100%; height: 100%; clear: both; }
+    #gnb li.mnItem { height: 14.28%; width: 100%; }
+    #gnb li.mnItem a.mnDep1 { display: block; width: 100%; clear: both; border-bottom: 1px solid #ddd; text-align: center; color: #333; padding: 15px 0px; }
+    #tnb { width: 100%; position: absolute; z-index: 999; background: #fff; right: -100%; top: 62px; transition: 0.4s; opacity: 0; }
+    #tnb ul { width: 100%; height: 100%; clear: both; }
+    #tnb li.topItem { height: 25%; width: 100%; }
+    #tnb li.topItem a.topDep1 { display: block; width: 100%; clear: both; border-bottom: 1px solid #ddd; text-align: center; color: #333; padding: 15px 0px; }
+    .hdWrap { width: 100%; height: 80px; position: relative; clear: both; padding-top: 16px; }
+    .search { display: block; position: relative; width: 80%; margin: 0 auto; height: 42px; border: 3px solid #094ca6; }
+    #searchFrm { clear: both; margin-top: 16px; }
+    #keyword { border: 0; outline: 0; background: #fff; display: block; width: 80%; margin: 0 auto; height: 100%; padding: 0px 10px; }
+    .frmBtn { outline: 0; border: 0; display: block; width: 36px; height: 36px; line-height: 36px; background-color: #fff; background-repeat: no-repeat; background-position: center center; position: absolute; top: 3px; right: 5px; cursor: pointer; }
+    .searchBtn { background-image: url("./icon/search.png"); background-size: 50%; }
+    
+    </style>
+    
+    <style>
+    
+    /*        메인영역        */
+    #main { width: 100%; background: #ebebeb; }
+        
+    /*      비주얼배너영역      */
+    .banBox { width: 100%; height: 30vh; }
+    .slide { width: 100%; height: 100%; position: relative; float: left; }
+    .vs { width: 100%; height: 100%; overflow: hidden; position: relative; }
+    .vsBox { width: 800%; height: 100%; }
+    .slide .vsBox li { float: left; width: 12.5%; height: 100%; }
+    .slide .vsBox li img { width: 100%; height: 100%; }
+    .btnBox { position: absolute; z-index: 90; width: 100%; height: 50px; top: 43%; }
+    .btnBox li .direc { display: block; width: 36px; height: 50px; background-size: 35px 50px; background-repeat: no-repeat; background-color: transparent; background-position: center center; position: absolute; cursor: pointer; }
+    .direc.left { background-image: url("./icon/leftbtn.png"); left: 0; }
+    .direc.right { background-image: url("./icon/rightbtn.png"); right: 0; }
+        
+    </style>
+    
+    <style>
+        
+    /*    페이지1    */
+    .page1 { width: 100%; background: #fff; }
+    .page1 .pageTit { font-size: 1.15em; padding : 10px 0px 0px 0px; }
+    .news { position: relative; width: 90%; margin: 0 auto; margin-top: 15px; margin-bottom: 10px; padding: 10px 5px 10px 5px; }
+    .newsBox { overflow: hidden; padding: 10px 0px 10px 0px; } 
+    .newsBox a { display: block; width: 100%; line-height: 1.8; }
+    .newsBox a .fiTit { width: 15%; float: left; font-size: 0.9em; font-weight: 700; }
+    .newsBox a .newsTit { width: 85%; float: right; font-weight: 600; color: #333; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; font-size: 0.9em; font-weight: 600; }
+    .page1 a.item1 .fiTit { color: #008490; }
+    .page1 a.item2 .fiTit { color: #fe4747; }
+    .page1 a.item3 .fiTit { color: #ec9f04; }
+    .page1 a.item4 .fiTit { color: #427915; }
+    .page1 a.item5 .fiTit { color: #fe4747; }
+    .page1 a.item6 .fiTit { color: #2b345c; }
+    
+    </style>
+    
+    
+    <style>
+    
+    /*    페이지2   */
+    .page2 { width: 100%; background: #fff; margin-top: 15px; }
+    .iconBox { width: 90%; padding: 30px 10px 50px 10px; margin: 0 auto; height: 100%; }
+    .topIconBox { width: 100%; height: 10vh; }
+    .bottomIconBox { width: 100%; height: 10vh; padding: 20px 0px 20px 0px; }
+    .topIcon { text-align: center; width: 25%; }
+    .bottomIcon { text-align: center; width: 25%; }
+    .topIconBox .topIcon { float: left; height: 100%; }
+    .bottomIconBox .bottomIcon { float: left; height: 100%; margin-top: 20px; }
+    .topIcon a { display: block; width: 100%; height: 100%; text-align: center; }
+    .bottomIcon a { display: block; width: 100%; height: 100%; text-align: center; }
+    .topIcon a img { width: 80%; height: 80%; }
+    .bottomIcon a img { width: 80%; height: 80%; }
+    .iconBox .iconTit { font-size: 0.85em; text-align: center; margin-top: 8px; }
+        
+    </style>
+       
+    <style>
+        
+    /*    페이지3    */
+    .page3 { width: 100%; height: auto; background: #fff; margin-top: 15px; }
+    .now { width: 90%; height: 20vh; margin: 0 auto; position: relative; }
+    .pageTit { font-size: 1.25em; font-weight: bolder; color: #333; padding: 30px 10px 5px 30px; }
+    .imgBox { width: 50%; height: 15vh; float: left; margin-top: 3vh; overflow: hidden; }
+    .imgBox img { display: block; width: 100%; height: 100%; }
+    .conBox { width: 50%; float: right; margin-top: 18px; }
+    .conBox .imgTit { font-size: 0.9em; font-weight: bold; padding: 5px 10px 5px 30px; }
+        
+    </style>
+      
+    <style>
+    
+    /*  페이지4  */
+    .page4 { width: 100%; height: 145px; background: #fff; margin-top: 15px; }
+    .notice { width: 90%; margin: 0 auto; }
+    .txtBox { width: 100%; height: 136px; padding-top: 15px; }
+    .txtBox li { width: 100%; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; line-height: 1.9; border-bottom: 1px solid #ddd; }
+    .txtBox li:last-child { border-bottom: 0px; }
+    .txtBox .borTit { color: #3f861b; font-size: 0.9em; font-weight: bold; }
+    .txtBox .borCom { color: #333; font-size: 0.9em; padding-left: 15px; font-weight: bold; }
+        
+    </style>
+      
+    <style>
+        
+    .page5 { width: 100%; height: 183px; margin-top: 15px; }
+    .mayor { width: 100%; height: 100%; position: relative;  background-image: url("./img/main_mayor.png"); background-repeat: no-repeat; background-position: center center; background-size: 100%; }
+    .mayorTit { color: #094ca6; font-size: 20px; position: absolute; top: 26%; left: 30px; font-weight: 700; }
+    .mayorCom { position: absolute; top: 50%; left: 30px; }
+    .mayorCom a { font-size: 14px; color: #666; display: block; padding: 5px 0px; }
+    .mayorCom a:last-child { padding-top: 0; }
+    .mayorCom a:before { content: "●"; padding-right: 15px; }
+    
+    </style>
+       
+    <style>
+        
+    /*    페이지6    */
+    .page6 { width: 100%; height: 320px; background: #fff; margin-top: 15px; }
+    .page6 .pageTit { font-size: 1.15em; padding : 10px 0px 0px 0px; float: left; }
+    .allSite { float: right; margin-right: 5%; margin-top: 8px; font-size: 0.8em; padding: 5px 10px 5px 10px; border: 1px solid #ddd; cursor: pointer; }
+    .service { width: 90%; height: 100%; margin: 0 auto; position: relative; }
+    .leftBox { width: 48%; float: left; clear: both; position: absolute; top: 15%; left: 0; }
+    .rightBox { width: 48%; float: right; clear: both; position: absolute; top: 15%; right: 0; } 
+    .svItem { display: block; font-weight: bolder; width: 100%; background: #ebebeb; text-indent: 10px; border-radius: 10px; padding: 10px 0px 10px 0px; margin-top: 10px; color: #333; font-size: 0.8em; }
+    .linkTag { padding-left: 20px; font-weight: bolder; }
+    </style>
+    
+    <style> 
+        
+    /*    페이지7   */
+    .page7 { width: 100%; height: 130px; }
+    .bt_slide { width: 100%; height: 80px; float: left; position: relative; margin: 0 auto; margin-top: 15px; }
+    .bt_ban { width: 100%; height: 100%; position: relative; overflow: hidden; }
+    .bt_banBox { width: 1400%; height: 100%; }
+    .bt_banBox li { float: left; width: 7.14%; }
+    .bt_banBox li a { display: block; width: 100%; height: 100%; }
+    .bt_banBox li a img { width: 100%; height: 100%; }
+    .btnFrm { width: 100%; height: 35px; position: relative; }
+    .banbtnBox { position: absolute; width: 50px; height: 30px; top: 102px; right: 2%;}
+    .banbtnBox li { border: 1px solid #999; float: left; width: 20px; height: 20px; }
+    .banbtnBox li .banbtn { display: block; width: 20px; height: 20px; background-size: 20px 20px; background-repeat: no-repeat; background-color: transparent; background-position: center center; position: absolute; cursor: pointer; }
+    .banbtn.left { background-image: url("./icon/left_s.png"); }
+    .banbtn.right { background-image: url("./icon/right_s.png"); }
+        
+    </style>
+       
+       
+        
+    <style>    
+        
+    /*    footer    */
+    #ft { width: 100%; position: relative; clear: both; }
+    .ftWrap1 { width: 90%; height: 40px; position: relative; border-bottom: 1px solid #ebebeb; margin: 0 auto;} 
+    .ftlink { width: 100%; height: 40px; line-height: 40px; float: left; }
+    .ftlink li { float: left; padding: 0px 10px; }
+    .ftlink li a { display: block; font-size: 0.7em; font-weight: bold; color: #333; }
+    .ftlink li a.item1 { padding-left: 10px; }
+    .ftlink li a.item1:after { content: "｜"; width: 3px; height: 8px; position: absolute; padding-left: 5px; color: #666; }
+    .ftlink li a.item2:after { content: "｜"; width: 3px; height: 8px; position: absolute; padding-left: 5px; color: #666; }
+    .ftlink li a.item3:after { content: "｜"; width: 3px; height: 8px; position: absolute; padding-left: 5px; color: #666; }
+        
+    .ftWrap2 { width: 90%; height: 80px; position: relative; margin: 0 auto; }
+    .copy { margin-top: 15px; }
+    .copy p.add { font-weight: bolder; color: #000; }
+    .copy p { font-size: 0.7em; font-weight: bold; color: #333; line-height: 1.6; text-align: center; }
+     
+    </style>
+    <style>
+        
+    /*  모바일  */
+    @import url(mobile.css) screen and (max-width:767px);
+        
+    /*  태블릿  */
+    @import url(tablet.css) screen and (min-width:768px) and (max-width:1024px);
+        
+    /*  데스크탑  */
+    @import url(desktop.css) screen and (min-width:1025px);
+        
+    /*  프린트  */
+    @import url(print.css) print;
+    </style>
+    
+</head>
+
+<body>
+<div class="container">
+    <div class="wrap">
+        <input type="checkbox" id="ck1" class="ckItem">
+        <input type="checkbox" id="ck2" class="ckItem">
+        <header id="hd">
+            <label for="ck1" class="mainL">메인</label>
+            <div class="logoFrm">
+                <a href="index.html" class="logo">로고</a>
+            </div>
+            <label for="ck2" class="topR">상단</label>
+        </header>
+        <nav id="gnb">
+            <ul>
+                <li class="mnItem"><a href="login.html" class="mnDep1">로그인</a></li>
+                <li class="mnItem"><a href="login.html" class="mnDep1">나의계룡</a></li>
+                <li class="mnItem"><a href="login.html" class="mnDep1">전자우편</a></li>
+                <li class="mnItem"><a href="mobile_info.html" class="mnDep1">계룡소개</a></li>
+                <li class="mnItem"><a href="citizen.html" class="mnDep1">시민참여</a></li>
+                <li class="mnItem"><a href="team.html" class="mnDep1">부서안내</a></li>
+                <li class="mnItem"><a href="gob.html" class="mnDep1">청사안내</a></li>
+            </ul>
+        </nav>
+        <nav id="tnb">
+            <ul>
+                <li class="topItem"><a href="" class="topDep1">계룡소식</a></li>
+                <li class="topItem"><a href="" class="topDep1">응답소</a></li>
+                <li class="topItem"><a href="https://www.open.go.kr/" class="topDep1">정보공개</a></li>
+                <li class="topItem"><a href="" class="topDep1">분야정보</a></li>
+            </ul>
+        </nav>
+        <div class="hdWrap">
+            <div class="search">
+                <form action="" id="searchFrm">
+                    <input type="text" id="keyword" placeholder="검색어를 입력해 주세요" name="keyword"> 
+                    <input type="submit" class="frmBtn searchBtn" value=""> 
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <div id="main">
+        
+    <div class="banBox">
+        <div class="slide">
+            <figure class="vs">
+                <ul class="vsBox">
+                    <li><a href=""><img src="./img/main_ban1.png" alt="배너1"></a></li>
+                    <li><a href=""><img src="./img/main_ban2.png" alt="배너2"></a></li>
+                    <li><a href=""><img src="./img/main_ban3.png" alt="배너3"></a></li>
+                    <li><a href=""><img src="./img/main_ban4.png" alt="배너4"></a></li>
+                    <li><a href=""><img src="./img/main_ban5.png" alt="배너5"></a></li>
+                    <li><a href=""><img src="./img/main_ban6.png" alt="배너6"></a></li>
+                    <li><a href=""><img src="./img/main_ban7.png" alt="배너7"></a></li>
+                    <li><a href=""><img src="./img/main_ban8.png" alt="배너8"></a></li>
+                </ul>
+            </figure>
+            <ul class="btnBox">
+                <li class="leftBtn">
+                    <button class="direc left"></button>
+                </li>
+                <li class="rightBtn">
+                    <button class="direc right"></button>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="page1">
+        <div class="news">
+          <h2 class="pageTit">새소식</h2>
+           <div class="newsBox">
+               <a class="item1">
+                   <h3 class="fiTit">[경제]</h3>
+                   <p class="newsTit">계룡시, 제2산단 유망기업 투자협약(MOU) 체결</p>
+               </a>
+               <a class="item2">
+                   <h3 class="fiTit">[생활]</h3>
+                   <p class="newsTit">계룡시보건소, 홍역 대비 24시간 비상체제 가동</p>
+               </a>
+               <a class="item3">
+                   <h3 class="fiTit">[교육]</h3>
+                   <p class="newsTit">계룡시, 어린이집 노무․회계교육 실시</p>
+               </a>
+               <a class="item4">
+                   <h3 class="fiTit">[복지]</h3>
+                   <p class="newsTit">계룡시, 아이 키우기 좋은 보육환경을 위한 보육시책 추진</p>
+               </a>
+               <a class="item5">
+                   <h3 class="fiTit">[생활]</h3>
+                   <p class="newsTit">계룡시, 카카오톡 플러스친구 서비스 개시</p>
+               </a>
+               <a class="item6">
+                   <h3 class="fiTit">[행정]</h3>
+                   <p class="newsTit">계룡시, 경유차 환경개선부담금 연납신청 접수</p>
+               </a>
+           </div>
+        </div>   
+    </div>
+    <div class="page2">
+        <section class="iconBox">
+            <div class="topIconBox">
+                <div class="topIcon item1">
+                    <a href=""><img src="./icon/main_economic_icon.png" alt="경제"></a>
+                    <p class="iconTit">경제</p>
+                </div>
+                <div class="topIcon item2">
+                    <a href=""><img src="./icon/main_traffic_icon.png" alt="교통"></a>
+                    <p class="iconTit">교통</p>
+                </div>
+                <div class="topIcon item3">
+                    <a href=""><img src="./icon/main_welfare_icon.png" alt="복지"></a>
+                    <p class="iconTit">복지</p>
+                </div>
+                <div class="topIcon item4">
+                    <a href=""><img src="./icon/main_administration_icon.png" alt="행정"></a>
+                    <p class="iconTit">행정</p>
+                </div>
+            </div>
+            <div class="bottomIconBox">
+                <div class="bottomIcon item1">
+                    <a href=""><img src="./icon/main_life_icon.png" alt="생활"></a>
+                    <p class="iconTit">생활</p>
+                </div>
+                <div class="bottomIcon item2">
+                    <a href=""><img src="./icon/main_education_icon.png" alt="교육"></a>
+                    <p class="iconTit">교육</p>
+                </div>
+                <div class="bottomIcon item3">
+                    <a href=""><img src="./icon/main_job_icon.png" alt="취업"></a>
+                    <p class="iconTit">취업</p>
+                </div>
+                <div class="bottomIcon item4">
+                    <a href=""><img src="./icon/main_trip_icon.png" alt="관광"></a>
+                    <p class="iconTit">관광</p>
+                </div>
+            </div>
+        </section>
+    </div> 
+    <div class="page3">
+        <section class="now">
+                   <div class="imgBox">
+                       <img src="./img/now_img.jpg" alt="계룡은 지금">
+                   </div>
+                   <div class="conBox">
+                       <h2 class="pageTit">계룡은 지금</h2>
+                       <h5 class="imgTit">금암동민과의 대화</h5>
+                   </div>
+        </section>
+    </div>
+    <div class="page4">
+        <section class="notice">
+           <div class="txtBox">
+               <ul>
+                   <li>
+                       <a href="" class="borTit">공지사항</a>
+                       <a href="" class="borCom">겨울철 대설, 한파 대비 국민행동요령(5개 외국어 번역본)</a>
+                   </li>
+                   <li>
+                       <a href="" class="borTit">고시공고</a>
+                       <a href="" class="borCom">2019년도 농업기술센터 기간제근로자 채용 합격자 발표</a>
+                   </li>
+                   <li>
+                       <a href="" class="borTit">입찰정보</a>
+                       <a href="" class="borCom">금연보조제 및 행동물품 구매 입찰 공고</a>
+                   </li>
+                   <li>
+                       <a href="" class="borTit">보도자료</a>
+                       <a href="" class="borCom">계룡시, 카카오톡 플러스친구 서비스 개시</a>
+                   </li>
+               </ul>
+           </div>
+        </section>
+  </div> 
+    <div class="page5">
+        <section class="mayor">
+           <h3 class="mayorTit">계룡시장 최홍묵입니다</h3>
+           <ul class="mayorCom">
+               <li><a href="">공약사항</a></li>
+               <li><a href="">시장에게 바란다</a></li>
+           </ul>
+            
+        </section>
+    </div>
+    <div class="page6">
+        <section class="service">
+           <h2 class="pageTit">주요 서비스</h2>
+           <p class="allSite">전체사이트</p>
+           <div class="leftBox">
+               <a href="" class="svItem item1">
+                   시의회<span class="linkTag">〉</span>
+               </a>
+               <a href="" class="svItem item2">
+                   드림스타트사무소<span class="linkTag">〉</span>
+               </a>
+               <a href="" class="svItem item3">
+                   정책통계지도<span class="linkTag">〉</span>
+               </a>
+               <a href="" class="svItem item4">
+                   계룡문화관광<span class="linkTag">〉</span>
+               </a>
+               <a href="" class="svItem item5">
+                   자치법규열람<span class="linkTag">〉</span>
+               </a>
+           </div>
+           <div class="rightBox">
+               <a href="" class="svItem item6">
+                   인터넷지방세<span class="linkTag">〉</span>
+               </a>
+               <a href="" class="svItem item7">
+                   부동산실거래신고<span class="linkTag">〉</span>
+               </a>
+               <a href="" class="svItem item8">
+                   새주소안내<span class="linkTag">〉</span>
+               </a>
+               <a href="" class="svItem item9">
+                   현수막관리<span class="linkTag">〉</span>
+               </a>
+               <a href="" class="svItem item10">
+                   평생교육<span class="linkTag">〉</span>
+               </a>
+           </div>
+        </section>
+    </div> 
+    <div class="page7">
+      <div class="bt_slide">
+          <figure class="bt_ban">
+              <ul class="bt_banBox">
+                  <li><a href=""><img src="./img/main_bottom_banner1.jpg" alt="배너1"></a></li>
+                  <li><a href=""><img src="./img/main_bottom_banner2.jpg" alt="배너2"></a></li>
+                  <li><a href=""><img src="./img/main_bottom_banner3.jpg" alt="배너3"></a></li>
+                  <li><a href=""><img src="./img/main_bottom_banner4.jpg" alt="배너4"></a></li>
+                  <li><a href=""><img src="./img/main_bottom_banner5.jpg" alt="배너5"></a></li>
+                  <li><a href=""><img src="./img/main_bottom_banner6.jpg" alt="배너6"></a></li>
+                  <li><a href=""><img src="./img/main_bottom_banner7.jpg" alt="배너7"></a></li>
+                  <li><a href=""><img src="./img/main_bottom_banner8.jpg" alt="배너8"></a></li>
+                  <li><a href=""><img src="./img/main_bottom_banner9.png" alt="배너9"></a></li>
+                  <li><a href=""><img src="./img/main_bottom_banner10.jpg" alt="배너10"></a></li>
+                  <li><a href=""><img src="./img/main_bottom_banner11.jpg" alt="배너11"></a></li>
+                  <li><a href=""><img src="./img/main_bottom_banner12.jpg" alt="배너12"></a></li>
+                  <li><a href=""><img src="./img/main_bottom_banner13.jpg" alt="배너13"></a></li>
+                  <li><a href=""><img src="./img/main_bottom_banner14.jpg" alt="배너14"></a></li>
+              </ul>
+          </figure>
+      </div>
+      <div class="btnFrm">
+          <ul class="banbtnBox">
+                <li class="banleftBtn">
+                    <button class="banbtn left"></button>
+                </li>
+                <li class="banrightBtn">
+                    <button class="banbtn right"></button>
+                </li>
+          </ul>
+      </div>  
+    </div>
+        
+    </div>
+    <footer id="ft">
+        <div class="ftWrap1">
+           <div class="ftlink">
+               <ul>
+                   <li><a href="" class="item1">찾아오시는길</a></li>
+                   <li><a href="" class="item2">개인정보처리방침</a></li>
+                   <li><a href="" class="item3">저작권정책</a></li>
+                   <li><a href="" class="item4">PC버전</a></li>
+               </ul>
+           </div>
+        </div>
+        <div class="ftWrap2">
+          <div class="copy">
+              <p class="add">충청남도 계룡시 장안로 46(금암동)</p>
+              <p>TEL : 042)840-2114 (행정0450-114)</p>
+              <p>COPYRIGHT ⓒ 2018 THE GYERYONG CITY HALL. <br>ALL RIGHTS RESERVED.</p>
+          </div>  
+        </div>
+    </footer>
+</div>    
+</body>
+</html>
