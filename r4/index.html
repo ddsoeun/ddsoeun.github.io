@@ -1,0 +1,1539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BeadsGood.com</title>
+    <link rel="stylesheet" href="reset.css">
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon16.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon32.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon48.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon64.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon128.png">
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon150.png">
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta name="msapplication-TileImage" content="./ico/favicon144.png">
+    <!-- iPhone iOS 7이상   -->
+    <link rel="apple-touch-icon" size="120X120" href="./ico/favicon120.png">
+    <!--  표준 iOS 홈스크린  -->
+    <link rel="apple-touch-icon" size="57X57" href="./ico/favicon57.png">
+    <!--  iOS 홈스크린  -->
+    <link rel="apple-touch-icon" size="72X72" href="./ico/favicon72.png">
+    <!--  아이폰 레티나  -->
+    <link rel="apple-touch-icon" size="114X114" href="./ico/favicon114.png">
+    <!--  iPhone iOS  -->
+    <link rel="apple-touch-icon" size="180X180" href="./ico/favicon180.png">
+    <!--  안드로이드/iOS 기본   -->
+    <link rel="apple-touch-icon" size="152X152" href="./ico/favicon152.png">
+    <!--  안드로이드 크롬 홈  -->
+    <link rel="apple-touch-icon" size="196X196" href="./ico/favicon196.png">
+    <!--  아이패트 레티나 터치  -->
+    <link rel="apple-touch-icon" size="167X167" href="./ico/favicon167.png">
+   
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="application-name" content="BeadsGood Web Site">
+    <meta name="author" content="SoeunPark">
+    <meta name="description" content="BeadsGood Mainpage">
+    <meta name="generator" content="Brackets">
+    <meta name="keywords" content="BeadsGood, Beadsgood, beadsgood, 비즈굿, 비즈, 악세사리부자재, 귀걸이부자재, 부자재">
+    
+    <script>
+    $(document).ready(function(){
+        var wd=$(".vs").width();
+        var len=$(".vsBox li").length;
+        var intv = setInterval(function(){
+            nextAni();
+        }, 2800);
+        
+        function nextAni(){
+            $(".vsBox").not(":animated").animate({"margin-left":-wd+"px"}, 800, function(){
+                $(".vsBox li").eq(0).appendTo($(".vsBox"));
+                $(".vsBox").css("margin-left", "0px");
+                $(".btnBox li").eq(0).appendTo($(".btnBox"));
+                $(".btnBox li button").removeClass("on");
+                $(".btnBox li button").eq(0).addClass("on");    
+            });
+        }
+        function numAni(num){
+            for(var x=0;x<num-1;x++){
+                $(".vsBox li").eq(0).appendTo($(".vsBox"));
+                $(".btnBox li").eq(0).appendTo($(".btnBox"));
+            }
+            nextAni();
+        }
+        $(".btnBox li button").click(function(){
+            var btnNum = $(this).parents("li").index();
+            clearInterval(intv);
+            numAni(btnNum);
+            intv = setInterval(function(){ nextAni(); }, 2800);
+        });
+    });
+    </script>
+    <script>
+    $(document).ready(function(){
+        var wd=$(".slide").width();
+        var len=$(".conBox li").length;
+        
+        function nextAni(){
+            $(".conBox").not(":animated").animate({"margin-left":-wd+"px"}, function(){
+                $(".conBox li").eq(0).appendTo($(".conBox"));
+                $(".conBox").css("margin-left", "0px");
+                $(".conBtnBox li").eq(0).appendTo($(".conBtnBox"));
+                $(".conBtnBox li button").removeClass("on");
+                $(".conBtnBox li button").eq(0).addClass("on");
+            });
+        }
+        function numAni(num){
+            for(var x=0;x<num-1;x++){
+                $(".conBox li").eq(0).appendTo($(".conBox"));
+                $(".conBtnBox li").eq(0).appendTo($(".conBtnBox"));
+            }
+            nextAni();
+        }
+        $(".conBtnBox li button").click(function(){
+            var btnNum = $(this).parents("li").index();
+            numAni(btnNum);
+        })
+    });
+    </script>
+    <script>
+    $(document).ready(function(){
+       $(".hd").removeClass("on");
+       $(window).scroll(function(){
+          $(".hd").removeClass("on");
+          var scTop = $(window).scrollTop();
+          if(scTop>=100){
+               $(".hd").addClass("on");
+          } 
+       }); 
+    });
+    </script>
+    <script>
+    $(document).ready(function(){
+        var ht=$(".hot li").height();
+        var len=$(".hot li").length;
+        var intv = setInterval(function(){
+           nextAni(); 
+        }, 2500);
+        
+        function nextAni(){
+            $(".hot").not(":animated").animate({"margin-top":-ht+"px"}, 800, function(){
+                $(".hot li").eq(0).appendTo($(".hot"));
+                $(".hot").css("margin-top", "0px");
+                $(".hot li").removeClass("on");
+                $(".hot li").eq(2).addClass("on");
+            });
+        }
+       
+    });
+    </script>
+    <script src="par.js"></script>
+    
+    <style>
+    @media screen and (max-width:767px) {
+        .mo { display: block; }
+        .desk { display: none; }
+        .container { width: 100%; min-height: 100%; clear: both; }
+        .hd { width: 100%; height: 40px; background: transparent; position: fixed; top: 0; left: 0; z-index: 10; }
+        .hd.on { background: rgba(255, 255, 255, 0.7); }
+        .ckItem { display: none; }
+        .icon { width: 20px; height: 20px; position: absolute; top: 10px; background-image: url("./icon/iconset.png"); background-repeat: no-repeat; text-indent: -9999px; z-index: 15; cursor: pointer; }
+        .cart { background-position: 0px 0px; left: 15px; }
+        .search { background-position: 0px -20px; left: 45px; }
+        .logo { display: block; width: 150px; height: 40px; background-image: url("./icon/logo.png"); background-repeat: no-repeat; background-position: center center; background-size: 80% 100%; margin: 0 auto; text-indent: -9999px; }
+        .lstBox { display: block; position: absolute; width: 30px; height: 30px; top: 14px; right: 15px; z-index: 15; cursor: pointer; }
+        .lst { display: block; width: 15px; height: 2px; background: #333; border-radius: 2px; position: absolute; right: 0; transition: 0.4s; transition-delay: 0.1s; }
+        .lst.item1 { top: 0px; }
+        .lst.item2 { top: 5px; }
+        .lst.item3 { top: 10px; }
+        .wrap { width: 70%; background: #d5bea0; position: fixed; right: -100%; top: 0; transition: 0.6s; transition-delay: 0.2s; z-index: -1; clear: both; }
+        #ck2:checked ~ .wrap { position: absolute; right: 0; z-index: 20; }
+        .blank.mo { background: rgba(225, 225, 225, 0.6); position: fixed; display: block; width: 100%; height: 100%; right: -100%; top: 0; transition: 0.6s; transition-delay: 0.2s; z-index: 17; }
+        #ck2:checked ~ .blank.mo { right: 0; z-index: 15; }
+        #ck2:checked ~ .container { position: fixed; top: 0; left: 0; z-index: -1; }
+        
+        #ck2:checked ~ .container .hd .lstBox .lst.item1 { top: 5px; transform: rotate(45deg); }
+        #ck2:checked ~ .container .hd .lstBox .lst.item2 { display: none; }
+        #ck2:checked ~ .container .hd .lstBox .lst.item3 { top: 5px; transform: rotate(-45deg); }
+        #ck2:checked ~ .wrap .hd .lstBox .lst.item1 { top: 5px; transform: rotate(45deg); }
+        #ck2:checked ~ .wrap .hd .lstBox .lst.item2 { display: none; }
+        #ck2:checked ~ .wrap .hd .lstBox .lst.item3 { top: 5px; transform: rotate(-45deg); }
+        
+        .logo.desk { display: none; }
+        .subMn li a { display: none; }
+        
+        .vs { display: block; width: 100%; min-height: 300px; overflow: hidden; position: relative; }
+        .vsBox { width: 500%; height: 100%; }
+        .vsBox li { width: 20%; height: 100%; float: left; }
+        .vsBox li img { width: 100%; height: 100%; cursor: pointer; }
+        .btnBoxFrm { width: 100%; height: 20px; position: absolute; bottom: 0; left: 0; }
+        .btnBox { display: block; width: 100px; margin: 0 auto; height: 100%; position: relative; }
+        .btnBox li { position: absolute; bottom: 20px; width: 20px; height: 10px; cursor: pointer; }
+        .btnBox li.item1 { left: 0; }
+        .btnBox li.item2 { left: 20px; }
+        .btnBox li.item3 { left: 40px; }
+        .btnBox li.item4 { left: 60px; }
+        .btnBox li.item5 { left: 80px; }
+        .btnBox li button { width: 10px; height: 10px; display: block; background: #fff; border-radius: 20px; margin: 0 auto; }
+        .btnBox li button.on { background: #666; }
+        
+        .close { position: absolute; width: 20px; height: 20px; background-image: url("./icon/iconset.png"); background-repeat: no-repeat; background-position: 0px -80px; display: block; text-indent: -9999px; top: 20px; right: 20px; z-index: 21; cursor: pointer; }
+        .top { width: 90%; margin: 0 auto; height: 90px; margin-top: 30px; }
+        .link { float: left; width: 50%; height: 30px; line-height: 30px; }
+        .link a { display: block; width: 100%; height: 30px; line-height: 30px; text-align: left; color: #333; font-size: 0.9em; font-weight: bold; text-indent: 15px; }
+        .bottom { padding-top: 25px; width: 90%; margin: 0 auto; }
+        .bottom li { clear: both; width: 100%; height: 30px; line-height: 30px; }
+        .bottom li a { display: block; width: 100%; height: 30px; line-height: 30px; color: #333; font-weight: 300; font-size: 0.8em; text-indent: 15px; }
+        .bottom li a.bold { font-weight: bold; font-size: 0.85em; }
+        .searchFrm { width: 90%; margin: 0 auto; display: block; height: 30px; line-height: 30px; margin-bottom: 50px; margin-top: 30px; }
+        .searchForm { display: block; margin-left: 15px; height: 30px; line-height: 30px; float: left; width: calc(100% - 60px); text-indent: 15px; color: #999; font-size: 0.7em; }
+        .searchBtn { width: 30px; height: 30px; line-height: 30px; float: right; margin-right: 15px; background-image: url("./icon/search.png"); background-repeat: no-repeat; background-position: center center; background-size: 20px 20px; background-color: #dfd1be; text-indent: -9999px; cursor: pointer; }
+        
+        .sub { width: 100%; margin-top: 10px; }
+        .sub img { width: 100%; cursor: pointer; }
+        .col { width: 100%; column-count: 3; }
+        .title { font-size: 0.85em; font-weight: bold; letter-spacing: 5px; text-align: center; padding: 15px 0px 10px 0px; height: 20px; line-height: 20px; width: 100%; }
+        .tit { font-size: 0.65em; font-weight: 300; color: #333; padding: 5px 0px; }
+        .cost { font-size: 0.6em; font-weight: 300; color: #333; padding: 2px 0px 15px 0px; }
+        .more { display: block; width: 100px; margin: 0 auto; height: 35px; line-height: 35px; background-color: #d5bea0; color: #333; font-size: 0.8em; font-weight: 400; text-align: center; margin-top: 20px; }
+        
+        .sub.item2 { width: 100%; margin-top: 40px; background: #eee; height: 200vw; }
+        .sub.item2 .title { padding-top: 30px; }
+        .sub.item2 .slide { width: 100%; height: calc(100% - 60px); overflow: hidden; }
+        .sub.item2 .slide .conBox  { width: 500%; height: calc(100% - 40px); margin-top: 10px; }
+        .sub.item2 .conBox li { float: left; width: 20%; height: 100%; }
+        .conBox li .itemBox { width: 45%; margin-top: 20px; }
+        .conBox li .itemBox.item1, .conBox li .itemBox.item3 { margin-left: 3%; margin-right: 4%; float: left; }
+        .conBox li .itemBox.item2, .conBox li .itemBox.item4 { margin-left: 0; margin-right: 3%; float: right; }
+        .conBtnBox { width: 100%; height: 5px; position: relative; }
+        .conBtnBox li { float: left; width: 20%; height: 5px; position: absolute; top: 0; }
+        .conBtnBox li.item1 { left: 0; }
+        .conBtnBox li.item2 { left: 20%; }
+        .conBtnBox li.item3 { left: 40%; }
+        .conBtnBox li.item4 { left: 60%; }
+        .conBtnBox li.item5 { left: 80%; }
+        .conBtnBox li button { display: block; width: 100%; height: 100%; background: #ddd; }
+        .conBtnBox li button.on { background: #d5bea0; }
+        
+        .sub.item3 { width: 100%; background: #eee; height: 200vw; margin-top: 0; }
+        .raItem { display: none; }
+        .sub.item3 .btnBox2 { width: 100%; height: 30px; }
+        .sub.item3 .btnBox2 label { width: 33%; height: 30px; line-height: 30px; display: block; text-align: center; color: #333; background: #fff; float: left; font-size: 0.7em; }
+        .sub.item3 .btnBox2 label.item1 { width: 34%; }
+        .conBox2 { display: none; width: 100%; height: calc(100% - 40px); padding-top: 10px; }
+        #ra1:checked ~ .conBox2.item1 { display: block; }
+        #ra2:checked ~ .conBox2.item2 { display: block; }
+        #ra3:checked ~ .conBox2.item3 { display: block; }
+        #ra1:checked ~ .btnBox2 label.item1 { color: #d5bea0; font-weight: bold; }
+        #ra2:checked ~ .btnBox2 label.item2 { color: #d5bea0; font-weight: bold; }
+        #ra3:checked ~ .btnBox2 label.item3 { color: #d5bea0; font-weight: bold; }
+        .conBox2 .itemBox { width: 45%; margin-top: 20px; }
+        .conBox2 .itemBox.item1, .conBox2 .itemBox.item3 { margin-left: 3%; margin-right: 4%; float: left; }
+        .conBox2 .itemBox.item2, .conBox2 .itemBox.item4 { margin-left: 0; margin-right: 3%; float: right; }
+        
+        .sub.item4 { position: relative; }
+        .sub.item4 img { width: 100%; margin-top: 20px; }
+        .sub.item4 a.more { width: 200px; background: transparent; margin: 0px; position: absolute; bottom: 0; width: 100%; text-align: center; }
+        
+        .sub.item5 { width: 100%; margin-bottom: 20px; }
+        .sub.item5 .searchFrm { width: 100%; border: 1px solid #eee; box-shadow: 2px 2px 3px #ddd; height: 40px; margin-bottom: 10px; }
+        .sub.item5 form { display: block; width: 100%; height: 40px; line-height: 40px; }
+        .sub.item5 select { display: block; float: left; width: 30%; height: 40px; line-height: 40px; }
+        .sub.item5 .searchForm { width: calc(100% - 30% - 42px); border-left: 1px solid #eee; border-right: 1px solid #eee; height: 40px; margin: 0; padding: 0; float: left; }
+        .sub.item5 .searchBtn { width: 40px; height: 40px; float: right; margin: 0; padding: 0; background: transparent; background-image: url("./icon/search_b.png"); background-size: 60% 60%; background-repeat: no-repeat; background-position: center center; }
+        .sub.item5 .col { width: 95%; margin: 0 auto; }
+        .sub.item5 .col .colLst { border: 1px solid #ddd; width: 100%; }
+        .sub.item5 .tit { width: 90%; margin: 0 auto; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+        .writer { font-size: 0.6em; font-weight: 300; color: #333; padding: 2px 0px 2px 0px; width: 90%; margin: 0 auto; }
+        .date { font-size: 0.6em; font-weight: 300; color: #333; padding: 2px 0px 15px 0px; width: 90%; margin: 0 auto; }
+        
+        .sub.item6 { background: #eee; padding-bottom: 2px; }
+        .com { width: 95%; margin: 0 auto; font-size: 0.8em; font-weight: 300; color: #333; padding: 8px 0px 12px 0px; }
+        .com .bold { font-size: 1.2em; font-weight: bold; }
+        .conBox3 { width: 95%; margin: 0 auto; height: 55px; border-top: 1px solid #ddd; }
+        .conBox3 img { width: 25%; height: 40px; margin-top: 8px; float: left; }
+        .conBox3 .subCom { float: left; font-size: 0.7em; width: calc(100% - 25% - 20px); height: 55px; line-height: 55px; padding-left: 10px; }
+        .conBox3 .subCom .txt_b { color: #155cac; }
+        .conBox3 button { background: transparent; width: 10px; float: right; height: 55px; line-height: 55px; color: #666; }
+        
+        .sub.item7 { margin-top: 0; height: 50vw; }
+        .sub.item7 .conBox4 { width: calc(50% - 1px); float: left; border-top: 1px solid #ddd; position: relative; height: 100%; padding-bottom: 10px; border-bottom: 1px solid #ddd; }
+        .sub.item7 .conBox4.item1 { border-right: 1px solid #ddd; }
+        .sub.item7 .conBox4 .conTit { width: 90%; margin: 0 auto; text-align: center; padding-top: 20px; }
+        .sub.item7 .conBox4 .num { width: 90%; margin: 0 auto; text-align: center; font-size: 0.9em; font-weight: 500; padding: 5px 0px; }
+        .sub.item7 .conBox4 .conCom { width: 90%; margin: 0 auto; text-align: center; font-size: 0.65em; font-weight: 500; line-height: 1.8; }
+        .sub.item7 .conBox4.item2 .conCom { padding-top: 5px; }
+        .sub.item7 .conBox4 a.link { display: block; width: 70%; margin: 0 auto; border: 1px solid #ccc; text-align: center; position: absolute; font-size: 0.75em; color: #333; top: 130px; left: 15%; }
+        
+        .sub.item8 .conTit { width: 90%; margin: 0 auto; padding-top: 20px; }
+        .sub.item8 .conCom { width: 90%; margin: 0 auto; font-size: 0.7em; font-weight: 500; line-height: 1.6; padding: 10px 0px 20px 0px; }
+        
+        .ft { width: 100%; border-top: 1px solid #ddd; }
+        .ftLink { width: 80%; margin: 0 auto; height: 40px; line-height: 40px; }
+        .ftLink li { float: left; width: 20%; height: 40px; }
+        .ftLink li:last-child { width: 40%; }
+        .ftLink li a { display: block; width: 100%; height: 16px; line-height: 16px; text-align: center; font-size: 0.65em; color: #666; border-right: 1px solid #ddd; margin-top: 12px; }
+        .ftLink li:last-child a { border-right: 0px; }
+        .ft_wrap { width: 100%; border-top: 1px solid #ddd; padding: 20px 0px; }
+        .ft_wrap p.info { width: 80%; margin: 0 auto; font-size: 0.7em; line-height: 1.6; color: #666; }
+        .ft .copy { width: 100%; text-align: center; padding: 20px 0px; background: #d5bea0; color: #333; font-size: 0.7em; }
+        
+        #ck1:checked ~ .container .hd label.search { width: 20px; height: 20px; background-position: 0px -80px; }
+        #ck1:checked ~ .container .hd { background: rgba(255, 255, 255, 0.7); }
+        #ck1:checked ~ .searchBox { display: block; }
+        .searchBox { display: none; width: 100%; position: fixed; z-index: 15; top: 40px; left: 0; background: #fff; }
+        .searchBox .searchFrm { margin-top: 20px; margin-bottom: 10px; }
+        .searchBox .searchForm { border: 1px solid #ccc; width: calc(100% - 32px); font-size: 0.85em; margin-left: 0; }
+        .searchBox .searchBtn { height: 32px; margin-right: 0;}
+        .slideBox { width: 100%; height: 200px; overflow: hidden; }
+        .hot { width: 90%; margin: 0 auto; height: 200px; }
+        .hot li { height: 40px; line-height: 40px; }
+        .hot li a { display: block; height: 40px; line-height: 40px; font-size: 0.8em; color: #666; font-weight: 500; text-align: center; transition: 0.4s; transition-timing-function: ease-in-out; }
+        .hot li.on a { font-size: 1em; border-top: 1px solid #666; border-bottom: 1px solid #666; color: #333; }
+        .closeBox { width: 100%; height: 30px; line-height: 30px; background: #eee; }
+        .closeBox label.closeBtn { display: block; width: 20px; height: 20px; background-image: url("./icon/iconset.png"); background-repeat: no-repeat; background-position: 0px -80px; float: right; margin-right: 5%; text-indent: -30px; font-size: 0.8em; line-height: 20px; margin-top: 5px; }
+        .scrollBtn { position: fixed; z-index: 15; background-image: url("./icon/iconset.png"); background-repeat: no-repeat; width: 20px; height: 20px; display: block; background-color: transparent; right: 20px; }
+        .scrollBtn.up { background-position: 0px -60px; bottom: 20px; }
+    }
+    @media screen and (min-width:768px) and (max-width:959px) {
+        .mo { display: block; }
+        .desk { display: none; }
+        .container { width: 100%; min-height: 100%; clear: both; }
+        .hd { width: 100%; height: 40px; background: transparent; position: fixed; top: 0; left: 0; z-index: 10; }
+        .hd.on { background: rgba(255, 255, 255, 0.7); }
+        .ckItem { display: none; }
+        .icon { width: 20px; height: 20px; position: absolute; top: 10px; background-image: url("./icon/iconset.png"); background-repeat: no-repeat; text-indent: -9999px; z-index: 15; cursor: pointer; }
+        .cart { background-position: 0px 0px; left: 15px; }
+        .search { background-position: 0px -20px; left: 45px; }
+        .logo { display: block; width: 150px; height: 40px; background-image: url("./icon/logo.png"); background-repeat: no-repeat; background-position: center center; background-size: 80% 100%; margin: 0 auto; text-indent: -9999px; }
+        .lstBox { display: block; position: absolute; width: 30px; height: 30px; top: 14px; right: 15px; z-index: 15; cursor: pointer; }
+        .lst { display: block; width: 15px; height: 2px; background: #333; border-radius: 2px; position: absolute; right: 0; transition: 0.4s; transition-delay: 0.1s; }
+        .lst.item1 { top: 0px; }
+        .lst.item2 { top: 5px; }
+        .lst.item3 { top: 10px; }
+        .wrap { width: 30%; height: 100%; background: #d5bea0; position: fixed; right: -100%; top: 0; transition: 0.6s; transition-delay: 0.2s; z-index: -1; clear: both; }
+        #ck2:checked ~ .wrap { position: absolute; right: 0; z-index: 20; }
+        .blank.mo { background: rgba(225, 225, 225, 0.6); position: fixed; display: block; width: 100%; height: 100%; right: -100%; top: 0; transition: 0.6s; transition-delay: 0.2s; z-index: 17; }
+        #ck2:checked ~ .blank.mo { right: 0; z-index: 15; }
+        #ck2:checked ~ .container { position: fixed; top: 0; left: 0; z-index: -1; }
+        
+        .subMn li a { display: none; }
+        .logo.desk { display: none; }
+        
+        #ck2:checked ~ .container .hd .lstBox .lst.item1 { top: 5px; transform: rotate(45deg); }
+        #ck2:checked ~ .container .hd .lstBox .lst.item2 { display: none; }
+        #ck2:checked ~ .container .hd .lstBox .lst.item3 { top: 5px; transform: rotate(-45deg); }
+        #ck2:checked ~ .wrap .hd .lstBox .lst.item1 { top: 5px; transform: rotate(45deg); }
+        #ck2:checked ~ .wrap .hd .lstBox .lst.item2 { display: none; }
+        #ck2:checked ~ .wrap .hd .lstBox .lst.item3 { top: 5px; transform: rotate(-45deg); }
+        
+        .vs { display: block; width: 100%; min-height: 300px; overflow: hidden; position: relative; }
+        .vsBox { width: 500%; height: 100%; }
+        .vsBox li { width: 20%; height: 100%; float: left; }
+        .vsBox li img { width: 100%; height: 100%; cursor: pointer; }
+        .btnBoxFrm { width: 100%; height: 20px; position: absolute; bottom: 0; left: 0; }
+        .btnBox { display: block; width: 100px; margin: 0 auto; height: 100%; position: relative; }
+        .btnBox li { position: absolute; bottom: 20px; width: 20px; height: 10px; cursor: pointer; }
+        .btnBox li.item1 { left: 0; }
+        .btnBox li.item2 { left: 20px; }
+        .btnBox li.item3 { left: 40px; }
+        .btnBox li.item4 { left: 60px; }
+        .btnBox li.item5 { left: 80px; }
+        .btnBox li button { width: 10px; height: 10px; display: block; background: #fff; border-radius: 20px; margin: 0 auto; }
+        .btnBox li button.on { background: #666; }
+        
+        .close { position: absolute; width: 20px; height: 20px; background-image: url("./icon/iconset.png"); background-repeat: no-repeat; background-position: 0px -80px; display: block; text-indent: -9999px; top: 20px; right: 20px; z-index: 21; cursor: pointer; }
+        .top { width: 90%; margin: 0 auto; height: 90px; margin-top: 30px; }
+        .link { float: left; width: 50%; height: 30px; line-height: 30px; }
+        .link a { display: block; width: 100%; height: 30px; line-height: 30px; text-align: left; color: #333; font-size: 0.9em; font-weight: bold; text-indent: 15px; }
+        .bottom { padding-top: 25px; width: 90%; margin: 0 auto; }
+        .bottom li { clear: both; width: 100%; height: 30px; line-height: 30px; }
+        .bottom li a { display: block; width: 100%; height: 30px; line-height: 30px; color: #333; font-weight: 300; font-size: 0.8em; text-indent: 15px; }
+        .bottom li a.bold { font-weight: bold; font-size: 0.85em; }
+        .searchFrm { width: 90%; margin: 0 auto; display: block; height: 30px; line-height: 30px; margin-bottom: 50px; margin-top: 30px; }
+        .searchForm { display: block; margin-left: 15px; height: 30px; line-height: 30px; float: left; width: calc(100% - 60px); text-indent: 15px; color: #999; font-size: 0.7em; }
+        .searchBtn { width: 30px; height: 30px; line-height: 30px; float: right; margin-right: 15px; background-image: url("./icon/search.png"); background-repeat: no-repeat; background-position: center center; background-size: 20px 20px; background-color: #dfd1be; text-indent: -9999px; cursor: pointer; }
+        
+        .sub { width: 100%; margin-top: 10px; }
+        .sub img { width: 100%; cursor: pointer; }
+        .col { width: 100%; column-count: 3; }
+        .title { font-size: 1em; font-weight: bold; letter-spacing: 5px; text-align: center; padding: 15px 0px 10px 0px; height: 20px; line-height: 20px; width: 100%; }
+        .tit { font-size: 0.8em; font-weight: 300; color: #333; padding: 5px 0px; }
+        .cost { font-size: 0.75em; font-weight: 300; color: #333; padding: 2px 0px 15px 0px; }
+        .more { display: block; width: 100px; margin: 0 auto; height: 35px; line-height: 35px; background-color: #d5bea0; color: #333; font-size: 0.8em; font-weight: 400; text-align: center; margin-top: 20px; }
+        
+        .sub.item2 { width: 100%; margin-top: 40px; background: #eee; height: 100vh; }
+        .sub.item2 .title { padding-top: 30px; }
+        .sub.item2 .slide { width: 100%; height: calc(100% - 60px); overflow: hidden; }
+        .sub.item2 .slide .conBox  { width: 500%; height: calc(100% - 40px); margin-top: 10px; }
+        .sub.item2 .conBox li { float: left; width: 20%; height: 100%; }
+        .conBox li .itemBox { width: 45%; margin-top: 20px; }
+        .conBox li .itemBox.item1, .conBox li .itemBox.item3 { margin-left: 3%; margin-right: 4%; float: left; }
+        .conBox li .itemBox.item2, .conBox li .itemBox.item4 { margin-left: 0; margin-right: 3%; float: right; }
+        .conBtnBox { width: 100%; height: 5px; position: relative; }
+        .conBtnBox li { float: left; width: 20%; height: 5px; position: absolute; top: 0; }
+        .conBtnBox li.item1 { left: 0; }
+        .conBtnBox li.item2 { left: 20%; }
+        .conBtnBox li.item3 { left: 40%; }
+        .conBtnBox li.item4 { left: 60%; }
+        .conBtnBox li.item5 { left: 80%; }
+        .conBtnBox li button { display: block; width: 100%; height: 100%; background: #ddd; }
+        .conBtnBox li button.on { background: #d5bea0; }
+        
+        .sub.item3 { width: 100%; background: #eee; height: 150vw; margin-top: 0; }
+        .raItem { display: none; }
+        .sub.item3 .btnBox2 { width: 100%; height: 30px; }
+        .sub.item3 .btnBox2 label { width: 33%; height: 30px; line-height: 30px; display: block; text-align: center; color: #333; background: #fff; float: left; font-size: 0.8em; }
+        .sub.item3 .btnBox2 label.item1 { width: 34%; }
+        .conBox2 { display: none; width: 100%; height: calc(100% - 40px); padding-top: 10px; }
+        #ra1:checked ~ .conBox2.item1 { display: block; }
+        #ra2:checked ~ .conBox2.item2 { display: block; }
+        #ra3:checked ~ .conBox2.item3 { display: block; }
+        #ra1:checked ~ .btnBox2 label.item1 { color: #d5bea0; font-weight: bold; }
+        #ra2:checked ~ .btnBox2 label.item2 { color: #d5bea0; font-weight: bold; }
+        #ra3:checked ~ .btnBox2 label.item3 { color: #d5bea0; font-weight: bold; }
+        .conBox2 .itemBox { width: 45%; margin-top: 20px; }
+        .conBox2 .itemBox.item1, .conBox2 .itemBox.item3 { margin-left: 3%; margin-right: 4%; float: left; }
+        .conBox2 .itemBox.item2, .conBox2 .itemBox.item4 { margin-left: 0; margin-right: 3%; float: right; }
+        
+        .sub.item4 { position: relative; }
+        .sub.item4 img { width: 100%; margin-top: 20px; }
+        .sub.item4 a.more { width: 200px; background: transparent; margin: 0px; position: absolute; bottom: 0; width: 100%; text-align: center; }
+        
+        .sub.item5 { width: 100%; margin-bottom: 20px; }
+        .sub.item5 .searchFrm { width: 100%; border: 1px solid #eee; box-shadow: 2px 2px 3px #ddd; height: 40px; margin-bottom: 10px; }
+        .sub.item5 form { display: block; width: 100%; height: 40px; line-height: 40px; }
+        .sub.item5 select { display: block; float: left; width: 30%; height: 40px; line-height: 40px; }
+        .sub.item5 .searchForm { width: calc(100% - 30% - 42px); border-left: 1px solid #eee; border-right: 1px solid #eee; height: 40px; margin: 0; padding: 0; float: left; }
+        .sub.item5 .searchBtn { width: 40px; height: 40px; float: right; margin: 0; padding: 0; background: transparent; background-image: url("./icon/search_b.png"); background-size: 60% 60%; background-repeat: no-repeat; background-position: center center; }
+        .sub.item5 .col { width: 95%; margin: 0 auto; }
+        .sub.item5 .col .colLst { border: 1px solid #ddd; width: 100%; }
+        .sub.item5 .tit { width: 90%; margin: 0 auto; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+        .writer { font-size: 0.6em; font-weight: 300; color: #333; padding: 2px 0px 2px 0px; width: 90%; margin: 0 auto; }
+        .date { font-size: 0.6em; font-weight: 300; color: #333; padding: 2px 0px 15px 0px; width: 90%; margin: 0 auto; }
+        
+        .sub.item6 { background: #eee; padding-bottom: 2px; }
+        .com { width: 95%; margin: 0 auto; font-size: 0.9em; font-weight: 500; color: #333; padding: 8px 0px 12px 0px; }
+        .com .bold { font-size: 1.3em; font-weight: bold; }
+        .conBox3 { width: 95%; margin: 0 auto; height: 55px; border-top: 1px solid #ddd; }
+        .conBox3 img { width: 10%; height: 40px; margin-top: 8px; float: left; }
+        .conBox3 .subCom { float: left; font-size: 0.8em; width: calc(100% - 25% - 20px); height: 55px; line-height: 55px; padding-left: 10px; }
+        .conBox3 .subCom .txt_b { color: #155cac; }
+        .conBox3 button { background: transparent; width: 10px; float: right; height: 55px; line-height: 55px; color: #666; }
+        
+        .sub.item7 { margin-top: 0; height: 23vw; }
+        .sub.item7 .conBox4 { width: calc(50% - 1px); float: left; border-top: 1px solid #ddd; position: relative; height: 100%; padding-bottom: 10px; border-bottom: 1px solid #ddd; }
+        .sub.item7 .conBox4.item1 { border-right: 1px solid #ddd; }
+        .sub.item7 .conBox4 .conTit { width: 90%; margin: 0 auto; text-align: center; padding-top: 20px; }
+        .sub.item7 .conBox4 .num { width: 90%; margin: 0 auto; text-align: center; font-size: 0.9em; font-weight: 500; padding: 5px 0px; }
+        .sub.item7 .conBox4 .conCom { width: 90%; margin: 0 auto; text-align: center; font-size: 0.65em; font-weight: 500; line-height: 1.8; }
+        .sub.item7 .conBox4.item2 .conCom { padding-top: 5px; }
+        .sub.item7 .conBox4 a.link { display: block; width: 70%; margin: 0 auto; border: 1px solid #ccc; text-align: center; position: absolute; font-size: 0.75em; color: #333; top: 130px; left: 15%; }
+        
+        .sub.item8 .conTit { width: 90%; margin: 0 auto; padding-top: 20px; }
+        .sub.item8 .conCom { width: 90%; margin: 0 auto; font-size: 0.7em; font-weight: 500; line-height: 1.6; padding: 10px 0px 20px 0px; }
+        
+        .ft { width: 100%; border-top: 1px solid #ddd; }
+        .ftLink { width: 80%; margin: 0 auto; height: 40px; line-height: 40px; }
+        .ftLink li { float: left; width: 20%; height: 40px; }
+        .ftLink li:last-child { width: 40%; }
+        .ftLink li a { display: block; width: 100%; height: 16px; line-height: 16px; text-align: center; font-size: 0.65em; color: #666; border-right: 1px solid #ddd; margin-top: 12px; }
+        .ftLink li:last-child a { border-right: 0px; }
+        .ft_wrap { width: 100%; border-top: 1px solid #ddd; padding: 20px 0px; }
+        .ft_wrap p.info { width: 80%; margin: 0 auto; font-size: 0.7em; line-height: 1.6; color: #666; }
+        .ft .copy { width: 100%; text-align: center; padding: 20px 0px; background: #d5bea0; color: #333; font-size: 0.7em; }
+        
+        #ck1:checked ~ .container .hd label.search { width: 20px; height: 20px; background-image: url("./icon/iconset.png"); background-repeat: no-repeat; background-position: 0px -80px; }
+        #ck1:checked ~ .container .hd { background: rgba(255, 255, 255, 0.7); }
+        #ck1:checked ~ .searchBox { display: block; }
+        .searchBox { display: none; width: 100%; position: fixed; z-index: 15; top: 40px; left: 0; background: #fff; }
+        .searchBox .searchFrm { margin-top: 20px; margin-bottom: 10px; }
+        .searchBox .searchForm { border: 1px solid #ccc; width: calc(100% - 32px); font-size: 0.85em; margin-left: 0; }
+        .searchBox .searchBtn { height: 32px; margin-right: 0;}
+        .slideBox { width: 100%; height: 200px; overflow: hidden; }
+        .hot { width: 90%; margin: 0 auto; height: 200px; }
+        .hot li { height: 40px; line-height: 40px; }
+        .hot li a { display: block;  height: 40px; line-height: 40px; font-size: 0.8em; color: #666; font-weight: 500; text-align: center; transition: 0.4s; transition-timing-function: ease-in-out; }
+        .hot li.on a { font-size: 1em; border-top: 1px solid #666; border-bottom: 1px solid #666; color: #333; }
+        .closeBox { width: 100%; height: 30px; line-height: 30px; background: #eee; }
+        .closeBox label.closeBtn { display: block; width: 20px; height: 20px; background-image: url("./icon/iconset.png"); background-repeat: no-repeat; background-position: 0px -80px; float: right; margin-right: 5%; text-indent: -30px; font-size: 0.8em; line-height: 20px; margin-top: 5px; }
+        .scrollBtn { position: fixed; z-index: 15; background-image: url("./icon/iconset.png"); background-repeat: no-repeat; width: 20px; height: 20px; display: block; background-color: transparent; right: 20px; }
+        .scrollBtn.up { background-position: 0px -60px; bottom: 20px; }
+    }
+    @media screen and (min-width:960px) and (max-width:1024px) {
+        .mo { display: block; }
+        .desk { display: none; }
+        .container { width: 100%; min-height: 100%; clear: both; }
+        .hd { width: 100%; height: 40px; background: transparent; position: fixed; top: 0; left: 0; z-index: 10; }
+        .hd.on { background: rgba(255, 255, 255, 0.7); }
+        .ckItem { display: none; }
+        .icon { width: 20px; height: 20px; position: absolute; top: 10px; background-image: url("./icon/iconset.png"); background-repeat: no-repeat; text-indent: -9999px; z-index: 15; cursor: pointer; }
+        .cart { background-position: 0px 0px; left: 15px; }
+        .search { background-position: 0px -20px; left: 45px; }
+        .logo { display: block; width: 150px; height: 40px; background-image: url("./icon/logo.png"); background-repeat: no-repeat; background-position: center center; background-size: 80% 100%; margin: 0 auto; text-indent: -9999px; }
+        .lstBox { display: block; position: absolute; width: 30px; height: 30px; top: 14px; right: 15px; z-index: 15; cursor: pointer; }
+        .lst { display: block; width: 15px; height: 2px; background: #333; border-radius: 2px; position: absolute; right: 0; transition: 0.4s; transition-delay: 0.1s; }
+        .lst.item1 { top: 0px; }
+        .lst.item2 { top: 5px; }
+        .lst.item3 { top: 10px; }
+        .wrap { width: 30%; height: 100%; background: #d5bea0; position: fixed; right: -100%; top: 0; transition: 0.6s; transition-delay: 0.2s; z-index: -1; clear: both; }
+        #ck2:checked ~ .wrap { position: absolute; right: 0; z-index: 20; }
+        .blank.mo { background: rgba(225, 225, 225, 0.6); position: fixed; display: block; width: 100%; height: 100%; right: -100%; top: 0; transition: 0.6s; transition-delay: 0.2s; z-index: 17; }
+        #ck2:checked ~ .blank.mo { right: 0; z-index: 15; }
+        #ck2:checked ~ .container { position: fixed; top: 0; left: 0; z-index: -1; }
+        
+        .subMn li a { display: none; }
+        .logo.desk { display: none; }
+        
+        #ck2:checked ~ .container .hd .lstBox .lst.item1 { top: 5px; transform: rotate(45deg); }
+        #ck2:checked ~ .container .hd .lstBox .lst.item2 { display: none; }
+        #ck2:checked ~ .container .hd .lstBox .lst.item3 { top: 5px; transform: rotate(-45deg); }
+        #ck2:checked ~ .wrap .hd .lstBox .lst.item1 { top: 5px; transform: rotate(45deg); }
+        #ck2:checked ~ .wrap .hd .lstBox .lst.item2 { display: none; }
+        #ck2:checked ~ .wrap .hd .lstBox .lst.item3 { top: 5px; transform: rotate(-45deg); }
+        
+        .vs { display: block; width: 100%; min-height: 300px; overflow: hidden; position: relative; }
+        .vsBox { width: 500%; height: 100%; }
+        .vsBox li { width: 20%; height: 100%; float: left; }
+        .vsBox li img { width: 100%; height: 100%; cursor: pointer; }
+        .btnBoxFrm { width: 100%; height: 20px; position: absolute; bottom: 0; left: 0; }
+        .btnBox { display: block; width: 100px; margin: 0 auto; height: 100%; position: relative; }
+        .btnBox li { position: absolute; bottom: 20px; width: 20px; height: 10px; cursor: pointer; }
+        .btnBox li.item1 { left: 0; }
+        .btnBox li.item2 { left: 20px; }
+        .btnBox li.item3 { left: 40px; }
+        .btnBox li.item4 { left: 60px; }
+        .btnBox li.item5 { left: 80px; }
+        .btnBox li button { width: 10px; height: 10px; display: block; background: #fff; border-radius: 20px; margin: 0 auto; cursor: pointer; }
+        .btnBox li button.on { background: #666; }
+        
+        .close { position: absolute; width: 20px; height: 20px; background-image: url("./icon/iconset.png"); background-repeat: no-repeat; background-position: 0px -80px; display: block; text-indent: -9999px; top: 20px; right: 20px; z-index: 21; cursor: pointer; }
+        .top { width: 90%; margin: 0 auto; height: 90px; margin-top: 30px; }
+        .link { float: left; width: 50%; height: 30px; line-height: 30px; }
+        .link a { display: block; width: 100%; height: 30px; line-height: 30px; text-align: left; color: #333; font-size: 0.9em; font-weight: bold; text-indent: 15px; }
+        .bottom { padding-top: 25px; width: 90%; margin: 0 auto; }
+        .bottom li { clear: both; width: 100%; height: 30px; line-height: 30px; }
+        .bottom li a { display: block; width: 100%; height: 30px; line-height: 30px; color: #333; font-weight: 300; font-size: 0.8em; text-indent: 15px; }
+        .bottom li a.bold { font-weight: bold; font-size: 0.85em; }
+        .searchFrm { width: 90%; margin: 0 auto; display: block; height: 30px; line-height: 30px; margin-bottom: 50px; margin-top: 30px; }
+        .searchForm { display: block; margin-left: 15px; height: 30px; line-height: 30px; float: left; width: calc(100% - 60px); text-indent: 15px; color: #999; font-size: 0.7em; }
+        .searchBtn { width: 30px; height: 30px; line-height: 30px; float: right; margin-right: 15px; background-image: url("./icon/search.png"); background-repeat: no-repeat; background-position: center center; background-size: 20px 20px; background-color: #dfd1be; text-indent: -9999px; cursor: pointer; }
+        
+        .sub { width: 100%; margin-top: 10px; }
+        .sub img { width: 100%; cursor: pointer; }
+        .col { width: 100%; column-count: 3; }
+        .title { font-size: 1em; font-weight: bold; letter-spacing: 5px; text-align: center; padding: 15px 0px 10px 0px; height: 20px; line-height: 20px; width: 100%; }
+        .tit { font-size: 0.8em; font-weight: 300; color: #333; padding: 5px 0px; }
+        .cost { font-size: 0.75em; font-weight: 300; color: #333; padding: 2px 0px 15px 0px; }
+        .more { display: block; width: 100px; margin: 0 auto; height: 35px; line-height: 35px; background-color: #d5bea0; color: #333; font-size: 0.8em; font-weight: 400; text-align: center; margin-top: 20px; }
+        
+        .sub.item2 { width: 100%; margin-top: 40px; background: #eee; height: 95vh; }
+        .sub.item2 .title { padding-top: 30px; }
+        .sub.item2 .slide { width: 100%; height: calc(100% - 60px); overflow: hidden; }
+        .sub.item2 .slide .conBox  { width: 500%; height: calc(100% - 40px); margin-top: 10px; }
+        .sub.item2 .conBox li { float: left; width: 20%; height: 100%; }
+        .conBox li .itemBox { width: 45%; margin-top: 20px; }
+        .conBox li .itemBox.item1, .conBox li .itemBox.item3 { margin-left: 3%; margin-right: 4%; float: left; }
+        .conBox li .itemBox.item2, .conBox li .itemBox.item4 { margin-left: 0; margin-right: 3%; float: right; }
+        .conBtnBox { width: 100%; height: 5px; position: relative; }
+        .conBtnBox li { float: left; width: 20%; height: 5px; position: absolute; top: 0; }
+        .conBtnBox li.item1 { left: 0; }
+        .conBtnBox li.item2 { left: 20%; }
+        .conBtnBox li.item3 { left: 40%; }
+        .conBtnBox li.item4 { left: 60%; }
+        .conBtnBox li.item5 { left: 80%; }
+        .conBtnBox li button { display: block; width: 100%; height: 100%; background: #ddd; cursor: pointer; }
+        .conBtnBox li button.on { background: #d5bea0; }
+        
+        .sub.item3 { width: 100%; background: #eee; height: 140vw; margin-top: 0; }
+        .raItem { display: none; }
+        .sub.item3 .btnBox2 { width: 100%; height: 30px; }
+        .sub.item3 .btnBox2 label { width: 33%; height: 30px; line-height: 30px; display: block; text-align: center; color: #333; background: #fff; float: left; font-size: 0.8em; cursor: pointer; }
+        .sub.item3 .btnBox2 label.item1 { width: 34%; }
+        .conBox2 { display: none; width: 100%; height: calc(100% - 40px); padding-top: 10px; }
+        #ra1:checked ~ .conBox2.item1 { display: block; }
+        #ra2:checked ~ .conBox2.item2 { display: block; }
+        #ra3:checked ~ .conBox2.item3 { display: block; }
+        #ra1:checked ~ .btnBox2 label.item1 { color: #d5bea0; font-weight: bold; }
+        #ra2:checked ~ .btnBox2 label.item2 { color: #d5bea0; font-weight: bold; }
+        #ra3:checked ~ .btnBox2 label.item3 { color: #d5bea0; font-weight: bold; }
+        .conBox2 .itemBox { width: 45%; margin-top: 20px; }
+        .conBox2 .itemBox.item1, .conBox2 .itemBox.item3 { margin-left: 3%; margin-right: 4%; float: left; }
+        .conBox2 .itemBox.item2, .conBox2 .itemBox.item4 { margin-left: 0; margin-right: 3%; float: right; }
+        
+        .sub.item4 { position: relative; }
+        .sub.item4 img { width: 100%; margin-top: 20px; }
+        .sub.item4 a.more { width: 200px; background: transparent; margin: 0px; position: absolute; bottom: 0; width: 100%; text-align: center; }
+        
+        .sub.item5 { width: 100%; margin-bottom: 20px; }
+        .sub.item5 .searchFrm { width: 100%; border: 1px solid #eee; box-shadow: 2px 2px 3px #ddd; height: 40px; margin-bottom: 10px; }
+        .sub.item5 form { display: block; width: 100%; height: 40px; line-height: 40px; }
+        .sub.item5 select { display: block; float: left; width: 30%; height: 40px; line-height: 40px; }
+        .sub.item5 select option { width: 100%; }
+        .sub.item5 .searchForm { width: calc(100% - 30% - 42px); border-left: 1px solid #eee; border-right: 1px solid #eee; height: 40px; margin: 0; padding: 0; float: left; }
+        .sub.item5 .searchBtn { width: 40px; height: 40px; float: right; margin: 0; padding: 0; background: transparent; background-image: url("./icon/search_b.png"); background-size: 60% 60%; background-repeat: no-repeat; background-position: center center; cursor: pointer; }
+        .sub.item5 .col { width: 95%; margin: 0 auto; }
+        .sub.item5 .col .colLst { border: 1px solid #ddd; width: 100%; cursor: pointer; }
+        .sub.item5 .tit { width: 90%; margin: 0 auto; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+        .writer { font-size: 0.6em; font-weight: 300; color: #333; padding: 2px 0px 2px 0px; width: 90%; margin: 0 auto; }
+        .date { font-size: 0.6em; font-weight: 300; color: #333; padding: 2px 0px 15px 0px; width: 90%; margin: 0 auto; }
+        
+        .sub.item6 { background: #eee; padding-bottom: 2px; }
+        .com { width: 95%; margin: 0 auto; font-size: 0.9em; font-weight: 500; color: #333; padding: 8px 0px 12px 0px; }
+        .com .bold { font-size: 1.3em; font-weight: bold; }
+        .conBox3 { width: 95%; margin: 0 auto; height: 65px; border-top: 1px solid #ddd; cursor: pointer; }
+        .conBox3 img { width: 10%; height: 50px; margin-top: 8px; float: left; }
+        .conBox3 .subCom { float: left; font-size: 0.8em; width: calc(100% - 25% - 20px); height: 65px; line-height: 65px; padding-left: 30px; }
+        .conBox3 .subCom .txt_b { color: #155cac; }
+        .conBox3 button { background: transparent; width: 10px; float: right; height: 55px; line-height: 55px; color: #666; }
+        
+        .sub.item7 { margin-top: 0; height: 17vw; }
+        .sub.item7 .conBox4 { width: calc(50% - 1px); float: left; border-top: 1px solid #ddd; position: relative; height: 100%; padding-bottom: 10px; border-bottom: 1px solid #ddd; }
+        .sub.item7 .conBox4.item1 { border-right: 1px solid #ddd; }
+        .sub.item7 .conBox4 .conTit { width: 90%; margin: 0 auto; text-align: center; padding-top: 20px; }
+        .sub.item7 .conBox4 .num { width: 90%; margin: 0 auto; text-align: center; font-size: 0.9em; font-weight: 500; padding: 5px 0px; }
+        .sub.item7 .conBox4 .conCom { width: 90%; margin: 0 auto; text-align: center; font-size: 0.65em; font-weight: 500; line-height: 1.8; }
+        .sub.item7 .conBox4.item2 .conCom { padding-top: 5px; }
+        .sub.item7 .conBox4 a.link { display: block; width: 70%; margin: 0 auto; border: 1px solid #ccc; text-align: center; position: absolute; font-size: 0.75em; color: #333; top: 130px; left: 15%; }
+        
+        .sub.item8 .conTit { width: 90%; margin: 0 auto; padding-top: 20px; }
+        .sub.item8 .conCom { width: 90%; margin: 0 auto; font-size: 0.7em; font-weight: 500; line-height: 1.6; padding: 10px 0px 20px 0px; }
+        
+        .ft { width: 100%; border-top: 1px solid #ddd; }
+        .ftLink { width: 80%; margin: 0 auto; height: 40px; line-height: 40px; }
+        .ftLink li { float: left; width: 20%; height: 40px; }
+        .ftLink li:last-child { width: 40%; }
+        .ftLink li a { display: block; width: 100%; height: 16px; line-height: 16px; text-align: center; font-size: 0.65em; color: #666; border-right: 1px solid #ddd; margin-top: 12px; }
+        .ftLink li:last-child a { border-right: 0px; }
+        .ft_wrap { width: 100%; border-top: 1px solid #ddd; padding: 20px 0px; }
+        .ft_wrap p.info { width: 80%; margin: 0 auto; font-size: 0.7em; line-height: 1.6; color: #666; }
+        .ft .copy { width: 100%; text-align: center; padding: 20px 0px; background: #d5bea0; color: #333; font-size: 0.7em; }
+        
+        #ck1:checked ~ .container .hd label.search { width: 20px; height: 20px; background-image: url("./icon/iconset.png"); background-repeat: no-repeat; background-position: 0px -80px; }
+        #ck1:checked ~ .container .hd { background: rgba(255, 255, 255, 0.7); }
+        #ck1:checked ~ .searchBox { display: block; }
+        .searchBox { display: none; width: 100%; position: fixed; z-index: 15; top: 40px; left: 0; background: #fff; }
+        .searchBox .searchFrm { margin-top: 20px; margin-bottom: 10px; }
+        .searchBox .searchForm { border: 1px solid #ccc; width: calc(100% - 32px); font-size: 0.85em; margin-left: 0; }
+        .searchBox .searchBtn { height: 32px; margin-right: 0;}
+        .slideBox { width: 100%; height: 200px; overflow: hidden; }
+        .hot { width: 90%; margin: 0 auto; height: 200px; }
+        .hot li { height: 40px; line-height: 40px; }
+        .hot li a { display: block;  height: 40px; line-height: 40px; font-size: 0.8em; color: #666; font-weight: 500; text-align: center; transition: 0.4s; transition-timing-function: ease-in-out; }
+        .hot li.on a { font-size: 1em; border-top: 1px solid #666; border-bottom: 1px solid #666; color: #333; }
+        .closeBox { width: 100%; height: 30px; line-height: 30px; background: #eee; }
+        .closeBox label.closeBtn { display: block; width: 20px; height: 20px; background-image: url("./icon/iconset.png"); background-repeat: no-repeat; background-position: 0px -80px; float: right; margin-right: 5%; text-indent: -30px; font-size: 0.8em; line-height: 20px; margin-top: 5px; }
+        .scrollBtn { position: fixed; z-index: 15; background-image: url("./icon/iconset.png"); background-repeat: no-repeat; width: 20px; height: 20px; display: block; background-color: transparent; right: 20px; cursor: pointer; }
+        .scrollBtn.up { background-position: 0px -60px; bottom: 20px; }
+    }
+    @media screen and (min-width:1025px) {
+        .mo { display: none; }
+        .desk { display: block; }
+        .container { width: 100%; min-height: 100%; clear: both; }
+        .left { position: fixed; width: 15%; height: 100%; left: 0; top: 60px; background: transparent; z-index: 10; }
+        .hd { width: 15%; height: 100%; background: transparent; position:fixed; right: 0; top: 60px; z-index: 10; }
+        .vs, .sub, .ft { width: 70%; margin: 0 auto; }
+        #gnb { width: 100%; height: 60px; }
+        #gnb ul { width: 70%; margin: 0 auto; line-height: 2; padding-top: 25px; }
+        #gnb li { float: left; width: 6%; height: 25px; line-height: 25px; }
+        #gnb li.long { width: 8%; }
+        #gnb li a { display: block; text-align: center; font-size: 0.7em; color: #333; }
+        #gnb li:hover a { text-decoration: underline; }
+        
+        .left_wrap { width: 65%; margin: 0 auto; background-color: transparent; }
+        .left_wrap img { width: 100%; margin-top: 50px; }
+        .left_wrap img.left_txt { margin-top: 0; }
+        .left_wrap .cart { z-index: 21; }
+        
+        .ckItem { display: none; }
+        .icon { width: 20px; height: 20px; position: absolute; top: 10px; background-image: url("./icon/iconset.png"); background-repeat: no-repeat; text-indent: -9999px; z-index: 15; cursor: pointer; }
+        .cart { background-position: 0px 0px; left: calc((100% - 20px) / 2); top: 45%; }
+        .search { background-position: 0px -20px; left: calc((100% - 20px) / 2); top: 49%; }
+        .logo { display: block; width: 50px; height: 200px; background-image: url("./icon/logo_desk.png"); background-repeat: no-repeat; background-position: center center; background-size: 100% 100%; margin: 0 auto; text-indent: -9999px; }
+        .lstBox { display: block; position: absolute; width: 30px; height: 30px; top: 45%; left: calc((100% - 30px) / 2); z-index: 15; cursor: pointer; }
+        .lst { display: block; width: 15px; height: 2px; background: #333; border-radius: 2px; position: absolute; right: 7px; transition: 0.4s; transition-delay: 0.1s; }
+        .lst.item1 { top: 0px; }
+        .lst.item2 { top: 5px; }
+        .lst.item3 { top: 10px; }
+        .wrap { width: 100%; height: 100%; background: #d5bea0; position: fixed; left: 0; top: 0; transition: 0.6s; transition-delay: 0.2s; z-index: -1; clear: both; opacity: 0; overflow: hidden; }
+        #ck2:checked ~ .wrap { opacity: 1; display: block; z-index: 20; }
+        #ck2:checked ~ .container { position: fixed; top: 0; left: 0; z-index: -1; }
+        
+        .subMn { width: 30px; height: 240px; position: absolute; bottom: 15%; left: calc((100% - 30px) / 2); }
+        .subMn li { width: 100%; height: 80px; line-height: 80px; }
+        .subMn li a { writing-mode: tb-rl; -webkit-writing-mode: vertical-rl; -moz-writing-mode: vertical-rl; -o-writing-mode: vertical-rl; -ms-writing-mode: vertical-rl; -epub-writing-mode: vertical-rl; color: #333; font-size: 0.85em; font-weight: bold; display: block; width: 30px;  height: 80px; line-height: 30px; text-align: center; }
+        
+        #ck2:checked ~ .container .hd .lstBox .lst.item1 { top: 5px; transform: rotate(45deg); }
+        #ck2:checked ~ .container .hd .lstBox .lst.item2 { display: none; }
+        #ck2:checked ~ .container .hd .lstBox .lst.item3 { top: 5px; transform: rotate(-45deg); }
+        #ck2:checked ~ .wrap .hd .lstBox .lst.item1 { top: 5px; transform: rotate(45deg); }
+        #ck2:checked ~ .wrap .hd .lstBox .lst.item2 { display: none; }
+        #ck2:checked ~ .wrap .hd .lstBox .lst.item3 { top: 5px; transform: rotate(-45deg); }
+        
+        .vs { display: block; min-height: 300px; overflow: hidden; position: relative; margin-top: 48px; }
+        .vsBox { width: 500%; height: 100%; }
+        .vsBox li { width: 20%; height: 100%; float: left; }
+        .vsBox li img { width: 100%; height: 100%; cursor: pointer; }
+        .btnBoxFrm { width: 100%; height: 20px; position: absolute; bottom: 0; left: 0; }
+        .btnBox { display: block; width: 100px; margin: 0 auto; height: 100%; position: relative; }
+        .btnBox li { position: absolute; bottom: 20px; width: 20px; height: 10px; cursor: pointer; }
+        .btnBox li.item1 { left: 0; }
+        .btnBox li.item2 { left: 20px; }
+        .btnBox li.item3 { left: 40px; }
+        .btnBox li.item4 { left: 60px; }
+        .btnBox li.item5 { left: 80px; }
+        .btnBox li button { width: 10px; height: 10px; display: block; background: #fff; border-radius: 20px; margin: 0 auto; cursor: pointer; }
+        .btnBox li button.on { background: #666; }
+        
+        .menu { width: 70%; height: 20px; position: absolute; left: 15%; top: calc(45% + 60px); }
+        .menu li { float: left; width: 15%; height: 20px; line-height: 20px; }
+        .menu li:first-child { margin-left: 5%; }
+        .menu li:last-child { margin-right: 5%; }
+        .menu li a { display: block; text-align: center; font-size: 0.85em; font-weight: bold; color: #333; transition: 0.4s; transition-delay: 0.1s; }
+        .menu li:hover a { color: #a5381e; text-decoration: underline; }
+        
+        .sub { margin-top: 50px; }
+        .sub img { width: 100%; cursor: pointer; }
+        .col { width: 100%; column-count: 4; }
+        .title { font-size: 1.5em; font-weight: bold; letter-spacing: 5px; text-align: center; padding: 30px 0px 20px 0px; height: 20px; line-height: 20px; width: 100%; }
+        .tit { font-size: 0.8em; font-weight: 300; color: #333; padding: 5px 0px; height: 50px; line-height: 1.6; }
+        .cost { font-size: 0.75em; font-weight: 300; color: #333; padding: 2px 0px 15px 0px; }
+        .more { display: block; width: 100px; margin: 0 auto; height: 35px; line-height: 35px; background-color: #d5bea0; color: #333; font-size: 0.8em; font-weight: 400; text-align: center; margin-top: 20px; }
+        
+        .sub.item2 {  margin-top: 40px; background: #eee; }
+        .sub.item2 .title { padding-top: 30px; }
+        .sub.item2 .slide { width: 100%; height: calc(100% - 60px); overflow: hidden; }
+        .sub.item2 .slide .conBox  { width: 100%; height: calc(100% - 40px); margin-top: 10px; }
+        .sub.item2 .conBox li { width: 100%; height: 100%; }
+        .conBox li .itemBox { width: 30%; margin-top: 20px; margin-left: 2.5%; float: left; }
+        .conBox li .itemBox.item3, .conBox li .itemBox.item6 { margin-right: 2.5%; }
+        
+        .sub.item3 { background: #eee; height: 135vh; margin-top: 0; padding-top: 50px; }
+        .raItem { display: none; }
+        .sub.item3 .btnBox2 { width: 100%; height: 30px; }
+        .sub.item3 .btnBox2 label { width: 33%; height: 30px; line-height: 30px; display: block; text-align: center; color: #333; background: #fff; float: left; font-size: 0.8em; cursor: pointer; }
+        .sub.item3 .btnBox2 label.item1 { width: 34%; }
+        .conBox2 { display: none; width: 100%; height: calc(100% - 40px); padding-top: 10px; }
+        #ra1:checked ~ .conBox2.item1 { display: block; }
+        #ra2:checked ~ .conBox2.item2 { display: block; }
+        #ra3:checked ~ .conBox2.item3 { display: block; }
+        #ra1:checked ~ .btnBox2 label.item1 { color: #d5bea0; font-weight: bold; }
+        #ra2:checked ~ .btnBox2 label.item2 { color: #d5bea0; font-weight: bold; }
+        #ra3:checked ~ .btnBox2 label.item3 { color: #d5bea0; font-weight: bold; }
+        .conBox2 .itemBox { width: 30%; margin-top: 20px; margin-left: 2.5%; float: left; }
+        .conBox2 .itemBox.item3, .conBox li .itemBox.item6 { margin-right: 2.5%; }
+        
+        .sub.item4 { position: relative; }
+        .sub.item4 img { width: 100%; margin-top: 20px; }
+        .sub.item4 a.more { width: 200px; background: transparent; margin: 0px; position: absolute; bottom: 0; width: 100%; text-align: center; }
+        
+        .sub.item5 { margin-bottom: 20px; }
+        .sub.item5 .searchFrm { width: 70%; margin: 0 auto; border: 1px solid #eee; box-shadow: 2px 2px 3px #ddd; height: 40px; margin-bottom: 50px; }
+        .sub.item5 form { display: block; width: 100%; height: 40px; line-height: 40px; }
+        .sub.item5 select { display: block; float: left; width: 30%; height: 40px; line-height: 40px; }
+        .sub.item5 select option { width: 100%; }
+        .sub.item5 .searchForm { width: calc(100% - 30% - 42px); border-left: 1px solid #eee; border-right: 1px solid #eee; height: 40px; margin: 0; padding: 0; float: left; }
+        .sub.item5 .searchBtn { width: 40px; height: 40px; float: right; margin: 0; padding: 0; background: transparent; background-image: url("./icon/search_b.png"); background-size: 60% 60%; background-repeat: no-repeat; background-position: center center; text-indent: -9999px; cursor: pointer; }
+        .sub.item5 .col { width: 70%; margin: 0 auto; column-count: 3; }
+        .sub.item5 .col .colLst { border: 1px solid #ddd; width: 100%; cursor: pointer; }
+        .sub.item5 .tit { width: 90%; margin: 0 auto; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+        .writer { font-size: 0.6em; font-weight: 300; color: #333; padding: 2px 0px 2px 0px; width: 90%; margin: 0 auto; }
+        .date { font-size: 0.6em; font-weight: 300; color: #333; padding: 2px 0px 15px 0px; width: 90%; margin: 0 auto; }
+        
+        .sub.item6 { padding-bottom: 20px; }
+        .com { width: 70%; margin: 0 auto; font-size: 0.9em; font-weight: 500; color: #333; padding: 8px 0px 12px 0px; }
+        .com .bold { font-size: 1.3em; font-weight: bold; }
+        .conBox3 { width: 70%; margin: 0 auto; height: 65px; border-top: 1px solid #ddd; cursor: pointer; }
+        .conBox3 img { width: 10%; height: 50px; margin-top: 8px; float: left; }
+        .conBox3 .subCom { float: left; font-size: 0.8em; width: calc(100% - 25% - 20px); height: 65px; line-height: 65px; padding-left: 30px; }
+        .conBox3 .subCom .txt_b { color: #155cac; }
+        .conBox3 button { background: transparent; width: 10px; float: right; height: 55px; line-height: 55px; color: #666; }
+        
+        .sub.item7 { margin-top: 0; width: 32%; float: left; margin-left: 25.5%; height: 18vh; }
+        .sub.item7 .conBox4 { width: 50%; float: left; position: relative; height: 100%; padding-bottom: 10px; }
+        .sub.item7 .conBox4 .conTit { width: 90%; margin: 0 auto; text-align: center; padding-top: 20px; }
+        .sub.item7 .conBox4 .num { width: 90%; margin: 0 auto; text-align: center; font-size: 0.9em; font-weight: 500; padding: 5px 0px; }
+        .sub.item7 .conBox4 .conCom { width: 90%; margin: 0 auto; text-align: center; font-size: 0.65em; font-weight: 500; line-height: 1.8; }
+        .sub.item7 .conBox4.item2 .conCom { padding-top: 5px; }
+        .sub.item7 .conBox4 a.link { display: block; width: 30%; border: 1px solid #ccc; text-align: center; position: absolute; font-size: 0.75em; color: #333; top: 130px; left: 35%; padding: 5px 0px; }
+        
+        .sub.item8 { width: 17%; float: right; margin-right: 25.5%; margin-top: 0; height: 18vh; }
+        .sub.item8 .conTit { width: 90%; margin: 0 auto; padding-top: 20px; text-align: center; }
+        .sub.item8 .conCom { width: 90%; margin: 0 auto; font-size: 0.7em; font-weight: 500; line-height: 1.6; padding: 10px 0px 20px 0px; text-align: center; }
+        
+        .ft { border: 0px; height: 150px; position: relative; clear: both; }
+        .ft_wrap { width: 100%; padding: 40px 0px 20px 0px; }
+        .ft_wrap p.info { width: 80%; margin: 0 auto; font-size: 0.7em; line-height: 1.6; color: #666; text-align: center; }
+        .ft .copy { width: 100%; text-align: center; padding: 20px 0px; color: #333; font-size: 0.7em; }
+        
+        #ck1:checked ~ .searchBox { display: block; }
+        #ck1:checked ~ .blank_w { display: block; }
+        .blank_w { width: 100%; height: 100%; position: fixed; z-index: 10; top: 0; left: 0; background: rgba(225, 225, 225, 0.6); display: none; }
+        .searchBox { display: none; width: 30%; position: fixed; z-index: 25; top: 35%; left: 35%; background: #fff; }
+        .searchBox .searchBtn { width: 30px; height: 32px; line-height: 30px; float: right; margin-right: 15px; background-image: url("./icon/search.png"); background-repeat: no-repeat; background-position: center center; background-size: 20px 20px; background-color: #dfd1be; text-indent: -9999px; cursor: pointer;  margin-right: 0; cursor: pointer; }
+        .searchBox .searchFrm { width: 90%; margin: 0 auto; display: block; height: 30px; line-height: 30px; margin-top: 20px; margin-bottom: 10px; }
+        .searchBox .searchForm { border: 1px solid #ccc; width: calc(100% - 32px); font-size: 0.85em; margin-left: 0; display: block; height: 30px; line-height: 30px; float: left; text-indent: 15px; color: #999; }
+        .slideBox { width: 100%; height: 200px; overflow: hidden; }
+        .hot { width: 90%; margin: 0 auto; height: 200px; }
+        .hot li { height: 40px; line-height: 40px; }
+        .hot li a { display: block;  height: 40px; line-height: 40px; font-size: 0.8em; color: #666; font-weight: 500; text-align: center; transition: 0.4s; transition-timing-function: ease-in-out; }
+        .hot li.on a { font-size: 1em; border-top: 1px solid #666; border-bottom: 1px solid #666; color: #333; }
+        .closeBox { width: 100%; height: 30px; line-height: 30px; background: #eee; }
+        .closeBox label.closeBtn { display: block; width: 20px; height: 20px; background-image: url("./icon/iconset.png"); background-repeat: no-repeat; background-position: 0px -80px; float: right; margin-right: 5%; text-indent: -30px; font-size: 0.8em; line-height: 20px; margin-top: 5px; cursor: pointer; }
+        .scrollBtn { position: fixed; z-index: 15; background-image: url("./icon/iconset.png"); background-repeat: no-repeat; width: 20px; height: 20px; display: block; background-color: transparent; right: calc((15% - 20px) / 2); bottom: 20px; background-position: 0px -60px; cursor: pointer; }
+    }
+    </style>
+</head>
+<body>
+    <input type="checkbox" name="ck01" id="ck1" class="ckItem">
+    <input type="checkbox" name="ck01" id="ck2" class="ckItem">
+    <div class="container">
+        <div class="left desk">
+            <div class="left_wrap">
+                <img src="./img/left_img.gif" alt="배너">
+                <img src="./img/left_txt.png" alt="txt" class="left_txt">
+                <a href="#" class="icon cart">장바구니</a>
+            </div>
+        </div>
+        <header class="hd on">
+            <a href="#" class="icon cart mo">장바구니</a>
+            <label for="ck1" class="icon search">검색</label>
+            <a href="index.html" class="logo desk">로고</a>
+            <label for="ck2" class="lstBox">
+                <span class="lst item1"></span>
+                <span class="lst item2"></span>
+                <span class="lst item3"></span>
+            </label>
+            <ul class="subMn">
+                <li><a href="#">Login</a></li>
+                <li><a href="#">Join</a></li>
+                <li><a href="#">My page</a></li>
+            </ul>
+        </header> 
+        <nav id="gnb" class="desk">
+            <ul>
+                <li>
+                    <a href="" class="mnDep1 bold">디자인제안</a>
+                </li>
+                <li>
+                    <a href="" class="mnDep1 bold">신상품</a>
+                </li>
+                <li>
+                    <a href="" class="mnDep1 bold">완제품</a>
+                </li>
+                <li>
+                    <a href="" class="mnDep1">귀침</a>
+                </li>
+                <li>
+                    <a href="" class="mnDep1">스와로브스키</a>
+                </li>
+                <li>
+                    <a href="" class="mnDep1">크리스탈</a>
+                </li>
+                <li>
+                    <a href="" class="mnDep1">시드/캣츠</a>
+                </li>
+                <li>
+                    <a href="" class="mnDep1">원석(젬스톤)</a>
+                </li>
+                <li>
+                    <a href="" class="mnDep1">진주/자개</a>
+                </li>
+                <li>
+                    <a href="" class="mnDep1">아크릴/우드</a>
+                </li>
+                <li>
+                    <a href="" class="mnDep1">이니셜</a>
+                </li>
+                <li>
+                    <a href="" class="mnDep1">메탈</a>
+                </li>
+                <li>
+                    <a href="" class="mnDep1">팬던트</a>
+                </li>
+                <br>
+                <li>
+                    <a href="" class="mnDep1">은제품</a>
+                </li>
+                <li>
+                    <a href="" class="mnDep1">체인(chain)</a>
+                </li>
+                <li>
+                    <a href="" class="mnDep1">태슬/깃털</a>
+                </li>
+                <li class="long">
+                    <a href="" class="mnDep1">폼폼(pompom)</a>
+                </li>
+                <li class="long">
+                    <a href="" class="mnDep1">각종줄/레이스</a>
+                </li>
+                <li class="long">
+                    <a href="" class="mnDep1">악세사리부자재</a>
+                </li>
+                <li>
+                    <a href="" class="mnDep1">공구/포장</a>
+                </li>
+                <li>
+                    <a href="" class="mnDep1">개인결제</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="vs">
+            <ul class="vsBox">
+                <li class="item1">
+                    <img src="./img/slide1_mo.png" alt="디자인제안" class="mo">
+                    <img src="./img/slide1.png" alt="디자인제안" class="desk">
+                </li>
+                <li class="item2">
+                    <img src="./img/slide2_mo.png" alt="디자인제안" class="mo">
+                    <img src="./img/slide2.png" alt="디자인제안" class="desk">
+                </li>
+                <li class="item3">
+                    <img src="./img/slide3_mo.png" alt="디자인제안" class="mo">
+                    <img src="./img/slide3.png" alt="디자인제안" class="desk">
+                </li>
+                <li class="item4">
+                    <img src="./img/slide4_mo.png" alt="비즈굿" class="mo">
+                    <img src="./img/slide4.png" alt="비즈굿" class="desk">
+                </li>
+                <li class="item5">
+                    <img src="./img/slide5_mo.png" alt="비즈굿" class="mo">
+                    <img src="./img/slide5.png" alt="비즈굿" class="desk">
+                </li>
+            </ul>
+            <div class="btnBoxFrm">
+                <ul class="btnBox">
+                    <li class="item1"><button class="on"></button></li>
+                    <li class="item2"><button></button></li>
+                    <li class="item3"><button></button></li>
+                    <li class="item4"><button></button></li>
+                    <li class="item5"><button></button></li>
+                </ul>
+            </div>
+        </div>
+        <div class="sub item1">
+            <img src="./img/section1_mo.png" alt="디자인제안" class="mo">
+            <img src="./img/section1.png" alt="디자인제안" class="desk">
+            <h3 class="title">DESIGN PROPOSE</h3>
+            <div class="col">
+                <div class="colLst">
+                    <img src="./img/sub1_img1.jpg" alt="디자인제안1">
+                    <p class="tit">(디자인-g1689) 컬러스톤드롭언발귀걸이</p>
+                    <p class="cost">재료비 4,168원</p>
+                </div>
+                <div class="colLst">
+                    <img src="./img/sub1_img2.jpg" alt="디자인제안2">
+                    <p class="tit">(디자인-g1688) 아크릴벌집하트귀걸이</p>
+                    <p class="cost">재료비 3,400원</p>
+                </div>
+                <div class="colLst">
+                    <img src="./img/sub1_img3.jpg" alt="디자인제안3">
+                    <p class="tit">(디자인-g1687) 아크릴드롭볼귀걸이</p>
+                    <p class="cost">재료비 4,250원</p>
+                </div>
+                <div class="colLst">
+                    <img src="./img/sub1_img4.jpg" alt="디자인제안4">
+                    <p class="tit">(디자인-g1686) 아크릴달귀걸이</p>
+                    <p class="cost">재료비 3,950원</p>
+                </div>
+                <div class="colLst">
+                    <img src="./img/sub1_img5.jpg" alt="디자인제안5">
+                    <p class="tit">(디자인-g1685) 하트레이스드롭귀걸이</p>
+                    <p class="cost">재료비 5,900원</p>
+                </div>
+                <div class="colLst">
+                    <img src="./img/sub1_img6.jpg" alt="디자인제안6">
+                    <p class="tit">(디자인-g1684) 소라물방울드롭귀걸이</p>
+                    <p class="cost">재료비 2,950원</p>
+                </div>
+                <div class="colLst">
+                    <img src="./img/sub1_img7.jpg" alt="디자인제안7">
+                    <p class="tit">(디자인-g1683) 스윙리본귀걸이</p>
+                    <p class="cost">재료비 4,408원</p>
+                </div>
+                <div class="colLst">
+                    <img src="./img/sub1_img8.jpg" alt="디자인제안8">
+                    <p class="tit">(디자인-g1682) 보석진주나무귀걸이</p>
+                    <p class="cost">재료비 4,800원</p>
+                </div>
+                <div class="colLst">
+                    <img src="./img/sub1_img9.jpg" alt="디자인제안9">
+                    <p class="tit">(디자인-g1681) 진주장미귀걸이</p>
+                    <p class="cost">재료비 3,208원</p>
+                </div>
+                <div class="colLst desk">
+                    <img src="./img/sub1_img10.jpg" alt="디자인제안10">
+                    <p class="tit">(디자인-g1690) 장미꽃진주2단그네귀걸이</p>
+                    <p class="cost">재료비 4,200원</p>
+                </div>
+                <div class="colLst desk">
+                    <img src="./img/sub1_img11.jpg" alt="디자인제안11">
+                    <p class="tit">(디자인-g1695) 큐빅사각사각원귀걸이</p>
+                    <p class="cost">재료비 11,300원</p>
+                </div>
+                <div class="colLst desk">
+                    <img src="./img/sub1_img12.jpg" alt="디자인제안12">
+                    <p class="tit">(디자인-g1694) 이중공간쭈글귀걸이</p>
+                    <p class="cost">재료비 3,650원</p>
+                </div>
+            </div>
+            <a href="#" class="more">+ 더보기</a>
+        </div>
+        <div class="sub item2">
+            <h3 class="title">NEW ARRIVAL</h3>
+            <div class="slide">
+                <ul class="conBox">
+                    <li>
+                        <div class="itemBox item1">
+                            <img src="./img/sub2_img1.jpg" alt="신상품">
+                            <p class="tit">[9-1526-01] 포스트 에폭조약돌 한고리 13x10mm 티탄침 6color 골드 {귀걸이재료} (1쌍)</p>
+                            <p class="cost">2,150원</p>
+                        </div>
+                        <div class="itemBox item2">
+                            <img src="./img/sub2_img2.jpg" alt="신상품">
+                            <p class="tit">[7-1744-01] 커넥터 큐빅원 7mm 양고리 6color 무니켈골드 {귀걸이재료,큐빅지르콘} (1개)</p>
+                            <p class="cost">450원</p>
+                        </div>
+                        <div class="itemBox item3">
+                            <img src="./img/sub2_img3.jpg" alt="신상품">
+                            <p class="tit">[7-1745-01] 커넥터 큐빅사각 6.5mm 양고리 5color 무니켈골드 {귀걸이재료,큐빅지르콘} (1개)</p>
+                            <p class="cost">450원</p>
+                        </div>
+                        <div class="itemBox item4">
+                            <img src="./img/sub2_img4.jpg" alt="신상품">
+                            <p class="tit">[7-1746-01] 커넥터 큐빅부채 10x7mm 양고리 5color 무니켈골드 {귀걸이재료} (1개)</p>
+                            <p class="cost">450원</p>
+                        </div>
+                        <div class="itemBox item5 desk">
+                            <img src="./img/sub2_img21.jpg" alt="신상품">
+                            <p class="tit">[7-708-01] 체인팬던트 진주2단그네 9x53mm {귀걸이재료} (1개)</p>
+                            <p class="cost">1,350원</p>
+                        </div>
+                        <div class="itemBox item6 desk">
+                            <img src="./img/sub2_img22.jpg" alt="신상품">
+                            <p class="tit">[7-1749-04] 큐빅팬던트 직사각줄란스틱 양고리 2.5x35mm 3color 골드 {귀걸이재료} (1개)</p>
+                            <p class="cost">1,350원</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="itemBox item1">
+                            <img src="./img/sub2_img5.jpg" alt="신상품">
+                            <p class="tit">[7-1747-01] 커넥터 큐빅보트 4.5x10mm 양고리 5color 무니켈골드 {귀걸이재료} (1개)</p>
+                            <p class="cost">400원</p>
+                        </div>
+                        <div class="itemBox item2">
+                            <img src="./img/sub2_img6.jpg" alt="신상품">
+                            <p class="tit">[7-1663-04] 팬던트 하트레이스 25x23mm 무니켈골드 {귀걸이재료} (1개)</p>
+                            <p class="cost">300원</p>
+                        </div>
+                        <div class="itemBox item3">
+                            <img src="./img/sub2_img7.jpg" alt="신상품">
+                            <p class="tit">[6-007-01] 아크릴진주 벌집하트 24x23mm 크림펄 {귀걸이재료} (1개)</p>
+                            <p class="cost">1,000원</p>
+                        </div>
+                        <div class="itemBox item4">
+                            <img src="./img/sub2_img8.jpg" alt="신상품">
+                            <p class="tit">[6-007-02] 아크릴진주 달 22x25mm 크림펄 {귀걸이재료} (1개)</p>
+                            <p class="cost">1,900원</p>
+                        </div>
+                        <div class="itemBox item5 desk">
+                            <img src="./img/sub2_img23.jpg" alt="신상품">
+                            <p class="tit">[7-708-02] 체인팬던트 별판군번+반구멍침 14.5x81mm {귀걸이재료} (1개)</p>
+                            <p class="cost">1,100원</p>
+                        </div>
+                        <div class="itemBox item6 desk">
+                            <img src="./img/sub2_img24.jpg" alt="신상품">
+                            <p class="tit">[7-708-03] 체인팬던트 모눈삼각뱀줄딸랑이 13x73mm {귀걸이재료} (1개)</p>
+                            <p class="cost">1,450원</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="itemBox item1">
+                            <img src="./img/sub2_img9.jpg" alt="신상품">
+                            <p class="tit">[6-008-01] 아크릴진주 드롭볼 약22x20mm 크림펄/골드 {귀걸이재료} (1개)</p>
+                            <p class="cost">1,200원</p>
+                        </div>
+                        <div class="itemBox item2">
+                            <img src="./img/sub2_img10.jpg" alt="신상품">
+                            <p class="tit">[6-010-01] 아크릴진주 진주나무-3줄기 약60x52mm 크림펄 {귀걸이재료} (1개)</p>
+                            <p class="cost">2,200원</p>
+                        </div>
+                        <div class="itemBox item3">
+                            <img src="./img/sub2_img11.jpg" alt="신상품">
+                            <p class="tit">[6-009-02] 아크릴진주 진주나무-1줄기 약25x32mm 크림펄 {귀걸이재료} (1개)</p>
+                            <p class="cost">1,100원</p>
+                        </div>
+                        <div class="itemBox item4">
+                            <img src="./img/sub2_img12.jpg" alt="신상품">
+                            <p class="tit">[6-009-01] 아크릴진주 보석진주나무-1줄기 약24x25mm 연핑크TR/골드 {귀걸이재료} (1개)</p>
+                            <p class="cost">1,100원</p>
+                        </div>
+                        <div class="itemBox item5 desk">
+                            <img src="./img/sub2_img25.jpg" alt="신상품">
+                            <p class="tit">[7-1749-02] 팬던트 모빌삼각 16x18mm {귀걸이재료} (1개)</p>
+                            <p class="cost">1,000원</p>
+                        </div>
+                        <div class="itemBox item6 desk">
+                            <img src="./img/sub2_img26.jpg" alt="신상품">
+                            <p class="tit">[7-1749-03] 팬던트 이중공간쭈글 24x29mm {귀걸이재료} (1개)</p>
+                            <p class="cost">750원</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="itemBox item1">
+                            <img src="./img/sub2_img13.jpg" alt="신상품">
+                            <p class="tit">[6-006-01] 아크릴진주 12구볼-소 6mm 크림펄 {귀걸이재료} (1개)</p>
+                            <p class="cost">400원</p>
+                        </div>
+                        <div class="itemBox item2">
+                            <img src="./img/sub2_img14.jpg" alt="신상품">
+                            <p class="tit">[7-1711-02] 팬던트 컬러스톤드롭 13x19mm 8color 무니켈도금 (1개)</p>
+                            <p class="cost">650원</p>
+                        </div>
+                        <div class="itemBox item3">
+                            <img src="./img/sub2_img15.jpg" alt="신상품">
+                            <p class="tit">[8-069-12] 은침포스트 스윙리본-소 20x33mm 무도금은침 실리콘뒤클러치 {귀걸이재료} (1쌍)</p>
+                            <p class="cost">3,600원</p>
+                        </div>
+                        <div class="itemBox item4">
+                            <img src="./img/sub2_img16.jpg" alt="신상품">
+                            <p class="tit">[9-1510-03] 포스트 Low볼 약16x61mm 무니켈도금 {귀걸이재료} (1쌍)</p>
+                            <p class="cost">3,200원</p>
+                        </div>
+                        <div class="itemBox item5 desk">
+                            <img src="./img/sub2_img27.jpg" alt="신상품">
+                            <p class="tit">[9-1527-01] 포스트 장미꽃 11mm 티탄침 {귀걸이재료} (1쌍)</p>
+                            <p class="cost">1,500원</p>
+                        </div>
+                        <div class="itemBox item6 desk">
+                            <img src="./img/sub2_img28.jpg" alt="신상품">
+                            <p class="tit">[9-1527-02] 포스트 진주해바라기 14mm 무니켈골드 {귀걸이재료} (1쌍)</p>
+                            <p class="cost">2,000원</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="itemBox item1">
+                            <img src="./img/sub2_img17.jpg" alt="신상품">
+                            <p class="tit">[6-041-03] 팬던트 나팔꽃주렁 아크릴 약20x53mm 골드 {귀걸이재료} (1개)</p>
+                            <p class="cost">1,450원</p>
+                        </div>
+                        <div class="itemBox item2">
+                            <img src="./img/sub2_img18.jpg" alt="신상품">
+                            <p class="tit">[6-041-02] 팬던트 꽃3송이커넥터 아크릴 약17x37mm 골드 {귀걸이재료} (1개)</p>
+                            <p class="cost">800원</p>
+                        </div>
+                        <div class="itemBox item3">
+                            <img src="./img/sub2_img19.jpg" alt="신상품">
+                            <p class="tit">[7-1743-04] 팬던트 하트큰고리 20x23mm 2color 골드 {귀걸이재료} (1개)</p>
+                            <p class="cost">1,100원</p>
+                        </div>
+                        <div class="itemBox item4">
+                            <img src="./img/sub2_img20.jpg" alt="신상품">
+                            <p class="tit">[7-1743-05] 팬던트 물방울스톤줄란 8x66mm 4color 골드 {귀걸이재료} (1개)</p>
+                            <p class="cost">1,350원</p>
+                        </div>
+                        <div class="itemBox item5 desk">
+                            <img src="./img/sub2_img29.jpg" alt="신상품">
+                            <p class="tit">[7-1748-01] 팬던트 진주레이스잎 21x23mm {귀걸이재료} (1개)</p>
+                            <p class="cost">800원</p>
+                        </div>
+                        <div class="itemBox item6 desk">
+                            <img src="./img/sub2_img30.jpg" alt="신상품">
+                            <p class="tit">[7-1749-01] 팬던트 쭈글엘리자베스 12x13mm {귀걸이재료} (1개)</p>
+                            <p class="cost">650원</p>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="conBtnBox mo">
+                    <li class="item1"><button class="on"></button></li>
+                    <li class="item2"><button></button></li>
+                    <li class="item3"><button></button></li>
+                    <li class="item4"><button></button></li>
+                    <li class="item5"><button></button></li>
+                </ul>
+            </div>    
+        </div>
+        <div class="sub item3">
+            <input type="radio" class="raItem" name="ra1" id="ra1" checked>
+            <input type="radio" class="raItem" name="ra1" id="ra2">
+            <input type="radio" class="raItem" name="ra1" id="ra3">
+            <div class="btnBox2">
+                <label for="ra1" class="item1">Best Item</label>
+                <label for="ra2" class="item2">완제품</label>
+                <label for="ra3" class="item3">귀침</label>
+            </div>
+            <div class="conBox2 item1">
+                <div class="itemBox item1">
+                    <img src="./img/sub3_img1.gif" alt="베스트상품">
+                    <p class="tit">[7-907-01] 팬던트 포도볼 14mm 크리스탈AB 골드 {귀걸이재료,O링이 달려있어 팬던트로 사용가능} (1개)</p>
+                    <p class="cost">2,200원</p>
+                </div>
+                <div class="itemBox item2">
+                    <img src="./img/sub3_img2.jpg" alt="베스트상품">
+                    <p class="tit">[9-1508-01] 포스트 넝쿨직사각 한고리 17x21mm 티탄침 7color 골드 (1쌍)</p>
+                    <p class="cost">3,000원</p>
+                </div>
+                <div class="itemBox item3">
+                    <img src="./img/sub3_img3.gif" alt="베스트상품">
+                    <p class="tit">[8-078] 은침포스트 컬러꽃망울 7mm 12color/OR 무도금은침 실리콘뒤클러치 (1쌍)</p>
+                    <p class="cost">1,750원</p>
+                </div>
+                <div class="itemBox item4">
+                    <img src="./img/sub3_img4.jpg" alt="베스트상품">
+                    <p class="tit">[7-1644-01] 팬던트 컬러레트로플라워 양고리 14mm 4color 무니켈골드 (1개)</p>
+                    <p class="cost">1,050원</p>
+                </div>
+                <div class="itemBox item5 desk">
+                    <img src="./img/sub3_img13.gif" alt="베스트상품">
+                    <p class="tit">[7-1681-02] 팬던트 활짝벚꽃 22mm 5color 고무코팅 {플라워} (1개)</p>
+                    <p class="cost">1,100원</p>
+                </div>
+                <div class="itemBox item6 desk">
+                    <img src="./img/sub3_img14.jpg" alt="베스트상품">
+                    <p class="tit">[7-1722-01] 팬던트 수술꽃 15x16mm 8color 고무코팅 {플라워} (1개)</p>
+                    <p class="cost">1,000원</p>
+                </div>    
+            </div>
+            <div class="conBox2 item2">
+                <div class="itemBox item1">
+                    <img src="./img/sub3_img5.jpg" alt="완제품">
+                    <p class="tit">[B-006-01]{완제품} 라인원포스트 진주도트원 1.5x5.7cm 무니켈침 실리콘뒤클러치 나비뒤클러치 (1쌍)</p>
+                    <p class="cost">3,200원</p>
+                </div>
+                <div class="itemBox item2">
+                    <img src="./img/sub3_img6.jpg" alt="완제품">
+                    <p class="tit">[B-007-01]{완제품} 볼포스트 진주송이 약1.3x12.1cm 무니켈침 실리콘뒤클러치 나비뒤클러치 (1쌍)</p>
+                    <p class="cost">4,700원</p>
+                </div>
+                <div class="itemBox item3">
+                    <img src="./img/sub3_img7.jpg" alt="완제품">
+                    <p class="tit">[B-006-02]{완제품} 원포스트 진주돌맹이저울 3x6.6cm 무니켈침 실리콘뒤클러치 나비뒤클러치 (1쌍)</p>
+                    <p class="cost">3,500원</p>
+                </div>
+                <div class="itemBox item4">
+                    <img src="./img/sub3_img8.jpg" alt="완제품">
+                    <p class="tit">[B-005-01]{완제품} 원형스틱포스트 진주사각뱀줄사각스틱 1.2x9.7cm 무니켈침 실리콘뒤클러치 나비뒤클러치 (1쌍)</p>
+                    <p class="cost">3,400원</p>
+                </div>
+                <div class="itemBox item5 desk">
+                    <img src="./img/sub3_img15.jpg" alt="완제품">
+                    <p class="tit">[B-002-01]{완제품} 포스트 C자클립연결 10x38mm 무니켈침 실리콘뒤클러치 나비뒤클러치 (1쌍)</p>
+                    <p class="cost">3,000원</p>
+                </div>
+                <div class="itemBox item6 desk">
+                    <img src="./img/sub3_img16.jpg" alt="완제품">
+                    <p class="tit">[B-003-02]{완제품} 포스트 삼각컷플랫바연결 0.5x6.5cm 무니켈침 실리콘뒤클러치 나비뒤클러치 (1쌍)</p>
+                    <p class="cost">3,700원</p>
+                </div>    
+            </div>
+            <div class="conBox2 item3">
+                <div class="itemBox item1">
+                    <img src="./img/sub3_img9.jpg" alt="귀침">
+                    <p class="tit">[9-1527-01] 포스트 장미꽃 11mm 티탄침 {귀걸이재료} (1쌍)</p>
+                    <p class="cost">1,500원</p>
+                </div>
+                <div class="itemBox item2">
+                    <img src="./img/sub3_img10.jpg" alt="귀침">
+                    <p class="tit">[9-1526-01] 포스트 에폭조약돌 한고리 13x10mm 티탄침 6color 골드 {귀걸이재료} (1쌍)</p>
+                    <p class="cost">2,150원</p>
+                </div>
+                <div class="itemBox item3">
+                    <img src="./img/sub3_img11.jpg" alt="귀침">
+                    <p class="tit">[8-068-01] 은침포스트 큐빅미니리스+반구멍침 7x9.5mm 무도금은침 실리콘뒤클러치 {귀걸이재료} (1쌍)</p>
+                    <p class="cost">5,200원</p>
+                </div>
+                <div class="itemBox item4">
+                    <img src="./img/sub3_img12.jpg" alt="귀침">
+                    <p class="tit">[9-1463-04] 포스트 오로라큐빅여섯발 4mm 6mm 무니켈침 {귀걸이재료} (1쌍)</p>
+                    <p class="cost">1,350원</p>
+                </div>
+                <div class="itemBox item5 desk">
+                    <img src="./img/sub3_img17.jpg" alt="귀침">
+                    <p class="tit">[9-1494-07] 스톤포스트 반구진주꽃 9.5mm 무니켈침 {귀걸이재료} (1쌍)</p>
+                    <p class="cost">2,650원</p>
+                </div>
+                <div class="itemBox item6 desk">
+                    <img src="./img/sub3_img18.gif" alt="귀침">
+                    <p class="tit">[9-1485-02] 포스트 컬러직사각 한고리 6x16mm 4color 무니켈골드 {귀걸이재료} (1쌍)</p>
+                    <p class="cost">2,900원</p>
+                </div>    
+            </div>
+        </div>
+        <div class="sub item4">
+            <img src="./img/sub4.jpg" alt="혜택안내" class="mo">
+            <img src="./img/sub4_img.jpg" alt="혜택안내" class="desk">
+            <a href="#" class="more">금액대별 사은품 알아보기 〉</a>
+        </div>
+        <div class="sub item5">
+            <div class="searchFrm">
+                <form action="">
+                    <select name="category" id="category">
+                        <option value="">전체</option>
+                        <option value="">귀침</option>
+                        <option value="">스와로브스키</option>
+                        <option value="">크리스탈</option>
+                        <option value="">시드/캣츠</option>
+                        <option value="">원석(젬스톤)</option>
+                        <option value="">진주/자개</option>
+                        <option value="">아크릴/우드</option>
+                        <option value="">이니셜</option>
+                        <option value="">메탈</option>
+                        <option value="">팬던트</option>
+                        <option value="">은제품</option>
+                        <option value="">체인(chain)</option>
+                        <option value="">태슬/깃털</option>
+                        <option value="">폼폼(pompom)</option>
+                        <option value="">각종줄/레이스</option>
+                        <option value="">악세사리부자재</option>
+                        <option value="">공구/포장</option>
+                        <option value="">완제품</option>
+                    </select>
+                    <input type="text" class="searchForm">
+                    <input type="submit" class="searchBtn">
+                </form>
+            </div>
+            <div class="col">
+                <div class="colLst">
+                    <img src="./img/sub5_img1.jpg" alt="상품리뷰">
+                    <p class="tit">[[9-617] 공구 써지컬스틸 니퍼 사이즈12mm (1개)] 뚝딱 깔끔하게 잘 잘려요!</p>
+                    <p class="writer">김희*</p>
+                    <p class="date">2019/03/28</p>
+                </div>
+                <div class="colLst">
+                    <img src="./img/sub5_img2.jpg" alt="상품리뷰">
+                    <p class="tit">[[2-440-01] 팬던트 스왈st-라운드 6mm 8mm 10mm 크리스탈AB {귀걸이재료} (1개)] 예뻐요</p>
+                    <p class="writer">이지*</p>
+                    <p class="date">2019/03/27</p>
+                </div>
+                <div class="colLst">
+                    <img src="./img/sub5_img3.jpg" alt="상품리뷰">
+                    <p class="tit">[[8-350-14] 은조정체인하트 4cm 은92.5% (1개)] 좋아요</p>
+                    <p class="writer">임원*</p>
+                    <p class="date">2019/03/26</p>
+                </div>
+                <div class="colLst">
+                    <img src="./img/sub5_img4.jpg" alt="상품리뷰">
+                    <p class="tit">[[8-081-01] 은침포스트 곡선매듭 7x20mm 무도금은침 실리콘뒤클러치 {귀걸이재료,매듭귀걸이,하단고리있음} (1쌍)] 예뻐요</p>
+                    <p class="writer">이지*</p>
+                    <p class="date">2019/03/28</p>
+                </div>
+                <div class="colLst">
+                    <img src="./img/sub5_img5.jpg" alt="상품리뷰">
+                    <p class="tit">[[7-014-02] 큐빅팬던트 도형라운드-소 6x6mm (1개)] 예뻐요</p>
+                    <p class="writer">이지*</p>
+                    <p class="date">2019/03/27</p>
+                </div>
+                <div class="colLst">
+                    <img src="./img/sub5_img6.jpg" alt="상품리뷰">
+                    <p class="tit">[[8-350-13] 은랍스터-소 8mm 은92.5% (1개)] 좋아요</p>
+                    <p class="writer">임원*</p>
+                    <p class="date">2019/03/26</p>
+                </div>
+                <div class="colLst">
+                    <img src="./img/sub5_img7.jpg" alt="상품리뷰">
+                    <p class="tit">[[9-1471-02] 포스트 트위스트C자고리-소 3x17mm 무니켈도금 (1쌍)] 이뻐요</p>
+                    <p class="writer">이지*</p>
+                    <p class="date">2019/03/28</p>
+                </div>
+                <div class="colLst">
+                    <img src="./img/sub5_img8.jpg" alt="상품리뷰">
+                    <p class="tit">[[9-050-04] 기본체인 SF235 폭1.8mm 신주재질 핑크골드 (1M)] 예뻐요</p>
+                    <p class="writer">이지*</p>
+                    <p class="date">2019/03/27</p>
+                </div>
+                <div class="colLst">
+                    <img src="./img/sub5_img9.jpg" alt="상품리뷰">
+                    <p class="tit">[[8-276-01] 은목걸이줄 뱀줄125R 폭0.8mm 은92.5% {목걸이재료} (1개)] 괜찮아요.</p>
+                    <p class="writer">임원*</p>
+                    <p class="date">2019/03/26</p>
+                </div>
+            </div>
+        </div>
+        <div class="sub item6">
+            <p class="com"><span class="bold">혜택</span> Beads Good 회원 혜택을 한 눈에!</p>   
+            <div class="conBox3">
+                <img src="./img/sub6_img1.png" alt="혜택">
+                <p class="subCom"><span class="txt_b">등급별</span> 혜택, 확인해보세요!</p>
+                <button>＞</button>
+            </div>
+            <div class="conBox3">
+                <img src="./img/sub6_img2.png" alt="혜택">
+                <p class="subCom"><span class="txt_b">10% 할인쿠폰</span> 바로 발급받기</p>
+                <button>＞</button>
+            </div> 
+        </div>
+        <div class="sub item7">
+            <div class="conBox4 item1">
+                <h4 class="conTit">CALL CENTER</h4>
+                <p class="num">02-318-1450</p> 
+                <p class="conCom">MON-FRI 10AM - 5PM<br>LUNCH 11:50AM - 12:50PM<br>WEEKEND,HOLIDAY OFF</p>   
+                <a href="tel:02-318-1450" class="link">바로 연결</a>
+            </div>
+            <div class="conBox4 item2">
+                <h4 class="conTit">BANK INFO</h4>
+                <p class="conCom">농협 302-1254-1315-81<br>국민 417201-01-281551<br>예금주 : 김종재(비즈굿)</p>   
+                <a href="tel:02-318-1450" class="link">문의하기</a>    
+            </div>
+        </div>
+        <div class="sub item8">
+            <h4 class="conTit">DELIVERY</h4>
+            <p class="conCom">교환·반품 주소<br>서울시 중구 퇴계로 36, 615호 (남창동,삼선빌딩)</p>    
+        </div>
+        <footer class="ft">
+            <ul class="ftLink mo">
+                <li><a href="">회사소개</a></li>
+                <li><a href="">이용안내</a></li>
+                <li><a href="">이용약관</a></li>
+                <li><a href="">개인정보처리방침</a></li>
+            </ul>
+            <div class="ft_wrap">
+                <p class="info mo">업체명 : 비즈굿<br>대표 : 김종재<br>전화 : 02-318-1450<br>이메일 : help@beadsgood.com<br>사업자등록번호 : 110-07-55704<br>개인정보담당자 : 김종재<br>통신판매업신고번호 : 제2013 서울중구 0274호<br>주소 : 서울시 중구 퇴계로 36, 615호 (남창동,삼선빌딩)</p>  
+                <p class="info desk">업체명 : 비즈굿 ｜ 대표 : 김종재 ｜ 전화 : 02-318-1450 ｜ 이메일 : help@beadsgood.com ｜ 사업자등록번호 : 110-07-55704<br>개인정보담당자 : 김종재 ｜ 통신판매업신고번호 : 제2013 서울중구 0274호 ｜ 주소 : 서울시 중구 퇴계로 36, 615호 (남창동,삼선빌딩)</p>   
+            </div>
+            <p class="copy">COPYRIGHT ⓒ 2019 BEADSGOOD ALL RIGHTS RESERVED.</p>
+        </footer>
+    </div>  
+    <button id="quick_up" class="scrollBtn up"></button>
+    <div class="wrap">
+        <div class="left desk">
+            <div class="left_wrap">
+                <a href="#" class="icon cart">장바구니</a>
+            </div>
+        </div>
+        <header class="hd">
+            <label for="ck1" class="icon search desk">검색</label>
+            <a href="index.html" class="logo desk">로고</a>
+            <label for="ck2" class="lstBox closeBtn">
+                <span class="lst item1"></span>
+                <span class="lst item2"></span>
+                <span class="lst item3"></span>
+            </label>
+            <ul class="subMn desk">
+                <li><a href="#">Login</a></li>
+                <li><a href="#">Join</a></li>
+                <li><a href="#">My page</a></li>
+            </ul>
+        </header> 
+        <div class="top mo">
+            <div class="link">
+                <a href="">Login</a>
+            </div>
+            <div class="link">
+                <a href="">Join</a>
+            </div>
+            <div class="link">
+                <a href="">MyPage</a>
+            </div>
+            <div class="link">
+                <a href="">Wishlist</a>
+            </div>
+            <div class="link">
+                <a href="">Q&A</a>
+            </div>
+            <div class="link">
+                <a href="">FAQ</a>
+            </div>
+        </div> 
+        <ul class="bottom mo">
+            <li>
+                <a href="" class="bold">디자인제안</a>
+            </li>
+            <li>
+                <a href="" class="bold">신상품</a>
+            </li>
+            <li>
+                <a href="" class="bold">완제품</a>
+            </li>
+            <li>
+                <a href="">귀침</a>
+            </li>
+            <li>
+                <a href="">스와로브스키</a>
+            </li>
+            <li>
+                <a href="">크리스탈</a>
+            </li>
+            <li>
+                <a href="">시드/캣츠</a>
+            </li>
+            <li>
+                <a href="">원석(젬스톤)</a>
+            </li>
+            <li>
+                <a href="">진주/자개</a>
+            </li>
+            <li>
+                <a href="">아크릴/우드</a>
+            </li>
+            <li>
+                <a href="">이니셜</a>
+            </li>
+            <li>
+                <a href="">메탈</a>
+            </li>
+            <li>
+                <a href="">팬던트</a>
+            </li>
+            <li>
+                <a href="">은제품</a>
+            </li>
+            <li>
+                <a href="">체인(chain)</a>
+            </li>
+            <li>
+                <a href="">태슬/깃털</a>
+            </li>
+            <li>
+                <a href="">폼폼(pompom)</a>
+            </li>
+            <li>
+                <a href="">각종줄/레이스</a>
+            </li>
+            <li>
+                <a href="">악세사리부자재</a>
+            </li>
+            <li>
+                <a href="">공구/포장</a>
+            </li>
+            <li>
+                <a href="">개인결제</a>
+            </li>
+        </ul>
+        <ul class="menu desk">
+            <li><a href="#">디자인제안</a></li>
+            <li><a href="#">작품갤러리</a></li>
+            <li><a href="#">도안자료실</a></li>
+            <li><a href="#">할인쿠폰</a></li>
+            <li><a href="#">Q&A</a></li>
+            <li><a href="#">FAQ</a></li>
+        </ul>
+        <form action="" class="searchFrm mo">
+            <input type="text" class="searchForm" placeholder="검색어를 입력해주세요">
+            <input type="submit" class="searchBtn">
+        </form>  
+        <div class="blank_w desk"></div>
+    </div> 
+    <div class="blank mo"></div>
+    <div class="searchBox">
+            <form action="" class="searchFrm">
+                <input type="text" class="searchForm" placeholder="상품을 검색해주세요">
+                <input type="submit" class="searchBtn">
+            </form> 
+            <div class="slideBox">
+                <ul class="hot">
+                    <li><a href="#">내가 직접 만드는 나만의 악세사리</a></li>
+                    <li><a href="#">벚꽃놀이에 딱 맞는 귀걸이 디자인 제안</a></li>
+                    <li class="on"><a href="#">오늘 하루 10% 할인 항목</a></li>
+                    <li><a href="#">일정금액 구매하고 금액별 사은품 받아가세요!</a></li>
+                    <li><a href="#">알러지 OUT! 안심할 수 있는 은침 귀걸이</a></li>
+                </ul>     
+            </div>
+            <div class="closeBox">
+                <label for="ck1" class="closeBtn">닫기</label>
+            </div>           
+        </div>
+        <div class="blank_w desk"></div>
+</body>
+</html>
