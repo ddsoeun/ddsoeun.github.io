@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Park Soeun Portolio</title>
+    <link rel="stylesheet" href="reset.css">
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link href="https://fonts.googleapis.com/css?family=Crete+Round|Nanum+Gothic+Coding|Noto+Sans+KR|Roboto|Ubuntu" rel="stylesheet">
+
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon16.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon32.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon48.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon64.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon128.png">
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon150.png">
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta name="msapplication-TileImage" content="./ico/favicon144.png">
+    <link rel="apple-touch-icon" size="120X120" href="./ico/favicon120.png">
+    <link rel="apple-touch-icon" size="57X57" href="./ico/favicon57.png">
+    <link rel="apple-touch-icon" size="72X72" href="./ico/favicon72.png">
+    <link rel="apple-touch-icon" size="114X114" href="./ico/favicon114.png">
+    <link rel="apple-touch-icon" size="180X180" href="./ico/favicon180.png">
+    <link rel="apple-touch-icon" size="152X152" href="./ico/favicon152.png">
+    <link rel="apple-touch-icon" size="196X196" href="./ico/favicon196.png">
+    <link rel="apple-touch-icon" size="167X167" href="./ico/favicon167.png">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="application-name" content="SOEUN PORTFOLIO Web Site">
+    <meta name="author" content="SoeunPark">
+    <meta name="description" content="SOEUN PORTFOLIO Mainpage">
+    <meta name="generator" content="Brackets">
+    <meta name="keywords" content="SOEUN PORTFOLIO, soeun portfolio">
+
+    <style>
+        body,
+        html {
+            -ms-overflow-style: none;
+        }
+
+        ::-webkit-scrollbar {
+            display: none;
+        }
+
+        ::-o-scrollbar {
+            display: none;
+        }
+
+        /*
+    font-family: 'Noto Sans KR', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
+    font-family: 'Nanum Gothic Coding', monospace;
+    font-family: 'Crete Round', serif;
+    font-family: 'Roboto', sans-serif;    
+*/
+        @media screen and (max-width:767px) {
+            .container {
+                background: #ada9d4;
+                width: 100%;
+                height: 100%;
+            }
+
+            .wrap {
+                height: calc(100vh - 69px);
+                padding: 5vw 5vw calc(10vw + 1em);
+            }
+
+            .vs {
+                background-image: url("./img/vs.png");
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center center;
+                100%;
+                height: 90%;
+                position: relative;
+            }
+
+            .hd {
+                width: 100%;
+                height: 100%;
+            }
+
+            .num {
+                color: #fff;
+                font-size: 3rem;
+                font-style: italic;
+                font-family: 'Crete Round', serif;
+                letter-spacing: 3px;
+                margin-left: 4vw;
+            }
+
+            .title {
+                font-family: 'Ubuntu', sans-serif;
+                font-size: 2rem;
+                color: #fff;
+                padding-top: 1vw;
+            }
+
+            .com {
+                font-size: 1rem;
+                color: #fff;
+            }
+
+            .deco {
+                writing-mode: vertical-rl;
+                position: absolute;
+                right: -3vw;
+                bottom: -3vw;
+                color: #fff;
+                font-size: 0.85rem;
+                letter-spacing: 3px;
+            }
+
+            .lstBox {
+                width: 40px;
+                height: 40px;
+                background: transparent;
+                float: right;
+                margin-top: 4vw;
+                position: relative;
+            }
+
+            .lst {
+                width: 30px;
+                height: 3px;
+                background: #fff;
+                border-radius: 3px;
+                position: absolute;
+                right: 5vw;
+                transition: 0.4s;
+            }
+
+            .lst.item1 {
+                top: 10px;
+            }
+
+            .lst.item2 {
+                top: 18px;
+            }
+
+            .lst.item3 {
+                top: 26px;
+            }
+
+            .menuBox {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                z-index: -10;
+                background: #ada9d4;
+                width: 100%;
+                height: 100%;
+                transition-duration: 0.8s;
+            }
+
+            .menuBox .closeBtn {
+                margin-top: 10vw;
+                margin-right: 5vw;
+                position: relative;
+            }
+
+            .menuBox .menu {
+                margin-top: 20vh;
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .menuBox .menu .menuLst {
+                position: relative;
+                z-index: 10;
+            }
+
+            .menuBox .menu .menuLst a {
+                display: flex;
+                width: 100%;
+                height: 100%;
+                margin-top: -100%;
+                opacity: 0;
+                transition-duration: 0.6s;
+                transition-delay: 0.4s;
+                flex-direction: column;
+                align-items: flex-start;
+                text-align: center;
+            }
+
+            .menuBox .menu .menuLst a span {
+                text-align: center;
+                color: #fff;
+                font-family: 'Crete Round', serif;
+                font-size: 1rem;
+                font-weight: bold;
+                letter-spacing: 5px;
+                overflow: hidden;
+                text-transform: uppercase;
+                position: relative;
+                display: inline-block;
+                margin-top: 10vh;
+                text-shadow: -1px -1px 2px #8f89c9, 1px 1px 2px #8f89c9;
+            }
+
+            .menuBox .menu .menuLst a span::before,
+            .menuBox .menu .menuLst a span::after {
+                content: "";
+                width: 100%;
+                height: 100%;
+                background: #8f89c9;
+                position: absolute;
+                top: 0;
+                left: 0;
+                transform: translate3d(-100%, 0, 0) translate3d(-1px, 0, 0);
+                transition: transform 0.7s;
+                transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+            }
+
+            .menuBox .menu .menuLst a:hover span::before {
+                transform: translate3d(100%, 0, 0) translate3d(1px, 0, 0);
+            }
+
+            .menuBox .menu .menuLst a:hover span::after {
+                transform: translate3d(0, 0, 0);
+            }
+
+            .menuBox .menu .menuLst a span::after {
+                top: calc(50% - 2px);
+                height: 4px;
+            }
+        }
+
+        @media screen and (min-width:768px) and (max-width:959px) {
+            .container {
+                background: #ada9d4;
+                width: 100%;
+                height: 100%;
+            }
+
+            .wrap {
+                height: calc(100vh - 69px);
+                padding: 5vw 5vw calc(10vw + 1em);
+            }
+
+            .vs {
+                background-image: url("./img/vs.png");
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center center;
+                100%;
+                height: 90%;
+                position: relative;
+            }
+
+            .hd {
+                width: 100%;
+                height: 100%;
+            }
+
+            .num {
+                color: #fff;
+                font-size: 5rem;
+                font-style: italic;
+                font-family: 'Crete Round', serif;
+                letter-spacing: 3px;
+                margin-left: 4vw;
+            }
+
+            .title {
+                font-family: 'Ubuntu', sans-serif;
+                font-size: 6rem;
+                color: #fff;
+                margin-top: -8vw;
+            }
+
+            .com {
+                font-size: 1.5rem;
+                color: #fff;
+            }
+
+            .deco {
+                writing-mode: vertical-rl;
+                position: absolute;
+                right: -1.5vw;
+                bottom: -3vw;
+                color: #fff;
+                font-size: 1rem;
+                letter-spacing: 3px;
+            }
+
+            .lstBox {
+                width: 40px;
+                height: 40px;
+                background: transparent;
+                float: right;
+                margin-top: 4vw;
+                position: relative;
+            }
+
+            .lst {
+                width: 30px;
+                height: 3px;
+                background: #fff;
+                border-radius: 3px;
+                position: absolute;
+                right: 5vw;
+                transition: 0.4s;
+            }
+
+            .lst.item1 {
+                top: 10px;
+            }
+
+            .lst.item2 {
+                top: 18px;
+            }
+
+            .lst.item3 {
+                top: 26px;
+            }
+
+            .menuBox {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                z-index: -10;
+                background: #ada9d4;
+                width: 100%;
+                height: 100%;
+                transition-duration: 0.8s;
+            }
+
+            .menuBox .menu {
+                width: 80%;
+                margin: 0 auto;
+                margin-top: 35vw;
+            }
+
+            .menuBox .menu .menuLst {
+                width: 100%;
+            }
+
+            .menuBox .menu .menuLst a {
+                display: block;
+                text-align: center;
+                width: 100%;
+                height: 100%;
+                margin-top: -100%;
+                opacity: 0;
+                transition-duration: 0.6s;
+                transition-delay: 0.4s;
+                height: 20vw;
+                line-height: 20vw;
+            }
+
+            .menuBox .menu .menuLst a span {
+                text-align: center;
+                color: #fff;
+                font-family: 'Crete Round', serif;
+                font-size: 1.8rem;
+                font-weight: bold;
+                letter-spacing: 5px;
+                overflow: hidden;
+                text-transform: uppercase;
+                text-shadow: -1px -1px 2px #8f89c9, 1px 1px 2px #8f89c9;
+            }
+
+            .menuBox .closeBtn {
+                margin-top: 10vw;
+                margin-right: 5vw;
+                position: relative;
+            }
+        }
+
+        @media screen and (min-width:960px) and (max-width:1024px) {
+            .container {
+                background: #ada9d4;
+                width: 100%;
+                height: 100%;
+            }
+
+            .wrap {
+                height: calc(100vh - 69px);
+                padding: 5vw 5vw calc(10vw + 1em);
+            }
+
+            .vs {
+                background-image: url("./img/vs.png");
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center center;
+                100%;
+                height: 90%;
+                position: relative;
+            }
+
+            .hd {
+                width: 100%;
+                height: 100%;
+            }
+
+            .num {
+                color: #fff;
+                font-size: 5rem;
+                font-style: italic;
+                font-family: 'Crete Round', serif;
+                letter-spacing: 3px;
+                margin-left: 4vw;
+            }
+
+            .title {
+                font-family: 'Ubuntu', sans-serif;
+                font-size: 6rem;
+                color: #fff;
+                margin-top: -7vw;
+            }
+
+            .com {
+                font-size: 1.5rem;
+                color: #fff;
+            }
+
+            .deco {
+                writing-mode: vertical-rl;
+                position: absolute;
+                right: -1vw;
+                bottom: -3vw;
+                color: #fff;
+                font-size: 1rem;
+                letter-spacing: 3px;
+            }
+
+            .lstBox {
+                width: 40px;
+                height: 40px;
+                background: transparent;
+                float: right;
+                margin-top: 4vw;
+                position: relative;
+                cursor: pointer;
+            }
+
+            .lst {
+                width: 30px;
+                height: 3px;
+                background: #fff;
+                border-radius: 3px;
+                position: absolute;
+                right: 5vw;
+                transition: 0.4s;
+            }
+
+            .lst.item1 {
+                top: 10px;
+            }
+
+            .lst.item2 {
+                top: 18px;
+            }
+
+            .lst.item3 {
+                top: 26px;
+            }
+
+            .lstBox:hover .lst {
+                background: #f9d763;
+            }
+
+            .menuBox {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                z-index: -10;
+                background: #ada9d4;
+                width: 100%;
+                height: 100%;
+                transition-duration: 0.8s;
+            }
+
+            .menuBox .menu {
+                width: 80%;
+                margin: 0 auto;
+                margin-top: 35vw;
+            }
+
+            .menuBox .menu .menuLst {
+                width: 100%;
+            }
+
+            .menuBox .menu .menuLst a {
+                display: block;
+                text-align: center;
+                width: 100%;
+                height: 100%;
+                margin-top: -100%;
+                opacity: 0;
+                transition-duration: 0.6s;
+                transition-delay: 0.4s;
+                height: 20vw;
+                line-height: 20vw;
+            }
+
+            .menuBox .menu .menuLst a span {
+                text-align: center;
+                color: #fff;
+                font-family: 'Crete Round', serif;
+                font-size: 1.8rem;
+                font-weight: bold;
+                letter-spacing: 5px;
+                overflow: hidden;
+                text-transform: uppercase;
+                text-shadow: -1px -1px 2px #8f89c9, 1px 1px 2px #8f89c9;
+            }
+
+            .menuBox .closeBtn {
+                margin-top: 10vw;
+                margin-right: 5vw;
+                position: relative;
+            }
+
+            .menuBox .menu .menuLst a span::before,
+            .menuBox .menu .menuLst a span::after {
+                content: "";
+                width: 100%;
+                height: 100%;
+                background: #8f89c9;
+                position: absolute;
+                top: 0;
+                left: 0;
+                transform: translate3d(-100%, 0, 0) translate3d(-1px, 0, 0);
+                transition: transform 0.7s;
+                transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+            }
+
+            .menuBox .menu .menuLst a:hover span::before {
+                transform: translate3d(100%, 0, 0) translate3d(1px, 0, 0);
+            }
+
+            .menuBox .menu .menuLst a:hover span::after {
+                transform: translate3d(0, 0, 0);
+            }
+
+            .menuBox .menu .menuLst a span::after {
+                top: calc(50% - 2px);
+                height: 4px;
+            }
+        }
+
+        @media screen and (min-width:1025px) {
+            .container {
+                background: #ada9d4;
+                width: 100%;
+                height: 100%;
+            }
+
+            .wrap {
+                height: calc(100vh - 69px);
+                padding: 3.5vw 5vw 0vw 5vw;
+            }
+
+            .vs {
+                background-image: url("./img/vs.png");
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center center;
+                100%;
+                height: 90%;
+                position: relative;
+            }
+
+            .hd {
+                width: 100%;
+                height: 100%;
+            }
+
+            .num {
+                color: #fff;
+                font-size: 6rem;
+                font-style: italic;
+                font-family: 'Crete Round', serif;
+                letter-spacing: 3px;
+                margin-left: -2vw;
+            }
+
+            .title {
+                font-family: 'Ubuntu', sans-serif;
+                font-size: 6rem;
+                color: #fff;
+                margin-top: -10vw;
+                margin-left: -2vw;
+            }
+
+            .com {
+                font-size: 1.5rem;
+                color: #fff;
+                margin-top: -0.5vw;
+                margin-left: 1vw;
+            }
+
+            .deco {
+                writing-mode: vertical-rl;
+                position: absolute;
+                right: -1vw;
+                bottom: 3vw;
+                color: #fff;
+                font-size: 1.5rem;
+                letter-spacing: 3px;
+            }
+
+            .lstBox {
+                width: 40px;
+                height: 40px;
+                background: transparent;
+                float: right;
+                margin-top: 3vw;
+                position: relative;
+                cursor: pointer;
+            }
+
+            .lst {
+                width: 40px;
+                height: 3px;
+                background: #fff;
+                border-radius: 3px;
+                position: absolute;
+                right: 5vw;
+                transition: 0.4s;
+            }
+
+            .lst.item1 {
+                top: 10px;
+            }
+
+            .lst.item2 {
+                top: 18px;
+            }
+
+            .lst.item3 {
+                top: 26px;
+            }
+
+            .lstBox:hover .lst {
+                background: #f9d763;
+            }
+
+            .menuBox {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                z-index: -10;
+                background: #ada9d4;
+                width: 100%;
+                height: 100%;
+                transition-duration: 0.8s;
+            }
+
+            .menuBox .menu {
+                margin-top: 25vh;
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .menuBox .menu .menuLst {
+                position: relative;
+                z-index: 10;
+            }
+
+            .menuBox .menu .menuLst a {
+                display: flex;
+                width: 100%;
+                height: 100%;
+                margin-top: -100%;
+                opacity: 0;
+                transition-duration: 0.6s;
+                transition-delay: 0.4s;
+                flex-direction: column;
+                align-items: flex-start;
+                text-align: center;
+            }
+
+            .menuBox .menu .menuLst a span {
+                text-align: center;
+                color: #fff;
+                font-family: 'Crete Round', serif;
+                font-size: 1.8rem;
+                font-weight: bold;
+                letter-spacing: 5px;
+                overflow: hidden;
+                text-transform: uppercase;
+                position: relative;
+                display: inline-block;
+                margin-top: 10vh;
+                text-shadow: -1px -1px 2px #8f89c9, 1px 1px 2px #8f89c9;
+            }
+
+            .menuBox .closeBtn {
+                margin-top: 5vw;
+                margin-right: 5vw;
+            }
+
+            .menuBox .menu .menuLst a span::before,
+            .menuBox .menu .menuLst a span::after {
+                content: "";
+                width: 100%;
+                height: 100%;
+                background: #8f89c9;
+                position: absolute;
+                top: 0;
+                left: 0;
+                transform: translate3d(-100%, 0, 0) translate3d(-1px, 0, 0);
+                transition: transform 0.7s;
+                transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+            }
+
+            .menuBox .menu .menuLst a:hover span::before {
+                transform: translate3d(100%, 0, 0) translate3d(1px, 0, 0);
+            }
+
+            .menuBox .menu .menuLst a:hover span::after {
+                transform: translate3d(0, 0, 0);
+            }
+
+            .menuBox .menu .menuLst a span::after {
+                top: calc(50% - 2px);
+                height: 4px;
+            }
+        }
+    </style>
+    <script>
+        $(document).ready(function() {
+            var wd = $("body, html").width();
+            $(".openBtn").click(function() {
+                $(".menuBox").css("right", "0").css("z-index", "99");
+                $(".lstBox .lst.item1").css("top", "18px").css("transform", "rotate(-45deg)");
+                $(".lstBox .lst.item2").css("display", "none");
+                $(".lstBox .lst.item3").css("top", "18px").css("transform", "rotate(45deg)");
+            });
+            $(".closeBtn").click(function() {
+                $(".menuBox").css("right", "-100%").css("z-index", "-10");
+                $(".lstBox .lst.item1").css("top", "10px").css("transform", "rotate(0deg)");
+                $(".lstBox .lst.item2").css("display", "block").css("top", "18px");
+                $(".lstBox .lst.item3").css("top", "26px").css("transform", "rotate(0deg)");
+            });
+            $(".openBtn").click(function() {
+                var intv = setTimeout(function() {
+                    $(".menuBox .menuLst a").css("margin-top", "0px").css("opacity", "1");
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="wrap">
+            <div class="vs">
+                <header class="hd">
+                    <div class="lstBox openBtn">
+                        <span class="lst item1"></span>
+                        <span class="lst item2"></span>
+                        <span class="lst item3"></span>
+                    </div>
+                    <h2 class="num">01</h2>
+                    <span class="deco">Park Soeun</span>
+                </header>
+                <h1 class="title">Portfolio</h1>
+                <p class="com">My Personal Works</p>
+            </div>
+        </div>
+    </div>
+    <div class="menuBox">
+        <div class="lstBox closeBtn">
+            <span class="lst item1"></span>
+            <span class="lst item2"></span>
+            <span class="lst item3"></span>
+        </div>
+        <div class="menu">
+            <nav class="menuLst">
+                <a href="index.html"><span>HOME</span></a>
+                <a href="about.html"><span>ABOUT</span></a>
+                <a href="portfolio.html"><span>PORTFOLIO</span></a>
+            </nav>
+        </div>
+    </div>
+</body>
+
+</html>

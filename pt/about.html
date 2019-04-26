@@ -1,0 +1,1214 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+    <meta charset="UTF-8">
+    <title>Park Soeun Portolio</title>
+    <link rel="stylesheet" href="reset.css">
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link href="https://fonts.googleapis.com/css?family=Crete+Round|Nanum+Gothic+Coding|Noto+Sans+KR|Roboto|Ubuntu" rel="stylesheet">
+    
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon16.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon32.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon48.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon64.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon128.png">
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon150.png">
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta name="msapplication-TileImage" content="./ico/favicon144.png">
+    <link rel="apple-touch-icon" size="120X120" href="./ico/favicon120.png">
+    <link rel="apple-touch-icon" size="57X57" href="./ico/favicon57.png">
+    <link rel="apple-touch-icon" size="72X72" href="./ico/favicon72.png">
+    <link rel="apple-touch-icon" size="114X114" href="./ico/favicon114.png">
+    <link rel="apple-touch-icon" size="180X180" href="./ico/favicon180.png">
+    <link rel="apple-touch-icon" size="152X152" href="./ico/favicon152.png">
+    <link rel="apple-touch-icon" size="196X196" href="./ico/favicon196.png">
+    <link rel="apple-touch-icon" size="167X167" href="./ico/favicon167.png">
+   
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="application-name" content="SOEUN PORTFOLIO Web Site">
+    <meta name="author" content="SoeunPark">
+    <meta name="description" content="SOEUN PORTFOLIO Mainpage">
+    <meta name="generator" content="Brackets">
+    <meta name="keywords" content="SOEUN PORTFOLIO, soeun portfolio">
+    
+    <style>
+    body, html { -ms-overflow-style:none; background: #ada9d4; }
+    ::-webkit-scrollbar { display: none; }
+    ::-o-scrollbar { display: none; }
+    
+/*
+    font-family: 'Noto Sans KR', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
+    font-family: 'Nanum Gothic Coding', monospace;
+    font-family: 'Crete Round', serif;
+    font-family: 'Roboto', sans-serif;    
+*/
+    @media screen and (max-width:767px) {
+        main { width: 100%; height: 100%; overflow: hidden; }
+        
+        .hd { width: 80%; height: 60px; background: transparent; z-index: 60; position: fixed; top: 0; left: 10%; }
+        
+        .logo { display: block; width: 50px; height: 40px; margin-top: 10px; float: left; }
+        .logo img { width: 100%; }
+        
+        .lstBox { width: 40px; height: 40px; background: transparent; float: right; position: relative; cursor: pointer; margin-top: 10px; }
+        .lst { width: 40px; height: 3px; background: #fff; border-radius: 3px; position: absolute; transition: 0.4s; }
+        .lst.item1 { top: 10px; }
+        .lst.item2 { top: 18px; }
+        .lst.item3 { top: 26px; }  
+        .lstBox:hover .lst { background: #f9d763; }
+        
+        .slideBox { width: 100%; height: 100%; overflow: hidden; position: relative; transition: 0.8s; padding-top: 60px; }
+        .slideBox.on { margin-top: -100vh; }
+        .slideBox .slide { width: 300%; height: 100%; }
+        .slideBox .slide li { float: left; width: 33.333333333333%; height: 100%; position: relative; }
+        .slide_img { width: 60vw; margin: 0 auto; height: 75vh; background-position: center center; background-repeat: no-repeat; background-size: cover; margin-top: 3vh; }
+        .slide li.item1 .slide_img { background-image: url("./img/about_img1.png"); }
+        .slide li.item2 .slide_img { background-image: url("./img/about_img2.png"); }
+        .slide li.item3 .slide_img { background-image: url("./img/about_img3.png"); }
+        .slide_num { font-size: 4rem; font-family: 'Crete Round', serif; color: #fff; letter-spacing: 3px; font-style: italic; position: absolute; width: 20vw; left: 40vw; text-align: center; top: -4vh; }
+        .slide_title { font-size: 3.5rem; font-family: 'Crete Round', serif; position: absolute; width: 60vw; left: 20vw; text-align: center; top: 35vh; color: #fff; letter-spacing: 1vw; }
+        .slide li.item3 .slide_title { font-size: 3rem; width: 70vw; left: 15vw; }
+        
+        .btnBox { width: 100%; height: 40vh; }
+        .btnBox li { float: left; position: absolute; top: 50vh; cursor: pointer; }
+        .btnBox li:before, .btnBox li:after { content: ""; position: absolute; width: 3rem; height: 1px; background: #fff; top: 50%; }
+        .btnBox li:before { left: 120%; }
+        .btnBox li:after { right: 120%; }
+        .btnBox li button { background: transparent; display: block; font-size: 1rem; color: #fff; text-align: center; transition: 0.6s; cursor: pointer; }
+        .btnBox li.item1 { transform: rotate(-90deg); left: 3vw; }
+        .btnBox li.item2 { transform: rotate(90deg); right: 5vw; }
+        .btnBox li:hover button { color: #f9d763; }
+        
+        .slidenav { width: 40px; margin: 0 auto; height: 40px; margin-top: 2vh; }
+        .slidenav button { display: block; width: 40px; height: 40px; background-color: transparent; animation: btnAni 2s ease infinite 0.2s; cursor: pointer; }
+        .slidenav button svg { width: 40px; height: 40px; transition: 0.4s; }
+        
+        .slidenav:hover button { animation-play-state: paused; }
+        .slidenav:hover button svg line { stroke: #f9d763; }
+        .slidenav:hover button svg circle { fill: #f9d763; }
+        
+        @keyframes btnAni {
+            from { transform: translateY(-0.2vw); }
+            50% { transform: translateY(0.5vw); }
+            to { transform: translateY(-0.2vw); }
+        }
+        
+        .comBox { position: fixed; bottom: -100%; left: 0; z-index: -10; width: 100%; height: calc(100% - 60px); transition: 1s; transition-delay: 0.4s; padding-top: 60px; background-repeat: no-repeat; background-position: center center; background-size: cover; }
+        .comBox.item1 { background-image: url("./img/about_downimg1.png"); }
+        .comBox.item2 { background-image: url("./img/about_downimg2.png"); }
+        .comBox.item3 { background-image: url("./img/about_downimg3.png"); }
+        .comBox.on { bottom: 0; left: 0; z-index: 50; }
+        
+        .comTit { width: 60%; margin: 0 auto; font-size: 1.5rem; text-align: center; margin-bottom: 5vw; color: #fff; font-family: 'Ubuntu', sans-serif; text-transform: uppercase; letter-spacing: 1vw; position: relative; margin-top: 2vh; }
+        .comTit::before, .comTit::after { content: ""; height: 3px; position: absolute; z-index: -1; }
+        .comTit::before { background: #6e69a4; top: 60%; left: 0; width: 45%; }
+        .comTit::after { background: #f9d763; top: 40%; right: 0; width: 50%; }
+        .txtBox { width: 80%; margin: 0 auto; height: 35%; }
+        .txtBox.item2 { display: none; }
+        .timeBox { width: 80%; margin: 0 auto; height: 20%; margin-top: 5vh; }
+        
+        .txtBox .pro { width: 80%; margin: 0 auto; height: 5vh; }
+        .txtBox .pro li { float: left; margin-left: 4%; font-size: 0.8rem; font-weight: bold; color: #000; height: 5vh; line-height: 5vh; }
+        .txtBox .pro li:first-child { margin-left: 0; }
+        .txtBox .pro li.tit { color: #fff; letter-spacing: 0.5vw; width: 30%; }
+        .txtBox .pro li.com { width: 66%; font-size: 0.7rem; }
+        
+        .txtBox .pro.item6 li { clear: both; }
+        .txtBox .pro.item6 .tit { width: 30%; float: left; }
+        .txtBox .pro.item6 li.com { width: 100%; text-align: center; }
+        .timeCom { float: left; width: 20%; text-align: center; font-size: 0.7rem; color: #f9d763; margin-top: -5vh; }
+        .timeCom:first-of-type { margin-left: 10%; }
+        .txt_p { color: #000; font-size: 0.6rem; font-weight: bold; writing-mode: vertical-rl; margin-top: 5vh; word-break: keep-all; text-align: left; }
+        
+        .txtBox .pro.item8 li.tit, .txtBox .pro.item9 li.tit, .txtBox .pro.item10 li.tit { text-indent: -9999px; }
+        .txtBox.item2 .pro .txt_y { color: #f9d763; padding-right: 1vw; }
+        
+        .timeImg { width: 55%; height: 10vh; margin: 0 auto; }
+        .timeImg svg { width: 10vh; height: 10vh; }
+        .timeImg svg #leg1 { animation: legAni1 2s infinite; transform-origin: center top; }
+        .timeImg svg #leg2 { animation: legAni2 2s infinite; transform-origin: center top; } 
+        
+        .timeline { width: 80%; height: 3px; background: #fff; position: relative; margin: 0 auto; }
+        .timeline .point { position: absolute; width: 3vw; height: 3vw; border-radius: 3vw; background: #f9d763; top: -100%; }
+        .timeline .point.item1 { left: 12%; }
+        .timeline .point.item2 { left: 37%; }
+        .timeline .point.item3 { left: 62%; }
+        .timeline .point.item4 { left: 87%; }
+        
+        @keyframes legAni1 {
+            from { transform: rotateZ(-10deg) translateY(-2vw); }
+            50% { transform: rotateZ(1deg) translateY(-0.1vw); }
+            to { transform: rotateZ(-10deg) translateY(-2vw); }
+        }
+        @keyframes legAni2 {
+            from { transform: rotate(-4deg) translateY(-0.1vw); }
+            50% { transform: rotateZ(2deg) translateY(-0.2vw); }
+            to { transform: rotate(-4deg) translateY(-0.1vw); }
+        }
+        @keyframes imgAni {
+            from { transform: translateX(0); }
+            to { transform: translateX(45vw); }
+        }
+        
+        .comnav { width: 40px; margin: 0 auto; height: 40px; margin-top: 5vh; }
+        .comnav button { display: block; width: 40px; height: 40px; background-color: transparent; animation: btnAni 2s ease infinite 0.2s; cursor: pointer; }
+        .comnav button svg { width: 40px; height: 40px; transition: 0.4s; transform: rotate(180deg); }
+        
+        .comnav:hover button { animation-play-state: paused; }
+        .comnav:hover button svg line { stroke: #f9d763; }
+        .comnav:hover button svg circle { fill: #f9d763; }
+        
+        .comBox.item2 .comTit, .comBox.item3 .comTit { margin-bottom: 2vw; }
+        .comBox.item2 .comnav { margin-top: 2vh; }
+        .comBox.item3 .comnav { margin-top: 2vh; }
+        .graphBox { width: 80%; margin: 0 auto; background: rgba(255, 255, 255, 0.6); height: 65vh; margin-top: 5vh; }
+        .skill { width: 80%; margin: 0 auto; }
+        .skillBox { width: 100%; clear: both; padding-top: 2vh; margin: 0 auto; clear: both; }
+        .skTit { width: 100%; float: left; color: #333; font-weight: bold; font-size: 0.8rem; margin-top: 0.5vh; }
+        .graph { width: 100%; margin: 0 auto; }
+        .graph .graphFrm { width: 100%; position: relative; height: 1px; background: #fff; margin-top: 5vh; }
+        .graph .graphFrm:before { content: ""; width: 1px; height: 2vh; background: #fff; position: absolute; top: -1vh; left: 0; }
+        .graph .graphFrm:after { content: ""; width: 1px; height: 2vh; background: #fff; position: absolute; top: -1vh; right: 0; }
+        .graphFrm .line { width: 1px; height: 2vh; background: #fff; position: absolute; top: -1vh; }
+        .graphFrm .line.item1 { left: 20%; }
+        .graphFrm .line.item2 { left: 40%; }
+        .graphFrm .line.item3 { left: 60%; }
+        .graphFrm .line.item4 { left: 80%; }
+        .graphbody { width: 0; height: 1vh; margin-top: -0.5vh; transition: 4s; transition-delay: 1.5s; background: #8f89c9; }
+        .graphbody.item1.on { width: 90%; }
+        .graphbody.item2.on { width: 85%; }
+        .graphbody.item3.on { width: 99%; }
+        .graphbody.item4.on { width: 95%; }
+        .graphbody.item5.on { width: 80%; }
+        .graphbody.item6.on { width: 70%; }
+        .graphbody.item7.on { width: 95%; }
+        .graphbody.item8.on { width: 99%; }
+        
+        .workBox { width: 80%; margin: 0 auto; height: 70vh; padding-top: 2vh; }
+        .workBox li { width: 48%; margin-right: 4%; background: #8f89c9; height: 15vh; float: left; margin-top: 2vh; }
+        .workBox li:nth-child(2n) { margin-right: 0; }
+        .workBox li a { display: block; width: 100%; height: 100%; background-repeat: no-repeat; background-position: center center; background-size: cover; }
+        .workBox li.item1 a { background-image: url("./img/working_img1.png"); }
+        .workBox li.item2 a { background-image: url("./img/working_img2.png"); }
+        .workBox li.item3 a { background-image: url("./img/working_img3.png"); }
+        .workBox li.item4 a { background-image: url("./img/working_img4.png"); }
+        .workBox li.item5 a { background-image: url("./img/working_img5.png"); }
+        .workBox li.item6 a { background-image: url("./img/working_img6.png"); }
+        .workBox li.item7 a { background-image: url("./img/working_img7.png"); }
+        .workBox li.item8 a { background-image: url("./img/working_img8.png"); }
+        
+        .workTxt { display: block; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.4); position: relative; }
+        .workTit { font-size: 0.8rem; padding: 10% 10% 5% 10%; word-break: keep-all; text-align: center; color: #fff; }
+        .workCom { font-size: 0.7rem; text-align: center; width: 70%; margin: 0 auto; height: 7vw; line-height: 7vw; background: #fff; color: #8f89c9; position: absolute; left: 15%; bottom: 5vw; }
+        
+        .menuBox { position: fixed; top: 0; right: -100%; z-index: -10; background: #ada9d4; width: 100%; height: 100%; transition-duration: 0.8s; }
+        .menuBox .menu { margin-top: 20vh; position: relative; display: flex; justify-content: center; align-items: center; }
+        .menuBox .menu .menuLst { position: relative; z-index: 10; }
+        .menuBox .menu .menuLst a { display: flex; width: 100%; height: 100%; margin-top: -100%; opacity: 0; transition-duration: 0.6s; transition-delay: 0.4s; flex-direction: column; align-items: flex-start; text-align: center; }
+        .menuBox .menu .menuLst a span { text-align: center; color: #fff; font-family: 'Crete Round', serif; font-size: 1rem; font-weight: bold; letter-spacing: 5px; overflow: hidden; text-transform: uppercase; position: relative; display: inline-block; margin-top: 10vh; text-shadow: -1px -1px 2px #8f89c9, 1px 1px 2px #8f89c9; }
+        .menuBox .menu .menuLst a span::before, .menuBox .menu .menuLst a span::after { content: ""; width: 100%; height: 100%; background: #8f89c9; position: absolute; top: 0; left: 0; transform: translate3d(-100%,0,0) translate3d(-1px,0,0); transition: transform 0.7s; transition-timing-function: cubic-bezier(0.7,0,0.3,1); }
+        
+        .menuBox .menu .menuLst a:hover span::before { transform: translate3d(100%, 0, 0) translate3d(1px, 0, 0); }
+        .menuBox .menu .menuLst a:hover span::after { transform: translate3d(0, 0, 0); }
+        .menuBox .menu .menuLst a span::after { top: calc(50% - 2px); height: 4px; }
+    }
+    @media screen and (min-width:768px) and (max-width:959px) {
+        main { width: 100%; height: 100%; overflow: hidden; }
+        
+        .hd { width: 80%; height: 100px; background: transparent; z-index: 60; position: fixed; top: 0; left: 10%; }
+        
+        .logo { display: block; width: 50px; height: 40px; margin-top: 30px; float: left; }
+        .logo img { width: 100%; }
+        
+        .lstBox { width: 40px; height: 40px; background: transparent; float: right; position: relative; cursor: pointer; margin-top: 30px; }
+        .lst { width: 40px; height: 3px; background: #fff; border-radius: 3px; position: absolute; transition: 0.4s; }
+        .lst.item1 { top: 10px; }
+        .lst.item2 { top: 18px; }
+        .lst.item3 { top: 26px; }  
+        .lstBox:hover .lst { background: #f9d763; }
+        
+        .slideBox { width: 100%; height: 100%; overflow: hidden; position: relative; transition: 0.8s; padding-top: 100px; }
+        .slideBox.on { margin-top: -100vh; }
+        .slideBox .slide { width: 300%; height: 100%; }
+        .slideBox .slide li { float: left; width: 33.333333333333%; height: 100%; position: relative; }
+        .slide_img { width: 60vw; margin: 0 auto; height: 75vh; background-position: center center; background-repeat: no-repeat; background-size: cover; margin-top: 3vh; }
+        .slide li.item1 .slide_img { background-image: url("./img/about_img1.png"); }
+        .slide li.item2 .slide_img { background-image: url("./img/about_img2.png"); }
+        .slide li.item3 .slide_img { background-image: url("./img/about_img3.png"); }
+        .slide_num { font-size: 4rem; font-family: 'Crete Round', serif; color: #fff; letter-spacing: 3px; font-style: italic; position: absolute; width: 20vw; left: 40vw; text-align: center; top: -2vh; }
+        .slide_title { font-size: 5rem; font-family: 'Crete Round', serif; position: absolute; width: 60vw; left: 20vw; text-align: center; top: 35vh; color: #fff; letter-spacing: 1vw; }
+        
+        .btnBox { width: 100%; height: 40vh; }
+        .btnBox li { float: left; position: absolute; top: 50vh; cursor: pointer; }
+        .btnBox li:before, .btnBox li:after { content: ""; position: absolute; width: 3rem; height: 1px; background: #fff; top: 50%; }
+        .btnBox li:before { left: 120%; }
+        .btnBox li:after { right: 120%; }
+        .btnBox li button { background: transparent; display: block; font-size: 1rem; color: #fff; text-align: center; transition: 0.6s; cursor: pointer; }
+        .btnBox li.item1 { transform: rotate(-90deg); left: 3vw; }
+        .btnBox li.item2 { transform: rotate(90deg); right: 5vw; }
+        .btnBox li:hover button { color: #f9d763; }
+        
+        .slidenav { width: 40px; margin: 0 auto; height: 40px; margin-top: 2vh; }
+        .slidenav button { display: block; width: 40px; height: 40px; background-color: transparent; animation: btnAni 2s ease infinite 0.2s; cursor: pointer; }
+        .slidenav button svg { width: 40px; height: 40px; transition: 0.4s; }
+        
+        .slidenav:hover button { animation-play-state: paused; }
+        .slidenav:hover button svg line { stroke: #f9d763; }
+        .slidenav:hover button svg circle { fill: #f9d763; }
+        
+        @keyframes btnAni {
+            from { transform: translateY(-0.2vw); }
+            50% { transform: translateY(0.5vw); }
+            to { transform: translateY(-0.2vw); }
+        }
+        
+        .comBox { position: fixed; bottom: -100%; left: 0; z-index: -10; width: 100%; height: calc(100% - 100px); transition: 1s; transition-delay: 0.4s; padding-top: 100px; background-repeat: no-repeat; background-position: center center; background-size: cover; }
+        .comBox.item1 { background-image: url("./img/about_downimg1.png"); }
+        .comBox.item2 { background-image: url("./img/about_downimg2.png"); }
+        .comBox.item3 { background-image: url("./img/about_downimg3.png"); }
+        .comBox.on { bottom: 0; left: 0; z-index: 50; }
+        
+        .comTit { width: 60%; margin: 0 auto; font-size: 1.5rem; text-align: center; margin-bottom: 5vw; color: #fff; font-family: 'Ubuntu', sans-serif; text-transform: uppercase; letter-spacing: 1vw; position: relative; margin-top: 2vh; }
+        .comTit::before, .comTit::after { content: ""; height: 3px; position: absolute; z-index: -1; }
+        .comTit::before { background: #6e69a4; top: 60%; left: 0; width: 45%; }
+        .comTit::after { background: #f9d763; top: 40%; right: 0; width: 50%; }
+        .txtBox { width: 80%; margin: 0 auto; height: 35%; }
+        .txtBox.item2 { position: absolute; left: 10%; bottom: -5vw; }
+        .timeBox { width: 80%; margin: 0 auto; height: 20%; margin-top: 2vh; }
+        
+        .txtBox .pro { width: 80%; margin: 0 auto; height: 4vh; }
+        .txtBox .pro li { float: left; margin-left: 4%; font-size: 1rem; font-weight: bold; color: #000; height: 5vh; line-height: 5vh; }
+        .txtBox .pro li:first-child { margin-left: 0; }
+        .txtBox .pro li.tit { color: #fff; letter-spacing: 0.5vw; width: 30%; }
+        .txtBox .pro li.com { width: 66%; font-size: 1rem; }
+        
+        .txtBox .pro.item6 li { clear: both; }
+        .txtBox .pro.item6 .tit { width: 30%; float: left; }
+        .txtBox .pro.item6 li.com { width: 100%; text-align: center; }
+        .timeCom { float: left; width: 20%; text-align: center; font-size: 1rem; color: #f9d763; margin-top: 5vh; font-size: 0.8rem; }
+        .timeCom:first-of-type { margin-left: 10%; }
+        .txt_p { color: #000; font-size: 1rem; font-weight: bold; word-break: keep-all; text-align: left; }
+        
+        .txtBox .pro.item8 li.tit, .txtBox .pro.item9 li.tit, .txtBox .pro.item10 li.tit { text-indent: -9999px; }
+        .txtBox.item2 .pro .txt_y { color: #f9d763; padding-right: 3vw; }
+        
+        .timeImg { width: 55%; height: 10vh; margin: 0 auto; margin-top: -5vh; }
+        .timeImg svg { width: 10vh; height: 10vh; }
+        .timeImg svg #leg1 { animation: legAni1 2s infinite; transform-origin: center top; }
+        .timeImg svg #leg2 { animation: legAni2 2s infinite; transform-origin: center top; } 
+        
+        .timeline { width: 80%; height: 3px; background: #fff; position: relative; margin: 0 auto; }
+        .timeline .point { position: absolute; width: 2vh; height: 2vh; border-radius: 2vh; background: #f9d763; top: -250%; }
+        .timeline .point.item1 { left: 10%; }
+        .timeline .point.item2 { left: 35%; }
+        .timeline .point.item3 { left: 60%; }
+        .timeline .point.item4 { left: 85%; }
+        
+        @keyframes legAni1 {
+            from { transform: rotateZ(-10deg) translateY(-2vw); }
+            50% { transform: rotateZ(1deg) translateY(-0.1vw); }
+            to { transform: rotateZ(-10deg) translateY(-2vw); }
+        }
+        @keyframes legAni2 {
+            from { transform: rotate(-4deg) translateY(-0.1vw); }
+            50% { transform: rotateZ(2deg) translateY(-0.2vw); }
+            to { transform: rotate(-4deg) translateY(-0.1vw); }
+        }
+        @keyframes imgAni {
+            from { transform: translateX(-20vw); }
+            to { transform: translateX(35vw); }
+        }
+        
+        .comnav { width: 40px; margin: 0 auto; height: 40px; margin-top: 5vh; }
+        .comnav button { display: block; width: 40px; height: 40px; background-color: transparent; animation: btnAni 2s ease infinite 0.2s; cursor: pointer; }
+        .comnav button svg { width: 40px; height: 40px; transition: 0.4s; transform: rotate(180deg); }
+        
+        .comnav:hover button { animation-play-state: paused; }
+        .comnav:hover button svg line { stroke: #f9d763; }
+        .comnav:hover button svg circle { fill: #f9d763; }
+        
+        .comBox.item3 .comTit { margin-bottom: 2vw; }
+        .comBox.item1 .comTit { margin-bottom: 2vw; }
+        .comBox.item1 .comnav { margin-top: 17vh; }
+        .comBox.item2 .comnav { margin-top: 5vh; }
+        .graphBox { width: 80%; margin: 0 auto; background: rgba(255, 255, 255, 0.6); height: 65vh; margin-top: 5vh; }
+        .skill { width: 80%; margin: 0 auto; }
+        .skillBox { width: 100%; clear: both; padding-top: 2vh; margin: 0 auto; clear: both; }
+        .skTit { width: 100%; float: left; color: #333; font-weight: bold; font-size: 0.8rem; margin-top: 0.5vh; }
+        .graph { width: 100%; margin: 0 auto; }
+        .graph .graphFrm { width: 100%; position: relative; height: 1px; background: #fff; margin-top: 5vh; }
+        .graph .graphFrm:before { content: ""; width: 1px; height: 2vh; background: #fff; position: absolute; top: -1vh; left: 0; }
+        .graph .graphFrm:after { content: ""; width: 1px; height: 2vh; background: #fff; position: absolute; top: -1vh; right: 0; }
+        .graphFrm .line { width: 1px; height: 2vh; background: #fff; position: absolute; top: -1vh; }
+        .graphFrm .line.item1 { left: 20%; }
+        .graphFrm .line.item2 { left: 40%; }
+        .graphFrm .line.item3 { left: 60%; }
+        .graphFrm .line.item4 { left: 80%; }
+        .graphbody { width: 0; height: 1vh; margin-top: -0.5vh; transition: 4s; transition-delay: 1.5s; background: #8f89c9; }
+        .graphbody.item1.on { width: 90%; }
+        .graphbody.item2.on { width: 85%; }
+        .graphbody.item3.on { width: 99%; }
+        .graphbody.item4.on { width: 95%; }
+        .graphbody.item5.on { width: 80%; }
+        .graphbody.item6.on { width: 70%; }
+        .graphbody.item7.on { width: 95%; }
+        .graphbody.item8.on { width: 99%; }
+        
+        .workBox { width: 80%; margin: 0 auto; height: 70vh; padding-top: 2vh; }
+        .workBox li { width: 48%; margin-right: 4%; background: #8f89c9; height: 15vh; float: left; margin-top: 2vh; }
+        .workBox li:nth-child(2n) { margin-right: 0; }
+        .workBox li a { display: block; width: 100%; height: 100%; background-repeat: no-repeat; background-position: center center; background-size: cover; }
+        .workBox li.item1 a { background-image: url("./img/working_img1.png"); }
+        .workBox li.item2 a { background-image: url("./img/working_img2.png"); }
+        .workBox li.item3 a { background-image: url("./img/working_img3.png"); }
+        .workBox li.item4 a { background-image: url("./img/working_img4.png"); }
+        .workBox li.item5 a { background-image: url("./img/working_img5.png"); }
+        .workBox li.item6 a { background-image: url("./img/working_img6.png"); }
+        .workBox li.item7 a { background-image: url("./img/working_img7.png"); }
+        .workBox li.item8 a { background-image: url("./img/working_img8.png"); }
+        
+        .workTxt { display: block; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.4); position: relative; }
+        .workTit { font-size: 1rem; padding: 10% 10% 0 10%; word-break: keep-all; text-align: center; color: #fff; }
+        .workCom { font-size: 0.85rem; text-align: center; width: 50%; margin: 0 auto; height: 5vw; line-height: 5vw; background: #fff; color: #8f89c9; position: absolute; left: 25%; bottom: 3vw; }
+        
+        .menuBox { position: fixed; top: 0; right: -100%; z-index: -10; background: #ada9d4; width: 100%; height: 100%; transition-duration: 0.8s; }
+        .menuBox .menu { margin-top: 20vh; position: relative; display: flex; justify-content: center; align-items: center; }
+        .menuBox .menu .menuLst { position: relative; z-index: 10; }
+        .menuBox .menu .menuLst a { display: flex; width: 100%; height: 100%; margin-top: -100%; opacity: 0; transition-duration: 0.6s; transition-delay: 0.4s; flex-direction: column; align-items: flex-start; text-align: center; }
+        .menuBox .menu .menuLst a span { text-align: center; color: #fff; font-family: 'Crete Round', serif; font-size: 1.8rem; font-weight: bold; letter-spacing: 5px; overflow: hidden; text-transform: uppercase; position: relative; display: inline-block; margin-top: 10vh; text-shadow: -1px -1px 2px #8f89c9, 1px 1px 2px #8f89c9; }
+        .menuBox .menu .menuLst a span::before, .menuBox .menu .menuLst a span::after { content: ""; width: 100%; height: 100%; background: #8f89c9; position: absolute; top: 0; left: 0; transform: translate3d(-100%,0,0) translate3d(-1px,0,0); transition: transform 0.7s; transition-timing-function: cubic-bezier(0.7,0,0.3,1); }
+        
+        .menuBox .menu .menuLst a:hover span::before { transform: translate3d(100%, 0, 0) translate3d(1px, 0, 0); }
+        .menuBox .menu .menuLst a:hover span::after { transform: translate3d(0, 0, 0); }
+        .menuBox .menu .menuLst a span::after { top: calc(50% - 2px); height: 4px; }
+    }
+    @media screen and (min-width:960px) and (max-width:1024px) {
+        main { width: 100%; height: 100%; overflow: hidden; }
+        
+        .hd { width: 80%; height: 100px; background: transparent; z-index: 60; position: fixed; top: 0; left: 10%; }
+        
+        .logo { display: block; width: 50px; height: 40px; margin-top: 30px; float: left; }
+        .logo img { width: 100%; }
+        
+        .lstBox { width: 40px; height: 40px; background: transparent; float: right; position: relative; cursor: pointer; margin-top: 30px; }
+        .lst { width: 40px; height: 3px; background: #fff; border-radius: 3px; position: absolute; transition: 0.4s; }
+        .lst.item1 { top: 10px; }
+        .lst.item2 { top: 18px; }
+        .lst.item3 { top: 26px; }  
+        .lstBox:hover .lst { background: #f9d763; }
+        
+        .slideBox { width: 100%; height: 100%; overflow: hidden; position: relative; transition: 0.8s; padding-top: 100px; }
+        .slideBox.on { margin-top: -100vh; }
+        .slideBox .slide { width: 300%; height: 100%; }
+        .slideBox .slide li { float: left; width: 33.333333333333%; height: 100%; position: relative; }
+        .slide_img { width: 60vw; margin: 0 auto; height: 75vh; background-position: center center; background-repeat: no-repeat; background-size: cover; margin-top: 5vh; }
+        .slide li.item1 .slide_img { background-image: url("./img/about_img1.png"); }
+        .slide li.item2 .slide_img { background-image: url("./img/about_img2.png"); }
+        .slide li.item3 .slide_img { background-image: url("./img/about_img3.png"); }
+        .slide_num { font-size: 5rem; font-family: 'Crete Round', serif; color: #fff; letter-spacing: 3px; font-style: italic; position: absolute; width: 20vw; left: 40vw; text-align: center; top: 1vh; }
+        .slide_title { font-size: 7rem; font-family: 'Crete Round', serif; position: absolute; width: 60vw; left: 20vw; text-align: center; top: 35vh; color: #fff; letter-spacing: 1vw; }
+        
+        .btnBox { width: 100%; height: 40vh; }
+        .btnBox li { float: left; position: absolute; top: 50vh; cursor: pointer; }
+        .btnBox li:before, .btnBox li:after { content: ""; position: absolute; width: 3rem; height: 1px; background: #fff; top: 50%; }
+        .btnBox li:before { left: 120%; }
+        .btnBox li:after { right: 120%; }
+        .btnBox li button { background: transparent; display: block; font-size: 1rem; color: #fff; text-align: center; transition: 0.6s; cursor: pointer; }
+        .btnBox li.item1 { transform: rotate(-90deg); left: 3vw; }
+        .btnBox li.item2 { transform: rotate(90deg); right: 5vw; }
+        .btnBox li:hover button { color: #f9d763; }
+        
+        .slidenav { width: 40px; margin: 0 auto; height: 40px; margin-top: 2vh; }
+        .slidenav button { display: block; width: 40px; height: 40px; background-color: transparent; animation: btnAni 2s ease infinite 0.2s; cursor: pointer; }
+        .slidenav button svg { width: 40px; height: 40px; transition: 0.4s; }
+        
+        .slidenav:hover button { animation-play-state: paused; }
+        .slidenav:hover button svg line { stroke: #f9d763; }
+        .slidenav:hover button svg circle { fill: #f9d763; }
+        
+        @keyframes btnAni {
+            from { transform: translateY(-0.2vw); }
+            50% { transform: translateY(0.5vw); }
+            to { transform: translateY(-0.2vw); }
+        }
+        
+        .comBox { position: fixed; bottom: -100%; left: 0; z-index: -10; width: 100%; height: calc(100% - 100px); transition: 1s; transition-delay: 0.4s; padding-top: 100px; background-repeat: no-repeat; background-position: center center; background-size: cover; }
+        .comBox.item1 { background-image: url("./img/about_downimg1.png"); }
+        .comBox.item2 { background-image: url("./img/about_downimg2.png"); }
+        .comBox.item3 { background-image: url("./img/about_downimg3.png"); }
+        .comBox.on { bottom: 0; left: 0; z-index: 50; }
+        
+        .comTit { width: 60%; margin: 0 auto; font-size: 1.5rem; text-align: center; margin-bottom: 5vw; color: #fff; font-family: 'Ubuntu', sans-serif; text-transform: uppercase; letter-spacing: 1vw; position: relative; margin-top: 2vh; }
+        .comTit::before, .comTit::after { content: ""; height: 3px; position: absolute; z-index: -1; }
+        .comTit::before { background: #6e69a4; top: 60%; left: 0; width: 45%; }
+        .comTit::after { background: #f9d763; top: 40%; right: 0; width: 50%; }
+        .txtBox { width: 80%; margin: 0 auto; height: 35%; }
+        .txtBox.item2 { position: absolute; left: 10%; bottom: -2vw; }
+        .timeBox { width: 80%; margin: 0 auto; height: 20%; margin-top: 2vh; }
+        
+        .txtBox .pro { width: 80%; margin: 0 auto; height: 4vh; }
+        .txtBox .pro li { float: left; margin-left: 4%; font-size: 1rem; font-weight: bold; color: #000; height: 5vh; line-height: 5vh; }
+        .txtBox .pro li:first-child { margin-left: 0; }
+        .txtBox .pro li.tit { color: #fff; letter-spacing: 0.5vw; width: 30%; }
+        .txtBox .pro li.com { width: 66%; font-size: 1rem; }
+        
+        .txtBox .pro.item6 li { clear: both; }
+        .txtBox .pro.item6 .tit { width: 30%; float: left; }
+        .txtBox .pro.item6 li.com { width: 100%; text-align: center; }
+        .timeCom { float: left; width: 20%; text-align: center; font-size: 1rem; color: #f9d763; margin-top: 5vh; font-size: 0.8rem; }
+        .timeCom:first-of-type { margin-left: 10%; }
+        .txt_p { color: #000; font-size: 1rem; font-weight: bold; word-break: keep-all; text-align: left; }
+        .txtBox .pro.item8 li.tit, .txtBox .pro.item9 li.tit, .txtBox .pro.item10 li.tit { text-indent: -9999px; }
+        .txtBox.item2 .pro .txt_y { color: #f9d763; padding-right: 3vw; }
+        
+        .timeImg { width: 55%; height: 10vh; margin: 0 auto; margin-top: -5vh; }
+        .timeImg svg { width: 10vh; height: 10vh; }
+        .timeImg svg #leg1 { animation: legAni1 2s infinite; transform-origin: center top; }
+        .timeImg svg #leg2 { animation: legAni2 2s infinite; transform-origin: center top; } 
+        
+        .timeline { width: 80%; height: 3px; background: #fff; position: relative; margin: 0 auto; }
+        .timeline .point { position: absolute; width: 2vh; height: 2vh; border-radius: 2vh; background: #f9d763; top: -250%; }
+        .timeline .point.item1 { left: 10%; }
+        .timeline .point.item2 { left: 35%; }
+        .timeline .point.item3 { left: 60%; }
+        .timeline .point.item4 { left: 85%; }
+        
+        @keyframes legAni1 {
+            from { transform: rotateZ(-10deg) translateY(-2vw); }
+            50% { transform: rotateZ(1deg) translateY(-0.1vw); }
+            to { transform: rotateZ(-10deg) translateY(-2vw); }
+        }
+        @keyframes legAni2 {
+            from { transform: rotate(-4deg) translateY(-0.1vw); }
+            50% { transform: rotateZ(2deg) translateY(-0.2vw); }
+            to { transform: rotate(-4deg) translateY(-0.1vw); }
+        }
+        @keyframes imgAni {
+            from { transform: translateX(-20vw); }
+            to { transform: translateX(30vw); }
+        }
+        
+        .comnav { width: 40px; margin: 0 auto; height: 40px; margin-top: 15vh; }
+        .comnav button { display: block; width: 40px; height: 40px; background-color: transparent; animation: btnAni 2s ease infinite 0.2s; cursor: pointer; }
+        .comnav button svg { width: 40px; height: 40px; transition: 0.4s; transform: rotate(180deg); }
+        
+        .comnav:hover button { animation-play-state: paused; }
+        .comnav:hover button svg line { stroke: #f9d763; }
+        .comnav:hover button svg circle { fill: #f9d763; }
+        
+        .comBox.item2 .comTit, .comBox.item3 .comTit { margin-bottom: 2vw; }
+        .comBox.item2 .comnav, .comBox.item3 .comnav { margin-top: 5vh; }
+        .graphBox { width: 80%; margin: 0 auto; background: rgba(255, 255, 255, 0.6); height: 65vh; margin-top: 5vh; }
+        .skill { width: 80%; margin: 0 auto; }
+        .skillBox { width: 100%; clear: both; padding-top: 2vh; margin: 0 auto; clear: both; }
+        .skTit { width: 100%; float: left; color: #333; font-weight: bold; font-size: 0.8rem; margin-top: 0.5vh; }
+        .graph { width: 100%; margin: 0 auto; }
+        .graph .graphFrm { width: 100%; position: relative; height: 1px; background: #fff; margin-top: 5vh; }
+        .graph .graphFrm:before { content: ""; width: 1px; height: 2vh; background: #fff; position: absolute; top: -1vh; left: 0; }
+        .graph .graphFrm:after { content: ""; width: 1px; height: 2vh; background: #fff; position: absolute; top: -1vh; right: 0; }
+        .graphFrm .line { width: 1px; height: 2vh; background: #fff; position: absolute; top: -1vh; }
+        .graphFrm .line.item1 { left: 20%; }
+        .graphFrm .line.item2 { left: 40%; }
+        .graphFrm .line.item3 { left: 60%; }
+        .graphFrm .line.item4 { left: 80%; }
+        .graphbody { width: 0; height: 1vh; margin-top: -0.5vh; transition: 4s; transition-delay: 1.5s; background: #8f89c9; }
+        .graphbody.item1.on { width: 90%; }
+        .graphbody.item2.on { width: 85%; }
+        .graphbody.item3.on { width: 99%; }
+        .graphbody.item4.on { width: 95%; }
+        .graphbody.item5.on { width: 80%; }
+        .graphbody.item6.on { width: 70%; }
+        .graphbody.item7.on { width: 95%; }
+        .graphbody.item8.on { width: 99%; }
+        
+        .workBox { width: 80%; margin: 0 auto; height: 70vh; padding-top: 2vh; }
+        .workBox li { width: 48%; margin-right: 4%; background: #8f89c9; height: 15vh; float: left; margin-top: 2vh; }
+        .workBox li:nth-child(2n) { margin-right: 0; }
+        .workBox li a { display: block; width: 100%; height: 100%; background-repeat: no-repeat; background-position: center center; background-size: cover; }
+        .workBox li.item1 a { background-image: url("./img/working_img1.png"); }
+        .workBox li.item2 a { background-image: url("./img/working_img2.png"); }
+        .workBox li.item3 a { background-image: url("./img/working_img3.png"); }
+        .workBox li.item4 a { background-image: url("./img/working_img4.png"); }
+        .workBox li.item5 a { background-image: url("./img/working_img5.png"); }
+        .workBox li.item6 a { background-image: url("./img/working_img6.png"); }
+        .workBox li.item7 a { background-image: url("./img/working_img7.png"); }
+        .workBox li.item8 a { background-image: url("./img/working_img8.png"); }
+        
+        .workTxt { display: block; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.4); position: relative; }
+        .workTit { font-size: 1rem; padding: 10% 10% 0 10%; word-break: keep-all; text-align: center; color: #fff; }
+        .workCom { font-size: 0.85rem; text-align: center; width: 50%; margin: 0 auto; height: 4vw; line-height: 4vw; background: #fff; color: #8f89c9; transition: 0.6s; position: absolute; left: 25%; bottom: 4vw; }
+        .workBox li:hover .workTxt { opacity: 1; }
+        .workCom:hover { border: 1px solid #fff; background: transparent; }
+        
+        .menuBox { position: fixed; top: 0; right: -100%; z-index: -10; background: #ada9d4; width: 100%; height: 100%; transition-duration: 0.8s; }
+        .menuBox .menu { margin-top: 20vh; position: relative; display: flex; justify-content: center; align-items: center; }
+        .menuBox .menu .menuLst { position: relative; z-index: 10; }
+        .menuBox .menu .menuLst a { display: flex; width: 100%; height: 100%; margin-top: -100%; opacity: 0; transition-duration: 0.6s; transition-delay: 0.4s; flex-direction: column; align-items: flex-start; text-align: center; }
+        .menuBox .menu .menuLst a span { text-align: center; color: #fff; font-family: 'Crete Round', serif; font-size: 1.8rem; font-weight: bold; letter-spacing: 5px; overflow: hidden; text-transform: uppercase; position: relative; display: inline-block; margin-top: 10vh; text-shadow: -1px -1px 2px #8f89c9, 1px 1px 2px #8f89c9; }
+        .menuBox .menu .menuLst a span::before, .menuBox .menu .menuLst a span::after { content: ""; width: 100%; height: 100%; background: #8f89c9; position: absolute; top: 0; left: 0; transform: translate3d(-100%,0,0) translate3d(-1px,0,0); transition: transform 0.7s; transition-timing-function: cubic-bezier(0.7,0,0.3,1); }
+        
+        .menuBox .menu .menuLst a:hover span::before { transform: translate3d(100%, 0, 0) translate3d(1px, 0, 0); }
+        .menuBox .menu .menuLst a:hover span::after { transform: translate3d(0, 0, 0); }
+        .menuBox .menu .menuLst a span::after { top: calc(50% - 2px); height: 4px; }
+    }
+    @media screen and (min-width:1025px) {
+        main { width: 100%; height: 100%; overflow: hidden; }
+        
+        .hd { width: 80%; height: 100px; background: transparent; z-index: 60; position: fixed; top: 0; left: 10%; }
+        
+        .logo { display: block; width: 50px; height: 40px; margin-top: 30px; float: left; }
+        .logo img { width: 100%; }
+        
+        .lstBox { width: 40px; height: 40px; background: transparent; float: right; position: relative; cursor: pointer; margin-top: 30px; }
+        .lst { width: 40px; height: 3px; background: #fff; border-radius: 3px; position: absolute; transition: 0.4s; }
+        .lst.item1 { top: 10px; }
+        .lst.item2 { top: 18px; }
+        .lst.item3 { top: 26px; }  
+        .lstBox:hover .lst { background: #f9d763; }
+        
+        .slideBox { width: 100%; height: 100%; overflow: hidden; position: relative; transition: 0.8s; padding-top: 100px; }
+        .slideBox.on { margin-top: calc(-100% + 100px); }
+        .slideBox .slide { width: 300%; height: 100%; }
+        .slideBox .slide li { float: left; width: 33.333333333333%; height: 100%; position: relative; }
+        .slide_img { width: 20vw; margin: 0 auto; height: 75vh; background-position: center center; background-repeat: no-repeat; background-size: cover; margin-top: 3vh; }
+        .slide li.item1 .slide_img { background-image: url("./img/about_img1.png"); }
+        .slide li.item2 .slide_img { background-image: url("./img/about_img2.png"); }
+        .slide li.item3 .slide_img { background-image: url("./img/about_img3.png"); }
+        .slide_num { font-size: 3rem; font-family: 'Crete Round', serif; color: #fff; letter-spacing: 3px; font-style: italic; position: absolute; width: 10vw; left: 45vw; text-align: center; top: -1vh; }
+        .slide_title { font-size: 7rem; font-family: 'Crete Round', serif; position: absolute; width: 30vw; left: 35vw; text-align: center; top: 35vh; color: #fff; letter-spacing: 1vw; }
+        
+        .btnBox { width: 100%; height: 40vh; }
+        .btnBox li { float: left; position: absolute; top: 50vh; cursor: pointer; }
+        .btnBox li:before, .btnBox li:after { content: ""; position: absolute; width: 3rem; height: 1px; background: #fff; top: 50%; }
+        .btnBox li:before { left: 120%; }
+        .btnBox li:after { right: 120%; }
+        .btnBox li button { background: transparent; display: block; font-size: 1rem; color: #fff; text-align: center; transition: 0.6s; cursor: pointer; }
+        .btnBox li.item1 { transform: rotate(-90deg); left: 5vw; }
+        .btnBox li.item2 { transform: rotate(90deg); right: 5vw; }
+        .btnBox li:hover button { color: #f9d763; }
+        
+        .slidenav { width: 40px; margin: 0 auto; height: 40px; margin-top: 2vh; }
+        .slidenav button { display: block; width: 40px; height: 40px; background-color: transparent; animation: btnAni 2s ease infinite 0.2s; cursor: pointer; }
+        .slidenav button svg { width: 40px; height: 40px; transition: 0.4s; }
+        
+        .slidenav:hover button { animation-play-state: paused; }
+        .slidenav:hover button svg line { stroke: #f9d763; }
+        .slidenav:hover button svg circle { fill: #f9d763; }
+        
+        @keyframes btnAni {
+            from { transform: translateY(-0.2vw); }
+            50% { transform: translateY(0.5vw); }
+            to { transform: translateY(-0.2vw); }
+        }
+        
+        .comBox { position: fixed; bottom: -100%; left: 0; z-index: -10; width: 100%; height: calc(100% - 100px); transition: 1s; transition-delay: 0.4s; padding-top: 100px; background-repeat: no-repeat; background-position: center center; background-size: cover; }
+        .comBox.item1 { background-image: url("./img/about_downimg1.png"); }
+        .comBox.item2 { background-image: url("./img/about_downimg2.png"); }
+        .comBox.item3 { background-image: url("./img/about_downimg3.png"); }
+        .comBox.on { bottom: 0; left: 0; z-index: 50; }
+        
+        .comTit { width: 60%; margin: 0 auto; font-size: 3rem; text-align: center; margin-bottom: 5vw; color: #fff; font-family: 'Ubuntu', sans-serif; text-transform: uppercase; letter-spacing: 1vw; position: relative; }
+        .comTit::before, .comTit::after { content: ""; height: 3px; position: absolute; z-index: -1; }
+        .comTit::before { background: #6e69a4; top: 60%; left: 0; width: 45%; }
+        .comTit::after { background: #f9d763; top: 40%; right: 0; width: 50%; }
+        .txtBox { width: 30%; float: left; height: 35%; }
+        .txtBox.item1 { margin-left: 20%; }
+        .txtBox.item2 { margin-right: 20%; }
+        .timeBox { width: 80%; margin: 0 auto; height: 20%; }
+        
+        .txtBox .pro { width: 80%; margin: 0 auto; height: 5vh; }
+        .txtBox .pro li { float: left; margin-left: 4%; font-size: 1rem; font-weight: bold; color: #000; height: 5vh; line-height: 5vh; }
+        .txtBox .pro li:first-child { margin-left: 0; }
+        .txtBox .pro li.tit { color: #fff; letter-spacing: 0.5vw; width: 30%; }
+        .txtBox .pro li.com { width: 66%; font-size: 0.85rem; }
+        .txtBox .pro.item8 li.tit, .txtBox .pro.item9 li.tit, .txtBox .pro.item10 li.tit { text-indent: -9999px; }
+        .txtBox.item2 .pro .txt_y { color: #f9d763; padding-right: 1vw; }
+        
+        .txtBox .pro.item6 li { clear: both; }
+        .txtBox .pro.item6 .tit { width: 30%; float: left; }
+        .txtBox .pro.item6 li.com { width: 100%; text-align: center; }
+        .timeCom { float: left; width: 20%; text-align: center; font-size: 1rem; color: #f9d763; margin-top: 2vw; }
+        .timeCom:first-of-type { margin-left: 10%; }
+        .txt_p { color: #000; font-size: 0.8rem; font-weight: bold; }
+        
+        .timeImg { width: 64%; height: 5vw; margin: 0 auto; padding-left: 12%; padding-top: 35vh; }
+        .timeImg svg { width: 5vw; height: 5vw; }
+        .timeImg svg #leg1 { animation: legAni1 2s infinite; transform-origin: center top; }
+        .timeImg svg #leg2 { animation: legAni2 2s infinite; transform-origin: center top; } 
+        
+        .timeline { width: 80%; height: 3px; background: #fff; position: relative; margin: 0 auto; }
+        .timeline .point { position: absolute; width: 1vw; height: 1vw; border-radius: 1vw; background: #f9d763; top: -250%; }
+        .timeline .point.item1 { left: 12%; }
+        .timeline .point.item2 { left: 37%; }
+        .timeline .point.item3 { left: 62%; }
+        .timeline .point.item4 { left: 87%; }
+        
+        @keyframes legAni1 {
+            from { transform: rotateZ(-10deg) translateY(-2vw); }
+            50% { transform: rotateZ(1deg) translateY(-0.1vw); }
+            to { transform: rotateZ(-10deg) translateY(-2vw); }
+        }
+        @keyframes legAni2 {
+            from { transform: rotate(-4deg) translateY(-0.1vw); }
+            50% { transform: rotateZ(2deg) translateY(-0.2vw); }
+            to { transform: rotate(-4deg) translateY(-0.1vw); }
+        }
+        @keyframes imgAni {
+            from { transform: translateX(0); }
+            to { transform: translateX(950%); }
+        }
+        
+        .comnav { width: 40px; margin: 0 auto; height: 40px; margin-top: 2vh; }
+        .comnav button { display: block; width: 40px; height: 40px; background-color: transparent; animation: btnAni 2s ease infinite 0.2s; cursor: pointer; }
+        .comnav button svg { width: 40px; height: 40px; transition: 0.4s; transform: rotate(180deg); }
+        
+        .comnav:hover button { animation-play-state: paused; }
+        .comnav:hover button svg line { stroke: #f9d763; }
+        .comnav:hover button svg circle { fill: #f9d763; }
+        
+        .comBox.item2 .comTit, .comBox.item3 .comTit { margin-bottom: 2vw; }
+        .graphBox { width: 70%; margin: 0 auto; background: rgba(255, 255, 255, 0.6); height: 65vh; }
+        .skill { width: 70%; margin: 0 auto; }
+        .skillBox { width: 80%; clear: both; padding-top: 2vw; margin: 0 auto; }
+        .skTit { width: 10%; float: left; color: #333; font-weight: bold; font-size: 1rem; margin-top: 0.5vw; }
+        .graph { width: 80%; float: left; margin-left: 2vw; }
+        .graph .graphFrm { width: 100%; position: relative; height: 1px; background: #fff; margin-top: 1vw; }
+        .graph .graphFrm:before { content: ""; width: 1px; height: 1vw; background: #fff; position: absolute; top: -0.5vw; left: 0; }
+        .graph .graphFrm:after { content: ""; width: 1px; height: 1vw; background: #fff; position: absolute; top: -0.5vw; right: 0; }
+        .graphFrm .line { width: 1px; height: 1vw; background: #fff; position: absolute; top: -0.5vw; }
+        .graphFrm .line.item1 { left: 20%; }
+        .graphFrm .line.item2 { left: 40%; }
+        .graphFrm .line.item3 { left: 60%; }
+        .graphFrm .line.item4 { left: 80%; }
+        .graphbody { width: 0; height: 0.8vw; margin-top: -0.45vw; transition: 4s; transition-delay: 1.5s; background: #8f89c9; }
+        .graphbody.item1.on { width: 90%; }
+        .graphbody.item2.on { width: 85%; }
+        .graphbody.item3.on { width: 99%; }
+        .graphbody.item4.on { width: 95%; }
+        .graphbody.item5.on { width: 80%; }
+        .graphbody.item6.on { width: 70%; }
+        .graphbody.item7.on { width: 95%; }
+        .graphbody.item8.on { width: 99%; }
+        
+        .workBox { width: 70%; margin: 0 auto; height: 65vh; padding-top: 1vw; }
+        .workBox li { width: 22%; margin-right: 4%; background: #8f89c9; height: 14vw; float: left; }
+        .workBox li:nth-child(5), .workBox li:nth-child(6), .workBox li:nth-child(7), .workBox li:nth-child(8) { margin-top: 2vw; }
+        .workBox li:nth-child(4n) { margin-right: 0; }
+        .workBox li a { display: block; width: 100%; height: 100%; background-repeat: no-repeat; background-position: center center; background-size: cover; }
+        .workBox li.item1 a { background-image: url("./img/working_img1.png"); }
+        .workBox li.item2 a { background-image: url("./img/working_img2.png"); }
+        .workBox li.item3 a { background-image: url("./img/working_img3.png"); }
+        .workBox li.item4 a { background-image: url("./img/working_img4.png"); }
+        .workBox li.item5 a { background-image: url("./img/working_img5.png"); }
+        .workBox li.item6 a { background-image: url("./img/working_img6.png"); }
+        .workBox li.item7 a { background-image: url("./img/working_img7.png"); }
+        .workBox li.item8 a { background-image: url("./img/working_img8.png"); }
+        
+        .workTxt { display: block; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.4); opacity: 0; transition: 0.6s; position: relative; }
+        .workTit { font-size: 1rem; padding: 20% 10% 0% 10%; word-break: keep-all; text-align: center; color: #fff; }
+        .workCom { font-size: 0.85rem; text-align: center; width: 50%; margin: 0 auto; height: 4vh; line-height: 4vh; background: #fff; color: #8f89c9; transition: 0.6s; position: absolute; left: 25%; bottom: 20%; }
+        .workBox li:hover .workTxt { opacity: 1; }
+        .workCom:hover { border: 1px solid #fff; background: transparent; color: #fff; }
+        
+        .menuBox { position: fixed; top: 0; right: -100%; z-index: -10; background: #ada9d4; width: 100%; height: 100%; transition-duration: 0.8s; }
+        .menuBox .menu { margin-top: 25vh; position: relative; display: flex; justify-content: center; align-items: center; }
+        .menuBox .menu .menuLst { position: relative; z-index: 10; }
+        .menuBox .menu .menuLst a { display: flex; width: 100%; height: 100%; margin-top: -100%; opacity: 0; transition-duration: 0.6s; transition-delay: 0.4s; flex-direction: column; align-items: flex-start; text-align: center; }
+        .menuBox .menu .menuLst a span { text-align: center; color: #fff; font-family: 'Crete Round', serif; font-size: 1.8rem; font-weight: bold; letter-spacing: 5px; overflow: hidden; text-transform: uppercase; position: relative; display: inline-block; margin-top: 10vh; text-shadow: -1px -1px 2px #8f89c9, 1px 1px 2px #8f89c9; }
+        .menuBox .menu .menuLst a span::before, .menuBox .menu .menuLst a span::after { content: ""; width: 100%; height: 100%; background: #8f89c9; position: absolute; top: 0; left: 0; transform: translate3d(-100%,0,0) translate3d(-1px,0,0); transition: transform 0.7s; transition-timing-function: cubic-bezier(0.7,0,0.3,1); }
+        
+        .menuBox .menu .menuLst a:hover span::before { transform: translate3d(100%, 0, 0) translate3d(1px, 0, 0); }
+        .menuBox .menu .menuLst a:hover span::after { transform: translate3d(0, 0, 0); }
+        .menuBox .menu .menuLst a span::after { top: calc(50% - 2px); height: 4px; }
+    }
+    </style>
+   
+    <script>
+    $(document).ready(function(){
+        var wd = $("body, html").width();
+        $(".openBtn").click(function(){
+            $(".menuBox").css("right", "0").css("z-index", "99");  
+            $(".lstBox .lst.item1").css("top", "18px").css("transform", "rotate(-45deg)");
+            $(".lstBox .lst.item2").css("display", "none");
+            $(".lstBox .lst.item3").css("top", "18px").css("transform", "rotate(45deg)");
+        });
+        $(".closeBtn").click(function(){
+            $(".menuBox").css("right", "-100%").css("z-index", "-10"); 
+            $(".lstBox .lst.item1").css("top", "10px").css("transform", "rotate(0deg)");
+            $(".lstBox .lst.item2").css("display", "block").css("top", "18px");
+            $(".lstBox .lst.item3").css("top", "26px").css("transform", "rotate(0deg)");
+        });
+        $(".openBtn").click(function(){
+            var intv = setTimeout(function(){
+                $(".menuBox .menuLst a").css("margin-top", "0px").css("opacity", "1");    
+            }); 
+        }); 
+    });
+    </script>
+    <script>
+    $(document).ready(function(){
+        var wd = $(".slideBox").width();
+        var len = $(".slide li").length;
+        
+        function nextAni(){
+            $(".slide").not(":animated").animate({"margin-left":-wd+"px"}, function(){
+                $(".slide li").eq(0).appendTo($(".slide"));
+                $(".slide").css("margin-left", "0px");
+            });
+        }
+        function prevAni(){
+            $(".slide li").eq(len-1).prependTo($(".slide"));
+            $(".slide").css("margin-left", -wd+"px");
+            $(".slide").not(":animated").animate({"margin-left":"0px"});
+        }
+        $(".btnBox li.item1 button").click(function(){
+            prevAni();    
+        });
+        $(".btnBox li.item2 button").click(function(){
+            nextAni(); 
+        });
+        
+        $(".slidenav.item1").click(function(){
+            $(".slideBox").addClass("on").css("transition", "0.8s");
+            $(".comBox.item1").addClass("on").css("transition", "1s").css("transition-delay", "0.4s");
+            $(".timeImg svg").css("animation", "imgAni 25s ease-in-out infinite 1.5s");
+        });
+        $(".slidenav.item2").click(function(){
+            $(".slideBox").addClass("on").css("transition", "0.8s");
+            $(".comBox.item2").addClass("on").css("transition", "1s").css("transition-delay", "0.4s");
+            $(".graphbody").addClass("on");
+        });
+        $(".slidenav.item3").click(function(){
+            $(".slideBox").addClass("on").css("transition", "0.8s");
+            $(".comBox.item3").addClass("on").css("transition", "1s").css("transition-delay", "0.4s");
+        });
+        
+        $(".comnav.item1").click(function(){
+            $(".slideBox").removeClass("on").css("transition", "1s").css("transition-delay", "0.4s");
+            $(".comBox.item1").removeClass("on").css("transition", "0.8s");
+        });
+        $(".comnav.item2").click(function(){
+            $(".slideBox").removeClass("on").css("transition", "1s").css("transition-delay", "0.4s");
+            $(".comBox.item2").removeClass("on").css("transition", "0.8s");
+        });
+        $(".comnav.item3").click(function(){
+            $(".slideBox").removeClass("on").css("transition", "1s").css("transition-delay", "0.4s");
+            $(".comBox.item3").removeClass("on").css("transition", "0.8s");
+        });
+    });
+    </script>
+</head>
+<body>
+    <main>
+        <header class="hd">
+            <a href="index.html" class="logo">
+                <img src="./img/logo.png" alt="로고">
+            </a>
+            <div class="lstBox openBtn">
+                <span class="lst item1"></span>
+                <span class="lst item2"></span>
+                <span class="lst item3"></span>
+            </div>
+        </header>
+        <div class="slideBox">
+            <ul class="slide">
+                <li class="item1">
+                    <p class="slide_num">01</p>
+                    <div class="slide_img"></div> 
+                    <h1 class="slide_title">Profile</h1> 
+                    <div class="slidenav item1">
+                        <button>
+                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="200px" height="200px" viewBox="0 0 200 200" enable-background="new 0 0 200 200" xml:space="preserve">
+                                <g>
+                                    <line fill="none" stroke="#FFFFFF" stroke-width="11" stroke-miterlimit="10" x1="13.544" y1="87.228" x2="100" y2="144.79" />
+                                    <line fill="none" stroke="#FFFFFF" stroke-width="11" stroke-miterlimit="10" x1="186.456" y1="87.228" x2="100" y2="144.79" />
+                                    <circle fill="#FFFFFF" cx="13.544" cy="87.228" r="5.531" />
+                                    <circle fill="#FFFFFF" cx="186.456" cy="87.228" r="5.53" />
+                                    <circle fill="#FFFFFF" cx="100" cy="144.79" r="5.53" />
+                                </g>
+                            </svg>
+                        </button>
+                    </div>      
+                </li>
+                <li class="item2">
+                    <p class="slide_num">02</p>
+                    <div class="slide_img"></div> 
+                    <h1 class="slide_title">Skill</h1> 
+                    <div class="slidenav item2">
+                        <button>
+                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="200px" height="200px" viewBox="0 0 200 200" enable-background="new 0 0 200 200" xml:space="preserve">
+                                <g>
+                                    <line fill="none" stroke="#FFFFFF" stroke-width="11" stroke-miterlimit="10" x1="13.544" y1="87.228" x2="100" y2="144.79" />
+                                    <line fill="none" stroke="#FFFFFF" stroke-width="11" stroke-miterlimit="10" x1="186.456" y1="87.228" x2="100" y2="144.79" />
+                                    <circle fill="#FFFFFF" cx="13.544" cy="87.228" r="5.531" />
+                                    <circle fill="#FFFFFF" cx="186.456" cy="87.228" r="5.53" />
+                                    <circle fill="#FFFFFF" cx="100" cy="144.79" r="5.53" />
+                                </g>
+                            </svg>
+                        </button>
+                    </div> 
+                </li>
+                <li class="item3">
+                    <p class="slide_num">03</p>
+                    <div class="slide_img"></div> 
+                    <h1 class="slide_title">Working</h1>  
+                    <div class="slidenav item3">
+                        <button>
+                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="200px" height="200px" viewBox="0 0 200 200" enable-background="new 0 0 200 200" xml:space="preserve">
+                                <g>
+                                    <line fill="none" stroke="#FFFFFF" stroke-width="11" stroke-miterlimit="10" x1="13.544" y1="87.228" x2="100" y2="144.79" />
+                                    <line fill="none" stroke="#FFFFFF" stroke-width="11" stroke-miterlimit="10" x1="186.456" y1="87.228" x2="100" y2="144.79" />
+                                    <circle fill="#FFFFFF" cx="13.544" cy="87.228" r="5.531" />
+                                    <circle fill="#FFFFFF" cx="186.456" cy="87.228" r="5.53" />
+                                    <circle fill="#FFFFFF" cx="100" cy="144.79" r="5.53" />
+                                </g>
+                            </svg>
+                        </button>
+                    </div>
+                </li>
+            </ul>
+            <ul class="btnBox">
+                <li class="item1">
+                    <button>Previous</button>
+                </li>
+                <li class="item2">
+                    <button>Next</button>
+                </li>
+            </ul>
+        </div>
+        <div class="comBox item1">
+            <h2 class="comTit">Profile</h2>
+            <div class="txtBox item1">
+                <ul class="pro item1">
+                    <li class="tit">Name</li>
+                    <li class="com">박소은</li>
+                </ul>
+                <ul class="pro item2">
+                    <li class="tit">Age</li>
+                    <li class="com">25세 (만 23세)</li>
+                </ul>
+                <ul class="pro item3">
+                    <li class="tit">Tel</li>
+                    <li class="com">010.6572.5569</li>
+                </ul>
+                <ul class="pro item4">
+                    <li class="tit">E-mail</li>
+                    <li class="com">soeun920@naver.com</li>
+                </ul>
+                <ul class="pro item5">
+                    <li class="tit">Address</li>
+                    <li class="com">대전광역시 유성구 지족동</li>
+                </ul>
+                <ul class="pro item6">
+                    <li class="tit">Career</li>
+                </ul>
+            </div>
+            <div class="txtBox item2">
+                <ul class="pro item7">
+                    <li class="tit">License</li>
+                    <li class="com">
+                        <span class="txt_y">2019.04.19</span>웹디자인기능사
+                    </li>
+                </ul>
+                <ul class="pro item8">
+                    <li class="tit">License</li>
+                    <li class="com">
+                        <span class="txt_y">2017.08.12</span>한국사능력검정시험 1급
+                    </li>
+                </ul>
+                <ul class="pro item9">
+                    <li class="tit">License</li>
+                    <li class="com">
+                        <span class="txt_y">2016.04.09</span>한자 3급
+                    </li>
+                </ul>
+                <ul class="pro item10">
+                    <li class="tit">License</li>
+                    <li class="com">
+                        <span class="txt_y">2015.08.14</span>GTQ 그래픽기술자격 1급
+                    </li>
+                </ul>    
+            </div>
+            <div class="timeImg">
+                <svg version="1.1" id="Layer_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="595.28px" height="841.89px" viewBox="0 0 595.28 841.89" enable-background="new 0 0 595.28 841.89" xml:space="preserve">
+                    <path fill="#F4F4F4" d="M71,461c0,0-18,152-22,190c0,0-7,102,47-15l59-161l-79-14" id="leg1"/>
+                    <path fill="#F4F4F4" d="M275,492l14.372,155c0,0,20.628,113,54.628-19l37-136H275z" id="leg2"/>
+                    <path fill="#FFFFFF" d="M461.886,224.168c0,0-31.147-163.837-67.017,25.998c0,0-38.477,132.558-132.924,121.495
+                    c0,0-52.818-4.589-94.882-11.125c0,0-53.854-3.795-66.958,6.334c0,0-87.287-25.705-64.278-101.47c0,0,11.278-57.02,91.226-58.71
+                    c0,0,21.989-1.704,20.968-21.697c0,0-2.03-14.254-27.031-11.15c0,0-67.654-0.889-104.822,54.634c0,0-34.116,63.837-1.642,118.68
+                    c0,0,28.294,40.829,57.884,45.836c0,0-15.635,16.936-10.553,72.112c0,0,15.413,154.538,23.175,178.887
+                    c0,0,19.791,98.932,43.879-3.53l23.564-93.556c0,0,25.115-8.193,93.499-1.675c0,0,51.742,5.269,68.384,6.519
+                    c0,0-1.71,73.593,12.689,100.307c0,0,32.504,75.711,48.117-9.025C375.165,643.031,392,558,398,531c0,0,13.064-99.652,81.532-114.826
+                    c0,0,72.761-31.715,89.528-52.48c0,0,29.639-60.994-43.711-112.344C525.35,251.35,509.771,99.336,461.886,224.168z" />
+                    <g>
+                        <path fill="#2A2F33" d="M462.996,306.424c0-9.128,7.408-16.536,16.536-16.536s16.536,7.407,16.536,16.536
+                        s-7.408,16.536-16.536,16.536S462.996,315.552,462.996,306.424" />
+                        <path fill="#2A2F33" d="M545.673,312.623c-20.322-12.715,49.607-23.977,49.607,0c0,23.962-16.535,43.407-24.804,43.407
+                        C562.209,356.03,562.21,322.958,545.673,312.623" />
+                    </g>
+                    <g>
+                        <path fill="#2A2F33" d="M545.673,364.298c-1.24,0-2.496-0.282-3.688-0.874c-29.912-14.949-92.881,0.462-93.509,0.628
+                        c-4.432,1.041-8.93-1.604-10.021-6.021c-1.107-4.431,1.571-8.913,6.002-10.021c2.828-0.695,69.516-17.065,104.918,0.628
+                        c4.086,2.033,5.738,7.011,3.705,11.094C551.626,362.628,548.717,364.298,545.673,364.298" />
+                        <path fill="#2A2F33" d="M462.996,397.368c-2.678,0-5.291-1.289-6.896-3.688c-2.527-3.803-1.487-8.929,2.301-11.459
+                        c2.114-1.405,52.103-34.459,87.272-34.459c4.564,0,8.27,3.705,8.27,8.268c0,4.563-3.704,8.269-8.27,8.269
+                        c-30.176,0-77.617,31.351-78.096,31.683C466.154,396.922,464.567,397.368,462.996,397.368" />
+                    </g>
+                </svg>
+            </div>
+            <div class="timeBox">
+                <div class="timeline">
+                    <p class="point item1"></p>
+                    <p class="point item2"></p>
+                    <p class="point item3"></p>
+                    <p class="point item4"></p>
+                </div>
+                <p class="timeCom">2014.02<br>
+                    <span class="txt_p">한밭고등학교 졸업</span>
+                </p>
+                <p class="timeCom">2014.03<br>
+                    <span class="txt_p">중앙대학교 경영학부 입학</span>
+                </p>
+                <p class="timeCom">2019.02<br>
+                    <span class="txt_p">중앙대학교 경영학부 졸업</span>
+                </p>
+                <p class="timeCom">2019.05<br>
+                    <span class="txt_p">스마트기기 UX/UI 디자인 과정 수료</span>
+                </p>    
+            </div>
+            <div class="comnav item1">
+                <button>
+                    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="200px" height="200px" viewBox="0 0 200 200" enable-background="new 0 0 200 200" xml:space="preserve">
+                        <g>
+                            <line fill="none" stroke="#FFFFFF" stroke-width="11" stroke-miterlimit="10" x1="13.544" y1="87.228" x2="100" y2="144.79" />
+                            <line fill="none" stroke="#FFFFFF" stroke-width="11" stroke-miterlimit="10" x1="186.456" y1="87.228" x2="100" y2="144.79" />
+                            <circle fill="#FFFFFF" cx="13.544" cy="87.228" r="5.531" />
+                            <circle fill="#FFFFFF" cx="186.456" cy="87.228" r="5.53" />
+                            <circle fill="#FFFFFF" cx="100" cy="144.79" r="5.53" />
+                        </g>
+                    </svg>
+                </button>
+            </div>    
+        </div>
+        <div class="comBox item2">
+            <h2 class="comTit">Skill</h2>
+            <div class="graphBox">
+                <div class="skill">
+                    <div class="skillBox">
+                        <p class="skTit">Photoshop</p>
+                        <div class="graph">
+                            <div id="graph_frm" class="graphFrm">
+                                <span class="line item1"></span>
+                                <span class="line item2"></span>
+                                <span class="line item3"></span>
+                                <span class="line item4"></span>
+                            </div>
+                            <div id="graph_body" class="graphbody item1"></div>
+                        </div>
+                    </div>
+                    <div class="skillBox">
+                        <p class="skTit">Illustrator</p>
+                        <div class="graph">
+                            <div id="graph_frm" class="graphFrm">
+                                <span class="line item1"></span>
+                                <span class="line item2"></span>
+                                <span class="line item3"></span>
+                                <span class="line item4"></span>
+                            </div>
+                            <div id="graph_body" class="graphbody item2"></div>
+                        </div>
+                    </div>
+                    <div class="skillBox">
+                        <p class="skTit">HTML</p>
+                        <div class="graph">
+                            <div id="graph_frm" class="graphFrm">
+                                <span class="line item1"></span>
+                                <span class="line item2"></span>
+                                <span class="line item3"></span>
+                                <span class="line item4"></span>
+                            </div>
+                            <div id="graph_body" class="graphbody item3"></div>
+                        </div>
+                    </div>
+                    <div class="skillBox">
+                        <p class="skTit">CSS</p>
+                        <div class="graph">
+                            <div id="graph_frm" class="graphFrm">
+                                <span class="line item1"></span>
+                                <span class="line item2"></span>
+                                <span class="line item3"></span>
+                                <span class="line item4"></span>
+                            </div>
+                            <div id="graph_body" class="graphbody item4"></div>
+                        </div>
+                    </div>
+                    <div class="skillBox">
+                        <p class="skTit">JavaScript</p>
+                        <div class="graph">
+                            <div id="graph_frm" class="graphFrm">
+                                <span class="line item1"></span>
+                                <span class="line item2"></span>
+                                <span class="line item3"></span>
+                                <span class="line item4"></span>
+                            </div>
+                            <div id="graph_body" class="graphbody item5"></div>
+                        </div>
+                    </div>
+                    <div class="skillBox">
+                        <p class="skTit">Excel</p>
+                        <div class="graph">
+                            <div id="graph_frm" class="graphFrm">
+                                <span class="line item1"></span>
+                                <span class="line item2"></span>
+                                <span class="line item3"></span>
+                                <span class="line item4"></span>
+                            </div>
+                            <div id="graph_body" class="graphbody item6"></div>
+                        </div>
+                    </div>
+                    <div class="skillBox">
+                        <p class="skTit">Hancom Office</p>
+                        <div class="graph">
+                            <div id="graph_frm" class="graphFrm">
+                                <span class="line item1"></span>
+                                <span class="line item2"></span>
+                                <span class="line item3"></span>
+                                <span class="line item4"></span>
+                            </div>
+                            <div id="graph_body" class="graphbody item7"></div>
+                        </div>
+                    </div>
+                    <div class="skillBox">
+                        <p class="skTit">PowerPoint</p>
+                        <div class="graph">
+                            <div id="graph_frm" class="graphFrm">
+                                <span class="line item1"></span>
+                                <span class="line item2"></span>
+                                <span class="line item3"></span>
+                                <span class="line item4"></span>
+                            </div>
+                            <div id="graph_body" class="graphbody item8"></div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+            <div class="comnav item2">
+                <button>
+                    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="200px" height="200px" viewBox="0 0 200 200" enable-background="new 0 0 200 200" xml:space="preserve">
+                        <g>
+                            <line fill="none" stroke="#FFFFFF" stroke-width="11" stroke-miterlimit="10" x1="13.544" y1="87.228" x2="100" y2="144.79" />
+                            <line fill="none" stroke="#FFFFFF" stroke-width="11" stroke-miterlimit="10" x1="186.456" y1="87.228" x2="100" y2="144.79" />
+                            <circle fill="#FFFFFF" cx="13.544" cy="87.228" r="5.531" />
+                            <circle fill="#FFFFFF" cx="186.456" cy="87.228" r="5.53" />
+                            <circle fill="#FFFFFF" cx="100" cy="144.79" r="5.53" />
+                        </g>
+                    </svg>
+                </button>
+            </div>   
+        </div>
+        <div class="comBox item3">
+            <h2 class="comTit">Working</h2> 
+            <ul class="workBox">
+                <li class="item1">
+                    <a href="https://postimg.cc/gallery/1lhi2sfmi/" target="_blank">
+                        <div class="workTxt">
+                            <h3 class="workTit">사회복지법인 계룡 웹사이트 기획</h3>
+                            <p class="workCom">둘러보기 +</p>    
+                        </div>
+                    </a>
+                </li>
+                <li class="item2">
+                    <a href="https://postimg.cc/gallery/p6d2wgey/" target="_blank">
+                        <div class="workTxt">
+                            <h3 class="workTit">(주)두산 웹사이트 기획</h3>
+                            <p class="workCom">둘러보기 +</p>   
+                        </div>
+                    </a>
+                </li>
+                <li class="item3">
+                    <a href="https://postimg.cc/gallery/1hwgi6kgq/" target="_blank">
+                        <div class="workTxt">
+                            <h3 class="workTit">(주)두산 프로토타입 제작</h3>
+                            <p class="workCom">둘러보기 +</p>    
+                        </div>
+                    </a>
+                </li>
+                <li class="item4">
+                    <a href="https://postimg.cc/gallery/kzok64nu/" target="_blank">
+                        <div class="workTxt">
+                            <h3 class="workTit">스마트이비인후과 웹사이트 기획</h3>
+                            <p class="workCom">둘러보기 +</p>    
+                        </div>
+                    </a>
+                </li>
+                <li class="item5">
+                    <a href="https://postimg.cc/gallery/2coz42wii/" target="_blank">
+                        <div class="workTxt">
+                            <h3 class="workTit">계룡시청 웹사이트 기획</h3>
+                            <p class="workCom">둘러보기 +</p>    
+                        </div>
+                    </a>
+                </li>
+                <li class="item6">
+                    <a href="https://postimg.cc/gallery/i7zrz122/" target="_blank">
+                        <div class="workTxt">
+                            <h3 class="workTit">계룡시청 웹사이트 디자인</h3>
+                            <p class="workCom">둘러보기 +</p>    
+                        </div>
+                    </a>
+                </li>
+                <li class="item7">
+                    <a href="https://postimg.cc/gallery/jvpqm716/" target="_blank">
+                        <div class="workTxt">
+                            <h3 class="workTit">하나투어 모바일 웹사이트 기획</h3>
+                            <p class="workCom">둘러보기 +</p>    
+                        </div>
+                    </a>
+                </li>
+                <li class="item8">
+                    <a href="https://postimg.cc/gallery/3eh8n12qi/" target="_blank">
+                        <div class="workTxt">
+                            <h3 class="workTit">하나투어 모바일 웹사이트 디자인</h3>
+                            <p class="workCom">둘러보기 +</p>    
+                        </div>
+                    </a>
+                </li>
+            </ul>
+            <div class="comnav item3">
+                <button>
+                    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="200px" height="200px" viewBox="0 0 200 200" enable-background="new 0 0 200 200" xml:space="preserve">
+                        <g>
+                            <line fill="none" stroke="#FFFFFF" stroke-width="11" stroke-miterlimit="10" x1="13.544" y1="87.228" x2="100" y2="144.79" />
+                            <line fill="none" stroke="#FFFFFF" stroke-width="11" stroke-miterlimit="10" x1="186.456" y1="87.228" x2="100" y2="144.79" />
+                            <circle fill="#FFFFFF" cx="13.544" cy="87.228" r="5.531" />
+                            <circle fill="#FFFFFF" cx="186.456" cy="87.228" r="5.53" />
+                            <circle fill="#FFFFFF" cx="100" cy="144.79" r="5.53" />
+                        </g>
+                    </svg>
+                </button>
+            </div>   
+        </div>
+    </main>
+    <div class="menuBox">
+        <header class="hd">
+            <a href="index.html" class="logo">
+                <img src="./img/logo.png" alt="로고">
+            </a>
+            <div class="lstBox closeBtn">
+                <span class="lst item1"></span>
+                <span class="lst item2"></span>
+                <span class="lst item3"></span>
+            </div>
+        </header>
+        <div class="menu">
+            <nav class="menuLst">
+                <a href="index.html"><span>HOME</span></a>
+                <a href="about.html"><span>ABOUT</span></a>
+                <a href="portfolio.html"><span>PORTFOLIO</span></a>
+            </nav>
+        </div>
+    </div>
+</body>
+</html>
