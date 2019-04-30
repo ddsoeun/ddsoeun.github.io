@@ -44,8 +44,47 @@
     font-family: 'Crete Round', serif;
     font-family: 'Roboto', sans-serif;    
 */
+    main { width: 100%; height: 100%; overflow: hidden; }
+        
+    .lst { width: 40px; height: 3px; background: #fff; border-radius: 3px; position: absolute; transition: 0.4s; }
+    .lst.item1 { top: 10px; }
+    .lst.item2 { top: 18px; }
+    .lst.item3 { top: 26px; }  
+    .lstBox:hover .lst { background: #f9d763; }
+        
+    .slide li.item1 .slide_img { background-image: url("./img/about_img1.png"); }
+    .slide li.item2 .slide_img { background-image: url("./img/about_img2.png"); }
+    .slide li.item3 .slide_img { background-image: url("./img/about_img3.png"); }
+        
+    .slideBox.on { margin-top: -100vh; }
+    .slideBox .slide { width: 300%; height: 100%; }
+    .slideBox .slide li { float: left; width: 33.333333333333%; height: 100%; position: relative; }
+        
+    .comBox.item1 { background-image: url("./img/about_downimg1.png"); }
+    .comBox.item2 { background-image: url("./img/about_downimg2.png"); }
+    .comBox.item3 { background-image: url("./img/about_downimg3.png"); }
+        
+    .comBox.on { bottom: 0; left: 0; z-index: 50; }
+        
+    .workBox li.item1 a { background-image: url("./img/working_img1.png"); }
+    .workBox li.item2 a { background-image: url("./img/working_img2.png"); }
+    .workBox li.item3 a { background-image: url("./img/working_img3.png"); }
+    .workBox li.item4 a { background-image: url("./img/working_img4.png"); }
+    .workBox li.item5 a { background-image: url("./img/working_img5.png"); }
+    .workBox li.item6 a { background-image: url("./img/working_img6.png"); }
+    .workBox li.item7 a { background-image: url("./img/working_img7.png"); }
+    .workBox li.item8 a { background-image: url("./img/working_img8.png"); }
+    
+    .graphbody.item1.on { width: 90%; }
+    .graphbody.item2.on { width: 85%; }
+    .graphbody.item3.on { width: 99%; }
+    .graphbody.item4.on { width: 95%; }
+    .graphbody.item5.on { width: 80%; }
+    .graphbody.item6.on { width: 70%; }
+    .graphbody.item7.on { width: 95%; }
+    .graphbody.item8.on { width: 99%; }    
+        
     @media screen and (max-width:767px) {
-        main { width: 100%; height: 100%; overflow: hidden; }
         
         .hd { width: 80%; height: 60px; background: transparent; z-index: 60; position: fixed; top: 0; left: 10%; }
         
@@ -53,20 +92,9 @@
         .logo img { width: 100%; }
         
         .lstBox { width: 40px; height: 40px; background: transparent; float: right; position: relative; cursor: pointer; margin-top: 10px; }
-        .lst { width: 40px; height: 3px; background: #fff; border-radius: 3px; position: absolute; transition: 0.4s; }
-        .lst.item1 { top: 10px; }
-        .lst.item2 { top: 18px; }
-        .lst.item3 { top: 26px; }  
-        .lstBox:hover .lst { background: #f9d763; }
         
         .slideBox { width: 100%; height: 100%; overflow: hidden; position: relative; transition: 0.8s; padding-top: 60px; }
-        .slideBox.on { margin-top: -100vh; }
-        .slideBox .slide { width: 300%; height: 100%; }
-        .slideBox .slide li { float: left; width: 33.333333333333%; height: 100%; position: relative; }
         .slide_img { width: 60vw; margin: 0 auto; height: 75vh; background-position: center center; background-repeat: no-repeat; background-size: cover; margin-top: 3vh; }
-        .slide li.item1 .slide_img { background-image: url("./img/about_img1.png"); }
-        .slide li.item2 .slide_img { background-image: url("./img/about_img2.png"); }
-        .slide li.item3 .slide_img { background-image: url("./img/about_img3.png"); }
         .slide_num { font-size: 4rem; font-family: 'Crete Round', serif; color: #fff; letter-spacing: 3px; font-style: italic; position: absolute; width: 20vw; left: 40vw; text-align: center; top: -4vh; }
         .slide_title { font-size: 3.5rem; font-family: 'Crete Round', serif; position: absolute; width: 60vw; left: 20vw; text-align: center; top: 35vh; color: #fff; letter-spacing: 1vw; }
         .slide li.item3 .slide_title { font-size: 3rem; width: 70vw; left: 15vw; }
@@ -96,10 +124,6 @@
         }
         
         .comBox { position: fixed; bottom: -100%; left: 0; z-index: -10; width: 100%; height: calc(100% - 60px); transition: 1s; transition-delay: 0.4s; padding-top: 60px; background-repeat: no-repeat; background-position: center center; background-size: cover; }
-        .comBox.item1 { background-image: url("./img/about_downimg1.png"); }
-        .comBox.item2 { background-image: url("./img/about_downimg2.png"); }
-        .comBox.item3 { background-image: url("./img/about_downimg3.png"); }
-        .comBox.on { bottom: 0; left: 0; z-index: 50; }
         
         .comTit { width: 60%; margin: 0 auto; font-size: 1.5rem; text-align: center; margin-bottom: 5vw; color: #fff; font-family: 'Ubuntu', sans-serif; text-transform: uppercase; letter-spacing: 1vw; position: relative; margin-top: 2vh; }
         .comTit::before, .comTit::after { content: ""; height: 3px; position: absolute; z-index: -1; }
@@ -177,27 +201,11 @@
         .graphFrm .line.item3 { left: 60%; }
         .graphFrm .line.item4 { left: 80%; }
         .graphbody { width: 0; height: 1vh; margin-top: -0.5vh; transition: 4s; transition-delay: 1.5s; background: #8f89c9; }
-        .graphbody.item1.on { width: 90%; }
-        .graphbody.item2.on { width: 85%; }
-        .graphbody.item3.on { width: 99%; }
-        .graphbody.item4.on { width: 95%; }
-        .graphbody.item5.on { width: 80%; }
-        .graphbody.item6.on { width: 70%; }
-        .graphbody.item7.on { width: 95%; }
-        .graphbody.item8.on { width: 99%; }
         
         .workBox { width: 80%; margin: 0 auto; height: 70vh; padding-top: 2vh; }
         .workBox li { width: 48%; margin-right: 4%; background: #8f89c9; height: 15vh; float: left; margin-top: 2vh; }
         .workBox li:nth-child(2n) { margin-right: 0; }
         .workBox li a { display: block; width: 100%; height: 100%; background-repeat: no-repeat; background-position: center center; background-size: cover; }
-        .workBox li.item1 a { background-image: url("./img/working_img1.png"); }
-        .workBox li.item2 a { background-image: url("./img/working_img2.png"); }
-        .workBox li.item3 a { background-image: url("./img/working_img3.png"); }
-        .workBox li.item4 a { background-image: url("./img/working_img4.png"); }
-        .workBox li.item5 a { background-image: url("./img/working_img5.png"); }
-        .workBox li.item6 a { background-image: url("./img/working_img6.png"); }
-        .workBox li.item7 a { background-image: url("./img/working_img7.png"); }
-        .workBox li.item8 a { background-image: url("./img/working_img8.png"); }
         
         .workTxt { display: block; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.4); position: relative; }
         .workTit { font-size: 0.8rem; padding: 10% 10% 5% 10%; word-break: keep-all; text-align: center; color: #fff; }
@@ -215,7 +223,6 @@
         .menuBox .menu .menuLst a span::after { top: calc(50% - 2px); height: 4px; }
     }
     @media screen and (min-width:768px) and (max-width:959px) {
-        main { width: 100%; height: 100%; overflow: hidden; }
         
         .hd { width: 80%; height: 100px; background: transparent; z-index: 60; position: fixed; top: 0; left: 10%; }
         
@@ -223,20 +230,9 @@
         .logo img { width: 100%; }
         
         .lstBox { width: 40px; height: 40px; background: transparent; float: right; position: relative; cursor: pointer; margin-top: 30px; }
-        .lst { width: 40px; height: 3px; background: #fff; border-radius: 3px; position: absolute; transition: 0.4s; }
-        .lst.item1 { top: 10px; }
-        .lst.item2 { top: 18px; }
-        .lst.item3 { top: 26px; }  
-        .lstBox:hover .lst { background: #f9d763; }
         
         .slideBox { width: 100%; height: 100%; overflow: hidden; position: relative; transition: 0.8s; padding-top: 100px; }
-        .slideBox.on { margin-top: -100vh; }
-        .slideBox .slide { width: 300%; height: 100%; }
-        .slideBox .slide li { float: left; width: 33.333333333333%; height: 100%; position: relative; }
         .slide_img { width: 60vw; margin: 0 auto; height: 75vh; background-position: center center; background-repeat: no-repeat; background-size: cover; margin-top: 3vh; }
-        .slide li.item1 .slide_img { background-image: url("./img/about_img1.png"); }
-        .slide li.item2 .slide_img { background-image: url("./img/about_img2.png"); }
-        .slide li.item3 .slide_img { background-image: url("./img/about_img3.png"); }
         .slide_num { font-size: 4rem; font-family: 'Crete Round', serif; color: #fff; letter-spacing: 3px; font-style: italic; position: absolute; width: 20vw; left: 40vw; text-align: center; top: -2vh; }
         .slide_title { font-size: 5rem; font-family: 'Crete Round', serif; position: absolute; width: 60vw; left: 20vw; text-align: center; top: 35vh; color: #fff; letter-spacing: 1vw; }
         
@@ -265,10 +261,6 @@
         }
         
         .comBox { position: fixed; bottom: -100%; left: 0; z-index: -10; width: 100%; height: calc(100% - 100px); transition: 1s; transition-delay: 0.4s; padding-top: 100px; background-repeat: no-repeat; background-position: center center; background-size: cover; }
-        .comBox.item1 { background-image: url("./img/about_downimg1.png"); }
-        .comBox.item2 { background-image: url("./img/about_downimg2.png"); }
-        .comBox.item3 { background-image: url("./img/about_downimg3.png"); }
-        .comBox.on { bottom: 0; left: 0; z-index: 50; }
         
         .comTit { width: 60%; margin: 0 auto; font-size: 1.5rem; text-align: center; margin-bottom: 5vw; color: #fff; font-family: 'Ubuntu', sans-serif; text-transform: uppercase; letter-spacing: 1vw; position: relative; margin-top: 2vh; }
         .comTit::before, .comTit::after { content: ""; height: 3px; position: absolute; z-index: -1; }
@@ -347,27 +339,11 @@
         .graphFrm .line.item3 { left: 60%; }
         .graphFrm .line.item4 { left: 80%; }
         .graphbody { width: 0; height: 1vh; margin-top: -0.5vh; transition: 4s; transition-delay: 1.5s; background: #8f89c9; }
-        .graphbody.item1.on { width: 90%; }
-        .graphbody.item2.on { width: 85%; }
-        .graphbody.item3.on { width: 99%; }
-        .graphbody.item4.on { width: 95%; }
-        .graphbody.item5.on { width: 80%; }
-        .graphbody.item6.on { width: 70%; }
-        .graphbody.item7.on { width: 95%; }
-        .graphbody.item8.on { width: 99%; }
         
         .workBox { width: 80%; margin: 0 auto; height: 70vh; padding-top: 2vh; }
         .workBox li { width: 48%; margin-right: 4%; background: #8f89c9; height: 15vh; float: left; margin-top: 2vh; }
         .workBox li:nth-child(2n) { margin-right: 0; }
         .workBox li a { display: block; width: 100%; height: 100%; background-repeat: no-repeat; background-position: center center; background-size: cover; }
-        .workBox li.item1 a { background-image: url("./img/working_img1.png"); }
-        .workBox li.item2 a { background-image: url("./img/working_img2.png"); }
-        .workBox li.item3 a { background-image: url("./img/working_img3.png"); }
-        .workBox li.item4 a { background-image: url("./img/working_img4.png"); }
-        .workBox li.item5 a { background-image: url("./img/working_img5.png"); }
-        .workBox li.item6 a { background-image: url("./img/working_img6.png"); }
-        .workBox li.item7 a { background-image: url("./img/working_img7.png"); }
-        .workBox li.item8 a { background-image: url("./img/working_img8.png"); }
         
         .workTxt { display: block; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.4); position: relative; }
         .workTit { font-size: 1rem; padding: 10% 10% 0 10%; word-break: keep-all; text-align: center; color: #fff; }
@@ -385,7 +361,6 @@
         .menuBox .menu .menuLst a span::after { top: calc(50% - 2px); height: 4px; }
     }
     @media screen and (min-width:960px) and (max-width:1024px) {
-        main { width: 100%; height: 100%; overflow: hidden; }
         
         .hd { width: 80%; height: 100px; background: transparent; z-index: 60; position: fixed; top: 0; left: 10%; }
         
@@ -393,20 +368,9 @@
         .logo img { width: 100%; }
         
         .lstBox { width: 40px; height: 40px; background: transparent; float: right; position: relative; cursor: pointer; margin-top: 30px; }
-        .lst { width: 40px; height: 3px; background: #fff; border-radius: 3px; position: absolute; transition: 0.4s; }
-        .lst.item1 { top: 10px; }
-        .lst.item2 { top: 18px; }
-        .lst.item3 { top: 26px; }  
-        .lstBox:hover .lst { background: #f9d763; }
         
         .slideBox { width: 100%; height: 100%; overflow: hidden; position: relative; transition: 0.8s; padding-top: 100px; }
-        .slideBox.on { margin-top: -100vh; }
-        .slideBox .slide { width: 300%; height: 100%; }
-        .slideBox .slide li { float: left; width: 33.333333333333%; height: 100%; position: relative; }
         .slide_img { width: 60vw; margin: 0 auto; height: 75vh; background-position: center center; background-repeat: no-repeat; background-size: cover; margin-top: 5vh; }
-        .slide li.item1 .slide_img { background-image: url("./img/about_img1.png"); }
-        .slide li.item2 .slide_img { background-image: url("./img/about_img2.png"); }
-        .slide li.item3 .slide_img { background-image: url("./img/about_img3.png"); }
         .slide_num { font-size: 5rem; font-family: 'Crete Round', serif; color: #fff; letter-spacing: 3px; font-style: italic; position: absolute; width: 20vw; left: 40vw; text-align: center; top: 1vh; }
         .slide_title { font-size: 7rem; font-family: 'Crete Round', serif; position: absolute; width: 60vw; left: 20vw; text-align: center; top: 35vh; color: #fff; letter-spacing: 1vw; }
         
@@ -435,10 +399,6 @@
         }
         
         .comBox { position: fixed; bottom: -100%; left: 0; z-index: -10; width: 100%; height: calc(100% - 100px); transition: 1s; transition-delay: 0.4s; padding-top: 100px; background-repeat: no-repeat; background-position: center center; background-size: cover; }
-        .comBox.item1 { background-image: url("./img/about_downimg1.png"); }
-        .comBox.item2 { background-image: url("./img/about_downimg2.png"); }
-        .comBox.item3 { background-image: url("./img/about_downimg3.png"); }
-        .comBox.on { bottom: 0; left: 0; z-index: 50; }
         
         .comTit { width: 60%; margin: 0 auto; font-size: 1.5rem; text-align: center; margin-bottom: 5vw; color: #fff; font-family: 'Ubuntu', sans-serif; text-transform: uppercase; letter-spacing: 1vw; position: relative; margin-top: 2vh; }
         .comTit::before, .comTit::after { content: ""; height: 3px; position: absolute; z-index: -1; }
@@ -514,27 +474,11 @@
         .graphFrm .line.item3 { left: 60%; }
         .graphFrm .line.item4 { left: 80%; }
         .graphbody { width: 0; height: 1vh; margin-top: -0.5vh; transition: 4s; transition-delay: 1.5s; background: #8f89c9; }
-        .graphbody.item1.on { width: 90%; }
-        .graphbody.item2.on { width: 85%; }
-        .graphbody.item3.on { width: 99%; }
-        .graphbody.item4.on { width: 95%; }
-        .graphbody.item5.on { width: 80%; }
-        .graphbody.item6.on { width: 70%; }
-        .graphbody.item7.on { width: 95%; }
-        .graphbody.item8.on { width: 99%; }
         
         .workBox { width: 80%; margin: 0 auto; height: 70vh; padding-top: 2vh; }
         .workBox li { width: 48%; margin-right: 4%; background: #8f89c9; height: 15vh; float: left; margin-top: 2vh; }
         .workBox li:nth-child(2n) { margin-right: 0; }
         .workBox li a { display: block; width: 100%; height: 100%; background-repeat: no-repeat; background-position: center center; background-size: cover; }
-        .workBox li.item1 a { background-image: url("./img/working_img1.png"); }
-        .workBox li.item2 a { background-image: url("./img/working_img2.png"); }
-        .workBox li.item3 a { background-image: url("./img/working_img3.png"); }
-        .workBox li.item4 a { background-image: url("./img/working_img4.png"); }
-        .workBox li.item5 a { background-image: url("./img/working_img5.png"); }
-        .workBox li.item6 a { background-image: url("./img/working_img6.png"); }
-        .workBox li.item7 a { background-image: url("./img/working_img7.png"); }
-        .workBox li.item8 a { background-image: url("./img/working_img8.png"); }
         
         .workTxt { display: block; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.4); position: relative; }
         .workTit { font-size: 1rem; padding: 10% 10% 0 10%; word-break: keep-all; text-align: center; color: #fff; }
@@ -554,7 +498,6 @@
         .menuBox .menu .menuLst a span::after { top: calc(50% - 2px); height: 4px; }
     }
     @media screen and (min-width:1025px) {
-        main { width: 100%; height: 100%; overflow: hidden; }
         
         .hd { width: 80%; height: 100px; background: transparent; z-index: 60; position: fixed; top: 0; left: 10%; }
         
@@ -562,20 +505,9 @@
         .logo img { width: 100%; }
         
         .lstBox { width: 40px; height: 40px; background: transparent; float: right; position: relative; cursor: pointer; margin-top: 30px; }
-        .lst { width: 40px; height: 3px; background: #fff; border-radius: 3px; position: absolute; transition: 0.4s; }
-        .lst.item1 { top: 10px; }
-        .lst.item2 { top: 18px; }
-        .lst.item3 { top: 26px; }  
-        .lstBox:hover .lst { background: #f9d763; }
         
         .slideBox { width: 100%; height: 100%; overflow: hidden; position: relative; transition: 0.8s; padding-top: 100px; }
-        .slideBox.on { margin-top: calc(-100% + 100px); }
-        .slideBox .slide { width: 300%; height: 100%; }
-        .slideBox .slide li { float: left; width: 33.333333333333%; height: 100%; position: relative; }
         .slide_img { width: 20vw; margin: 0 auto; height: 75vh; background-position: center center; background-repeat: no-repeat; background-size: cover; margin-top: 3vh; }
-        .slide li.item1 .slide_img { background-image: url("./img/about_img1.png"); }
-        .slide li.item2 .slide_img { background-image: url("./img/about_img2.png"); }
-        .slide li.item3 .slide_img { background-image: url("./img/about_img3.png"); }
         .slide_num { font-size: 3rem; font-family: 'Crete Round', serif; color: #fff; letter-spacing: 3px; font-style: italic; position: absolute; width: 10vw; left: 45vw; text-align: center; top: -1vh; }
         .slide_title { font-size: 7rem; font-family: 'Crete Round', serif; position: absolute; width: 30vw; left: 35vw; text-align: center; top: 35vh; color: #fff; letter-spacing: 1vw; }
         
@@ -604,10 +536,6 @@
         }
         
         .comBox { position: fixed; bottom: -100%; left: 0; z-index: -10; width: 100%; height: calc(100% - 100px); transition: 1s; transition-delay: 0.4s; padding-top: 100px; background-repeat: no-repeat; background-position: center center; background-size: cover; }
-        .comBox.item1 { background-image: url("./img/about_downimg1.png"); }
-        .comBox.item2 { background-image: url("./img/about_downimg2.png"); }
-        .comBox.item3 { background-image: url("./img/about_downimg3.png"); }
-        .comBox.on { bottom: 0; left: 0; z-index: 50; }
         
         .comTit { width: 60%; margin: 0 auto; font-size: 3rem; text-align: center; margin-bottom: 5vw; color: #fff; font-family: 'Ubuntu', sans-serif; text-transform: uppercase; letter-spacing: 1vw; position: relative; }
         .comTit::before, .comTit::after { content: ""; height: 3px; position: absolute; z-index: -1; }
@@ -683,28 +611,12 @@
         .graphFrm .line.item3 { left: 60%; }
         .graphFrm .line.item4 { left: 80%; }
         .graphbody { width: 0; height: 0.8vw; margin-top: -0.45vw; transition: 4s; transition-delay: 1.5s; background: #8f89c9; }
-        .graphbody.item1.on { width: 90%; }
-        .graphbody.item2.on { width: 85%; }
-        .graphbody.item3.on { width: 99%; }
-        .graphbody.item4.on { width: 95%; }
-        .graphbody.item5.on { width: 80%; }
-        .graphbody.item6.on { width: 70%; }
-        .graphbody.item7.on { width: 95%; }
-        .graphbody.item8.on { width: 99%; }
         
         .workBox { width: 70%; margin: 0 auto; height: 65vh; padding-top: 1vw; }
         .workBox li { width: 22%; margin-right: 4%; background: #8f89c9; height: 14vw; float: left; }
         .workBox li:nth-child(5), .workBox li:nth-child(6), .workBox li:nth-child(7), .workBox li:nth-child(8) { margin-top: 2vw; }
         .workBox li:nth-child(4n) { margin-right: 0; }
         .workBox li a { display: block; width: 100%; height: 100%; background-repeat: no-repeat; background-position: center center; background-size: cover; }
-        .workBox li.item1 a { background-image: url("./img/working_img1.png"); }
-        .workBox li.item2 a { background-image: url("./img/working_img2.png"); }
-        .workBox li.item3 a { background-image: url("./img/working_img3.png"); }
-        .workBox li.item4 a { background-image: url("./img/working_img4.png"); }
-        .workBox li.item5 a { background-image: url("./img/working_img5.png"); }
-        .workBox li.item6 a { background-image: url("./img/working_img6.png"); }
-        .workBox li.item7 a { background-image: url("./img/working_img7.png"); }
-        .workBox li.item8 a { background-image: url("./img/working_img8.png"); }
         
         .workTxt { display: block; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.4); opacity: 0; transition: 0.6s; position: relative; }
         .workTit { font-size: 1rem; padding: 20% 10% 0% 10%; word-break: keep-all; text-align: center; color: #fff; }
