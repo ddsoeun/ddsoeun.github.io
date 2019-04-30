@@ -96,6 +96,8 @@
         
     .num { text-shadow: -1px -1px 2px #feedb2, 1px 1px 2px #b39223; }
         
+    .subBox.on .subTit:hover { color: #f9d763; }
+        
     @media screen and (max-width:767px) {
         
         .hd { width: 80%; height: 60px; background: transparent; z-index: 60; position: fixed; top: 0; left: 10%; }
@@ -108,15 +110,14 @@
         .backBtn { width: 40px; height: 40px; position: absolute; left: calc(50% - 20px); top: 10px; opacity: 0; transition: 0.6s; transition-delay: 0.8s; transition-delay: 0.6s; }
         
         .contents { width: 100%; height: calc(100% - 60px); padding-top: 60px; }
-        .subBox { width: 100%; height: 30px; line-height: 30px; background: #8f89c9; position: absolute; left: 0; overflow: hidden; transition: 0.8s; transition-delay: 0.2s; z-index: 40; }
+        .subBox { width: 100%; height: 30px; line-height: 30px; background: #8f89c9; position: absolute; left: 0; overflow: hidden; z-index: 40; }
         .subBox.item1 { bottom: 10px; }
         .subBox.item2 { bottom: 45px; }
         .subBox.item3 { bottom: 80px; }
-        .subBox .wrap { opacity: 0; transition: 0.8s; transition-delay: 0.6s; width: 90%; margin: 0 auto; height: 100%; overflow: hidden; position: relative; }
+        .subBox .wrap { opacity: 0; width: 90%; margin: 0 auto; height: 100%; overflow: hidden; position: relative; }
         .subBox .subTit { color: #fff; text-align: center; height: 30px; line-height: 30px; }
         
-        .subBox.on { width: 100%; height: calc(100% - 60px); padding-top: 60px; transition: 0.8s; transition-delay: 0.2s; z-index: 50; bottom: 0; left: 0; background: #fff; }
-        .subBox.on .wrap { opacity: 1; }
+        .subBox.on { width: 100%; height: calc(100% - 60px); padding-top: 60px; z-index: 50; bottom: 0; left: 0; background: #fff; }
         .subBox.on .subTit { color: #8f89c9; position: absolute; bottom: 10px; text-align: center; left: 15vw; width: 70vw; }
         
         .subBox .wrap .slide { width: 100%; height: calc(100% - 40px); position: relative; }
@@ -136,9 +137,10 @@
         .imgWrap { width: 90%; margin: 0 auto; background-repeat: no-repeat; background-position: center center; background-size: cover; height: 100%; }
         
         .imgTit { font-size: 1rem; position: absolute; bottom: 5vw; left: 0; color: #fff; background: #8f89c9; width: 70vw; height: 10vw; line-height: 10vw; padding-left: 5vw; font-weight: 400; }
-        .imgTxtBox { position: absolute; right: 0; width: 20%; height: 100%; top: 0; }
+        .imgTxtBox { position: absolute; right: 0; width: 45%; height: 100%; top: 0; }
         .imgTxtBox .side { writing-mode: vertical-rl; font-size: 0.8rem; position: absolute; top: 2vw; right: 0; color: #000; font-weight: bold; }
         .imgTxtBox .num { font-size: 3.5rem; bottom: 0; right: 2vw; position: absolute; font-family: 'Crete Round', sans-serif; font-style: italic; color: #f9d763; letter-spacing: 1vw; }
+        .imgTxtBox .num .txt_b { font-size: 1rem; color: #333; text-shadow: -1px -1px 2px #666; letter-spacing: 0; }
         
         .numBox { width: 35%; margin: 0 auto; height: 10vw; position: relative; margin-top: 2vh; }
         .numBox p { font-size: 0.8rem; float: left; height: 10vw; line-height: 10vw; font-weight: bold; }
@@ -187,15 +189,14 @@
         .backBtn { width: 40px; height: 40px; position: absolute; right: calc(120px + 4vw); top: 30px; opacity: 0; transition: 0.6s; transition-delay: 0.8s; transition-delay: 0.6s; }
         
         .contents { width: 100%; height: calc(100% - 100px); padding-top: 100px; }
-        .subBox { width: 30px; height: 100%; background: #8f89c9; position: absolute; top: 0; overflow: hidden; transition: 0.8s; transition-delay: 0.2s; z-index: 40; }
+        .subBox { width: 30px; height: 100%; background: #8f89c9; position: absolute; top: 0; overflow: hidden; z-index: 40; }
         .subBox.item1 { left: 20px; }
         .subBox.item2 { left: 60px; }
         .subBox.item3 { left: 100px; }
-        .subBox .wrap { opacity: 0; transition: 0.8s; transition-delay: 0.6s; width: 90%; margin: 0 auto; height: 100%; overflow: hidden; position: relative; }
+        .subBox .wrap { opacity: 0; width: 90%; margin: 0 auto; height: 100%; overflow: hidden; position: relative; }
         .subBox .subTit { display: flex; color: #fff; text-align: center; width: 100%; transform: translateX(0px) rotate(-90deg); height: 100%; flex-direction: column; justify-content: center; align-items: center; }
         
-        .subBox.on { width: 100%; height: calc(100% - 100px); padding-top: 100px; transition: 0.8s; transition-delay: 0.2s; z-index: 50; top: 0; left: 0; background: #fff; }
-        .subBox.on .wrap { opacity: 1; }
+        .subBox.on { width: 100%; height: calc(100% - 100px); padding-top: 100px; z-index: 50; top: 0; left: 0; background: #fff; }
         .subBox.on .subTit { color: #8f89c9; position: absolute; left: 10px; text-align: center; top: 0; width: 40px; }
         
         .subBox .wrap .slide { width: 100%; height: calc(100% - 90px); position: relative; }
@@ -215,9 +216,10 @@
         .imgWrap { width: 90%; margin: 0 auto; background-repeat: no-repeat; background-position: center center; background-size: cover; height: 100%; }
         
         .imgTit { font-size: 1.5rem; position: absolute; bottom: 5vw; left: 2vw; color: #fff; background: #8f89c9; width: 55vw; height: 7vw; line-height: 7vw; padding-left: 5vw; font-weight: 400; }
-        .imgTxtBox { position: absolute; right: 0; width: 20%; height: 100%; top: 0; }
+        .imgTxtBox { position: absolute; right: 0; width: 45%; height: 100%; top: 0; }
         .imgTxtBox .side { writing-mode: vertical-rl; font-size: 1rem; position: absolute; top: 0; right: 2vw; color: #000; font-weight: bold; }
         .imgTxtBox .num { font-size: 4.5rem; bottom: -2vw; right: 2vw; position: absolute; font-family: 'Crete Round', sans-serif; font-style: italic; color: #f9d763; letter-spacing: 1vw; }
+        .imgTxtBox .num .txt_b { font-size: 1.5rem; color: #333; text-shadow: -1px -1px 2px #666; letter-spacing: 0; }
         
         .numBox { width: 20vw; margin: 0 auto; height: 10vw; position: relative; margin-top: 2vh; }
         .numBox p { font-size: 0.8rem; float: left; height: 10vw; line-height: 10vw; font-weight: bold; }
@@ -265,15 +267,14 @@
         .backBtn { width: 40px; height: 40px; position: absolute; right: calc(120px + 4vw); top: 30px; opacity: 0; transition: 0.6s; transition-delay: 0.8s; transition-delay: 0.6s; }
         
         .contents { width: 100%; height: calc(100% - 100px); padding-top: 100px; }
-        .subBox { width: 40px; height: 100%; background: #8f89c9; position: absolute; top: 0; overflow: hidden; transition: 0.8s; transition-delay: 0.2s; z-index: 40; }
+        .subBox { width: 40px; height: 100%; background: #8f89c9; position: absolute; top: 0; overflow: hidden; z-index: 40; }
         .subBox.item1 { left: 20px; }
         .subBox.item2 { left: 80px; }
         .subBox.item3 { left: 140px; }
-        .subBox .wrap { opacity: 0; transition: 0.8s; transition-delay: 0.6s; width: 90%; margin: 0 auto; height: 100%; overflow: hidden; position: relative; }
+        .subBox .wrap { opacity: 0; width: 90%; margin: 0 auto; height: 100%; overflow: hidden; position: relative; }
         .subBox .subTit { display: flex; color: #fff; text-align: center; width: 100%; transform: translateX(0px) rotate(-90deg); height: 100%; flex-direction: column; justify-content: center; align-items: center; }
         
-        .subBox.on { width: 100%; height: calc(100% - 100px); padding-top: 100px; transition: 0.8s; transition-delay: 0.2s; z-index: 50; top: 0; left: 0; background: #fff; }
-        .subBox.on .wrap { opacity: 1; }
+        .subBox.on { width: 100%; height: calc(100% - 100px); padding-top: 100px; z-index: 50; top: 0; left: 0; background: #fff; }
         .subBox.on .subTit { color: #8f89c9; position: absolute; left: 10px; text-align: center; top: 0; width: 40px; transition: 0.6s; }
         .subTit:hover { color: #f9d763; }
         .backBtn:hover .back { background: #f9d763; }
@@ -295,9 +296,10 @@
         .imgWrap { width: 90%; margin: 0 auto; background-repeat: no-repeat; background-position: center center; background-size: cover; height: 100%; }
         
         .imgTit { font-size: 1.5rem; position: absolute; bottom: 5vw; left: 2vw; color: #fff; background: #8f89c9; width: 55vw; height: 7vw; line-height: 7vw; padding-left: 5vw; font-weight: 400; }
-        .imgTxtBox { position: absolute; right: 0; width: 20%; height: 100%; top: 0; }
+        .imgTxtBox { position: absolute; right: 0; width: 45%; height: 100%; top: 0; }
         .imgTxtBox .side { writing-mode: vertical-rl; font-size: 1rem; position: absolute; top: 0; right: 2vw; color: #000; font-weight: bold; }
         .imgTxtBox .num { font-size: 7rem; bottom: -2vw; right: 2vw; position: absolute; font-family: 'Crete Round', sans-serif; font-style: italic; color: #f9d763; letter-spacing: 1vw; }
+        .imgTxtBox .num .txt_b { font-size: 2rem; color: #333; text-shadow: -1px -1px 2px #ddd; letter-spacing: 0; }
         
         .numBox { width: 20vw; margin: 0 auto; height: 10vw; position: relative; margin-top: 2vh; }
         .numBox p { font-size: 0.8rem; float: left; height: 10vw; line-height: 10vw; font-weight: bold; }
@@ -345,17 +347,16 @@
         .backBtn { width: 40px; height: 40px; position: absolute; right: calc(calc(90px + 5%) + 4vw); top: 30px; opacity: 0; transition: 0.6s; transition-delay: 0.8s; transition-delay: 0.6s; }
         
         .contents { width: 100%; height: calc(100% - 100px); padding-top: 100px; }
-        .subBox { width: 40px; height: 100%; background: #8f89c9; position: absolute; top: 0; overflow: hidden; transition: 0.8s; transition-delay: 0.2s; z-index: 40; }
+        .subBox { width: 40px; height: 100%; background: #8f89c9; position: absolute; top: 0; overflow: hidden; z-index: 40; }
         .subBox.item1 { left: 40px; }
         .subBox.item2 { left: 100px; }
         .subBox.item3 { left: 160px; }
-        .subBox .wrap { opacity: 0; transition: 0.8s; transition-delay: 0.6s; width: 70%; margin: 0 auto; height: 100%; overflow: hidden; position: relative; }
+        .subBox .wrap { opacity: 0; width: 70%; margin: 0 auto; height: 100%; overflow: hidden; position: relative; }
         .subBox .subTit { display: flex; color: #fff; text-align: center; width: 100%; transform: translateX(0px) rotate(-90deg); height: 100%; flex-direction: column; justify-content: center; align-items: center; transition: 0.6s; }
         .subTit:hover { color: #f9d763; }
         .backBtn:hover .back { background: #f9d763; }
         
-        .subBox.on { width: 100%; height: calc(100% - 100px); padding-top: 100px; transition: 0.8s; transition-delay: 0.2s; z-index: 50; top: 0; left: 0; background: #fff; }
-        .subBox.on .wrap { opacity: 1; }
+        .subBox.on { width: 100%; height: calc(100% - 100px); padding-top: 100px; z-index: 50; top: 0; left: 0; background: #fff; }
         .subBox.on .subTit { color: #8f89c9; position: absolute; left: 10px; text-align: center; top: 0; width: 40px; }
         
         .subBox .wrap .slide { width: 100%; height: calc(100% - 90px); position: relative; }
@@ -375,9 +376,10 @@
         .imgWrap { width: 50%; margin: 0 auto; background-repeat: no-repeat; background-position: center center; background-size: cover; height: 100%; }
         
         .imgTit { font-size: 1.5rem; position: absolute; bottom: 5vw; left: 0; color: #fff; background: #8f89c9; width: 20vw; height: 3vw; line-height: 3vw; padding-left: 5vw; font-weight: 400; }
-        .imgTxtBox { position: absolute; right: 25%; width: 20%; height: 100%; top: 0; }
+        .imgTxtBox { position: absolute; right: 25%; width: 45%; height: 100%; top: 0; }
         .imgTxtBox .side { writing-mode: vertical-rl; font-size: 1rem; position: absolute; top: 0; right: -1vw; color: #000; font-weight: bold; }
         .imgTxtBox .num { font-size: 7rem; bottom: -3vw; right: 0; position: absolute; font-family: 'Crete Round', sans-serif; font-style: italic; color: #f9d763; letter-spacing: 1vw; }
+        .imgTxtBox .num .txt_b { font-size: 2rem; color: #333; text-shadow: -1px -1px 2px #ddd; letter-spacing: 0; }
         
         .numBox { width: 120px; margin: 0 auto; height: 10vh; position: relative; margin-top: 2vh; }
         .numBox p { font-size: 0.8rem; float: left; height: 10vh; line-height: 10vh; font-weight: bold; }
@@ -413,6 +415,13 @@
         .menuBox .menu .menuLst a:hover span::after { transform: translate3d(0, 0, 0); }
         .menuBox .menu .menuLst a span::after { top: calc(50% - 2px); height: 4px; }
     }
+        
+    .subBox.on { transition: 0.8s; transition-delay: 0.2s; }
+    .subBox.on .wrap { transition: 0.8s; transition-delay: 0.4s; opacity: 1; }
+    .subBox { transition: 0.8s; transition-delay: 0.4s; }
+    .subBox .wrap { transition: 0.8s; transition-delay: 0.2s; }
+        
+    .subBox .subTit { z-index: 55; }
     </style>
    
     <script>
@@ -441,21 +450,44 @@
     </script>
     <script>
     $(document).ready(function(){ //서브박스 스크립트
-        $(".subBox.item1").click(function(){
-            $(".subBox.item1").addClass("on"); 
-            $(".backBtn").css("opacity", "1");
-        });
-        $(".subBox.item2").click(function(){
-            $(".subBox.item2").addClass("on"); 
-            $(".backBtn").css("opacity", "1");
-        });
-        $(".subBox.item3").click(function(){
-            $(".subBox.item3").addClass("on"); 
-            $(".backBtn").css("opacity", "1");
-        });
+        var sw = [false, false, false];
+
         $(".backBtn").click(function(){
             $(".subBox").removeClass("on");
             $(".backBtn").css("opacity", "0").css("transition-delay", "0s");
+        });
+        $(".subBox.item1 .subTit").click(function(index){
+            var idx = $(this).index();
+            if(sw[idx]){
+                $(".subBox.item1").removeClass("on");
+                $(".backBtn").css("opacity", "0");
+            } else {
+                $(".subBox.item1").addClass("on");
+                $(".backBtn").css("opacity", "1");
+            }
+            sw[idx]=!sw[idx];
+        });
+        $(".subBox.item2 .subTit").click(function(index){
+            var idx = $(this).index();
+            if(sw[idx]){
+                $(".subBox.item2").removeClass("on");
+                $(".backBtn").css("opacity", "0");
+            } else {
+                $(".subBox.item2").addClass("on");
+                $(".backBtn").css("opacity", "1");
+            }
+            sw[idx]=!sw[idx];
+        });
+        $(".subBox.item3 .subTit").click(function(index){
+            var idx = $(this).index();
+            if(sw[idx]){
+                $(".subBox.item3").removeClass("on");
+                $(".backBtn").css("opacity", "0");
+            } else {
+                $(".subBox.item3").addClass("on");
+                $(".backBtn").css("opacity", "1");
+            }
+            sw[idx]=!sw[idx];
         });
     });
     </script>
@@ -563,7 +595,7 @@
                                 </div>
                                 <div class="imgTxtBox">
                                     <p class="side">Portfolio</p>
-                                    <h1 class="num">#01</h1>
+                                    <h1 class="num">#01<span class="txt_b">/ 04</span></h1>
                                 </div>        
                             </div>
                             <div class="txtBox">
@@ -592,7 +624,7 @@
                                 </div>
                                 <div class="imgTxtBox">
                                     <p class="side">Portfolio</p>
-                                    <h1 class="num">#02</h1>
+                                    <h1 class="num">#02<span class="txt_b">/ 04</span></h1>
                                 </div>        
                             </div>
                             <div class="txtBox">
@@ -621,7 +653,7 @@
                                 </div>
                                 <div class="imgTxtBox">
                                     <p class="side">Portfolio</p>
-                                    <h1 class="num">#03</h1>
+                                    <h1 class="num">#03<span class="txt_b">/ 04</span></h1>
                                 </div>        
                             </div>
                             <div class="txtBox">
@@ -650,7 +682,7 @@
                                 </div>
                                 <div class="imgTxtBox">
                                     <p class="side">Portfolio</p>
-                                    <h1 class="num">#04</h1>
+                                    <h1 class="num">#04<span class="txt_b">/ 04</span></h1>
                                 </div>        
                             </div>
                             <div class="txtBox">
@@ -714,7 +746,7 @@
                                 </div>
                                 <div class="imgTxtBox">
                                     <p class="side">Portfolio</p>
-                                    <h1 class="num">#01</h1>
+                                    <h1 class="num">#01<span class="txt_b">/ 08</span></h1>
                                 </div>        
                             </div>
                             <div class="txtBox">
@@ -743,7 +775,7 @@
                                 </div>
                                 <div class="imgTxtBox">
                                     <p class="side">Portfolio</p>
-                                    <h1 class="num">#02</h1>
+                                    <h1 class="num">#02<span class="txt_b">/ 08</span></h1>
                                 </div>        
                             </div>
                             <div class="txtBox">
@@ -772,7 +804,7 @@
                                 </div>
                                 <div class="imgTxtBox">
                                     <p class="side">Portfolio</p>
-                                    <h1 class="num">#03</h1>
+                                    <h1 class="num">#03<span class="txt_b">/ 08</span></h1>
                                 </div>        
                             </div>
                             <div class="txtBox">
@@ -801,7 +833,7 @@
                                 </div>
                                 <div class="imgTxtBox">
                                     <p class="side">Portfolio</p>
-                                    <h1 class="num">#04</h1>
+                                    <h1 class="num">#04<span class="txt_b">/ 08</span></h1>
                                 </div>        
                             </div>
                             <div class="txtBox">
@@ -830,7 +862,7 @@
                                 </div>
                                 <div class="imgTxtBox">
                                     <p class="side">Portfolio</p>
-                                    <h1 class="num">#05</h1>
+                                    <h1 class="num">#05<span class="txt_b">/ 08</span></h1>
                                 </div>        
                             </div>
                             <div class="txtBox">
@@ -859,7 +891,7 @@
                                 </div>
                                 <div class="imgTxtBox">
                                     <p class="side">Portfolio</p>
-                                    <h1 class="num">#06</h1>
+                                    <h1 class="num">#06<span class="txt_b">/ 08</span></h1>
                                 </div>        
                             </div>
                             <div class="txtBox">
@@ -888,7 +920,7 @@
                                 </div>
                                 <div class="imgTxtBox">
                                     <p class="side">Portfolio</p>
-                                    <h1 class="num">#07</h1>
+                                    <h1 class="num">#07<span class="txt_b">/ 08</span></h1>
                                 </div>        
                             </div>
                             <div class="txtBox">
@@ -917,7 +949,7 @@
                                 </div>
                                 <div class="imgTxtBox">
                                     <p class="side">Portfolio</p>
-                                    <h1 class="num">#08</h1>
+                                    <h1 class="num">#08<span class="txt_b">/ 08</span></h1>
                                 </div>        
                             </div>
                             <div class="txtBox">
@@ -981,7 +1013,7 @@
                                 </div>
                                 <div class="imgTxtBox">
                                     <p class="side">Portfolio</p>
-                                    <h1 class="num">#01</h1>
+                                    <h1 class="num">#01<span class="txt_b">/ 05</span></h1>
                                 </div>        
                             </div>
                             <div class="txtBox">
@@ -1010,7 +1042,7 @@
                                 </div>
                                 <div class="imgTxtBox">
                                     <p class="side">Portfolio</p>
-                                    <h1 class="num">#02</h1>
+                                    <h1 class="num">#02<span class="txt_b">/ 05</span></h1>
                                 </div>        
                             </div>
                             <div class="txtBox">
@@ -1039,7 +1071,7 @@
                                 </div>
                                 <div class="imgTxtBox">
                                     <p class="side">Portfolio</p>
-                                    <h1 class="num">#03</h1>
+                                    <h1 class="num">#03<span class="txt_b">/ 05</span></h1>
                                 </div>        
                             </div>
                             <div class="txtBox">
@@ -1068,7 +1100,7 @@
                                 </div>
                                 <div class="imgTxtBox">
                                     <p class="side">Portfolio</p>
-                                    <h1 class="num">#04</h1>
+                                    <h1 class="num">#04<span class="txt_b">/ 05</span></h1>
                                 </div>        
                             </div>
                             <div class="txtBox">
@@ -1097,7 +1129,7 @@
                                 </div>
                                 <div class="imgTxtBox">
                                     <p class="side">Portfolio</p>
-                                    <h1 class="num">#05</h1>
+                                    <h1 class="num">#05<span class="txt_b">/ 05</span></h1>
                                 </div>        
                             </div>
                             <div class="txtBox">
