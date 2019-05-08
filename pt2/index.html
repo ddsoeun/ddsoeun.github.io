@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>P A R K S O E U N</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="reset.css">
+    
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon16.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon32.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon48.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon64.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon128.png">
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon150.png">
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta name="msapplication-TileImage" content="./ico/favicon144.png">
+    <link rel="apple-touch-icon" size="120X120" href="./ico/favicon120.png">
+    <link rel="apple-touch-icon" size="57X57" href="./ico/favicon57.png">
+    <link rel="apple-touch-icon" size="72X72" href="./ico/favicon72.png">
+    <link rel="apple-touch-icon" size="114X114" href="./ico/favicon114.png">
+    <link rel="apple-touch-icon" size="180X180" href="./ico/favicon180.png">
+    <link rel="apple-touch-icon" size="152X152" href="./ico/favicon152.png">
+    <link rel="apple-touch-icon" size="196X196" href="./ico/favicon196.png">
+    <link rel="apple-touch-icon" size="167X167" href="./ico/favicon167.png">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="application-name" content="SOEUN PORTFOLIO Web Site">
+    <meta name="author" content="SoeunPark">
+    <meta name="description" content="SOEUN PORTFOLIO Mainpage">
+    <meta name="generator" content="Brackets">
+    <meta name="keywords" content="SOEUN PORTFOLIO, soeun portfolio">
+    
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Gugi|Noto+Sans+KR|Ubuntu" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    
+    <style>
+/*
+    font-family: 'Gugi', cursive;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
+    font-family: 'Roboto', sans-serif;
+*/
+        
+    body, html { -ms-overflow-style:none; overflow: hidden; }
+    ::-webkit-scrollbar { display: none; }
+    ::-o-scrollbar { display: none; }
+        
+    .container { width: 100%; height: 100%; background-repeat: no-repeat; background-position: center center; background-size: cover; background-image: url("./img/vs.jpg"); position: relative; }
+    .wrap { width: 80vw; height: 80vh; background: transparent; position: absolute; left: 10vw; top: 10vh; z-index: 1; }
+    .titBox { width: 80%; margin: 0 auto; }
+    .tit { text-align: center; font-family: 'Gugi', cursive; color: #3365b1; letter-spacing: 5px; font-weight: 400; }
+    .slideBox { overflow: hidden; }
+    .slide { width: 100%; }
+    .slide li { width: 100%; text-align: center; font-family: 'Ubuntu', sans-serif; color: #fff; }
+    .txt_p { color: #b13933; }
+    .menuBox { background: rgba(255, 255, 255, 0.6); position: relative; }
+    .conBox { background: rgba(255, 255, 255, 0.6); position: relative; }
+    .fixBox { background: transparent; border: 1px solid #ccc; }
+    .fixBox a { display: block; width: 100%; height: 100%; color: #333; }
+    .lstBox { background: transparent; border: 1px solid #ccc; z-index: 1; transition: 0.8s; }
+    .lstBox .txt { display: block; width: 100%; height: 100%; color: #333; z-index: 10; cursor: pointer; }
+    .lstBox:hover { border: 1px solid #3365b1; }
+    .smallTxt { color: #999; }
+    .sub { width: 100%; position: absolute; transition: 0.8s; transition-delay: 0.2s; opacity: 0; overflow: hidden; border-right: 1px solid #ccc; border-bottom: 1px solid #ccc; border-left: 1px solid #ccc; margin-top: 1px; }
+    .sub li { width: 100%; }
+    .sub li a { display: block; width: 100%; border-bottom: 1px solid #ccc; color: #333; transition: 0.6s; transition-delay: 0.2s; background: #fff; }
+    .sub li:last-child a { border-bottom: 0px; }
+    .sub li:hover a { background: #3365b1; color: #fff; }
+    .raItem { display: none; }
+    .ckItem { display: none; }
+    .btnBox { margin: 0 auto; }
+    .btnBox li { float: left; width: 33.33333%; }
+    .btnBox li label { display: block; width: 100%; border-top: 1px solid #3365b1; border-bottom: 1px solid #3365b1; border-left: 1px solid #3365b1; text-align: center; transition: 0.8s; cursor: pointer; }
+    .btnBox li.item3 label { border-right: 1px solid #3365b1; }
+    #ra01:checked ~ .btnBox li.item1 label { background: #3365b1; color: #fff; }
+    #ra02:checked ~ .btnBox li.item2 label { background: #3365b1; color: #fff; }
+    #ra03:checked ~ .btnBox li.item3 label { background: #3365b1; color: #fff; }
+    #ck01:checked ~ .lstBox .txt #tri { transform: rotate(180deg); }
+    .ftBox { position: absolute; z-index: 0; }
+    .ftBox .ftItem { text-align: center; }
+    .ftBox a { display: block; color: #333; }
+    .conTit { text-align: center; color: #333; }
+    .nameBox label, .telBox label, .textBox label { color: #333; }
+    .nameBox input, .telBox input, .textBox textarea { height: 100%; border: 1px solid #ddd; color: #333; }
+    .submit { display: block; background: transparent; border: 1px solid #3365b1; color: #3365b1; transition: 0.8s; cursor: pointer; }
+    .submit:hover { background: #3365b1; color: #fff; }
+    .submit:active { background: #3365b1; color: #fff; }
+    #canvas { position: absolute; width: 100%; z-index: 0; }
+    #canvas svg.planeMove { width: 100%; height: 100%; }
+    #planePath { fill:none; stroke:none; width: 100%; height: 100%; }
+    .cloudMn { float: right; position: absolute; animation: cloud 3s infinite ease-in-out; cursor: pointer; }
+    .cloud { cursor: pointer; position: absolute; top: 0; right: 0; z-index: 0; }
+    .cloudMn:hover { animation-play-state: paused; }
+    .svgTit { position: absolute; width: 100%; margin: 0 auto; z-index: 1; text-align: center; color: #eee; text-shadow: -1px -1px 2px #ccc, 1px 1px 2px #333; }
+    @keyframes cloud {
+        0% { transform: translateY(-1vw); }
+        50% { transform: translateY(1vw); }
+        100% { transform: translateY(-1vw); }
+    }
+    .popMn { position: fixed; z-index: -1; opacity: 0; transition: 0.8s; }
+    .popMn ul { margin: 0; padding: 0; text-align: center; width: 100%; }
+    .popMn li { display: inline-block; width: 100%; }
+    .mnDep { width: 100%; display: block; color: #333; text-align: center; background: rgba(255, 255, 255, 0.6); position: relative; overflow: hidden; outline: none; -webkit-box-flex: 1; -webkit-flex-grow: 1; -ms-flex-positive: 1; flex-grow: 1; -webkit-animation-duration: 1s; animation-duration: 1s; -webkit-animation-fill-mode: both; animation-fill-mode: both; }
+    .mnDep:hover, .mnDep:focus { outline: none; }
+    .mnDep span { display: block; -webkit-transition: -webkit-transform 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55); transition: -webkit-transform 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55); transition: transform 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55); transition: transform 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55), -webkit-transform 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+    .mnDep:after { position: absolute; top: 100%; left: 0; right: 0; content: attr(data-link-alt); display: inline; text-align: center; -webkit-transition: top 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55); transition: top 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+    .mnDep:hover { color: #3365b1; }
+    .mnDep:hover span { color: #3365b1; -webkit-transform: translateY(-100%); transform: translateY(-100%); }
+    .mnDep:hover:after { top: 0; }
+    .mnDep:active { -webkit-animation-name: rubberBand; animation-name: rubberBand; }
+        
+    .closeBox { width: 100%; position: relative; }
+    .closeBox .closeBtn { display: block; background-color: transparent; float: right; width: 5vh; height: 5vh; position: relative; cursor: pointer; }
+    .closeBox .closeBtn .close { position: absolute; background: #333; }
+    .close.item1 { transform: rotate(45deg); }
+    .close.item2 { transform: rotate(-45deg); }
+        
+    @media screen and (max-width: 767px) {
+        .titBox { height: 20%; }
+        .tit { font-size: 1.25rem; margin-top: 5%; word-break: keep-all; }
+        .slideBox { width: 80%; margin: 0 auto; margin-top: 2%; height: 5vh; }
+        .slide { height: 15vh; }
+        .slide li { height: 5vh; line-height: 5vh; font-size: 1rem; }
+        .menuBox { width: 90%; margin: 0 auto; height: 40%; }
+        .conBox { width: 90%; margin: 0 auto; height: 40%; margin-top: 5%; }
+        .fixBox { width: 80%; height: 20%; position: absolute; left: 10%; top: 25%; }
+        .title, .smallTxt { padding-left: 5%; padding-top: 1.5%; }
+        .smallTxt { font-size: 0.6rem; }
+        .title { padding-top: 0.5vh; font-size: 0.8rem; }
+        .lstBox { width: 80%; height: 20%; position: absolute; left: 10%; top: 50%; border: 1px solid #3365b1; }
+        .sub { height: 0; top: 100%; }
+        .sub li a { height: 5vh; line-height: 5vh; text-indent: 10%; font-size: 0.7rem; }
+        .btnBox { width: 70%; height: 4vh; padding-top: 5%; }
+        .btnBox li { height: 4vh; }
+        .btnBox li label { height: 4vh; line-height: 4vh; font-size: 0.7rem; }
+        #tri { width: 0; height: 0; border-left: 0.5vh solid transparent; border-right: 0.5vh solid transparent; border-top: 1vh solid #3365b1; position: absolute; right: 10%; top: calc(calc(100% - 1vh) / 2); transition: 0.8s; }
+        #ck01:checked ~ .lstBox .sub { height: 15vh; opacity: 1; }
+        .ftBox { width: 80%; left: 10%; bottom: 5%; height: 6vh; }
+        .ftBox a { width: 100%; height: 3vh; line-height: 3vh; }
+        .ftBox .ftItem { font-size: 0.6rem; }
+        .ftItem .txt_p { padding-right: 5%; }
+        
+        .conTit { padding-top: 5%; font-size: 1.25rem; letter-spacing: 0.5vw; }
+        .nameBox { width: 80%; margin: 0 auto; position: relative; margin-top: 1vh; height: 3vh; line-height: 3vh; }
+        .telBox { width: 80%; margin: 0 auto; position: relative; margin-top: 1vh; height: 3vh; line-height: 3vh; }
+        .textBox { width: 80%; margin: 0 auto; position: relative; margin-top: 1vh; height: 10vh; }
+        .nameBox label, .telBox label, .textBox label { width: 28%; float: left; font-size: 1rem; font-size: 0.7rem; }
+        .nameBox input, .telBox input, .textBox textarea { width: 70%; float: right; text-indent: 5%; font-size: 0.7rem; }
+        .textBox textarea { font-size: 1rem; }
+        .submit { width: 60%; margin: 0 auto; height: 3vh; margin-top: 2vh; font-size: 0.7rem; }
+        #canvas { height: 80vh; left: 0; bottom: 0; }
+        .cloudMn { right: 2vw; top: -15vh; width: 30vw; height: 30vw; z-index: 20; }
+        .cloud { width: 30vw; height: 20vw; }
+        .svgTit { line-height: 25vw; letter-spacing: 0.5vw; font-size: 0.8rem; display: none; }
+        .popMn { display: none; }
+    }
+    @media screen and (min-width: 768px) and (max-width: 959px) {
+        .titBox { height: 15%; }
+        .tit { font-size: 2.5rem; margin-top: 5%; word-break: keep-all; }
+        .slideBox { width: 80%; margin: 0 auto; margin-top: 2%; height: 5vh; }
+        .slide { height: 15vh; }
+        .slide li { height: 5vh; line-height: 5vh; font-size: 1.5rem; }
+        .menuBox { width: 90%; margin: 0 auto; height: 40%; }
+        .conBox { width: 90%; margin: 0 auto; height: 40%; margin-top: 5%; }
+        .fixBox { width: 70%; height: 20%; position: absolute; left: 15%; top: 30%; }
+        .title, .smallTxt { padding-left: 5%; padding-top: 2%; }
+        .smallTxt { font-size: 0.8rem; }
+        .title { padding-top: 0.5vh; font-size: 1rem; }
+        .lstBox { width: 70%; height: 20%; position: absolute; left: 15%; top: 55%; border: 1px solid #3365b1; }
+        .sub { height: 0; top: 100%; }
+        .sub li a { height: 5vh; line-height: 5vh; text-indent: 10%; font-size: 0.8rem; }
+        .btnBox { width: 50%; height: 4vh; padding-top: 5%; }
+        .btnBox li { height: 4vh; }
+        .btnBox li label { height: 4vh; line-height: 4vh; font-size: 0.8rem; }
+        #tri { width: 0; height: 0; border-left: 0.5vh solid transparent; border-right: 0.5vh solid transparent; border-top: 1vh solid #3365b1; position: absolute; right: 10%; top: calc(calc(100% - 1vh) / 2); transition: 0.8s; }
+        #ck01:checked ~ .lstBox .sub { height: 15vh; opacity: 1; }
+        .ftBox { width: 80%; left: 10%; bottom: 5%; height: 5vh; }
+        .ftBox a { width: 60%; height: 5vh; float: left; line-height: 5vh; }
+        .ftBox .ftItem { font-size: 0.8rem; }
+        .ftBox a:first-child { width: 40%; }
+        .ftItem .txt_p { padding-right: 5%; }
+        
+        .conTit { padding-top: 5%; font-size: 1.5rem; letter-spacing: 1vw; }
+        .nameBox { width: 80%; margin: 0 auto; position: relative; margin-top: 1vh; height: 3vh; line-height: 3vh; }
+        .telBox { width: 80%; margin: 0 auto; position: relative; margin-top: 1vh; height: 3vh; line-height: 3vh; }
+        .textBox { width: 80%; margin: 0 auto; position: relative; margin-top: 1vh; height: 10vh; }
+        .nameBox label, .telBox label, .textBox label { width: 28%; float: left; font-size: 1rem; font-size: 0.8rem; }
+        .nameBox input, .telBox input, .textBox textarea { width: 70%; float: right; text-indent: 5%; font-size: 0.7rem; }
+        .textBox textarea { font-size: 1rem; }
+        .submit { width: 40%; margin: 0 auto; height: 3vh; margin-top: 2vh; font-size: 0.8rem; }
+        #canvas { height: 80vh; left: 0; bottom: 0; }
+        .cloudMn { right: 2vw; top: -15vh; width: 30vw; height: 30vw; z-index: 20; }
+        .cloud { width: 30vw; height: 20vw; }
+        .svgTit { line-height: 25vw; letter-spacing: 0.5vw; font-size: 0.8rem; display: none; }
+        .popMn { display: none; }
+    }
+    @media screen and (min-width: 960px) and (max-width: 1024px) {
+        .wrap { width: 850px; margin: 0 auto; left: calc(calc(100vw - 850px) / 2); }
+        .titBox { height: 15%; }
+        .tit { font-size: 2.5rem; margin-top: 5%; word-break: keep-all; }
+        .slideBox { width: 80%; margin: 0 auto; margin-top: 2%; height: 5vh; }
+        .slide { height: 15vh; }
+        .slide li { height: 5vh; line-height: 5vh; font-size: 1.5rem; }
+        .menuBox { width: 90%; margin: 0 auto; height: 40%; }
+        .conBox { width: 90%; margin: 0 auto; height: 40%; margin-top: 5%; }
+        .fixBox { width: 70%; height: 20%; position: absolute; left: 15%; top: 30%; }
+        .title, .smallTxt { padding-left: 5%; padding-top: 2.5%; }
+        .smallTxt { font-size: 1rem; }
+        .title { padding-top: 0.5vh; font-size: 1.2rem; }
+        .lstBox { width: 70%; height: 20%; position: absolute; left: 15%; top: 55%; border: 1px solid #3365b1; }
+        .sub { height: 0; top: 100%; }
+        .sub li a { height: 5vh; line-height: 5vh; text-indent: 10%; font-size: 0.8rem; }
+        .btnBox { width: 50%; height: 4vh; padding-top: 5%; }
+        .btnBox li { height: 4vh; }
+        .btnBox li label { height: 4vh; line-height: 4vh; font-size: 0.8rem; }
+        #tri { width: 0; height: 0; border-left: 0.5vh solid transparent; border-right: 0.5vh solid transparent; border-top: 1vh solid #3365b1; position: absolute; right: 10%; top: calc(calc(100% - 1vh) / 2); transition: 0.8s; }
+        #ck01:checked ~ .lstBox .sub { height: 15vh; opacity: 1; }
+        .ftBox { width: 80%; left: 10%; bottom: 5%; height: 5vh; }
+        .ftBox a { width: 60%; height: 5vh; float: left; line-height: 5vh; }
+        .ftBox .ftItem { font-size: 1rem; }
+        .ftBox a:first-child { width: 40%; }
+        .ftItem .txt_p { padding-right: 5%; }
+        
+        .conTit { padding-top: 5%; font-size: 1.5rem; letter-spacing: 1vw; }
+        .nameBox { width: 80%; margin: 0 auto; position: relative; margin-top: 1vh; height: 3vh; line-height: 3vh; }
+        .telBox { width: 80%; margin: 0 auto; position: relative; margin-top: 1vh; height: 3vh; line-height: 3vh; }
+        .textBox { width: 80%; margin: 0 auto; position: relative; margin-top: 1vh; height: 10vh; }
+        .nameBox label, .telBox label, .textBox label { width: 28%; float: left; font-size: 1rem; font-size: 0.8rem; }
+        .nameBox input, .telBox input, .textBox textarea { width: 70%; float: right; text-indent: 5%; font-size: 0.8rem; }
+        .textBox textarea { font-size: 1rem; }
+        .submit { width: 40%; margin: 0 auto; height: 3vh; margin-top: 2vh; font-size: 0.8rem; }
+        #canvas { height: 80vh; left: 0; bottom: 0; }
+        .cloudMn { right: 2vw; top: -15vh; width: 30vw; height: 30vw; z-index: 20; }
+        .cloud { width: 30vw; height: 20vw; }
+        .svgTit { line-height: 25vw; letter-spacing: 0.5vw; font-size: 0.8rem; display: none; }
+        .popMn { display: none; }
+    }
+    @media screen and (min-width: 1025px) {
+        .titBox { height: 25%; }
+        .tit { font-size: 3.5rem; margin-top: 5%; }
+        .slideBox { width: 40%; margin: 0 auto; margin-top: 2%; height: 5vh; }
+        .slide { height: 15vh; }
+        .slide li { height: 5vh; line-height: 5vh; font-size: 1.5rem; }
+        .menuBox { width: 35%; height: 60%; float: left; margin-left: 13%; }
+        .conBox { width: 35%; height: 60%; float: right; margin-right: 13%; }
+        .fixBox { width: 60%; height: 15%; position: absolute; left: 20%; top: 30%; }
+        .title, .smallTxt { padding-left: 10%; padding-top: 3.5%; }
+        .smallTxt { font-size: 0.8rem; }
+        .title { padding-top: 2%; font-size: 1.2rem; }
+        .lstBox { width: 60%; height: 15%; position: absolute; left: 20%; top: 50%; }
+        .sub { height: 0; top: 100%; }
+        .sub li a { height: 5vh; line-height: 5vh; text-indent: 10%; font-size: 1rem; }
+        .btnBox { width: 40%; height: 4vh; padding-top: 10%; }
+        .btnBox li { height: 4vh; }
+        .btnBox li label { height: 4vh; line-height: 4vh; font-size: 0.8rem; }
+        #tri { width: 0; height: 0; border-left: 0.5vh solid transparent; border-right: 0.5vh solid transparent; border-top: 1vh solid #3365b1; position: absolute; right: 10%; top: calc(calc(100% - 1vh) / 2); transition: 0.8s; }
+        #ck01:checked ~ .lstBox .sub { height: 15vh; opacity: 1; }
+        .ftBox { width: 80%; left: 10%; bottom: 10%; height: 5vh; }
+        .ftBox a { width: 60%; height: 5vh; float: left; line-height: 5vh; }
+        .ftBox .ftItem { font-size: 0.8rem; }
+        .ftBox a:first-child { width: 40%; }
+        .ftItem .txt_p { padding-right: 5%; }
+        
+        .conTit { padding-top: 10%; font-size: 2rem; letter-spacing: 0.5vw; }
+        .nameBox { width: 70%; margin: 0 auto; position: relative; margin-top: 3vh; height: 3vh; line-height: 3vh; }
+        .telBox { width: 70%; margin: 0 auto; position: relative; margin-top: 3vh; height: 3vh; line-height: 3vh; }
+        .textBox { width: 70%; margin: 0 auto; position: relative; margin-top: 3vh; height: 10vh; }
+        .nameBox label, .telBox label, .textBox label { width: 25%; float: left; font-size: 1rem; font-size: 0.8rem; }
+        .nameBox input, .telBox input, .textBox textarea { width: 70%; float: right; text-indent: 5%; font-size: 0.8rem; }
+        .textBox textarea { font-size: 1rem; }
+        .submit { width: 60%; margin: 0 auto; height: 4vh; margin-top: 3vh; font-size: 0.8rem; }
+        #canvas { height: 80vh; left: 0; bottom: 0; }
+        .cloudMn { right: 2vw; top: 10vh; width: 15vw; height: 15vw; }
+        .cloud { width: 15vw; height: 10vw; }
+        .svgTit { line-height: 13vw; letter-spacing: 0.5vw; font-size: 1.5rem; }
+        .popMn { width: 8vw; height: 20vh; right: 5.5vw; top: 50vh; }
+        .mnDep { height: 5vh; line-height: 5vh; }
+        .closeBox { height: 5vh; }
+        .closeBox .closeBtn .close { width: 2vh; height: 0.2vh; }
+    }
+    </style>
+    
+    <script>
+    $(document).ready(function(){
+        var ht = $(".slideBox").height();
+        var len = $(".slide li").length;
+        var intv = setInterval(function(){
+            nextAni();    
+        }, 2800);
+        
+        function nextAni(){
+            $(".slide").not(":animated").animate({"margin-top":-ht+"px"}, 800, function(){
+                $(".slide li").eq(0).appendTo($(".slide"));
+                $(".slide").css("margin-top", "0px");
+            });
+        }
+        $(".cloudMn").click(function(){
+            $(".popMn").css("opacity", "1").css("z-index", "50");    
+        }); 
+        $(".closeBtn").click(function(){
+            $(".popMn").css("opacity", "0").css("z-index", "-1");    
+        });
+    });
+    </script>
+</head>
+<body>
+    <div class="container">
+        
+        <div class="wrap">
+            <div class="titBox">
+                <h1 class="tit">Let's Fly Together!</h1>  
+                <div class="slideBox">
+                    <ul class="slide">
+                        <li class="item1"><span class="txt_p">From</span> - About me</li>
+                        <li class="item2"><span class="txt_p">And</span> - Working</li>
+                        <li class="item3"><span class="txt_p">To</span> - Portfolio</li>
+                    </ul>    
+                </div>  
+            </div>
+            <div class="menuBox">
+                <input type="radio" name="ra01" id="ra01" class="raItem" checked>
+                <input type="radio" name="ra01" id="ra02" class="raItem">
+                <input type="radio" name="ra01" id="ra03" class="raItem">
+                <ul class="btnBox">
+                    <li class="item1"><label for="ra01">왕복</label></li>
+                    <li class="item2"><label for="ra02">편도</label></li>
+                    <li class="item3"><label for="ra03">다구간</label></li>    
+                </ul>
+                <div class="fixBox">
+                    <a href="index.html">
+                        <p class="smallTxt">Departure Airport : Current Page</p>
+                        <p class="title">HOME</p>
+                    </a>
+                </div>  
+                <input type="checkbox" name="ck01" id="ck01" class="ckItem">
+                <div class="lstBox">
+                    <label for="ck01" class="txt">
+                        <p class="smallTxt">Arrival Airport : Next Page</p>
+                        <p class="title">HOME</p>
+                        <div id="tri"></div> 
+                        <ul class="sub">
+                            <li><a href="about.html">ABOUT</a></li>
+                            <li><a href="working.html">WORKING</a></li>
+                            <li><a href="portfolio.html">PORTFOLIO</a></li>
+                        </ul>   
+                    </label>
+                </div>
+                <div class="ftBox">
+                    <a href="call:01065725569">
+                        <p class="ftItem"><span class="txt_p">TEL</span> 01065725569</p>
+                    </a>
+                    <a href="mailto:soeun920@naver.com">
+                        <p class="ftItem"><span class="txt_p">E-MAIL</span> soeun920@naver.com</p>
+                    </a>
+                </div>  
+            </div>
+            <div class="conBox">
+                <h2 class="conTit">Contact</h2>
+                <div class="nameBox">
+                    <label for="">이름</label>
+                    <input type="text" class="name" placeholder="이름을 입력해주세요">
+                </div>
+                <div class="telBox">
+                    <label for="">연락처</label>
+                    <input type="text" class="tel" placeholder="연락처를 입력해주세요">
+                </div>
+                <div class="textBox">
+                    <label for="">내용</label>
+                    <textarea name="content" id="txtFrm" cols="30" rows="10"></textarea>
+                </div>
+                <button class="submit">Send</button>
+            </div>
+        </div>
+        
+        <div id="canvas">
+            <div class="cloudMn">
+                <p class="svgTit">Menu</p>
+                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                 width="336px" height="236px" viewBox="0 0 336 236" enable-background="new 0 0 336 236" xml:space="preserve" class="cloud">
+                    <g>
+                        <circle fill="#FFFFFF" cx="77" cy="159" r="52"/>
+                        <circle fill="#FFFFFF" cx="132" cy="83" r="62"/>
+                        <circle fill="#FFFFFF" cx="211.5" cy="103.5" r="36.5"/>
+                        <circle fill="#FFFFFF" cx="258" cy="155" r="56"/>
+                        <rect x="70" y="123" fill="#FFFFFF" width="181" height="88"/>
+                    </g>
+                </svg>    
+            </div>
+            
+            <svg width="100%" height="100%" class="planeMove">
+                <path id="planePath" clacc="planePath" d="M0,317.092c0,0,218.601,196.49,547.084,193.49
+                c0,0,283.985-18,412.979-131.994c0,0,61.496-88.496-67.497-134.993c0,0-73.996-19.499-118.993,34.499
+                c0,0-85.496,148.562,233.988,232.523c0,0,546.422,62.462,701.439-113.029"/>
+               <g id="plane">
+                    <path fill="#EFEFEF" d="M200.853,55.585c-0.021-0.018-0.043-0.035-0.065-0.056h-4.825c-2.626,0-4.759-2.129-4.759-4.759h5.399
+                        c-1.852-2.73-4.993-4.327-8.307-4.327H53.614L24.192,11.396h-11.25l6.863,30.503H37.39c1.792,0,3.245,1.453,3.245,3.245
+                        s-1.453,3.245-3.245,3.245H18.662c-1.535,3.19-0.024,7.414,3.852,8.498l42.38,11.855c4.574,1.281,9.303,1.93,14.053,1.93h31.572
+                        c-0.001-0.05-0.008-0.1-0.008-0.15c0-1.311,0.377-2.531,1.019-3.57h-4.984c-1.792,0-3.245-1.453-3.245-3.245
+                        c0-1.792,1.453-3.245,3.245-3.245h36.633c1.792,0,3.245,1.453,3.245,3.245c0,1.792-1.453,3.245-3.245,3.245h-1.298v3.721h47.018
+                        c2.596,0,5.171-0.346,7.649-1.021c1.342-0.369,2.657-0.831,3.938-1.385c-1.649-1.545-2.679-3.743-2.679-6.179
+                        C197.806,59.475,198.992,57.138,200.853,55.585z M79.73,55.083c-0.043,0.203-0.104,0.411-0.186,0.606
+                        c-0.083,0.194-0.182,0.384-0.299,0.558c-0.117,0.178-0.255,0.346-0.402,0.493c-0.152,0.151-0.316,0.286-0.494,0.407
+                        c-0.177,0.117-0.368,0.216-0.563,0.298c-0.195,0.078-0.398,0.144-0.605,0.182c-0.208,0.043-0.424,0.064-0.636,0.064
+                        s-0.424-0.021-0.632-0.064c-0.208-0.039-0.411-0.104-0.61-0.182c-0.195-0.082-0.381-0.181-0.558-0.298
+                        c-0.177-0.122-0.342-0.256-0.493-0.407c-0.151-0.147-0.286-0.315-0.402-0.493c-0.117-0.173-0.216-0.363-0.299-0.558
+                        c-0.082-0.195-0.143-0.403-0.186-0.606c-0.043-0.212-0.065-0.424-0.065-0.636c0-0.212,0.022-0.424,0.065-0.632
+                        c0.043-0.208,0.104-0.415,0.186-0.61c0.083-0.194,0.182-0.384,0.299-0.558c0.117-0.177,0.251-0.346,0.402-0.493
+                        c0.151-0.151,0.316-0.286,0.493-0.407c0.177-0.116,0.363-0.216,0.558-0.294c0.199-0.082,0.402-0.147,0.61-0.186
+                        c0.42-0.087,0.848-0.087,1.268,0c0.208,0.039,0.411,0.104,0.605,0.186c0.195,0.078,0.385,0.178,0.563,0.294
+                        c0.178,0.122,0.342,0.256,0.494,0.407c0.147,0.147,0.285,0.316,0.402,0.493c0.117,0.173,0.216,0.363,0.299,0.558
+                        c0.082,0.195,0.143,0.403,0.186,0.61c0.039,0.208,0.061,0.42,0.061,0.632C79.791,54.659,79.769,54.871,79.73,55.083z
+                         M90.175,55.083c-0.039,0.203-0.104,0.411-0.182,0.606c-0.083,0.194-0.182,0.384-0.299,0.558c-0.121,0.178-0.255,0.346-0.407,0.493
+                        c-0.601,0.606-1.437,0.952-2.293,0.952c-0.212,0-0.424-0.021-0.632-0.064c-0.208-0.039-0.416-0.104-0.61-0.182
+                        c-0.195-0.082-0.385-0.181-0.558-0.298c-0.178-0.122-0.346-0.256-0.493-0.407c-0.152-0.147-0.286-0.315-0.407-0.493
+                        c-0.117-0.173-0.216-0.363-0.298-0.558c-0.078-0.195-0.143-0.403-0.182-0.606c-0.043-0.212-0.065-0.424-0.065-0.636
+                        c0-0.852,0.346-1.691,0.952-2.293c0.147-0.151,0.315-0.286,0.493-0.403c0.173-0.121,0.363-0.22,0.558-0.298
+                        c0.194-0.082,0.402-0.147,0.61-0.186c1.051-0.211,2.172,0.134,2.925,0.887c0.606,0.602,0.952,1.441,0.952,2.293
+                        C90.24,54.659,90.218,54.871,90.175,55.083z M100.624,55.083c-0.039,0.203-0.104,0.411-0.186,0.606
+                        c-0.078,0.194-0.177,0.384-0.294,0.558c-0.121,0.178-0.255,0.346-0.407,0.493c-0.147,0.151-0.316,0.286-0.493,0.407
+                        c-0.173,0.117-0.364,0.216-0.558,0.298c-0.195,0.078-0.402,0.144-0.61,0.182c-0.208,0.043-0.419,0.064-0.632,0.064
+                        c-0.856,0-1.691-0.346-2.293-0.952c-0.151-0.147-0.286-0.315-0.407-0.493c-0.117-0.173-0.216-0.363-0.298-0.558
+                        c-0.078-0.195-0.143-0.403-0.182-0.606c-0.043-0.212-0.064-0.424-0.064-0.636c0-0.212,0.021-0.424,0.064-0.636
+                        c0.039-0.203,0.104-0.411,0.182-0.606c0.082-0.194,0.182-0.384,0.298-0.558c0.121-0.177,0.255-0.346,0.407-0.493
+                        c0.749-0.753,1.874-1.099,2.925-0.887c0.208,0.039,0.416,0.104,0.61,0.186c0.194,0.078,0.385,0.178,0.558,0.294
+                        c0.177,0.122,0.346,0.256,0.493,0.407c0.151,0.147,0.286,0.316,0.407,0.493c0.117,0.173,0.216,0.363,0.294,0.558
+                        c0.083,0.195,0.147,0.403,0.186,0.606c0.043,0.212,0.065,0.424,0.065,0.636C100.688,54.659,100.667,54.871,100.624,55.083z
+                         M111.073,55.083c-0.043,0.203-0.104,0.411-0.186,0.606c-0.083,0.194-0.182,0.384-0.298,0.558
+                        c-0.117,0.178-0.251,0.346-0.403,0.493c-0.151,0.151-0.315,0.286-0.493,0.407c-0.177,0.117-0.363,0.216-0.558,0.298
+                        c-0.199,0.078-0.403,0.144-0.61,0.182c-0.208,0.043-0.42,0.064-0.632,0.064s-0.424-0.021-0.636-0.064
+                        c-0.208-0.039-0.411-0.104-0.605-0.182c-0.195-0.082-0.385-0.181-0.563-0.298c-0.177-0.122-0.342-0.256-0.493-0.407
+                        c-0.147-0.147-0.286-0.315-0.402-0.493c-0.117-0.173-0.216-0.363-0.299-0.558c-0.082-0.195-0.143-0.403-0.186-0.606
+                        c-0.039-0.212-0.061-0.424-0.061-0.636c0-0.212,0.021-0.424,0.061-0.636c0.043-0.203,0.104-0.411,0.186-0.606
+                        c0.083-0.194,0.182-0.384,0.299-0.558c0.117-0.177,0.255-0.346,0.402-0.493c0.151-0.151,0.316-0.286,0.493-0.403
+                        c0.177-0.116,0.368-0.22,0.563-0.298c0.195-0.082,0.398-0.147,0.605-0.186c0.42-0.087,0.848-0.087,1.268,0
+                        c0.208,0.039,0.411,0.104,0.61,0.186c0.194,0.078,0.38,0.182,0.558,0.298c0.178,0.117,0.342,0.251,0.493,0.403
+                        c0.151,0.147,0.286,0.316,0.403,0.493c0.116,0.173,0.216,0.363,0.298,0.558c0.082,0.195,0.143,0.403,0.186,0.606
+                        c0.043,0.212,0.064,0.424,0.064,0.636C111.137,54.659,111.116,54.871,111.073,55.083z M121.521,55.083
+                        c-0.042,0.203-0.103,0.411-0.186,0.606c-0.082,0.194-0.181,0.384-0.298,0.558c-0.117,0.178-0.255,0.346-0.402,0.493
+                        c-0.605,0.606-1.44,0.952-2.293,0.952c-0.857,0-1.692-0.346-2.298-0.952c-0.147-0.147-0.285-0.315-0.402-0.493
+                        c-0.117-0.173-0.216-0.363-0.298-0.558c-0.082-0.195-0.143-0.403-0.186-0.606c-0.043-0.212-0.061-0.424-0.061-0.636
+                        c0-0.212,0.018-0.424,0.061-0.632c0.043-0.208,0.104-0.415,0.186-0.61c0.082-0.194,0.182-0.384,0.298-0.558
+                        c0.117-0.177,0.255-0.346,0.402-0.493c0.606-0.605,1.441-0.952,2.298-0.952c0.853,0,1.688,0.346,2.293,0.952
+                        c0.147,0.147,0.286,0.316,0.402,0.493c0.117,0.173,0.216,0.363,0.298,0.558c0.083,0.195,0.144,0.403,0.186,0.61
+                        c0.044,0.208,0.065,0.42,0.065,0.632C121.587,54.659,121.565,54.871,121.521,55.083z M131.971,55.083
+                        c-0.043,0.203-0.104,0.411-0.186,0.606c-0.083,0.194-0.182,0.384-0.299,0.558c-0.117,0.178-0.256,0.346-0.403,0.493
+                        c-0.605,0.606-1.44,0.952-2.297,0.952c-0.208,0-0.423-0.021-0.632-0.064c-0.208-0.039-0.411-0.104-0.609-0.182
+                        c-0.195-0.082-0.381-0.181-0.559-0.298c-0.177-0.122-0.341-0.256-0.493-0.407c-0.605-0.601-0.952-1.44-0.952-2.293
+                        c0-0.212,0.021-0.424,0.065-0.632c0.043-0.208,0.104-0.415,0.186-0.61c0.082-0.194,0.182-0.384,0.298-0.558
+                        c0.117-0.177,0.256-0.346,0.403-0.493c0.606-0.605,1.44-0.952,2.293-0.952c0.857,0,1.692,0.346,2.297,0.952
+                        c0.147,0.147,0.286,0.316,0.403,0.493c0.117,0.173,0.216,0.363,0.299,0.558c0.082,0.195,0.143,0.403,0.186,0.61
+                        c0.043,0.208,0.061,0.42,0.061,0.632C132.032,54.659,132.014,54.871,131.971,55.083z M142.415,55.083
+                        c-0.038,0.208-0.103,0.411-0.181,0.606c-0.082,0.194-0.182,0.384-0.299,0.558c-0.121,0.178-0.255,0.346-0.402,0.493
+                        c-0.606,0.606-1.441,0.952-2.298,0.952c-0.212,0-0.424-0.021-0.631-0.064c-0.208-0.039-0.412-0.104-0.61-0.182
+                        c-0.195-0.082-0.385-0.181-0.559-0.298c-0.177-0.122-0.346-0.256-0.493-0.407c-0.151-0.147-0.286-0.315-0.402-0.493
+                        c-0.117-0.173-0.221-0.363-0.299-0.558c-0.082-0.195-0.143-0.398-0.186-0.606c-0.043-0.212-0.065-0.424-0.065-0.636
+                        c0-0.212,0.022-0.424,0.065-0.636c0.043-0.203,0.104-0.411,0.186-0.606c0.078-0.194,0.182-0.384,0.299-0.558
+                        c0.116-0.177,0.251-0.346,0.402-0.493c0.147-0.151,0.316-0.286,0.493-0.407c0.173-0.116,0.364-0.216,0.559-0.294
+                        c0.199-0.082,0.402-0.147,0.61-0.186c1.051-0.211,2.172,0.135,2.929,0.887c0.147,0.147,0.281,0.316,0.402,0.493
+                        c0.117,0.173,0.217,0.363,0.299,0.559c0.078,0.194,0.143,0.402,0.181,0.605c0.044,0.212,0.065,0.424,0.065,0.636
+                        C142.48,54.659,142.459,54.871,142.415,55.083z M152.865,55.083c-0.039,0.203-0.104,0.411-0.182,0.606
+                        c-0.083,0.194-0.182,0.384-0.299,0.558c-0.121,0.178-0.255,0.346-0.406,0.493c-0.602,0.606-1.441,0.952-2.294,0.952
+                        c-0.852,0-1.691-0.346-2.292-0.952c-0.152-0.147-0.286-0.315-0.407-0.493c-0.117-0.173-0.217-0.363-0.299-0.558
+                        c-0.078-0.195-0.143-0.403-0.182-0.606c-0.043-0.212-0.065-0.424-0.065-0.636c0-0.857,0.346-1.691,0.952-2.293
+                        c0.752-0.753,1.869-1.099,2.929-0.887c0.203,0.039,0.411,0.104,0.605,0.182c0.195,0.082,0.385,0.182,0.559,0.298
+                        c0.177,0.122,0.346,0.256,0.493,0.407c0.605,0.602,0.952,1.441,0.952,2.293C152.93,54.659,152.908,54.871,152.865,55.083z
+                         M163.313,55.083c-0.043,0.203-0.104,0.411-0.186,0.606c-0.078,0.194-0.182,0.384-0.298,0.558
+                        c-0.117,0.178-0.251,0.346-0.402,0.493c-0.147,0.151-0.316,0.286-0.493,0.407c-0.173,0.117-0.364,0.216-0.559,0.298
+                        c-0.199,0.078-0.402,0.144-0.609,0.182c-0.208,0.043-0.42,0.064-0.632,0.064c-0.212,0-0.424-0.021-0.636-0.064
+                        c-0.208-0.039-0.412-0.104-0.606-0.182c-0.194-0.082-0.385-0.181-0.562-0.298c-0.178-0.122-0.342-0.256-0.493-0.407
+                        c-0.147-0.147-0.282-0.315-0.403-0.493c-0.117-0.173-0.216-0.363-0.299-0.558c-0.077-0.195-0.143-0.403-0.182-0.606
+                        c-0.043-0.212-0.065-0.424-0.065-0.636c0-0.212,0.022-0.424,0.065-0.636c0.039-0.203,0.104-0.411,0.182-0.606
+                        c0.083-0.194,0.182-0.384,0.299-0.558c0.121-0.177,0.255-0.346,0.403-0.493c0.151-0.151,0.315-0.286,0.493-0.407
+                        c0.177-0.116,0.368-0.216,0.562-0.294c0.194-0.082,0.398-0.147,0.606-0.186c0.419-0.087,0.852-0.087,1.268,0
+                        c0.208,0.039,0.41,0.104,0.609,0.186c0.195,0.078,0.385,0.178,0.559,0.294c0.177,0.122,0.346,0.256,0.493,0.407
+                        c0.151,0.147,0.286,0.316,0.402,0.493c0.117,0.173,0.221,0.363,0.298,0.558c0.083,0.195,0.143,0.403,0.186,0.606
+                        c0.043,0.212,0.065,0.424,0.065,0.636C163.378,54.659,163.357,54.871,163.313,55.083z M172.876,56.74
+                        c-0.152,0.151-0.316,0.286-0.493,0.407c-0.178,0.117-0.364,0.216-0.558,0.298c-0.199,0.078-0.403,0.144-0.61,0.182
+                        c-0.208,0.043-0.42,0.064-0.632,0.064c-0.212,0-0.428-0.021-0.636-0.064c-0.208-0.039-0.411-0.104-0.606-0.182
+                        c-0.199-0.082-0.385-0.181-0.563-0.298c-0.177-0.122-0.342-0.256-0.493-0.407c-0.602-0.601-0.948-1.44-0.948-2.293
+                        c0-0.852,0.346-1.691,0.948-2.293c0.151-0.151,0.316-0.286,0.493-0.407c0.177-0.116,0.364-0.216,0.563-0.298
+                        c0.195-0.078,0.397-0.143,0.606-0.182c0.419-0.087,0.848-0.087,1.268,0c0.208,0.039,0.411,0.104,0.61,0.182
+                        c0.194,0.082,0.38,0.182,0.558,0.298c0.177,0.122,0.341,0.256,0.493,0.407c0.606,0.602,0.952,1.441,0.952,2.293
+                        C173.828,55.304,173.482,56.139,172.876,56.74z"/>
+                    <path fill="#7891CE" d="M111.53,66.951c-0.642,1.039-1.019,2.259-1.019,3.57c0,0.051,0.007,0.1,0.008,0.15
+                        c0.081,3.693,3.095,6.664,6.807,6.664h22.539c1.113,0,2.015-0.902,2.015-2.015v-4.649v-3.721H111.53z"/>
+                    <path fill="#4059A8" d="M40.635,45.145c0-1.792-1.453-3.245-3.245-3.245H19.806h-8.589c-1.792,0-3.245,1.453-3.245,3.245
+                        s1.453,3.245,3.245,3.245h7.445H37.39C39.182,48.389,40.635,46.937,40.635,45.145z"/>
+                    <path fill="#B2EBF9" d="M195.963,55.529h4.825c-0.333-0.272-0.658-0.558-0.97-0.853c-1.163-1.099-2.198-2.336-3.067-3.695
+                        c-0.048-0.074-0.091-0.143-0.147-0.211h-5.399C191.204,53.4,193.337,55.529,195.963,55.529z"/>
+                    <path fill="#B2EBF9" d="M172.383,51.747c-0.178-0.116-0.364-0.216-0.558-0.298c-0.199-0.078-0.403-0.143-0.61-0.182
+                        c-0.42-0.087-0.848-0.087-1.268,0c-0.208,0.039-0.411,0.104-0.606,0.182c-0.199,0.082-0.385,0.182-0.563,0.298
+                        c-0.177,0.122-0.342,0.256-0.493,0.407c-0.602,0.602-0.948,1.441-0.948,2.293c0,0.853,0.346,1.692,0.948,2.293
+                        c0.151,0.151,0.316,0.286,0.493,0.407c0.177,0.117,0.364,0.216,0.563,0.298c0.195,0.078,0.397,0.144,0.606,0.182
+                        c0.208,0.043,0.423,0.064,0.636,0.064c0.212,0,0.424-0.021,0.632-0.064c0.208-0.039,0.411-0.104,0.61-0.182
+                        c0.194-0.082,0.38-0.181,0.558-0.298c0.177-0.122,0.341-0.256,0.493-0.407c0.606-0.601,0.952-1.436,0.952-2.293
+                        c0-0.852-0.346-1.691-0.952-2.293C172.724,52.002,172.56,51.868,172.383,51.747z"/>
+                    <path fill="#B2EBF9" d="M163.127,53.205c-0.078-0.194-0.182-0.384-0.298-0.558c-0.117-0.177-0.251-0.346-0.402-0.493
+                        c-0.147-0.151-0.316-0.286-0.493-0.407c-0.173-0.116-0.364-0.216-0.559-0.294c-0.199-0.082-0.402-0.147-0.609-0.186
+                        c-0.416-0.087-0.849-0.087-1.268,0c-0.208,0.039-0.412,0.104-0.606,0.186c-0.194,0.078-0.385,0.178-0.562,0.294
+                        c-0.178,0.122-0.342,0.256-0.493,0.407c-0.147,0.147-0.282,0.316-0.403,0.493c-0.117,0.173-0.216,0.363-0.299,0.558
+                        c-0.077,0.195-0.143,0.403-0.182,0.606c-0.043,0.212-0.065,0.424-0.065,0.636c0,0.212,0.022,0.424,0.065,0.636
+                        c0.039,0.203,0.104,0.411,0.182,0.606c0.083,0.194,0.182,0.384,0.299,0.558c0.121,0.178,0.255,0.346,0.403,0.493
+                        c0.151,0.151,0.315,0.286,0.493,0.407c0.177,0.117,0.368,0.216,0.562,0.298c0.194,0.078,0.398,0.144,0.606,0.182
+                        c0.212,0.043,0.424,0.064,0.636,0.064c0.212,0,0.423-0.021,0.632-0.064c0.208-0.039,0.41-0.104,0.609-0.182
+                        c0.195-0.082,0.385-0.181,0.559-0.298c0.177-0.122,0.346-0.256,0.493-0.407c0.151-0.147,0.286-0.315,0.402-0.493
+                        c0.117-0.173,0.221-0.363,0.298-0.558c0.083-0.195,0.143-0.403,0.186-0.606c0.043-0.212,0.065-0.424,0.065-0.636
+                        c0-0.212-0.021-0.424-0.065-0.636C163.271,53.607,163.21,53.4,163.127,53.205z"/>
+                    <path fill="#B2EBF9" d="M151.485,51.747c-0.173-0.116-0.364-0.216-0.559-0.298c-0.194-0.078-0.403-0.143-0.605-0.182
+                        c-1.06-0.211-2.177,0.134-2.929,0.887c-0.606,0.602-0.952,1.436-0.952,2.293c0,0.212,0.021,0.424,0.065,0.636
+                        c0.039,0.203,0.104,0.411,0.182,0.606c0.082,0.194,0.182,0.384,0.299,0.558c0.121,0.178,0.255,0.346,0.407,0.493
+                        c0.601,0.606,1.44,0.952,2.292,0.952c0.853,0,1.692-0.346,2.294-0.952c0.151-0.147,0.286-0.315,0.406-0.493
+                        c0.117-0.173,0.216-0.363,0.299-0.558c0.078-0.195,0.143-0.403,0.182-0.606c0.043-0.212,0.065-0.424,0.065-0.636
+                        c0-0.852-0.346-1.691-0.952-2.293C151.831,52.002,151.662,51.868,151.485,51.747z"/>
+                    <path fill="#B2EBF9" d="M142.234,53.206c-0.082-0.195-0.182-0.385-0.299-0.559c-0.121-0.177-0.255-0.346-0.402-0.493
+                        c-0.757-0.752-1.878-1.099-2.929-0.887c-0.208,0.039-0.412,0.104-0.61,0.186c-0.195,0.078-0.385,0.178-0.559,0.294
+                        c-0.177,0.122-0.346,0.256-0.493,0.407c-0.151,0.147-0.286,0.316-0.402,0.493c-0.117,0.173-0.221,0.363-0.299,0.558
+                        c-0.082,0.195-0.143,0.403-0.186,0.606c-0.043,0.212-0.065,0.424-0.065,0.636c0,0.212,0.022,0.424,0.065,0.636
+                        c0.043,0.208,0.104,0.411,0.186,0.606c0.078,0.194,0.182,0.384,0.299,0.558c0.116,0.178,0.251,0.346,0.402,0.493
+                        c0.147,0.151,0.316,0.286,0.493,0.407c0.173,0.117,0.364,0.216,0.559,0.298c0.199,0.078,0.402,0.144,0.61,0.182
+                        c0.208,0.043,0.419,0.064,0.631,0.064c0.856,0,1.692-0.346,2.298-0.952c0.147-0.147,0.281-0.315,0.402-0.493
+                        c0.117-0.173,0.217-0.363,0.299-0.558c0.078-0.195,0.143-0.398,0.181-0.606c0.044-0.212,0.065-0.424,0.065-0.636
+                        c0-0.212-0.021-0.424-0.065-0.636C142.377,53.607,142.312,53.4,142.234,53.206z"/>
+                    <path fill="#B2EBF9" d="M86.363,51.267c-0.208,0.039-0.416,0.104-0.61,0.186c-0.195,0.078-0.385,0.178-0.558,0.298
+                        c-0.178,0.117-0.346,0.251-0.493,0.403c-0.606,0.602-0.952,1.441-0.952,2.293c0,0.212,0.021,0.424,0.065,0.636
+                        c0.039,0.203,0.104,0.411,0.182,0.606c0.082,0.194,0.182,0.384,0.298,0.558c0.122,0.178,0.255,0.346,0.407,0.493
+                        c0.147,0.151,0.315,0.286,0.493,0.407c0.173,0.117,0.363,0.216,0.558,0.298c0.194,0.078,0.402,0.144,0.61,0.182
+                        c0.208,0.043,0.42,0.064,0.632,0.064c0.856,0,1.692-0.346,2.293-0.952c0.151-0.147,0.286-0.315,0.407-0.493
+                        c0.117-0.173,0.216-0.363,0.299-0.558c0.078-0.195,0.143-0.403,0.182-0.606c0.043-0.212,0.065-0.424,0.065-0.636
+                        c0-0.852-0.346-1.691-0.952-2.293C88.535,51.4,87.414,51.055,86.363,51.267z"/>
+                    <path fill="#B2EBF9" d="M79.544,53.205c-0.083-0.194-0.182-0.384-0.299-0.558c-0.117-0.177-0.255-0.346-0.402-0.493
+                        c-0.152-0.151-0.316-0.286-0.494-0.407c-0.177-0.116-0.368-0.216-0.563-0.294c-0.195-0.082-0.398-0.147-0.605-0.186
+                        c-0.42-0.087-0.848-0.087-1.268,0c-0.208,0.039-0.411,0.104-0.61,0.186c-0.195,0.078-0.381,0.178-0.558,0.294
+                        c-0.177,0.122-0.342,0.256-0.493,0.407c-0.151,0.147-0.286,0.316-0.402,0.493c-0.117,0.173-0.216,0.363-0.299,0.558
+                        c-0.082,0.195-0.143,0.403-0.186,0.61c-0.043,0.208-0.065,0.42-0.065,0.632c0,0.212,0.022,0.424,0.065,0.636
+                        c0.043,0.203,0.104,0.411,0.186,0.606c0.083,0.194,0.182,0.384,0.299,0.558c0.117,0.178,0.251,0.346,0.402,0.493
+                        c0.151,0.151,0.316,0.286,0.493,0.407c0.177,0.117,0.363,0.216,0.558,0.298c0.199,0.078,0.402,0.144,0.61,0.182
+                        c0.208,0.043,0.42,0.064,0.632,0.064s0.429-0.021,0.636-0.064c0.208-0.039,0.411-0.104,0.605-0.182
+                        c0.195-0.082,0.385-0.181,0.563-0.298c0.178-0.122,0.342-0.256,0.494-0.407c0.147-0.147,0.285-0.315,0.402-0.493
+                        c0.117-0.173,0.216-0.363,0.299-0.558c0.082-0.195,0.143-0.403,0.186-0.606c0.039-0.212,0.061-0.424,0.061-0.636
+                        c0-0.212-0.021-0.424-0.061-0.632C79.687,53.607,79.626,53.4,79.544,53.205z"/>
+                    <path fill="#B2EBF9" d="M131.785,53.205c-0.083-0.194-0.182-0.384-0.299-0.558c-0.117-0.177-0.256-0.346-0.403-0.493
+                        c-0.605-0.605-1.44-0.952-2.297-0.952c-0.853,0-1.687,0.346-2.293,0.952c-0.147,0.147-0.286,0.316-0.403,0.493
+                        c-0.116,0.173-0.216,0.363-0.298,0.558c-0.083,0.195-0.143,0.403-0.186,0.61c-0.043,0.208-0.065,0.42-0.065,0.632
+                        c0,0.853,0.346,1.692,0.952,2.293c0.152,0.151,0.316,0.286,0.493,0.407c0.178,0.117,0.364,0.216,0.559,0.298
+                        c0.199,0.078,0.402,0.144,0.609,0.182c0.208,0.043,0.424,0.064,0.632,0.064c0.857,0,1.692-0.346,2.297-0.952
+                        c0.147-0.147,0.286-0.315,0.403-0.493c0.117-0.173,0.216-0.363,0.299-0.558c0.082-0.195,0.143-0.403,0.186-0.606
+                        c0.043-0.212,0.061-0.424,0.061-0.636c0-0.212-0.018-0.424-0.061-0.632C131.928,53.607,131.867,53.4,131.785,53.205z"/>
+                    <path fill="#B2EBF9" d="M121.335,53.205c-0.082-0.194-0.181-0.384-0.298-0.558c-0.117-0.177-0.255-0.346-0.402-0.493
+                        c-0.605-0.605-1.44-0.952-2.293-0.952c-0.857,0-1.692,0.346-2.298,0.952c-0.147,0.147-0.285,0.316-0.402,0.493
+                        c-0.117,0.173-0.216,0.363-0.298,0.558c-0.082,0.195-0.143,0.403-0.186,0.61c-0.043,0.208-0.061,0.42-0.061,0.632
+                        c0,0.212,0.018,0.424,0.061,0.636c0.043,0.203,0.104,0.411,0.186,0.606c0.082,0.194,0.182,0.384,0.298,0.558
+                        c0.117,0.178,0.255,0.346,0.402,0.493c0.606,0.606,1.441,0.952,2.298,0.952c0.853,0,1.688-0.346,2.293-0.952
+                        c0.147-0.147,0.286-0.315,0.402-0.493c0.117-0.173,0.216-0.363,0.298-0.558c0.083-0.195,0.144-0.403,0.186-0.606
+                        c0.044-0.212,0.065-0.424,0.065-0.636c0-0.212-0.021-0.424-0.065-0.632C121.479,53.607,121.418,53.4,121.335,53.205z"/>
+                    <path fill="#B2EBF9" d="M110.887,53.205c-0.083-0.194-0.182-0.384-0.298-0.558c-0.117-0.177-0.251-0.346-0.403-0.493
+                        c-0.151-0.151-0.315-0.286-0.493-0.403c-0.177-0.116-0.363-0.22-0.558-0.298c-0.199-0.082-0.403-0.147-0.61-0.186
+                        c-0.42-0.087-0.848-0.087-1.268,0c-0.208,0.039-0.411,0.104-0.605,0.186c-0.195,0.078-0.385,0.182-0.563,0.298
+                        c-0.177,0.117-0.342,0.251-0.493,0.403c-0.147,0.147-0.286,0.316-0.402,0.493c-0.117,0.173-0.216,0.363-0.299,0.558
+                        c-0.082,0.195-0.143,0.403-0.186,0.606c-0.039,0.212-0.061,0.424-0.061,0.636c0,0.212,0.021,0.424,0.061,0.636
+                        c0.043,0.203,0.104,0.411,0.186,0.606c0.083,0.194,0.182,0.384,0.299,0.558c0.117,0.178,0.255,0.346,0.402,0.493
+                        c0.151,0.151,0.316,0.286,0.493,0.407c0.177,0.117,0.368,0.216,0.563,0.298c0.195,0.078,0.398,0.144,0.605,0.182
+                        c0.212,0.043,0.424,0.064,0.636,0.064s0.424-0.021,0.632-0.064c0.208-0.039,0.411-0.104,0.61-0.182
+                        c0.194-0.082,0.38-0.181,0.558-0.298c0.178-0.122,0.342-0.256,0.493-0.407c0.151-0.147,0.286-0.315,0.403-0.493
+                        c0.116-0.173,0.216-0.363,0.298-0.558c0.082-0.195,0.143-0.403,0.186-0.606c0.043-0.212,0.064-0.424,0.064-0.636
+                        c0-0.212-0.021-0.424-0.064-0.636C111.029,53.607,110.969,53.4,110.887,53.205z"/>
+                    <path fill="#B2EBF9" d="M100.438,53.205c-0.078-0.194-0.177-0.384-0.294-0.558c-0.121-0.177-0.255-0.346-0.407-0.493
+                        c-0.147-0.151-0.316-0.286-0.493-0.407c-0.173-0.116-0.364-0.216-0.558-0.294c-0.195-0.082-0.402-0.147-0.61-0.186
+                        c-1.051-0.211-2.176,0.134-2.925,0.887c-0.151,0.147-0.286,0.316-0.407,0.493c-0.117,0.173-0.216,0.363-0.298,0.558
+                        c-0.078,0.195-0.143,0.403-0.182,0.606c-0.043,0.212-0.064,0.424-0.064,0.636c0,0.212,0.021,0.424,0.064,0.636
+                        c0.039,0.203,0.104,0.411,0.182,0.606c0.082,0.194,0.182,0.384,0.298,0.558c0.121,0.178,0.255,0.346,0.407,0.493
+                        c0.602,0.606,1.437,0.952,2.293,0.952c0.212,0,0.424-0.021,0.632-0.064c0.208-0.039,0.416-0.104,0.61-0.182
+                        c0.194-0.082,0.385-0.181,0.558-0.298c0.177-0.122,0.346-0.256,0.493-0.407c0.151-0.147,0.286-0.315,0.407-0.493
+                        c0.117-0.173,0.216-0.363,0.294-0.558c0.083-0.195,0.147-0.403,0.186-0.606c0.043-0.212,0.065-0.424,0.065-0.636
+                        c0-0.212-0.021-0.424-0.065-0.636C100.584,53.607,100.52,53.4,100.438,53.205z"/>
+                    <path fill="#4059A8" d="M143.178,66.951c1.792,0,3.245-1.453,3.245-3.245c0-1.792-1.453-3.245-3.245-3.245h-36.633
+                        c-1.792,0-3.245,1.453-3.245,3.245c0,1.792,1.453,3.245,3.245,3.245h4.984h30.35H143.178z"/>
+                    <path fill="#4059A8" d="M203.608,57.484c-0.973-0.558-1.895-1.194-2.756-1.899c-1.861,1.553-3.046,3.89-3.046,6.503
+                        c0,2.436,1.03,4.634,2.679,6.179c1.09-0.472,2.15-1.009,3.18-1.614c1.744-1.025,2.614-2.794,2.614-4.564
+                        C206.278,60.292,205.387,58.501,203.608,57.484z"/>
+                </g>
+                <animateMotion xlink:href="#plane" dur="20s" repeatCount="indefinite" rotate="auto">
+                    <mpath xlink:href="#planePath" />
+                </animateMotion>
+            </svg>    
+        </div>
+        
+        <div class="popMn">
+            <div class="closeBox">
+                <button class="closeBtn">
+                    <span class="close item1"></span>
+                    <span class="close item2"></span>
+                </button>
+            </div>
+            <ul>
+                <li>
+                    <a href="about.html" class="mnDep" data-link-alt="Profile">
+                        <span>About</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="working.html" class="mnDep" data-link-alt="Project">
+                        <span>working</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="about.html" class="mnDep" data-link-alt="Gallery">
+                        <span>Portfolio</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        
+    </div>    
+</body>
+</html>

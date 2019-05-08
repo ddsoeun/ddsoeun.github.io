@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>P A R K S O E U N</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="reset.css">
+    
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon16.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon32.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon48.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon64.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon128.png">
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon150.png">
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta name="msapplication-TileImage" content="./ico/favicon144.png">
+    <link rel="apple-touch-icon" size="120X120" href="./ico/favicon120.png">
+    <link rel="apple-touch-icon" size="57X57" href="./ico/favicon57.png">
+    <link rel="apple-touch-icon" size="72X72" href="./ico/favicon72.png">
+    <link rel="apple-touch-icon" size="114X114" href="./ico/favicon114.png">
+    <link rel="apple-touch-icon" size="180X180" href="./ico/favicon180.png">
+    <link rel="apple-touch-icon" size="152X152" href="./ico/favicon152.png">
+    <link rel="apple-touch-icon" size="196X196" href="./ico/favicon196.png">
+    <link rel="apple-touch-icon" size="167X167" href="./ico/favicon167.png">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="application-name" content="SOEUN PORTFOLIO Web Site">
+    <meta name="author" content="SoeunPark">
+    <meta name="description" content="SOEUN PORTFOLIO Mainpage">
+    <meta name="generator" content="Brackets">
+    <meta name="keywords" content="SOEUN PORTFOLIO, soeun portfolio">
+    
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Gugi|Noto+Sans+KR|Ubuntu" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script src="./js/prefixfree.min.js"></script>
+    
+    <style>
+/*
+    font-family: 'Gugi', cursive;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
+    font-family: 'Roboto', sans-serif;
+*/
+        
+    body, html { -ms-overflow-style:none; }
+    ::-webkit-scrollbar { display: none; }
+    ::-o-scrollbar { display: none; }
+        
+    .hd { width: 100%; position: fixed; top: 0; left: 0; z-index: 10; background: rgba(255, 255, 255, 0.6); }
+        
+    .logo { display: block; float: left; width: 40px; height: 30px; }
+    .logo img { width: 100%; height: 100%; }
+        
+    .fixBox { background: transparent; float: left; width: calc(calc(90% - 40px) / 2); height: 40px; margin-left: 5%; }
+    .fixBox a { display: block; width: 100%; height: 100%; color: #333; border: 1px solid #98b0d4; }
+    .lstBox { background: transparent; z-index: 1; transition: 0.8s; float: right; position: relative; width: calc(calc(90% - 40px) / 2); height: 40px; margin-left: 5%; }
+    .lstBox .txt { display: block; width: 100%; height: 100%; color: #333; z-index: 10; cursor: pointer; border: 1px solid #3365b1; }
+    .lstBox:hover .txt { border: 1px solid #3365b1; }
+    .smallTxt { color: #999; }
+    .sub { width: 100%; transition: 0.8s; transition-delay: 0.2s; opacity: 0; overflow: hidden; border-right: 1px solid #ccc; border-bottom: 1px solid #ccc; border-left: 1px solid #ccc; height: 0; position: absolute; top: 100%; left: 0; margin-top: 1px; }
+
+    .title, .smallTxt { padding-left: 10%; padding-top: 0.2vw; }
+    .sub li { height: 40px; display: block; width: 100%; }
+    .sub li a { height: 40px; line-height: 40px; font-size: 0.8rem; }
+    #tri { width: 0; height: 0; border-left: 0.5vh solid transparent; border-right: 0.5vh solid transparent; border-top: 1vh solid #3365b1; position: absolute; right: 5%; top: calc(calc(100% - 1vh) / 2); transition: 0.8s; }
+    #ck01:checked ~ .lstBox .sub { height: 120px; opacity: 1; }
+    
+    .ckItem { display: none; }
+    
+    #ck01:checked ~ .lstBox .txt #tri { transform: rotate(180deg); }
+
+    .mnDep { width: 100%; display: block; color: #333; border-bottom: 1px solid #ccc; background: #fff; text-align: center; background: rgba(255, 255, 255, 0.6); position: relative; overflow: hidden; outline: none; -webkit-box-flex: 1; -webkit-flex-grow: 1; -ms-flex-positive: 1; flex-grow: 1; -webkit-animation-duration: 1s; animation-duration: 1s; -webkit-animation-fill-mode: both; animation-fill-mode: both; }
+    .sub li:last-child .mnDep { border-bottom: 0px; }
+    .mnDep:hover, .mnDep:focus { outline: none; }
+    .mnDep span { display: block; -webkit-transition: -webkit-transform 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55); transition: -webkit-transform 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55); transition: transform 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55); transition: transform 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55), -webkit-transform 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+    .mnDep:after { position: absolute; top: 100%; left: 0; right: 0; content: attr(data-link-alt); display: inline; text-align: center; -webkit-transition: top 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55); transition: top 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+    .mnDep:hover { color: #3365b1; }
+    .mnDep:hover span { color: #3365b1; -webkit-transform: translateY(-100%); transform: translateY(-100%); }
+    .mnDep:hover:after { top: 0; }
+    .mnDep:active { -webkit-animation-name: rubberBand; animation-name: rubberBand; }
+        
+    .container { width: 100%; height: calc(100% - 60px); padding-top: 60px; background: #bdcce4; }
+        
+    .page_title { text-align: center; }
+    .page_title span { color: #fff; text-shadow: 0 1px 0 #ccc, 0 2px 0 #ccc, 0 3px 0 #ccc, 0 4px 0 #ccc, 0 5px 0 #ccc, 0 6px 0 transparent, 0 7px 0 transparent, 0 8px 0 transparent, 0 9px 0 transparent, 0 10px 10px rgba(0, 0, 0, 0.4); }
+    
+    .slideBox { overflow: hidden; background: rgba(255, 255, 255, 0.6); }
+    .slideBox .slide li { width: 12.5%; height: 100%; float: left; }
+    .slide li .slide_img { display: block; width: 80%; height: 80%; margin: 0 auto; margin-top: 10%; background-repeat: no-repeat;  background-size: cover; background-position: center center; cursor: pointer; }
+        
+    .slide li.item1 .slide_img { background-image: url("./img/working_img1.png"); }
+    .slide li.item2 .slide_img { background-image: url("./img/working_img2.png"); }
+    .slide li.item3 .slide_img { background-image: url("./img/working_img3.png"); }
+    .slide li.item4 .slide_img { background-image: url("./img/working_img4.png"); }
+    .slide li.item5 .slide_img { background-image: url("./img/working_img5.png"); }
+    .slide li.item6 .slide_img { background-image: url("./img/working_img6.png"); }
+    .slide li.item7 .slide_img { background-image: url("./img/working_img7.png"); }
+    .slide li.item8 .slide_img { background-image: url("./img/working_img8.png"); }
+        
+    .imgBox { width: 100%; position: relative; }
+    .imgBox li { width: 100%; height: 100%; position: absolute; top: 0; left: 0; transition-duration: 0.8s; transition-delay: 0.1s; opacity: 0; transition-timing-function: ease; background: #bdcce4; }
+    .imgBox li.on { opacity: 1; left: 0; z-index: 20; }
+    .imgBox li a { display: block; width: 80%; margin: 0 auto; overflow: hidden; position: relative; }
+    .imgBox li a img { width: 100%; }
+    .imgBox li a .cover { width: 100%; height: 100%; background: rgba(0, 0, 0, 0.4); position: absolute; top: 0; left: 0; }
+    .imgBox li a .cover .cover_com { text-align: center; width: 100px; margin: 0 auto; height: 40px; line-height: 40px; background: transparent; color: #fff; border: 1px solid #fff; cursor: pointer; transition: 0.8s; transition-delay: 0.2s; }
+    .imgBox li:hover .cover .cover_com { background: #fff; color: #3365b1; }
+        
+    .numBox { width: 100px; margin: 0 auto; position: relative; }
+    .numBox p { float: left; }
+    .numBox p:last-child { float: right; }
+    .numBox span { width: 20px; height: 2px; background: #fff; position: absolute; left: calc(calc(100% - 20px) / 2); top: calc(calc(100% - 2px) / 2); }
+    .tit { text-align: center; color: #fff; word-break: keep-all; font-weight: 400; }
+        
+    .btnBox { width: 90px; margin: 0 auto; height: 40px; }
+    .btnBox li { width: 40px; height: 40px; float: left; position: relative; }
+    .btnBox li.item2 { float: right; }
+    .btnBox li button { width: 40px; height: 40px; background-color: transparent; border: 1px solid #fff; border-radius: 40px; display: block; cursor: pointer; transition: 0.8s; transition-delay: 0.2s; }
+    .btnBox li button span { width: 15px; height: 2px; background: #fff; position: absolute; top: 50%; left: 6.5px; transform: rotate(45deg); }
+    .btnBox li button span.item2 { transform: rotate(-45deg); left: 17.5px; }
+    .btnBox li.item2 button { transform: rotate(180deg); }
+        
+    .btnBox li button:hover { border: 1px solid #3365b1; background: #3365b1; }
+        
+    .slideTit { position: absolute; color: #fff; text-shadow: -1px -1px 2px #ddd, 1px 1px 2px #666; }
+        
+    @media screen and (max-width: 767px) {
+        
+        .hd { height: 60px; }
+        .hdWrap { width: 90%; margin: 0 auto; height: 60px; position: relative; }
+        
+        .logo { margin-top: 15px; }
+
+        .fixBox { margin-top: 10px; }
+        .smallTxt { font-size: 0.65rem; }
+        .title { padding-top: 0; font-size: 1rem; }
+        .lstBox { margin-top: 10px; }
+        
+        .page_title { font-size: 1.5rem; letter-spacing: 1vw; padding-top: 5%; }
+        
+        .contents { width: 90%; margin: 0 auto; height: calc(calc(100% - 60px) - 30%); overflow: hidden; margin-top: 10%; }
+        
+        .slideBox { width: 100%; height: 20%; }
+        .slideBox .slide { width: 266.66666666%; height: 100%; }
+        .imgBox { height: 38vh; margin-top: calc(calc(100% - 80vw) / 2); }
+        .imgBox li a { height: 41vw; }
+        .imgBox li a .cover .cover_com { margin-top: calc(calc(41vw - 40px) / 2); font-size: 0.8rem; }
+        .txtBox { width: 100%; height: 10vh; margin-top: 5%; }
+        .numBox { height: 5vh; }
+        .numBox p { line-height: 5vh; font-size: 0.8rem; }
+        .tit { font-size: 1.25rem; }
+        .slideTit { font-size: 1rem; margin-top: -3%; margin-left: 2vh; }
+    
+    }
+    @media screen and (min-width: 768px) and (max-width: 959px) {
+        
+        .hd { height: 100px; background: rgba(255, 255, 255, 0.6); }
+        .hdWrap { width: 70%; margin: 0 auto; height: 100px; position: relative; }
+        
+        .logo { margin-top: 35px; }
+
+        .fixBox { margin-top: 30px; }
+        .smallTxt { font-size: 0.65rem; }
+        .title { padding-top: 0; font-size: 1rem; }
+        .lstBox { margin-top: 30px; }
+        .sub li a { font-size: 0.8rem; }
+        
+        .container { height: calc(100% - 100px); padding-top: 100px; }
+        .page_title { font-size: 1.8rem; letter-spacing: 1vw; padding-top: 5%; }
+        
+        .contents { width: 90%; margin: 0 auto; height: calc(calc(100% - 60px) - 30%); overflow: hidden; margin-top: 5%; }
+        
+        .slideBox { width: 100%; height: 20%; }
+        .slideBox .slide { width: 266.66666666%; height: 100%; }
+        .imgBox { height: 45vh; margin-top: calc(calc(100% - 80vw) / 2); }
+        .imgBox li a { height: 40vw; }
+        .imgBox li a .cover .cover_com { margin-top: calc(calc(40vw - 40px) / 2); font-size: 1rem; width: 150px; }
+        .txtBox { width: 100%; height: 10vh; margin-top: 5%; }
+        .numBox { height: 5vh; }
+        .numBox p { line-height: 5vh; font-size: 0.8rem; }
+        .tit { font-size: 1.25rem; }
+        .slideTit { font-size: 1.5rem; margin-top: -2%; margin-left: 2vh; }
+        
+    }
+    @media screen and (min-width: 960px) and (max-width: 1024px) {
+        
+        .hd { height: 100px; background: rgba(255, 255, 255, 0.6); }
+        .hdWrap { width: 800px; margin: 0 auto; height: 100px; position: relative; }
+        
+        .logo { margin-top: 35px; }
+
+        .fixBox { margin-top: 30px; }
+        .smallTxt { font-size: 0.65rem; }
+        .title { padding-top: 0; font-size: 1rem; }
+        .lstBox { margin-top: 30px; }
+        .sub li a { font-size: 0.8rem; }
+        
+        .container { height: calc(100% - 100px); padding-top: 100px; }
+        .page_title { font-size: 2rem; letter-spacing: 1vw; padding-top: 5%; }
+        
+        .contents { width: 90%; margin: 0 auto; height: calc(calc(100% - 60px) - 30%); overflow: hidden; margin-top: 5%; }
+        
+        .slideBox { width: 100%; height: 20%; }
+        .slideBox .slide { width: 266.66666666%; height: 100%; }
+        .imgBox { height: 45vh; margin-top: calc(calc(100% - 80vw) / 2); }
+        .imgBox li a { height: 40vw; }
+        .imgBox li a .cover .cover_com { margin-top: calc(calc(40vw - 40px) / 2); font-size: 1rem; width: 150px; }
+        .txtBox { width: 100%; height: 10vh; margin-top: 5%; }
+        .numBox { height: 5vh; }
+        .numBox p { line-height: 5vh; font-size: 0.8rem; }
+        .tit { font-size: 1.25rem; }
+        .slideTit { font-size: 1.8rem; margin-top: -2%; margin-left: 2vh; }
+        
+    }
+    @media screen and (min-width: 1025px) {
+        .hd { height: 100px; background: rgba(255, 255, 255, 0.6); }
+        .hdWrap { width: 40%; margin: 0 auto; height: 100px; position: relative; }
+        
+        .logo { width: 55px; height: 40px; margin-top: 30px; }
+
+        .fixBox { width: calc(calc(80% - 55px) / 2); height: 40px; margin-top: 30px; margin-left: 10%; }
+        .title, .smallTxt { padding-left: 10%; padding-top: 0.2vw; }
+        .smallTxt { font-size: 0.65rem; }
+        .title { padding-top: 0; font-size: 1rem; }
+        .lstBox { width: calc(calc(80% - 55px) / 2); height: 40px; margin-top: 30px; margin-left: 10%; }
+        .sub { height: 0; position: absolute; top: 100%; left: 0; margin-top: 1px; }
+        .sub li { height: 40px; }
+        .sub li a { height: 40px; line-height: 40px; font-size: 1rem; }
+        
+        .container { height: calc(100% - 100px); padding-top: 100px; }
+        .page_title { font-size: 2rem; letter-spacing: 0.5vw; padding-top: 2%; }
+        
+        .contents { width: 70%; margin: 0 auto; height: calc(calc(100% - 100px) - 35%); overflow: hidden; margin-top: 2%; }
+        
+        .slideBox { width: 100%; height: 20%; }
+        .slideBox .slide { width: 266.66666666%; height: 100%; }
+        .imgBox { width: 100%; height: 80%; }
+        .imgBox li a { height: auto; margin: 0; width: 50%; float: left; }
+        .imgBox li a .cover { opacity: 0; transition: 0.8s; transition-delay: 0.2s; }
+        .imgBox li a:hover .cover { opacity: 1; }
+        .imgBox li:hover .cover .cover_com { background: transparent; color: #fff; border: 1px solid #fff; }
+        .imgBox li a .cover .cover_com:hover { background: #fff; color: #3365b1; }
+        .imgBox li a .cover .cover_com { font-size: 1rem; width: 150px; margin-top: calc(calc(60% - 40px) / 2); }
+        .txtBox { width: 50%; height: 10vh; margin-top: 10%; float: right; }
+        .numBox { height: 5vh; }
+        .numBox p { line-height: 5vh; font-size: 0.8rem; }
+        .btnBox { width: 50%; float: right; position: relative; margin-top: -5vw; }
+        .btnBox li { position: absolute; z-index: 50; }
+        .btnBox li.item1 { left: calc(calc(100% - 90px) / 2); }
+        .btnBox li.item2 { right: calc(calc(100% - 90px) / 2); }
+        .tit { font-size: 1.25rem; }
+        .slideBox { height: 30%; }
+        .slideBox .slide { width: 200%; }
+        .slideBox .slide .slide_img { margin-top: 5%; }
+        .slideTit { font-size: 1.8rem; margin-top: -1%; margin-left: 10vw; }
+    }
+        
+    </style>
+    
+    <script>
+    $(document).ready(function(){
+        var wd = $(".slide li").width();
+        var len = $(".slide li").length;
+        var intv = setInterval(function(){
+            nextAni();
+        }, 2800);
+        
+        function nextAni(){
+            $(".slide").not(":animated").animate({"margin-left": -wd+"px"}, 800, function(){
+                $(".slide li").eq(0).appendTo($(".slide"));
+                $(".slide").css("margin-left", "0px");
+            });
+        }
+    });
+    </script>
+    <script>
+    $(document).ready(function(){
+        var wd2 = $(".contents").width();
+        var cnt = 0;
+        var len2 = $(".imgBox li").length;
+        var intv2 = setInterval(function(){
+            nextAni2();    
+        }, 4000);
+        
+        function nextAni2(){
+            $(".imgBox li").removeClass("on");
+            cnt++;
+            if(cnt >= len2){
+                cnt = 0; 
+            }
+            $(".imgBox li").eq(cnt).addClass("on");
+        }
+        function prevAni2(){
+            $(".imgBox li").removeClass("on");
+            cnt--;
+            if(cnt < 0){
+                cnt = len2 - 1;
+            }
+            $(".imgBox li").eq(cnt).addClass("on");
+        }
+        $(".btnBox li.item1 button").click(function(){
+            clearInterval(intv2);
+            nextAni2();
+            intv2 = setInterval(function(){
+                nextAni2();    
+            }, 4000);
+        });
+        $(".btnBox li.item2 button").click(function(){
+            clearInterval(intv2);
+            prevAni2();
+            intv2 = setInterval(function(){
+                prevAni2();    
+            }, 4000);
+        });
+        
+        var sw= [false, false, false];
+        $(".slide li").click(function(index){
+            var idx = $(this).index();
+            if(sw[idx]){
+                $(".imgBox li").removeClass("on");
+            } else {
+                $(".imgBox li").addClass("on");
+            }
+            sw[idx]=!sw[idx];
+        });
+    });
+    </script>
+</head>
+<body>
+<header class="hd">
+    <div class="hdWrap">
+        <a href="index.html" class="logo">
+            <img src="./img/logo.png" alt="Park Soeun">
+        </a>
+        <div class="fixBox">
+            <a href="index.html">
+                <p class="smallTxt">Current Page</p>
+                <p class="title">HOME</p>
+            </a>    
+        </div>
+        <input type="checkbox" name="ck01" id="ck01" class="ckItem">
+        <div class="lstBox">
+            <label for="ck01" class="txt">
+                <p class="smallTxt">Next Page</p>
+                <p class="title">HOME</p>
+                <div id="tri"></div> 
+                <ul class="sub">
+                    <li>
+                        <a href="about.html" class="mnDep" data-link-alt="PROFILE">
+                            <span>ABOUT</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="working.html" class="mnDep" data-link-alt="PROJECT">
+                            <span>WORKING</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="portfolio.html" class="mnDep" data-link-alt="GALLERY">
+                            <span>PORTFOLIO</span>
+                        </a>
+                    </li>
+                </ul>   
+            </label>    
+        </div>
+    </div>
+</header>
+<div class="container">
+        <h2 class="page_title">
+            <span>W</span>
+            <span>O</span>
+            <span>R</span>
+            <span>K</span>
+            <span>I</span>
+            <span>N</span>
+            <span>G</span>
+        </h2> 
+    <div class="contents">
+        <ul class="imgBox">
+            <li class="item1 on">
+                <a href="https://postimg.cc/gallery/1lhi2sfmi/" target="_blank">
+                    <img src="./img/working_img1.png" alt="working">
+                    <div class="cover">
+                        <p class="cover_com">+ 둘러보기</p>
+                    </div>
+                </a>
+                <div class="txtBox">
+                    <div class="numBox">
+                        <p>01</p>
+                        <span></span>
+                        <p>08</p>
+                    </div>
+                    <h2 class="tit">사회복지법인 계룡 웹사이트 기획</h2>
+                </div>
+            </li>
+            <li class="item2">
+                <a href="https://postimg.cc/gallery/p6d2wgey/" target="_blank">
+                    <img src="./img/working_img2.png" alt="working">
+                    <div class="cover">
+                        <p class="cover_com">+ 둘러보기</p>
+                    </div>
+                </a>
+                <div class="txtBox">
+                    <div class="numBox">
+                        <p>02</p>
+                        <span></span>
+                        <p>08</p>
+                    </div>
+                    <h2 class="tit">(주)두산 웹사이트 기획</h2>
+                </div>
+            </li>
+            <li class="item3">
+                <a href="https://postimg.cc/gallery/1hwgi6kgq/" target="_blank">
+                    <img src="./img/working_img3.png" alt="working">
+                    <div class="cover">
+                        <p class="cover_com">+ 둘러보기</p>
+                    </div>
+                </a>
+                <div class="txtBox">
+                    <div class="numBox">
+                        <p>03</p>
+                        <span></span>
+                        <p>08</p>
+                    </div>
+                    <h2 class="tit">(주)두산 프로토타입 제작</h2>
+                </div>
+            </li>
+            <li class="item4">
+                <a href="https://postimg.cc/gallery/kzok64nu/" target="_blank">
+                    <img src="./img/working_img4.png" alt="working">
+                    <div class="cover">
+                        <p class="cover_com">+ 둘러보기</p>
+                    </div>
+                </a>
+                <div class="txtBox">
+                    <div class="numBox">
+                        <p>04</p>
+                        <span></span>
+                        <p>08</p>
+                    </div>
+                    <h2 class="tit">스마트이비인후과 웹사이트 기획</h2>
+                </div>
+            </li>
+            <li class="item5">
+                <a href="https://postimg.cc/gallery/2coz42wii/" target="_blank">
+                    <img src="./img/working_img5.png" alt="working">
+                    <div class="cover">
+                        <p class="cover_com">+ 둘러보기</p>
+                    </div>
+                </a>
+                <div class="txtBox">
+                    <div class="numBox">
+                        <p>05</p>
+                        <span></span>
+                        <p>08</p>
+                    </div>
+                    <h2 class="tit">계룡시청 웹사이트 기획</h2>
+                </div>
+            </li>
+            <li class="item6">
+                <a href="https://postimg.cc/gallery/i7zrz122/" target="_blank">
+                    <img src="./img/working_img6.png" alt="working">
+                    <div class="cover">
+                        <p class="cover_com">+ 둘러보기</p>
+                    </div>
+                </a>
+                <div class="txtBox">
+                    <div class="numBox">
+                        <p>06</p>
+                        <span></span>
+                        <p>08</p>
+                    </div>
+                    <h2 class="tit">계룡시청 웹사이트 디자인</h2>
+                </div>
+            </li>
+            <li class="item7">
+                <a href="https://postimg.cc/gallery/jvpqm716/" target="_blank">
+                    <img src="./img/working_img7.png" alt="working">
+                    <div class="cover">
+                        <p class="cover_com">+ 둘러보기</p>
+                    </div>
+                </a>
+                <div class="txtBox">
+                    <div class="numBox">
+                        <p>07</p>
+                        <span></span>
+                        <p>08</p>
+                    </div>
+                    <h2 class="tit">하나투어 모바일 웹사이트 기획</h2>
+                </div>
+            </li>
+            <li class="item8">
+                <a href="https://postimg.cc/gallery/3eh8n12qi/" target="_blank">
+                    <img src="./img/working_img8.png" alt="working">
+                    <div class="cover">
+                        <p class="cover_com">+ 둘러보기</p>
+                    </div>
+                </a>
+                <div class="txtBox">
+                    <div class="numBox">
+                        <p>08</p>
+                        <span></span>
+                        <p>08</p>
+                    </div>
+                    <h2 class="tit">하나투어 모바일 웹사이트 디자인</h2>
+                </div>
+            </li>
+        </ul>
+        <ul class="btnBox">
+            <li class="item1">
+                <button>
+                    <span class="item1"></span>
+                    <span class="item2"></span>
+                </button>
+            </li>
+            <li class="item2">
+                <button>
+                    <span class="item1"></span>
+                    <span class="item2"></span>    
+                </button>
+            </li>
+        </ul>
+    </div>
+    <div class="slideBox">
+        <h2 class="slideTit">Working Preview</h2>
+        <ul class="slide">
+            <li class="item1">
+                <div class="slide_img"></div>
+            </li>
+            <li class="item2">
+                <div class="slide_img"></div>
+            </li>
+            <li class="item3">
+                <div class="slide_img"></div>
+            </li>
+            <li class="item4">
+                <div class="slide_img"></div>
+            </li>
+            <li class="item5">
+                <div class="slide_img"></div>
+            </li>
+            <li class="item6">
+                <div class="slide_img"></div>
+            </li>
+            <li class="item7">
+                <div class="slide_img"></div>
+            </li>
+            <li class="item8">
+                <div class="slide_img"></div>
+            </li>
+        </ul>
+    </div>
+</div>
+      
+</body>
+</html>
