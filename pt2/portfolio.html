@@ -46,7 +46,7 @@
     ::-webkit-scrollbar { display: none; }
     ::-o-scrollbar { display: none; }
         
-    .hd { width: 100%; position: fixed; top: 0; left: 0; z-index: 10; background: rgba(255, 255, 255, 0.6); }
+    .hd { width: 100%; position: fixed; top: 0; left: 0; z-index: 20; background: rgba(255, 255, 255, 0.6); }
         
     .logo { display: block; float: left; width: 40px; height: 30px; }
     .logo img { width: 100%; height: 100%; }
@@ -57,7 +57,7 @@
     .lstBox .txt { display: block; width: 100%; height: 100%; color: #333; z-index: 10; cursor: pointer; border: 1px solid #3365b1; }
     .lstBox:hover .txt { border: 1px solid #3365b1; }
     .smallTxt { color: #999; }
-    .sub { width: 100%; transition: 0.8s; transition-delay: 0.2s; opacity: 0; overflow: hidden; border-right: 1px solid #ccc; border-bottom: 1px solid #ccc; border-left: 1px solid #ccc; height: 0; position: absolute; top: 100%; left: 0; margin-top: 1px; }
+    .sub { width: 100%; transition: 0.8s; transition-delay: 0.2s; opacity: 0; overflow: hidden; border-right: 1px solid #ccc; border-bottom: 1px solid #ccc; border-left: 1px solid #ccc; height: 0; position: absolute; top: 100%; left: 0; margin-top: 1px; z-index: 50; }
 
     .title, .smallTxt { padding-left: 10%; padding-top: 0.2vw; }
     .sub li { height: 40px; display: block; width: 100%; }
@@ -80,51 +80,73 @@
     .mnDep:active { -webkit-animation-name: rubberBand; animation-name: rubberBand; }
         
     .container { width: 100%; height: calc(100% - 60px); padding-top: 60px; background: #bdcce4; }
+    .raItem { display: none; }
+    .comBox { background: rgba(255, 255, 255, 0.6); }
+    .subBox { background: rgba(255, 255, 255, 0.6); }
+    .subBox .imgBox { display: none; transition: 0.8s; transition-delay: 0.2s; width: 100%; height: 100%; overflow: hidden; }
+    .slide { width: 500%; height: 100%; }
+    .slide li { width: 20%; height: calc(calc(100% - 30px) - 2vh); float: left; }
+    .slide2 { width: 800%; height: 100%; }
+    .slide2 li { width: 12.5%; height: calc(calc(100% - 30px) - 2vh); float: left; }
+    .slide3 { width: 400%; height: 100%; }
+    .slide3 li { width: 25%; height: calc(calc(100% - 30px) - 2vh); float: left; }
         
-    .page_title { text-align: center; }
-    .page_title span { color: #fff; text-shadow: 0 1px 0 #ccc, 0 2px 0 #ccc, 0 3px 0 #ccc, 0 4px 0 #ccc, 0 5px 0 #ccc, 0 6px 0 transparent, 0 7px 0 transparent, 0 8px 0 transparent, 0 9px 0 transparent, 0 10px 10px rgba(0, 0, 0, 0.4); }
+    #ra01:checked ~ .subBox .imgBox.item1 { display: block; }
+    #ra02:checked ~ .subBox .imgBox.item2 { display: block; }
+    #ra03:checked ~ .subBox .imgBox.item3 { display: block; }
+    #ra01:checked ~ .comBox .btnFrm li.item1 label { background: #3365b1; color: #fff; }
+    #ra02:checked ~ .comBox .btnFrm li.item2 label { background: #3365b1; color: #fff; }
+    #ra03:checked ~ .comBox .btnFrm li.item3 label { background: #3365b1; color: #fff; }
+        
+    .comTit { text-align: center; color: #fff; text-shadow: -1px -1px 2px #999, 1px 1px 2px #333; font-family: 'Gugi', cursive; }
     
-    .slideBox { overflow: hidden; background: rgba(255, 255, 255, 0.6); }
-    .slideBox .slide li { width: 12.5%; height: 100%; float: left; }
-    .slide li .slide_img { display: block; width: 80%; height: 80%; margin: 0 auto; margin-top: 10%; background-repeat: no-repeat;  background-size: cover; background-position: center center; cursor: pointer; }
+    .btnFrm li { width: 33.33333333%; float: left; list-style: none; }
+    .btnFrm label { display: block; width: 100%; text-align: center; border-top: 1px solid #3365b1; border-bottom: 1px solid #3365b1; border-right: 1px solid #3365b1; transition: 0.8s; transition-delay: 0.2s; }
+    .btnFrm li.item1 label { border-left: 1px solid #3365b1; }
+    
+    .img_wrap { background-repeat: no-repeat; background-position: center center; background-size: cover; }
+    .imgBox.item1 .slide li.item1 .img_wrap { background-image: url("./img/port-res1.png"); }
+    .imgBox.item1 .slide li.item2 .img_wrap { background-image: url("./img/port-res2.png"); }
+    .imgBox.item1 .slide li.item3 .img_wrap { background-image: url("./img/port-res3.png"); }
+    .imgBox.item1 .slide li.item4 .img_wrap { background-image: url("./img/port-res4.png"); }
+    .imgBox.item1 .slide li.item5 .img_wrap { background-image: url("./img/port-res5.png"); }
         
-    .slide li.item1 .slide_img { background-image: url("./img/working_img1.png"); }
-    .slide li.item2 .slide_img { background-image: url("./img/working_img2.png"); }
-    .slide li.item3 .slide_img { background-image: url("./img/working_img3.png"); }
-    .slide li.item4 .slide_img { background-image: url("./img/working_img4.png"); }
-    .slide li.item5 .slide_img { background-image: url("./img/working_img5.png"); }
-    .slide li.item6 .slide_img { background-image: url("./img/working_img6.png"); }
-    .slide li.item7 .slide_img { background-image: url("./img/working_img7.png"); }
-    .slide li.item8 .slide_img { background-image: url("./img/working_img8.png"); }
+    .imgBox.item2 .slide2 li.item1 .img_wrap { background-image: url("./img/port-mobile1.png"); }
+    .imgBox.item2 .slide2 li.item2 .img_wrap { background-image: url("./img/port-mobile2.png"); }
+    .imgBox.item2 .slide2 li.item3 .img_wrap { background-image: url("./img/port-mobile3.png"); }
+    .imgBox.item2 .slide2 li.item4 .img_wrap { background-image: url("./img/port-mobile4.png"); }
+    .imgBox.item2 .slide2 li.item5 .img_wrap { background-image: url("./img/port-mobile5.png"); }
+    .imgBox.item2 .slide2 li.item6 .img_wrap { background-image: url("./img/port-mobile6.png"); }
+    .imgBox.item2 .slide2 li.item7 .img_wrap { background-image: url("./img/port-mobile7.png"); }
+    .imgBox.item2 .slide2 li.item8 .img_wrap { background-image: url("./img/port-mobile8.png"); }
         
-    .imgBox { width: 100%; position: relative; }
-    .imgBox li { width: 100%; height: 100%; position: absolute; top: 0; left: 0; transition-duration: 0.8s; transition-delay: 0.1s; opacity: 0; transition-timing-function: ease; background: #bdcce4; }
-    .imgBox li.on { opacity: 1; left: 0; z-index: 20; }
-    .imgBox li a { display: block; width: 80%; margin: 0 auto; overflow: hidden; position: relative; }
-    .imgBox li a img { width: 100%; }
-    .imgBox li a .cover { width: 100%; height: 100%; background: rgba(0, 0, 0, 0.4); position: absolute; top: 0; left: 0; }
-    .imgBox li a .cover .cover_com { text-align: center; width: 100px; margin: 0 auto; height: 40px; line-height: 40px; background: transparent; color: #fff; border: 1px solid #fff; cursor: pointer; transition: 0.8s; transition-delay: 0.2s; }
-    .imgBox li:hover .cover .cover_com { background: #fff; color: #3365b1; }
+    .imgBox.item3 .slide3 li.item1 .img_wrap { background-image: url("./img/port-desk4.png"); }
+    .imgBox.item3 .slide3 li.item2 .img_wrap { background-image: url("./img/port-desk2.png"); }
+    .imgBox.item3 .slide3 li.item3 .img_wrap { background-image: url("./img/port-desk3.png"); }
+    .imgBox.item3 .slide3 li.item4 .img_wrap { background-image: url("./img/port-desk1.png"); }
+    
+    .slideTit { text-align: center; font-weight: 600; }
+    .slideCom li { width: 100%; clear: both }
+    .linkBox a { display: block; width: calc(48% - 2px); float: left; text-align: center; color: #3365b1; border: 1px solid #3365b1; transition: 0.8s; transition-delay: 0.2s; }
+    .linkBox a:first-child { margin-right: 4%; }
+    .linkBox a:hover { background: #3365b1; color: #fff; }
         
-    .numBox { width: 100px; margin: 0 auto; position: relative; }
-    .numBox p { float: left; }
-    .numBox p:last-child { float: right; }
-    .numBox span { width: 20px; height: 2px; background: #fff; position: absolute; left: calc(calc(100% - 20px) / 2); top: calc(calc(100% - 2px) / 2); }
-    .tit { text-align: center; color: #fff; word-break: keep-all; font-weight: 400; }
-        
-    .btnBox { width: 90px; margin: 0 auto; height: 40px; }
-    .btnBox li { width: 40px; height: 40px; float: left; position: relative; }
-    .btnBox li.item2 { float: right; }
-    .btnBox li button { width: 40px; height: 40px; background-color: transparent; border: 1px solid #fff; border-radius: 40px; display: block; cursor: pointer; transition: 0.8s; transition-delay: 0.2s; }
-    .btnBox li button span { width: 15px; height: 2px; background: #fff; position: absolute; top: 50%; left: 6.5px; transform: rotate(45deg); }
-    .btnBox li button span.item2 { transform: rotate(-45deg); left: 17.5px; }
-    .btnBox li.item2 button { transform: rotate(180deg); }
-        
-    .btnBox li button:hover { border: 1px solid #3365b1; background: #3365b1; }
-        
-    .slideTit { position: absolute; color: #fff; text-shadow: -1px -1px 2px #ddd, 1px 1px 2px #666; }
+    .arrowBox { width: 70px; margin: 0 auto; position: relative; height: 30px; }
+    .arrowBox li { width: 30px; height: 30px; position: absolute; }
+    .arrowBox li:first-child { left: 0; }
+    .arrowBox li:last-child { right: 0; }
+    .arrowBox li button { background-color: transparent; width: 30px; height: 30px; line-height: 30px; border: 1px solid #3365b1; border-radius: 30px; position: relative; transition: 0.8s; transition-delay: 0.2s; }
+    .arrowBox li button span { width: 12px; height: 2px; background: #3365b1; position: absolute; transition: 0.8s; transition-delay: 0.2s; }
+    .arrowBox li button span.item1 { transform: rotate(45deg); left: 4px; }
+    .arrowBox li button span.item2 { transform: rotate(-45deg); right: 4px; }
+    .arrowBox li.prev button { transform: rotate(90deg); }
+    .arrowBox li.next button { transform: rotate(-90deg); }
+    .arrowBox li:hover button { background: #3365b1; }
+    .arrowBox li:hover button span { background: #fff; }
         
     @media screen and (max-width: 767px) {
+        
+        .desk { display: none; }
         
         .hd { height: 60px; }
         .hdWrap { width: 90%; margin: 0 auto; height: 60px; position: relative; }
@@ -136,23 +158,34 @@
         .title { padding-top: 0; font-size: 1rem; }
         .lstBox { margin-top: 10px; }
         
-        .page_title { font-size: 1.5rem; letter-spacing: 1vw; padding-top: 5%; }
+        .comBox { width: 90%; margin: 0 auto; height: 20%; margin-top: 5%; }
+        .subBox { width: 90%; margin: 0 auto; margin-top: 5%; height: 70%; }
         
-        .contents { width: 90%; margin: 0 auto; height: calc(calc(100% - 60px) - 30%); overflow: hidden; margin-top: 10%; }
+        .comTit { width: 60%; margin: 0 auto; letter-spacing: 2vw; padding-top: calc(calc(25% - 40px) / 2); }
+        .btnFrm { width: 80%; margin: 0 auto; height: 30px; line-height: 30px; font-size: 0.8rem; margin-top: 2vh; }
         
-        .slideBox { width: 100%; height: 20%; }
-        .slideBox .slide { width: 266.66666666%; height: 100%; }
-        .imgBox { height: 38vh; margin-top: calc(calc(100% - 80vw) / 2); }
-        .imgBox li a { height: 41vw; }
-        .imgBox li a .cover .cover_com { margin-top: calc(calc(41vw - 40px) / 2); font-size: 0.8rem; }
-        .txtBox { width: 100%; height: 10vh; margin-top: 5%; }
-        .numBox { height: 5vh; }
-        .numBox p { line-height: 5vh; font-size: 0.8rem; }
-        .tit { font-size: 1.25rem; }
-        .slideTit { font-size: 1rem; margin-top: -3%; margin-left: 2vh; }
-    
+        .img_wrap { width: 80%; margin: 0 auto; height: 50vw; margin-top: 2vh; }
+        
+        .numBox { width: 80px; margin: 0 auto; position: relative; height: 20px; margin-top: 1vh; }
+        .numBox p { font-size: 0.8rem; float: left; line-height: 20px; }
+        .numBox p:last-child { float: right; }
+        .numBox span { width: 20px; height: 2px; background: #000; position: absolute; left: calc(calc(100% - 20px) / 2); top: calc(calc(100% - 2px) / 2); }
+        .slideTit { font-size: 1rem; }
+        .slideCom { width: 80%; margin: 0 auto; height: 8vh; }
+        .slideCom li { font-size: 0.7rem; height: 3vh; line-height: 3vh; }
+        .slideCom li .txt_p { color: #3365b1; width: 45%; float: left; }
+        .slideCom li .date, .slideCom li .size { width: 60%; }
+        .slideCom li:first-child { margin-top: 2vh; }
+        
+        .linkBox { width: 80%; margin: 0 auto; height: 30px; line-height: 30px; margin-top: 2vh; }
+        .linkBox a { font-size: 0.8rem; }
+        
+        .arrowBox li { top: calc(-30px - 1.5vh); }
+        
     }
     @media screen and (min-width: 768px) and (max-width: 959px) {
+        
+        .desk { display: none; }
         
         .hd { height: 100px; background: rgba(255, 255, 255, 0.6); }
         .hdWrap { width: 70%; margin: 0 auto; height: 100px; position: relative; }
@@ -165,24 +198,36 @@
         .lstBox { margin-top: 30px; }
         .sub li a { font-size: 0.8rem; }
         
-        .container { height: calc(100% - 100px); padding-top: 100px; }
-        .page_title { font-size: 1.8rem; letter-spacing: 1vw; padding-top: 5%; }
+        .container { width: 100%; height: calc(100% - 100px); padding-top: 100px; background: #bdcce4; }
         
-        .contents { width: 90%; margin: 0 auto; height: calc(calc(100% - 60px) - 30%); overflow: hidden; margin-top: 5%; }
+        .comBox { width: 90%; margin: 0 auto; height: 20%; margin-top: 3%; }
+        .subBox { width: 90%; margin: 0 auto; margin-top: 3%; height: 72%; }
         
-        .slideBox { width: 100%; height: 20%; }
-        .slideBox .slide { width: 266.66666666%; height: 100%; }
-        .imgBox { height: 45vh; margin-top: calc(calc(100% - 80vw) / 2); }
-        .imgBox li a { height: 40vw; }
-        .imgBox li a .cover .cover_com { margin-top: calc(calc(40vw - 40px) / 2); font-size: 1rem; width: 150px; }
-        .txtBox { width: 100%; height: 10vh; margin-top: 5%; }
-        .numBox { height: 5vh; }
-        .numBox p { line-height: 5vh; font-size: 0.8rem; }
-        .tit { font-size: 1.25rem; }
-        .slideTit { font-size: 1.5rem; margin-top: -2%; margin-left: 2vh; }
+        .comTit { width: 60%; margin: 0 auto; letter-spacing: 2vw; padding-top: calc(calc(25% - calc(30px + 2rem)) / 2); font-size: 2rem; }
+        .btnFrm { width: 60%; margin: 0 auto; height: 30px; line-height: 30px; font-size: 0.8rem; margin-top: 2vh; }
+        
+        .img_wrap { width: 80%; margin: 0 auto; height: 50vw; margin-top: 2vh; }
+        
+        .numBox { width: 80px; margin: 0 auto; position: relative; height: 20px; margin-top: 1vh; }
+        .numBox p { font-size: 0.8rem; float: left; line-height: 20px; }
+        .numBox p:last-child { float: right; }
+        .numBox span { width: 20px; height: 2px; background: #000; position: absolute; left: calc(calc(100% - 20px) / 2); top: calc(calc(100% - 2px) / 2); }
+        .slideTit { font-size: 1.5rem; }
+        .slideCom { width: 50%; margin: 0 auto; height: 8vh; }
+        .slideCom li { font-size: 0.8rem; height: 3vh; line-height: 3vh; }
+        .slideCom li .txt_p { color: #3365b1; width: 45%; float: left; }
+        .slideCom li .date, .slideCom li .size { width: 60%; }
+        .slideCom li:first-child { margin-top: 2vh; }
+        
+        .linkBox { width: 60%; margin: 0 auto; height: 30px; line-height: 30px; margin-top: 2vh; }
+        .linkBox a { font-size: 0.8rem; }
+        
+        .arrowBox li { top: calc(-30px - 1.5vh); }
         
     }
     @media screen and (min-width: 960px) and (max-width: 1024px) {
+        
+        .desk { display: none; }
         
         .hd { height: 100px; background: rgba(255, 255, 255, 0.6); }
         .hdWrap { width: 800px; margin: 0 auto; height: 100px; position: relative; }
@@ -195,24 +240,37 @@
         .lstBox { margin-top: 30px; }
         .sub li a { font-size: 0.8rem; }
         
-        .container { height: calc(100% - 100px); padding-top: 100px; }
-        .page_title { font-size: 2rem; letter-spacing: 1vw; padding-top: 5%; }
+        .container { width: 100%; height: calc(100% - 100px); padding-top: 100px; background: #bdcce4; }
         
-        .contents { width: 90%; margin: 0 auto; height: calc(calc(100% - 60px) - 30%); overflow: hidden; margin-top: 5%; }
+        .comBox { width: 850px; margin: 0 auto; height: 20%; margin-top: 3%; }
+        .subBox { width: 850px; margin: 0 auto; margin-top: 3%; height: 72%; }
         
-        .slideBox { width: 100%; height: 20%; }
-        .slideBox .slide { width: 266.66666666%; height: 100%; }
-        .imgBox { height: 45vh; margin-top: calc(calc(100% - 80vw) / 2); }
-        .imgBox li a { height: 40vw; }
-        .imgBox li a .cover .cover_com { margin-top: calc(calc(40vw - 40px) / 2); font-size: 1rem; width: 150px; }
-        .txtBox { width: 100%; height: 10vh; margin-top: 5%; }
-        .numBox { height: 5vh; }
-        .numBox p { line-height: 5vh; font-size: 0.8rem; }
-        .tit { font-size: 1.25rem; }
-        .slideTit { font-size: 1.8rem; margin-top: -2%; margin-left: 2vh; }
+        .comTit { width: 60%; margin: 0 auto; letter-spacing: 2vw; padding-top: calc(calc(25% - calc(30px + 2rem)) / 2); font-size: 2rem; }
+        .btnFrm { width: 60%; margin: 0 auto; height: 30px; line-height: 30px; font-size: 0.8rem; margin-top: 2vh; }
+    
+        .img_wrap { width: 80%; margin: 0 auto; height: 50vw; margin-top: 2vh; }
+        
+        .numBox { width: 80px; margin: 0 auto; position: relative; height: 20px; margin-top: 1vh; }
+        .numBox p { font-size: 0.8rem; float: left; line-height: 20px; }
+        .numBox p:last-child { float: right; }
+        .numBox span { width: 20px; height: 2px; background: #000; position: absolute; left: calc(calc(100% - 20px) / 2); top: calc(calc(100% - 2px) / 2); }
+        .slideTit { font-size: 1.5rem; }
+        .slideCom { width: 50%; margin: 0 auto; height: 8vh; }
+        .slideCom li { font-size: 0.8rem; height: 3vh; line-height: 3vh; }
+        .slideCom li .txt_p { color: #3365b1; width: 45%; float: left; }
+        .slideCom li .date, .slideCom li .size { width: 60%; }
+        .slideCom li:first-child { margin-top: 2vh; }
+        
+        .linkBox { width: 60%; margin: 0 auto; height: 30px; line-height: 30px; margin-top: 2vh; }
+        .linkBox a { font-size: 0.8rem; }
+        
+        .arrowBox li { top: calc(-30px - 1.5vh); }
         
     }
     @media screen and (min-width: 1025px) {
+        
+        .desk { display: block; }
+        
         .hd { height: 100px; background: rgba(255, 255, 255, 0.6); }
         .hdWrap { width: 40%; margin: 0 auto; height: 100px; position: relative; }
         
@@ -227,75 +285,517 @@
         .sub li { height: 40px; }
         .sub li a { height: 40px; line-height: 40px; font-size: 1rem; }
         
-        .container { height: calc(100% - 100px); padding-top: 100px; }
-        .page_title { font-size: 2rem; letter-spacing: 0.5vw; padding-top: 2%; }
+        .container { width: 100%; height: calc(100% - 100px); padding-top: 100px; background: #bdcce4; }
         
-        .contents { width: 70%; margin: 0 auto; height: calc(calc(100% - 100px) - 35%); overflow: hidden; margin-top: 2%; }
+        .comBox { width: 40%; float: left; height: calc(100% - 200px); margin-top: 100px; margin-left: 9%; }
+        .subBox { width: 40%; float: right; height: calc(100% - 200px); margin-top: 100px; margin-right: 9%; }
         
-        .slideBox { width: 100%; height: 20%; }
-        .slideBox .slide { width: 266.66666666%; height: 100%; }
-        .imgBox { width: 100%; height: 80%; }
-        .imgBox li a { height: auto; margin: 0; width: 50%; float: left; }
-        .imgBox li a .cover { opacity: 0; transition: 0.8s; transition-delay: 0.2s; }
-        .imgBox li a:hover .cover { opacity: 1; }
-        .imgBox li:hover .cover .cover_com { background: transparent; color: #fff; border: 1px solid #fff; }
-        .imgBox li a .cover .cover_com:hover { background: #fff; color: #3365b1; }
-        .imgBox li a .cover .cover_com { font-size: 1rem; width: 150px; margin-top: calc(calc(60% - 40px) / 2); }
-        .txtBox { width: 50%; height: 10vh; margin-top: 10%; float: right; }
-        .numBox { height: 5vh; }
-        .numBox p { line-height: 5vh; font-size: 0.8rem; }
-        .btnBox { width: 50%; float: right; position: relative; margin-top: -5vw; }
-        .btnBox li { position: absolute; z-index: 50; }
-        .btnBox li.item1 { left: calc(calc(100% - 90px) / 2); }
-        .btnBox li.item2 { right: calc(calc(100% - 90px) / 2); }
-        .tit { font-size: 1.25rem; }
-        .slideBox { height: 30%; }
-        .slideBox .slide { width: 200%; }
-        .slideBox .slide .slide_img { margin-top: 5%; }
-        .slideTit { font-size: 1.8rem; margin-top: -1%; margin-left: 10vw; }
+        .comTit { width: 60%; margin: 0 auto; letter-spacing: 2vw; padding-top: calc(calc(25% - calc(30px + 2rem)) / 2); font-size: 2rem; }
+        .btnFrm { width: 60%; margin: 0 auto; height: 30px; line-height: 30px; font-size: 0.8rem; margin-top: 2vh; }
+    
+        .img_wrap { width: 80%; margin: 0 auto; height: 20vw; margin-top: 2vh; }
+        
+        .numBox { width: 80px; margin: 0 auto; position: relative; height: 20px; margin-top: 1vh; }
+        .numBox p { font-size: 0.8rem; float: left; line-height: 20px; }
+        .numBox p:last-child { float: right; }
+        .numBox span { width: 20px; height: 2px; background: #000; position: absolute; left: calc(calc(100% - 20px) / 2); top: calc(calc(100% - 2px) / 2); }
+        .slideTit { font-size: 1.5rem; }
+        .slideCom { width: 50%; margin: 0 auto; height: 8vh; }
+        .slideCom li { font-size: 0.8rem; height: 3vh; line-height: 3vh; }
+        .slideCom li .txt_p { color: #3365b1; width: 45%; float: left; }
+        .slideCom li .date, .slideCom li .size { width: 60%; }
+        .slideCom li:first-child { margin-top: 2vh; }
+        
+        .linkBox { width: 60%; margin: 0 auto; height: 30px; line-height: 30px; margin-top: 2vh; }
+        .linkBox a { font-size: 0.8rem; }
+        
+        .arrowBox li { top: calc(-30px - 1.5vh); }
+        
+        .contact { width: 100%; height: calc(100% - 15vw); overflow: hidden; margin-top: 2vh; }
+        .contact_title { text-align: center; font-size: 1.5rem; letter-spacing: 0.5vw; margin-bottom: 0.5vw; }
+        .contact_comment { text-align: center; font-size: 0.8rem; margin-bottom: 0.5vw; }
+        #reply_writer { height: 30px; line-height: 30px; padding-left: 0.5vw; }
+        #reply_password { height: 30px; line-height: 30px; padding-left: 0.5vw; margin-left: 0.5vw; }
+        #reply_save { background: #3365b1; color: #fff; display: block; width: 5vw; height: 30px; line-height: 30px; float: right; }
+        #reply_content { width: 100%; border: 0; padding-top: 1vw; margin-top: 0.5vw; }
+        button { background: #3365b1; color: #fff; }
     }
         
     </style>
 
     <script>
     $(document).ready(function(){
-//        var wd2 = $(".contents").width();
-//        var cnt = 0;
-//        var len2 = $(".imgBox li").length;
-//        var intv2 = setInterval(function(){
-//            nextAni2();    
-//        }, 4000);
-//        
-//        function nextAni2(){
-//            $(".imgBox li").removeClass("on");
-//            cnt++;
-//            if(cnt >= len2){
-//                cnt = 0; 
-//            }
-//            $(".imgBox li").eq(cnt).addClass("on");
-//        }
-//        function prevAni2(){
-//            $(".imgBox li").removeClass("on");
-//            cnt--;
-//            if(cnt < 0){
-//                cnt = len2 - 1;
-//            }
-//            $(".imgBox li").eq(cnt).addClass("on");
-//        }
-//        $(".btnBox li.item1 button").click(function(){
-//            clearInterval(intv2);
-//            nextAni2();
-//            intv2 = setInterval(function(){
-//                nextAni2();    
-//            }, 4000);
-//        });
-//        $(".btnBox li.item2 button").click(function(){
-//            clearInterval(intv2);
-//            prevAni2();
-//            intv2 = setInterval(function(){
-//                prevAni2();    
-//            }, 4000);
-//        });
+        var wd = $(".imgBox").width();
+        var len = $(".slide li").length;
+        var len2 = $(".slide2 li").length;
+        var len3 = $(".slide3 li").length;
+        var intv = setInterval(function(){
+            nextAni();    
+        }, 4000);
+        var intv2 = setInterval(function(){
+            nextAni2();    
+        }, 4000);
+        var intv3 = setInterval(function(){
+            nextAni3();    
+        }, 4000);
+        
+        function nextAni(){
+            $(".slide").not(":animated").animate({"margin-left": -wd+"px"}, 1000, function(){
+                $(".slide li").eq(0).appendTo($(".slide"));
+                $(".slide").css("margin-left", "0px");
+            });
+        }
+        function nextAni2(){
+            $(".slide2").not(":animated").animate({"margin-left": -wd+"px"}, 1000, function(){
+                $(".slide2 li").eq(0).appendTo($(".slide2"));
+                $(".slide2").css("margin-left", "0px");
+            });
+        }
+        function nextAni3(){
+            $(".slide3").not(":animated").animate({"margin-left": -wd+"px"}, 1000, function(){
+                $(".slide3 li").eq(0).appendTo($(".slide3"));
+                $(".slide3").css("margin-left", "0px");
+            });
+        }
+        function prevAni(){
+            $(".slide li").eq(len).prependTo($(".slide"));
+            $(".slide").css("margin-left", -wd+"px");
+            $(".slide").not(":animated").animate({"margin-left": "0px"}, 1000);
+        }
+        function prevAni2(){
+            $(".slide2 li").eq(len2).prependTo($(".slide2"));
+            $(".slide2").css("margin-left", -wd+"px");
+            $(".slide2").not(":animated").animate({"margin-left": "0px"}, 1000);
+        }
+        function prevAni3(){
+            $(".slide3 li").eq(len3).prependTo($(".slide3"));
+            $(".slide3").css("margin-left", -wd+"px");
+            $(".slide3").not(":animated").animate({"margin-left": "0px"}, 1000);
+        }
+        $(".imgBox.item1 .arrowBox li.prev button").click(function(){
+            clearInterval();
+            prevAni();  
+            intv = setInterval(function(){
+                nextAni();
+            }, 4000);
+        });
+        $(".imgBox.item1 .arrowBox li.next button").click(function(){
+            clearInterval();
+            nextAni();
+            intv = setInterval(function(){
+                nextAni();
+            }, 4000);
+        });
+        $(".imgBox.item2 .arrowBox li.prev button").click(function(){
+            clearInterval();
+            prevAni2();  
+            intv2 = setInterval(function(){
+                nextAni2();
+            }, 4000);
+        });
+        $(".imgBox.item2 .arrowBox li.next button").click(function(){
+            clearInterval();
+            nextAni2();
+            intv2 = setInterval(function(){
+                nextAni2();
+            }, 4000);
+        });
+        $(".imgBox.item3 .arrowBox li.prev button").click(function(){
+            clearInterval();
+            prevAni3(); 
+            intv3 = setInterval(function(){
+                nextAni3();
+            }, 4000);
+        });
+        $(".imgBox.item3 .arrowBox li.next button").click(function(){
+            clearInterval();
+            nextAni3();
+            intv3 = setInterval(function(){
+                nextAni3();
+            }, 4000);
+        });
+    });
+    </script>
+    <script>
+    $(document).ready(function(){
+        var reply_count = 0; 
+        var status = false; 
+        $("#list").click(function(){
+            alert("게시판 리스트로 이동");
+        });
+        $("#reply_save").click(function(){
+            if($("#reply_writer").val().trim() == ""){
+                alert("이름을 입력하세요.");
+                $("#reply_writer").focus();
+                return false;
+            }
+            if($("#reply_password").val().trim() == ""){
+                alert("패스워드를 입력하세요.");
+                $("#reply_password").focus();
+                return false;
+            }
+            if($("#reply_content").val().trim() == ""){
+                alert("내용을 입력하세요.");
+                $("#reply_content").focus();
+                return false;
+            }
+            var reply_content = $("#reply_content").val().replace("\n", "<br>"); 
+            var objParams = {
+                    board_id        : $("#board_id").val(),
+                    parent_id       : "0",  
+                    depth           : "0",
+                    reply_writer    : $("#reply_writer").val(),
+                    reply_password  : $("#reply_password").val(),
+                    reply_content   : reply_content
+            };
+            var reply_id;
+            reply_id = reply_count++;
+            var reply_area = $("#reply_area");
+            var reply = 
+                '<tr reply_type="main" style="background:#fff;height:30px;line-height:30px;margin-top:1vw;">'+
+                '   <td width="40%">'+
+                reply_content+
+                '   </td>'+
+                '   <td width="20%">'+
+                $("#reply_writer").val()+
+                '   </td>'+
+                '   <td width="20%">'+
+                '       <input type="password" id="reply_password_'+reply_id+'" style="width:100%;" maxlength="10" placeholder="비밀번호 입력"/>'+
+                '   </td>'+
+                '   <td align="center" style="width:20%">'+
+                '       <button name="reply_reply" reply_id = "'+reply_id+'" style="display:block;float:left;width:30%;height30px;line-height:30px;paddinig:0.5vw 1vw;margin-right:5%;">댓글</button>'+
+                '       <button name="reply_modify" r_type = "main" reply_id = "'+reply_id+'" style="display:block;float:left;width:30%;height30px;line-height:30px;paddinig:0.5vw 1vw;margin-right:5%;">수정</button>      '+
+                '       <button name="reply_del" reply_id = "'+reply_id+'" style="display:block;float:left;width:30%;height30px;line-height:30px;paddinig:0.5vw 1vw">삭제</button>      '+
+                '   </td>'+
+                '</tr>';
+             if($('#reply_area').contents().size()==0){
+                 $('#reply_area').append(reply);
+             }else{
+                 $('#reply_area tr:last').after(reply);
+             }
+            $("#reply_writer").val("");
+            $("#reply_password").val("");
+            $("#reply_content").val("");
+        });
+        $(document).on("click","button[name='reply_del']", function(){
+            var check = false;
+            var reply_id = $(this).attr("reply_id");
+            var reply_password = "reply_password_"+reply_id;
+            if($("#"+reply_password).val().trim() == ""){
+                alert("패스워드을 입력하세요.");
+                $("#"+reply_password).focus();
+                return false;
+            }
+            var objParams = {
+                    reply_password  : $("#"+reply_password).val(),
+                    reply_id        : reply_id
+            };
+            check = true;
+            if(check){
+                var prevTr = $(this).parent().parent().next(); 
+                while(prevTr.attr("reply_type")=="sub"){
+                    prevTr = prevTr.next();
+                    prevTr.prev().remove();
+                }
+                if(prevTr.attr("reply_type") == undefined){
+                    prevTr = $(this).parent().parent();
+                    prevTr.remove();
+                }
+                $(this).parent().parent().remove(); 
+            }
+        });
+        $(document).on("click","button[name='reply_modify']", function(){
+            var check = false;
+            var reply_id = $(this).attr("reply_id");
+            var r_type = $(this).attr("r_type");
+            var reply_password = "reply_password_"+reply_id;
+            if($("#"+reply_password).val().trim() == ""){
+                alert("패스워드을 입력하세요.");
+                $("#"+reply_password).focus();
+                return false;
+            }
+            var objParams = {
+                    reply_password  : $("#"+reply_password).val(),
+                    reply_id        : reply_id
+            };
+            check = true;
+            if(status){
+                alert("수정과 대댓글은 동시에 불가합니다.");
+                return false;
+            }
+            if(check){
+                status = true;
+                var txt_reply_content = $(this).parent().prev().prev().prev().html().trim(); 
+                if(r_type=="sub"){
+                    txt_reply_content = txt_reply_content.replace("→ ","");
+                }
+                var txt_reply_writer = $(this).parent().prev().prev().html().trim(); 
+                var replyEditor = 
+                   '<tr id="reply_add" class="reply_modify">'+
+                   '   <td width="820px">'+
+                   '       <textarea name="reply_modify_content_'+reply_id+'" id="reply_modify_content_'+reply_id+'" rows="3" cols="50">'+txt_reply_content+'</textarea>'+
+                   '   </td>'+
+                   '   <td width="100px">'+
+                   '       <input type="text" name="reply_modify_writer_'+reply_id+'" id="reply_modify_writer_'+reply_id+'" style="width:100%;" maxlength="10" placeholder="작성자" value="'+txt_reply_writer+'"/>'+
+                   '   </td>'+
+                   '   <td width="100px">'+
+                   '       <input type="password" name="reply_modify_password_'+reply_id+'" id="reply_modify_password_'+reply_id+'" style="width:100%;" maxlength="10" placeholder="패스워드"/>'+
+                   '   </td>'+
+                   '   <td align="center">'+
+                   '       <button name="reply_modify_save" r_type = "'+r_type+'" reply_id="'+reply_id+'">등록</button>'+
+                   '       <button name="reply_modify_cancel" r_type = "'+r_type+'" r_content = "'+txt_reply_content+'" r_writer = "'+txt_reply_writer+'" reply_id="'+reply_id+'">취소</button>'+
+                   '   </td>'+
+                   '</tr>';
+                var prevTr = $(this).parent().parent();
+                prevTr.after(replyEditor);
+                $(this).parent().parent().remove(); 
+            }
+        }); $(document).on("click","button[name='reply_modify_cancel']", function(){
+            var r_type = $(this).attr("r_type");
+            var r_content = $(this).attr("r_content");
+            var r_writer = $(this).attr("r_writer");
+            var reply_id = $(this).attr("reply_id");
+            var reply;
+            if(r_type=="main"){
+                reply = 
+                    '<tr reply_type="main">'+
+                    '   <td width="820px">'+
+                    r_content+
+                    '   </td>'+
+                    '   <td width="100px">'+
+                    r_writer+
+                    '   </td>'+
+                    '   <td width="100px">'+
+                    '       <input type="password" id="reply_password_'+reply_id+'" style="width:100px;" maxlength="10" placeholder="패스워드"/>'+
+                    '   </td>'+
+                    '   <td align="center">'+
+                    '       <button name="reply_reply" reply_id = "'+reply_id+'">댓글</button>'+
+                    '       <button name="reply_modify" r_type = "main" reply_id = "'+reply_id+'">수정</button>      '+
+                    '       <button name="reply_del" reply_id = "'+reply_id+'">삭제</button>      '+
+                    '   </td>'+
+                    '</tr>';
+            }else{
+                reply = 
+                    '<tr reply_type="sub">'+
+                    '   <td width="820px"> → '+
+                    r_content+
+                    '   </td>'+
+                    '   <td width="100px">'+
+                    r_writer+
+                    '   </td>'+
+                    '   <td width="100px">'+
+                    '       <input type="password" id="reply_password_'+reply_id+'" style="width:100px;" maxlength="10" placeholder="패스워드"/>'+
+                    '   </td>'+
+                    '   <td align="center">'+
+                    '       <button name="reply_modify" r_type = "sub" reply_id = "'+reply_id+'">수정</button>'+
+                    '       <button name="reply_del" reply_id = "'+reply_id+'">삭제</button>'+
+                    '   </td>'+
+                    '</tr>';
+            }
+            var prevTr = $(this).parent().parent();
+            prevTr.after(reply);
+            $(this).parent().parent().remove(); 
+            status = false;
+        });
+        $(document).on("click","button[name='reply_modify_save']", function(){
+            var reply_id = $(this).attr("reply_id");
+            if($("#reply_modify_writer_"+reply_id).val().trim() == ""){
+                alert("이름을 입력하세요.");
+                $("#reply_modify_writer_"+reply_id).focus();
+                return false;
+            }
+            if($("#reply_modify_password_"+reply_id).val().trim() == ""){
+                alert("패스워드를 입력하세요.");
+                $("#reply_modify_password_"+reply_id).focus();
+                return false;
+            }
+            if($("#reply_modify_content_"+reply_id).val().trim() == ""){
+                alert("내용을 입력하세요.");
+                $("#reply_modify_content_"+reply_id).focus();
+                return false;
+            }
+            var reply_content = $("#reply_modify_content_"+reply_id).val().replace("\n", "<br>"); 
+            var r_type = $(this).attr("r_type");
+            var parent_id;
+            var depth;
+            if(r_type=="main"){
+                parent_id = "0";
+                depth = "0";
+            }else{
+                parent_id = $(this).attr("reply_id");
+                depth = "1";
+            }
+            var objParams = {
+                    board_id        : $("#board_id").val(),
+                    parent_id       : parent_id, 
+                    depth           : depth,
+                    reply_writer    : $("#reply_modify_writer_"+reply_id).val(),
+                    reply_password  : $("#reply_modify_password_"+reply_id).val(),
+                    reply_content   : reply_content
+            };
+            if(r_type=="main"){
+                reply = 
+                    '<tr reply_type="main">'+
+                    '   <td width="820px">'+
+                    $("#reply_modify_content_"+reply_id).val()+
+                    '   </td>'+
+                    '   <td width="100px">'+
+                    $("#reply_modify_writer_"+reply_id).val()+
+                    '   </td>'+
+                    '   <td width="100px">'+
+                    '       <input type="password" id="reply_password_'+reply_id+'" style="width:100px;" maxlength="10" placeholder="패스워드"/>'+
+                    '   </td>'+
+                    '   <td align="center">'+
+                    '       <button name="reply_reply" reply_id = "'+reply_id+'">댓글</button>'+
+                    '       <button name="reply_modify" r_type = "main" reply_id = "'+reply_id+'">수정</button>      '+
+                    '       <button name="reply_del" reply_id = "'+reply_id+'">삭제</button>      '+
+                    '   </td>'+
+                    '</tr>';
+            }else{
+                reply = 
+                    '<tr reply_type="sub">'+
+                    '   <td width="820px"> → '+
+                    $("#reply_modify_content_"+reply_id).val()+
+                    '   </td>'+
+                    '   <td width="100px">'+
+                    $("#reply_modify_writer_"+reply_id).val()+
+                    '   </td>'+
+                    '   <td width="100px">'+
+                    '       <input type="password" id="reply_password_'+reply_id+'" style="width:100px;" maxlength="10" placeholder="패스워드"/>'+
+                    '   </td>'+
+                    '   <td align="center">'+
+                    '       <button name="reply_modify" r_type = "sub" reply_id = "'+reply_id+'">수정</button>'+
+                    '       <button name="reply_del" reply_id = "'+reply_id+'">삭제</button>'+
+                    '   </td>'+
+                    '</tr>';
+            }
+            var prevTr = $(this).parent().parent();
+            prevTr.after(reply);
+            $(this).parent().parent().remove(); 
+            status = false;
+        }); $(document).on("click","button[name='reply_reply']",function(){ 
+            if(status){
+                alert("수정과 대댓글은 동시에 불가합니다.");
+                return false;
+            }
+            status = true;
+            $("#reply_add").remove();
+            var reply_id = $(this).attr("reply_id");
+            var last_check = false;
+            var replyEditor = 
+               '<tr id="reply_add" class="reply_reply">'+
+               '   <td width="820px">'+
+               '       <textarea name="reply_reply_content" rows="3" cols="50"></textarea>'+
+               '   </td>'+
+               '   <td width="100px">'+
+               '       <input type="text" name="reply_reply_writer" style="width:100%;" maxlength="10" placeholder="작성자"/>'+
+               '   </td>'+
+               '   <td width="100px">'+
+               '       <input type="password" name="reply_reply_password" style="width:100%;" maxlength="10" placeholder="패스워드"/>'+
+               '   </td>'+
+               '   <td align="center">'+
+               '       <button name="reply_reply_save" reply_id="'+reply_id+'">등록</button>'+
+               '       <button name="reply_reply_cancel">취소</button>'+
+               '   </td>'+
+               '</tr>';
+            var prevTr = $(this).parent().parent().next();
+            if(prevTr.attr("reply_type") == undefined){
+                prevTr = $(this).parent().parent();
+            }else{
+                while(prevTr.attr("reply_type")=="sub"){
+                    prevTr = prevTr.next();
+                }
+                if(prevTr.attr("reply_type") == undefined){
+                    last_check = true;
+                }else{
+                    prevTr = prevTr.prev();
+                }
+            }
+            if(last_check){
+                $('#reply_area tr:last').after(replyEditor); 
+            }else{
+                prevTr.after(replyEditor);
+            }
+        }); $(document).on("click","button[name='reply_reply_save']",function(){
+            var reply_reply_writer = $("input[name='reply_reply_writer']");
+            var reply_reply_password = $("input[name='reply_reply_password']");
+            var reply_reply_content = $("textarea[name='reply_reply_content']");
+            var reply_reply_content_val = reply_reply_content.val().replace("\n", "<br>");
+            if(reply_reply_writer.val().trim() == ""){
+                alert("이름을 입력하세요.");
+                reply_reply_writer.focus();
+                return false;
+            }
+            if(reply_reply_password.val().trim() == ""){
+                alert("패스워드를 입력하세요.");
+                reply_reply_password.focus();
+                return false;
+            }
+            if(reply_reply_content.val().trim() == ""){
+                alert("내용을 입력하세요.");
+                reply_reply_content.focus();
+                return false;
+            }
+            var objParams = {
+                    board_id        : $("#board_id").val(),
+                    parent_id       : $(this).attr("reply_id"), 
+                    depth           : "1",
+                    reply_writer    : reply_reply_writer.val(),
+                    reply_password  : reply_reply_password.val(),
+                    reply_content   : reply_reply_content_val
+            };
+            var reply_id;
+            reply_id = reply_count++;
+            var reply = 
+                '<tr reply_type="sub">'+
+                '   <td width="820px"> → '+
+                reply_reply_content_val+
+                '   </td>'+
+                '   <td width="100px">'+
+                reply_reply_writer.val()+
+                '   </td>'+
+                '   <td width="100px">'+
+                '       <input type="password" id="reply_password_'+reply_id+'" style="width:100px;" maxlength="10" placeholder="패스워드"/>'+
+                '   </td>'+
+                '   <td align="center">'+
+                '       <button name="reply_modify" r_type = "sub" reply_id = "'+reply_id+'">수정</button>'+
+                '       <button name="reply_del" reply_id = "'+reply_id+'">삭제</button>'+
+                '   </td>'+
+                '</tr>';
+            var prevTr = $(this).parent().parent().prev();
+            prevTr.after(reply);
+            $("#reply_add").remove();
+            status = false;
+        }); $(document).on("click","button[name='reply_reply_cancel']",function(){
+            $("#reply_add").remove();
+            status = false;
+        });
+        $("#modify").click(function(){
+            var password = $("input[name='password']");
+            if(password.val().trim() == ""){
+                alert("패스워드를 입력하세요.");
+                password.focus();
+                return false;
+            }
+            var objParams = {
+                    id       : $("#board_id").val(),
+                    password : $("#password").val()
+            };
+               alert("패스워드 체크하고 맞으면 수정페이지로 이동");
+        });
+        $("#delete").click(function(){
+            var password = $("input[name='password']");
+            if(password.val().trim() == ""){
+                alert("패스워드를 입력하세요.");
+                password.focus();
+                return false;
+            }
+            var objParams = {
+                    id       : $("#board_id").val(),
+                    password : $("#password").val()
+            };
+            alert("패스워드 체크하고 맞으면 게시글 삭제후 리스트 페이지 이동");
+        });
     });
     </script>
 </head>
@@ -339,46 +839,491 @@
     </div>
 </header>
 <div class="container">
-    <input type="radio" name="ra01" id="ra01" class="raItem">
+    <input type="radio" name="ra01" id="ra01" class="raItem" checked>
     <input type="radio" name="ra01" id="ra02" class="raItem">
     <input type="radio" name="ra01" id="ra03" class="raItem">
     <div class="comBox">
-        <div class="btnFrm"> 유형 선택
-            <ul class="btnBox">
-                <li class="item1"><label for="ra01">Responsive</label></li>
-                <li class="item2"><label for="ra02">Mobile</label></li>
-                <li class="item3"><label for="ra03">Desk</label></li>
-            </ul>    
+        <h2 class="comTit">Portfolio</h2>
+        <div class="btnFrm">
+            <li class="item1"><label for="ra01">Responsive</label></li>
+            <li class="item2"><label for="ra02">Mobile</label></li>
+            <li class="item3"><label for="ra03">Desk</label></li>
         </div>
-        <div class="aniBox">
-            
+        <div class="contact desk">
+            <h2 class="contact_title">Contact</h2>
+            <p class="contact_comment">자유롭게 메세지를 남겨주세요!</p>
+            <input type="hidden" id="board_id" name="board_id" value="${boardView.id}" />
+            <div align="center">
+                <table border="0" width="60%" cellspacing="0" cellpadding="10" bordercolor="#3365b1">
+                    <tr>
+                        <td width="100%">
+                            <input type="text" id="reply_writer" name="reply_writer" style="width:6vw;" maxlength="10" placeholder="작성자 입력"/>
+
+                            <input type="password" id="reply_password" name="reply_password" style="width:8vw;" maxlength="10" placeholder="비밀번호 입력"/>
+
+                            <button id="reply_save" name="reply_save">Submit</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <textarea id="reply_content" name="reply_content" rows="6" cols="50" placeholder="  메세지를 입력해 주세요."></textarea>
+                        </td>
+                    </tr>
+                </table> 
+                <table border="0" width="60%" cellspacing="0" cellpadding="10" id="reply_area">
+                    <tr reply_type="all">
+                        <td colspan="4"></td>
+                    </tr>
+                </table>   
+            </div>        
         </div>
     </div>
-    <div class="imgBox item1">
-        <ul class="slide">
+    <div class="subBox">
+        <div class="imgBox item1">
+            <ul class="slide">
+                <li class="item1">
+                    <div class="img_wrap"></div>
+                    <div class="numBox">
+                        <p>01</p>
+                        <span class="line"></span>
+                        <p>05</p>
+                    </div> 
+                    <h3 class="slideTit">삼육외국어학원 웹사이트 리뉴얼</h3>
+                    <ul class="slideCom">
+                        <li>
+                            <span class="txt_p">Production Reriod</span>
+                            <span class="date">2019.03.21 ~ 2019.03.27</span>
+                        </li>
+                        <li>
+                            <span class="txt_p">Optimal Size</span>
+                            <span class="size">반응형 웹사이트</span>
+                        </li> 
+                    </ul>   
+                    <div class="linkBox">
+                        <a href="http://ddsoeun.github.io/r1" class="link item1" target="_blank">사이트 둘러보기</a>
+                        <a href="designguide.html#page14" class="link item2" target="_blank">디자인가이드</a>    
+                    </div>
+                </li>
+                <li class="item2">
+                    <div class="img_wrap"></div>
+                    <div class="numBox">
+                        <p>02</p>
+                        <span class="line"></span>
+                        <p>05</p>
+                    </div> 
+                    <h3 class="slideTit">공차 웹사이트 리뉴얼</h3>
+                    <ul class="slideCom">
+                        <li>
+                            <span class="txt_p">Production Reriod</span>
+                            <span class="date">2019.03.28 ~ 2019.04.03</span>
+                        </li>
+                        <li>
+                            <span class="txt_p">Optimal Size</span>
+                            <span class="size">반응형 웹사이트</span>
+                        </li> 
+                    </ul>   
+                    <div class="linkBox">
+                        <a href="http://ddsoeun.github.io/r2" class="link item1" target="_blank">사이트 둘러보기</a>
+                        <a href="designguide.html#page15" class="link item2" target="_blank">디자인가이드</a>    
+                    </div>
+                </li>
+                <li class="item3">
+                    <div class="img_wrap"></div>
+                    <div class="numBox">
+                        <p>03</p>
+                        <span class="line"></span>
+                        <p>05</p>
+                    </div> 
+                    <h3 class="slideTit">한국색채연구소 웹사이트 리뉴얼</h3>
+                    <ul class="slideCom">
+                        <li>
+                            <span class="txt_p">Production Reriod</span>
+                            <span class="date">2019.04.04 ~ 2019.04.09</span>
+                        </li>
+                        <li>
+                            <span class="txt_p">Optimal Size</span>
+                            <span class="size">반응형 웹사이트</span>
+                        </li> 
+                    </ul>   
+                    <div class="linkBox">
+                        <a href="http://psoeun920.dothome.co.kr/r3" class="link item1" target="_blank">사이트 둘러보기</a>
+                        <a href="designguide.html#page16" class="link item2" target="_blank">디자인가이드</a>    
+                    </div>
+                </li>
+                <li class="item4">
+                    <div class="img_wrap"></div>
+                    <div class="numBox">
+                        <p>04</p>
+                        <span class="line"></span>
+                        <p>05</p>
+                    </div> 
+                    <h3 class="slideTit">비즈굿 웹사이트 리뉴얼</h3>
+                    <ul class="slideCom">
+                        <li>
+                            <span class="txt_p">Production Reriod</span>
+                            <span class="date">2018.04.10 ~ 2019.04.15</span>
+                        </li>
+                        <li>
+                            <span class="txt_p">Optimal Size</span>
+                            <span class="size">반응형 웹사이트</span>
+                        </li> 
+                    </ul>   
+                    <div class="linkBox">
+                        <a href="http://ddsoeun.github.io/r4" class="link item1" target="_blank">사이트 둘러보기</a>
+                        <a href="designguide.html#page17" class="link item2" target="_blank">디자인가이드</a>    
+                    </div>
+                </li>
+                <li class="item5">
+                    <div class="img_wrap"></div>
+                    <div class="numBox">
+                        <p>05</p>
+                        <span class="line"></span>
+                        <p>05</p>
+                    </div> 
+                    <h3 class="slideTit">환경부 웹사이트 리뉴얼</h3>
+                    <ul class="slideCom">
+                        <li>
+                            <span class="txt_p">Production Reriod</span>
+                            <span class="date">2019.03.14 ~ 2019.03.21</span>
+                        </li>
+                        <li>
+                            <span class="txt_p">Optimal Size</span>
+                            <span class="size">반응형 웹사이트</span>
+                        </li> 
+                    </ul>   
+                    <div class="linkBox">
+                        <a href="http://ddsoeun.github.io/g2" class="link item1" target="_blank">사이트 둘러보기</a>
+                        <a href="designguide.html#page5" class="link item2" target="_blank">디자인가이드</a>    
+                    </div>
+                </li>
+            </ul>
+            <ul class="arrowBox">
+                <li class="prev">
+                    <button class="btn">
+                        <span class="item1"></span>
+                        <span class="item2"></span>
+                    </button>
+                </li>
+                <li class="next">
+                    <button class="btn">
+                        <span class="item1"></span>
+                        <span class="item2"></span>
+                    </button>
+                </li>
+            </ul>
+        </div>
+        <div class="imgBox item2">
+        <ul class="slide2">
             <li class="item1">
                 <div class="img_wrap"></div>
                 <div class="numBox">
                     <p>01</p>
                     <span class="line"></span>
-                    <p>05</p>
+                    <p>08</p>
                 </div> 
-                <h3 class="slideTit"></h3>
+                <h3 class="slideTit">계룡시청 모바일 웹사이트 리뉴얼</h3>
                 <ul class="slideCom">
                     <li>
                         <span class="txt_p">Production Reriod</span>
-                        <span class="date"></span>
+                        <span class="date">2019.02.19 ~ 2019.02.22</span>
                     </li>
                     <li>
                         <span class="txt_p">Optimal Size</span>
-                        <span class="size"></span>
+                        <span class="size">375 X 812 외 다수</span>
                     </li> 
                 </ul>   
                 <div class="linkBox">
-                    
+                    <a href="http://ddsoeun.github.io/m1" class="link item1" target="_blank">사이트 둘러보기</a>
+                    <a href="designguide.html#page6" class="link item2" target="_blank">디자인가이드</a>    
+                </div>
+            </li>
+            <li class="item2">
+                <div class="img_wrap"></div>
+                <div class="numBox">
+                    <p>02</p>
+                    <span class="line"></span>
+                    <p>08</p>
+                </div> 
+                <h3 class="slideTit">하나투어 모바일 웹사이트 리뉴얼</h3>
+                <ul class="slideCom">
+                    <li>
+                        <span class="txt_p">Production Reriod</span>
+                        <span class="date">2019.02.25 ~ 2019.02.27</span>
+                    </li>
+                    <li>
+                        <span class="txt_p">Optimal Size</span>
+                        <span class="size">375 X 812 외 다수</span>
+                    </li> 
+                </ul>   
+                <div class="linkBox">
+                    <a href="http://ddsoeun.github.io/m2" class="link item1" target="_blank">사이트 둘러보기</a>
+                    <a href="designguide.html#page7" class="link item2" target="_blank">디자인가이드</a>    
+                </div>
+            </li>
+            <li class="item3">
+                <div class="img_wrap"></div>
+                <div class="numBox">
+                    <p>03</p>
+                    <span class="line"></span>
+                    <p>08</p>
+                </div> 
+                <h3 class="slideTit">크리스탈 모바일 웹사이트 제작</h3>
+                <ul class="slideCom">
+                    <li>
+                        <span class="txt_p">Production Reriod</span>
+                        <span class="date">2019.02.27 ~ 2019.02.28</span>
+                    </li>
+                    <li>
+                        <span class="txt_p">Optimal Size</span>
+                        <span class="size">375 X 812 외 다수</span>
+                    </li> 
+                </ul>   
+                <div class="linkBox">
+                    <a href="http://ddsoeun.github.io/m3" class="link item1" target="_blank">사이트 둘러보기</a>
+                    <a href="designguide.html#page8" class="link item2" target="_blank">디자인가이드</a>    
+                </div>
+            </li>
+            <li class="item4">
+                <div class="img_wrap"></div>
+                <div class="numBox">
+                    <p>04</p>
+                    <span class="line"></span>
+                    <p>08</p>
+                </div> 
+                <h3 class="slideTit">클리오 모바일 웹사이트 리뉴얼</h3>
+                <ul class="slideCom">
+                    <li>
+                        <span class="txt_p">Production Reriod</span>
+                        <span class="date">2019.03.04 ~ 2019.03.05</span>
+                    </li>
+                    <li>
+                        <span class="txt_p">Optimal Size</span>
+                        <span class="size">375 X 812 외 다수</span>
+                    </li> 
+                </ul>   
+                <div class="linkBox">
+                    <a href="http://ddsoeun.github.io/m4" class="link item1" target="_blank">사이트 둘러보기</a>
+                    <a href="designguide.html#page9" class="link item2" target="_blank">디자인가이드</a>    
+                </div>
+            </li>
+            <li class="item5">
+                <div class="img_wrap"></div>
+                <div class="numBox">
+                    <p>05</p>
+                    <span class="line"></span>
+                    <p>08</p>
+                </div> 
+                <h3 class="slideTit">Marvel 모바일 웹사이트 제작</h3>
+                <ul class="slideCom">
+                    <li>
+                        <span class="txt_p">Production Reriod</span>
+                        <span class="date">2019.03.06 ~ 2019.03.07</span>
+                    </li>
+                    <li>
+                        <span class="txt_p">Optimal Size</span>
+                        <span class="size">375 X 812 외 다수</span>
+                    </li> 
+                </ul>   
+                <div class="linkBox">
+                    <a href="http://ddsoeun.github.io/m5" class="link item1" target="_blank">사이트 둘러보기</a>
+                    <a href="designguide.html#page10" class="link item2" target="_blank">디자인가이드</a>    
+                </div>
+            </li>
+            <li class="item6">
+                <div class="img_wrap"></div>
+                <div class="numBox">
+                    <p>06</p>
+                    <span class="line"></span>
+                    <p>08</p>
+                </div> 
+                <h3 class="slideTit">스파오 모바일 웹사이트 리뉴얼</h3>
+                <ul class="slideCom">
+                    <li>
+                        <span class="txt_p">Production Reriod</span>
+                        <span class="date">2019.03.06 ~ 2019.03.08</span>
+                    </li>
+                    <li>
+                        <span class="txt_p">Optimal Size</span>
+                        <span class="size">375 X 812 외 다수</span>
+                    </li> 
+                </ul>   
+                <div class="linkBox">
+                    <a href="http://ddsoeun.github.io/m6" class="link item1" target="_blank">사이트 둘러보기</a>
+                    <a href="designguide.html#page11" class="link item2" target="_blank">디자인가이드</a>    
+                </div>
+            </li>
+            <li class="item7">
+                <div class="img_wrap"></div>
+                <div class="numBox">
+                    <p>07</p>
+                    <span class="line"></span>
+                    <p>08</p>
+                </div> 
+                <h3 class="slideTit">고양이 커뮤니티 모바일 웹사이트 제작</h3>
+                <ul class="slideCom">
+                    <li>
+                        <span class="txt_p">Production Reriod</span>
+                        <span class="date">2019.03.07 ~ 2019.03.08</span>
+                    </li>
+                    <li>
+                        <span class="txt_p">Optimal Size</span>
+                        <span class="size">375 X 812 외 다수</span>
+                    </li> 
+                </ul>   
+                <div class="linkBox">
+                    <a href="http://ddsoeun.github.io/m7" class="link item1" target="_blank">사이트 둘러보기</a>
+                    <a href="designguide.html#page12" class="link item2" target="_blank">디자인가이드</a>    
+                </div>
+            </li>
+            <li class="item8">
+                <div class="img_wrap"></div>
+                <div class="numBox">
+                    <p>08</p>
+                    <span class="line"></span>
+                    <p>08</p>
+                </div> 
+                <h3 class="slideTit">사회복지법인계룡 모바일 웹사이트 리뉴얼</h3>
+                <ul class="slideCom">
+                    <li>
+                        <span class="txt_p">Production Reriod</span>
+                        <span class="date">2018.01.30 ~ 2019.02.01</span>
+                    </li>
+                    <li>
+                        <span class="txt_p">Optimal Size</span>
+                        <span class="size">375 X 812 외 다수</span>
+                    </li> 
+                </ul>   
+                <div class="linkBox">
+                    <a href="http://ddsoeun.github.io/m8" class="link item1" target="_blank">사이트 둘러보기</a>
+                    <a href="designguide.html#page13" class="link item2" target="_blank">디자인가이드</a>    
                 </div>
             </li>
         </ul>
+        <ul class="arrowBox">
+            <li class="prev">
+                <button class="btn">
+                    <span class="item1"></span>
+                    <span class="item2"></span>
+                </button>
+            </li>
+            <li class="next">
+                <button class="btn">
+                    <span class="item1"></span>
+                    <span class="item2"></span>
+                </button>
+            </li>
+        </ul>
+    </div>
+        <div class="imgBox item3">
+        <ul class="slide3">
+            <li class="item1">
+                <div class="img_wrap"></div>
+                <div class="numBox">
+                    <p>01</p>
+                    <span class="line"></span>
+                    <p>04</p>
+                </div> 
+                <h3 class="slideTit">계룡시청 웹사이트 리뉴얼</h3>
+                <ul class="slideCom">
+                    <li>
+                        <span class="txt_p">Production Reriod</span>
+                        <span class="date">2019.02.11 ~ 2019.02.19</span>
+                    </li>
+                    <li>
+                        <span class="txt_p">Optimal Size</span>
+                        <span class="size">1920 X 1080</span>
+                    </li> 
+                </ul>   
+                <div class="linkBox">
+                    <a href="http://soeun920.dothome.co.kr/g1" class="link item1" target="_blank">사이트 둘러보기</a>
+                    <a href="designguide.html#page4" class="link item2" target="_blank">디자인가이드</a>    
+                </div>
+            </li>
+            <li class="item2">
+                <div class="img_wrap"></div>
+                <div class="numBox">
+                    <p>02</p>
+                    <span class="line"></span>
+                    <p>04</p>
+                </div> 
+                <h3 class="slideTit">(주)두산 웹사이트 리뉴얼</h3>
+                <ul class="slideCom">
+                    <li>
+                        <span class="txt_p">Production Reriod</span>
+                        <span class="date">2019.01.03 ~ 2019.01.16</span>
+                    </li>
+                    <li>
+                        <span class="txt_p">Optimal Size</span>
+                        <span class="size">1920 X 1080</span>
+                    </li> 
+                </ul>   
+                <div class="linkBox">
+                    <a href="http://soeun920.dothome.co.kr/c2" class="link item1" target="_blank">사이트 둘러보기</a>
+                    <a href="designguide.html#page2" class="link item2" target="_blank">디자인가이드</a>    
+                </div>
+            </li>
+            <li class="item3">
+                <div class="img_wrap"></div>
+                <div class="numBox">
+                    <p>03</p>
+                    <span class="line"></span>
+                    <p>04</p>
+                </div> 
+                <h3 class="slideTit">사회복지법인계룡 웹사이트 리뉴얼</h3>
+                <ul class="slideCom">
+                    <li>
+                        <span class="txt_p">Production Reriod</span>
+                        <span class="date">2019.01.17 ~ 2019.01.29</span>
+                    </li>
+                    <li>
+                        <span class="txt_p">Optimal Size</span>
+                        <span class="size">1920 X 1080</span>
+                    </li> 
+                </ul>   
+                <div class="linkBox">
+                    <a href="http://soeun920.dothome.co.kr/c3" class="link item1" target="_blank">사이트 둘러보기</a>
+                    <a href="designguide.html#page3" class="link item2" target="_blank">디자인가이드</a>    
+                </div>
+            </li>
+            <li class="item4">
+                <div class="img_wrap"></div>
+                <div class="numBox">
+                    <p>04</p>
+                    <span class="line"></span>
+                    <p>04</p>
+                </div> 
+                <h3 class="slideTit">스마트이비인후과 웹사이트 리뉴얼</h3>
+                <ul class="slideCom">
+                    <li>
+                        <span class="txt_p">Production Reriod</span>
+                        <span class="date">2018.12.24 ~ 2019.01.11</span>
+                    </li>
+                    <li>
+                        <span class="txt_p">Optimal Size</span>
+                        <span class="size">1920 X 1080</span>
+                    </li> 
+                </ul>   
+                <div class="linkBox">
+                    <a href="http://ddsoeun.github.io/c1" class="link item1" target="_blank">사이트 둘러보기</a>
+                    <a href="designguide.html#page1" class="link item2" target="_blank">디자인가이드</a>    
+                </div>
+            </li>
+        </ul>
+        <ul class="arrowBox">
+            <li class="prev">
+                <button class="btn">
+                    <span class="item1"></span>
+                    <span class="item2"></span>
+                </button>
+            </li>
+            <li class="next">
+                <button class="btn">
+                    <span class="item1"></span>
+                    <span class="item2"></span>
+                </button>
+            </li>
+        </ul>
+    </div>    
     </div>
 </div>  
 </body>
